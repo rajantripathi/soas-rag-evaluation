@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this benchmark or repository, please cite it using the metadata below."
+title: "Culturally Grounded Multilingual RAG Evaluation"
+type: software
+authors:
+  - family-names: "Tripathi"
+    given-names: "Rajan"
+repository-code: "https://github.com/rajantripathi/soas-rag-evaluation"
+abstract: "A reproducible bilingual English-Uzbek retrieval benchmark and experiment suite for culturally grounded multilingual RAG evaluation."
+license: "MIT"
+keywords:
+  - multilingual retrieval
+  - retrieval augmented generation
+  - culturally grounded AI
+  - benchmark
+  - Uzbek
+  - English

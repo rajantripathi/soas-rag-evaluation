@@ -1,0 +1,12 @@
+phase,condition,corpus,retrieval,overall_recall_at_k,english_recall_at_k,uzbek_recall_at_k
+v2,none,baseline,no_retrieval,0.0000,0.0000,0.0000
+v2,vector_baseline,baseline,simple_vector,0.4900,0.6100,0.3700
+v2,chunk_small,baseline_256_64,simple_vector,0.4850,0.6200,0.3500
+v2,chunk_smaller,baseline_128_32,simple_vector,0.4850,0.6200,0.3500
+v2,e5_large,baseline,multilingual_e5_large,0.5100,0.6300,0.3900
+v2,mpnet,baseline,multilingual_mpnet,0.4350,0.6200,0.2500
+v2,supplement_v1,baseline_plus_manual_uzbek,multilingual_e5_large,0.7150,0.6300,0.8000
+v2,supplement_v2,baseline_plus_structured_uzbek,multilingual_e5_large,0.8050,0.6300,0.9800
+v4,best_vector,supplement_v2,multilingual_e5_large,0.7950,0.6300,0.9600
+v4,bm25_only,supplement_v2,bm25,0.6700,0.6200,0.7200
+v4,hybrid,supplement_v2,bm25_plus_multilingual_e5_large,0.7950,0.6300,0.9600

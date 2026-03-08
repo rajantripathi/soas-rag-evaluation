@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" viewBox="0 0 900 520">
+<rect width="100%" height="100%" fill="#fbfaf5"/>
+<text x="450.0" y="38" text-anchor="middle" font-family="Georgia, serif" font-size="24" fill="#1f2937">Recall Improvement from Corpus Supplementation</text>
+<line x1="90" y1="410" x2="860" y2="410" stroke="#374151" stroke-width="2"/>
+<line x1="90" y1="70" x2="90" y2="410" stroke="#374151" stroke-width="2"/>
+<line x1="90" y1="410.0" x2="860" y2="410.0" stroke="#d1d5db" stroke-width="1"/>
+<text x="78" y="415.0" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#4b5563">0.0</text>
+<line x1="90" y1="342.0" x2="860" y2="342.0" stroke="#d1d5db" stroke-width="1"/>
+<text x="78" y="347.0" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#4b5563">0.2</text>
+<line x1="90" y1="274.0" x2="860" y2="274.0" stroke="#d1d5db" stroke-width="1"/>
+<text x="78" y="279.0" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#4b5563">0.4</text>
+<line x1="90" y1="206.0" x2="860" y2="206.0" stroke="#d1d5db" stroke-width="1"/>
+<text x="78" y="211.0" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#4b5563">0.6</text>
+<line x1="90" y1="138.0" x2="860" y2="138.0" stroke="#d1d5db" stroke-width="1"/>
+<text x="78" y="143.0" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#4b5563">0.8</text>
+<line x1="90" y1="70.0" x2="860" y2="70.0" stroke="#d1d5db" stroke-width="1"/>
+<text x="78" y="75.0" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#4b5563">1.0</text>
+<text x="218.3" y="438" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#111827">Overall</text>
+<rect x="100.0" y="236.6" width="52.2" height="173.4" fill="#c97b63" rx="4"/>
+<text x="126.1" y="230.6" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#111827">0.51</text>
+<rect x="164.2" y="166.9" width="52.2" height="243.1" fill="#4f772d" rx="4"/>
+<text x="190.3" y="160.9" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#111827">0.71</text>
+<rect x="228.3" y="136.3" width="52.2" height="273.7" fill="#1d4e89" rx="4"/>
+<text x="254.4" y="130.3" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#111827">0.81</text>
+<text x="475.0" y="438" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#111827">English</text>
+<rect x="356.7" y="195.8" width="52.2" height="214.2" fill="#c97b63" rx="4"/>
+<text x="382.8" y="189.8" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#111827">0.63</text>
+<rect x="420.8" y="195.8" width="52.2" height="214.2" fill="#4f772d" rx="4"/>
+<text x="446.9" y="189.8" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#111827">0.63</text>
+<rect x="485.0" y="195.8" width="52.2" height="214.2" fill="#1d4e89" rx="4"/>
+<text x="511.1" y="189.8" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#111827">0.63</text>
+<text x="731.7" y="438" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#111827">Uzbek</text>
+<rect x="613.3" y="277.4" width="52.2" height="132.6" fill="#c97b63" rx="4"/>
+<text x="639.4" y="271.4" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#111827">0.39</text>
+<rect x="677.5" y="138.0" width="52.2" height="272.0" fill="#4f772d" rx="4"/>
+<text x="703.6" y="132.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#111827">0.80</text>
+<rect x="741.7" y="76.8" width="52.2" height="333.2" fill="#1d4e89" rx="4"/>
+<text x="767.8" y="70.8" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#111827">0.98</text>
+<rect x="680" y="41" width="14" height="14" fill="#c97b63" rx="2"/>
+<text x="702" y="52" font-family="Arial, sans-serif" font-size="13" fill="#111827">Baseline</text>
+<rect x="680" y="63" width="14" height="14" fill="#4f772d" rx="2"/>
+<text x="702" y="74" font-family="Arial, sans-serif" font-size="13" fill="#111827">Supplement v1</text>
+<rect x="680" y="85" width="14" height="14" fill="#1d4e89" rx="2"/>
+<text x="702" y="96" font-family="Arial, sans-serif" font-size="13" fill="#111827">Supplement v2</text>
+</svg>
