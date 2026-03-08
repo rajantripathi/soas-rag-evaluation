@@ -18,10 +18,12 @@ def build_parser() -> argparse.ArgumentParser:
 def main() -> int:
     args = build_parser().parse_args()
     config = load_config(args.config)
-    eval_examples = read_jsonl(Path(config["paths"]["eval_data_dir"]) / "smoke_eval.jsonl")
+    eval_filename = config["paths"].get("eval_file", "smoke_eval.jsonl")
+    index_name = config["paths"].get("index_name", "smoke_index")
+    eval_examples = read_jsonl(Path(config["paths"]["eval_data_dir"]) / eval_filename)
     index = None
     if config["experiment"]["retrieval_mode"] == "vector":
-        index = SimpleVectorIndex.load(Path(config["paths"]["index_dir"]) / "smoke_index")
+        index = SimpleVectorIndex.load(Path(config["paths"]["index_dir"]) / index_name)
     results_root = ensure_dir(Path(config["paths"]["results_dir"]))
     run_dir = run_evaluation(config, eval_examples, index, results_root)
     print(f"Wrote evaluation run to {run_dir}")

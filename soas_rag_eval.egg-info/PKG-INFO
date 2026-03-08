@@ -1,7 +1,0 @@
-Metadata-Version: 2.4
-Name: soas-rag-eval
-Version: 0.1.0
-Summary: Config-driven multilingual RAG evaluation pipeline for Isambard
-Requires-Python: >=3.10
-Requires-Dist: datasets>=2.19.0
-Requires-Dist: PyYAML>=6.0

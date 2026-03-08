@@ -18,8 +18,10 @@ def build_parser() -> argparse.ArgumentParser:
 def main() -> int:
     args = build_parser().parse_args()
     config = load_config(args.config)
-    corpus_path = Path(config["paths"]["processed_data_dir"]) / "corpus_smoke.jsonl"
-    index_dir = ensure_dir(Path(config["paths"]["index_dir"]) / "smoke_index")
+    corpus_filename = config["paths"].get("corpus_file", "corpus_smoke.jsonl")
+    index_name = config["paths"].get("index_name", "smoke_index")
+    corpus_path = Path(config["paths"]["processed_data_dir"]) / corpus_filename
+    index_dir = ensure_dir(Path(config["paths"]["index_dir"]) / index_name)
     documents = read_jsonl(corpus_path)
     index = SimpleVectorIndex(documents)
     index.build()

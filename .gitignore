@@ -3,6 +3,7 @@ __pycache__/
 .pytest_cache/
 ._*
 .DS_Store
+soas_rag_eval.egg-info/
 *.pyc
 *.pyo
 *.out
@@ -21,5 +22,6 @@ results/logs/*
 !results/logs/.gitkeep
 results/reports/*
 !results/reports/.gitkeep
+results/eval_*/logs/
 logs/*
 !logs/.gitkeep

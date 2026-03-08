@@ -9,6 +9,7 @@ description = "Config-driven multilingual RAG evaluation pipeline for Isambard"
 requires-python = ">=3.10"
 dependencies = [
   "datasets>=2.19.0",
+  "huggingface_hub>=0.25.0",
   "PyYAML>=6.0",
 ]
 

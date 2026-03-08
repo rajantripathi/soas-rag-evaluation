@@ -5,10 +5,14 @@ paths:
   index_dir: data/indexes
   results_dir: results
   logs_dir: results/logs
+  corpus_file: corpus_smoke.jsonl
+  eval_file: smoke_eval.jsonl
+  index_name: smoke_index
 
 dataset:
   smoke_max_docs: 120
   smoke_max_eval: 50
+  generate_eval: true
 
 retrieval:
   backend: simple_vector

@@ -1,11 +1,13 @@
 from __future__ import annotations
 
+import gzip
 import json
 from pathlib import Path
 from typing import Any
 
 from datasets import Dataset, DatasetDict, IterableDataset, IterableDatasetDict
 from datasets import load_dataset, load_from_disk
+from huggingface_hub import snapshot_download
 
 from src.utils import ensure_dir
 
@@ -16,7 +18,8 @@ DATASET_SPECS = [
         "config_name": "en",
         "local_dir": "miracl_en",
         "language": "en",
-        "kind": "qa",
+        "kind": "corpus",
+        "fetch_strategy": "miracl_raw",
     },
     {
         "name": "tydiqa",
@@ -46,6 +49,31 @@ def fetch_dataset(spec: dict[str, Any], raw_root: Path, force: bool = False) -> 
         }
 
     ensure_dir(raw_root)
+    if spec.get("fetch_strategy") == "miracl_raw":
+        ensure_dir(target)
+        snapshot_download(
+            repo_id="miracl/miracl-corpus",
+            repo_type="dataset",
+            local_dir=str(target),
+            allow_patterns=["miracl-corpus-v1.0-en/docs-0.jsonl.gz"],
+        )
+        snapshot_download(
+            repo_id="miracl/miracl",
+            repo_type="dataset",
+            local_dir=str(target),
+            allow_patterns=[
+                "miracl-v1.0-en/topics/topics.miracl-v1.0-en-dev.tsv",
+                "miracl-v1.0-en/topics/topics.miracl-v1.0-en-train.tsv",
+                "miracl-v1.0-en/qrels/qrels.miracl-v1.0-en-dev.tsv",
+                "miracl-v1.0-en/qrels/qrels.miracl-v1.0-en-train.tsv",
+            ],
+        )
+        return {
+            "dataset": spec["name"],
+            "config_name": spec["config_name"],
+            "status": "downloaded_raw",
+            "output_dir": str(target),
+        }
     dataset = load_dataset(spec["name"], spec["config_name"])
     dataset.save_to_disk(str(target))
     return {
@@ -76,7 +104,16 @@ def iter_examples(dataset_obj: Any) -> Any:
 
 
 def detect_text(example: dict[str, Any]) -> str:
-    for key in ("text", "contents", "context", "document", "body", "article", "passage_text"):
+    for key in (
+        "text",
+        "contents",
+        "context",
+        "document",
+        "body",
+        "article",
+        "passage_text",
+        "document_plaintext",
+    ):
         value = example.get(key)
         if isinstance(value, str) and value.strip():
             return value.strip()
@@ -92,7 +129,16 @@ def detect_title(example: dict[str, Any]) -> str:
 
 
 def detect_id(example: dict[str, Any], fallback: str) -> str:
-    for key in ("doc_id", "docid", "id", "idx", "passage_id", "example_id"):
+    for key in (
+        "doc_id",
+        "docid",
+        "id",
+        "idx",
+        "passage_id",
+        "example_id",
+        "title",
+        "document_title",
+    ):
         value = example.get(key)
         if isinstance(value, (str, int)):
             return str(value)
@@ -100,7 +146,7 @@ def detect_id(example: dict[str, Any], fallback: str) -> str:
 
 
 def detect_question(example: dict[str, Any]) -> str:
-    for key in ("question", "query", "input", "prompt"):
+    for key in ("question", "query", "input", "prompt", "question_text"):
         value = example.get(key)
         if isinstance(value, str) and value.strip():
             return value.strip()
@@ -125,6 +171,16 @@ def detect_answer(example: dict[str, Any]) -> str:
         value = example.get(key)
         if isinstance(value, str) and value.strip():
             return value.strip()
+    annotations = example.get("annotations")
+    document_text = example.get("document_plaintext")
+    if isinstance(annotations, dict) and isinstance(document_text, str):
+        starts = annotations.get("minimal_answers_start_byte") or []
+        ends = annotations.get("minimal_answers_end_byte") or []
+        if starts and ends and starts[0] >= 0 and ends[0] > starts[0]:
+            try:
+                return document_text[starts[0] : ends[0]].strip()
+            except Exception:
+                return ""
     return ""
 
 
@@ -139,3 +195,13 @@ def detect_language(example: dict[str, Any], default: str) -> str:
 def write_manifest(path: Path, records: list[dict[str, Any]]) -> None:
     with path.open("w", encoding="utf-8") as handle:
         json.dump(records, handle, ensure_ascii=False, indent=2)
+
+
+def iter_miracl_raw_documents(dataset_path: Path) -> Any:
+    for gzip_path in sorted(dataset_path.glob("miracl-corpus-v1.0-en/docs-*.jsonl.gz")):
+        with gzip.open(gzip_path, "rt", encoding="utf-8") as handle:
+            for line in handle:
+                line = line.strip()
+                if not line:
+                    continue
+                yield json.loads(line)
