@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "soas-rag-eval"
+version = "0.1.0"
+description = "Config-driven multilingual RAG evaluation pipeline for Isambard"
+requires-python = ">=3.10"
+dependencies = [
+  "datasets>=2.19.0",
+  "PyYAML>=6.0",
+]
+
+[tool.setuptools]
+package-dir = {"" = "."}
+
+[tool.setuptools.packages.find]
+where = ["src"]

@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+soas_rag_eval.egg-info/PKG-INFO
+soas_rag_eval.egg-info/SOURCES.txt
+soas_rag_eval.egg-info/dependency_links.txt
+soas_rag_eval.egg-info/requires.txt
+soas_rag_eval.egg-info/top_level.txt

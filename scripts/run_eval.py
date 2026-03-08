@@ -1,0 +1,32 @@
+#!/usr/bin/env python3
+from __future__ import annotations
+
+import argparse
+from pathlib import Path
+
+from src.orchestration import run_evaluation
+from src.retrieval import SimpleVectorIndex
+from src.utils import ensure_dir, load_config, read_jsonl
+
+
+def build_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(description="Run a smoke evaluation with no-retrieval or vector retrieval.")
+    parser.add_argument("--config", default="configs/exp_smoke.yaml", help="Path to YAML config.")
+    return parser
+
+
+def main() -> int:
+    args = build_parser().parse_args()
+    config = load_config(args.config)
+    eval_examples = read_jsonl(Path(config["paths"]["eval_data_dir"]) / "smoke_eval.jsonl")
+    index = None
+    if config["experiment"]["retrieval_mode"] == "vector":
+        index = SimpleVectorIndex.load(Path(config["paths"]["index_dir"]) / "smoke_index")
+    results_root = ensure_dir(Path(config["paths"]["results_dir"]))
+    run_dir = run_evaluation(config, eval_examples, index, results_root)
+    print(f"Wrote evaluation run to {run_dir}")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

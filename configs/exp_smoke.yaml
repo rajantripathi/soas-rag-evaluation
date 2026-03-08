@@ -1,0 +1,12 @@
+base_config: base.yaml
+
+dataset:
+  smoke_max_docs: 80
+  smoke_max_eval: 30
+
+retrieval:
+  top_k: 3
+
+experiment:
+  retrieval_mode: vector
+  prompt_style: grounded

@@ -1,0 +1,2 @@
+run_dir,config_hash,git_commit,examples,grounded_answer_score,hallucination_rate,unsupported_claim_rate,retrieval_recall_at_k
+results/eval_20260308T145506Z_35149641e9b2,35149641e9b2,unknown,30,1.0,0.0,0.0,0.9667

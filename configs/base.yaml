@@ -1,0 +1,22 @@
+paths:
+  raw_data_dir: data/raw
+  processed_data_dir: data/processed
+  eval_data_dir: data/eval
+  index_dir: data/indexes
+  results_dir: results
+  logs_dir: results/logs
+
+dataset:
+  smoke_max_docs: 120
+  smoke_max_eval: 50
+
+retrieval:
+  backend: simple_vector
+  top_k: 3
+
+generation:
+  backend: stub
+
+experiment:
+  retrieval_mode: vector
+  prompt_style: grounded
