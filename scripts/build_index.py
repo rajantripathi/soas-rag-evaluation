@@ -5,7 +5,7 @@ import argparse
 import json
 from pathlib import Path
 
-from src.retrieval import SimpleVectorIndex
+from src.retrieval import build_index
 from src.utils import ensure_dir, load_config, read_jsonl
 
 
@@ -23,15 +23,17 @@ def main() -> int:
     corpus_path = Path(config["paths"]["processed_data_dir"]) / corpus_filename
     index_dir = ensure_dir(Path(config["paths"]["index_dir"]) / index_name)
     documents = read_jsonl(corpus_path)
-    index = SimpleVectorIndex(documents)
-    index.build()
+    backend = config["retrieval"]["backend"]
+    model_name = config["retrieval"].get("model_name")
+    index = build_index(documents, backend=backend, model_name=model_name)
     index.save(index_dir)
     with (index_dir / "metadata.json").open("w", encoding="utf-8") as handle:
         json.dump(
             {
-                "index_type": "simple_vector",
+                "index_type": backend,
                 "documents": len(documents),
-                "retrieval_backend": config["retrieval"]["backend"],
+                "retrieval_backend": backend,
+                "model_name": model_name,
             },
             handle,
             indent=2,
