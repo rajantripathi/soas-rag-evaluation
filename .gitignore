@@ -30,3 +30,5 @@ results/logs/*
 logs/*
 !logs/.gitkeep
 .ipynb_checkpoints/
+
+._*
