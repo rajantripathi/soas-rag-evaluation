@@ -1,0 +1,20 @@
+base_config: base.yaml
+
+paths:
+  source_corpus_file: corpus_manual_v1.jsonl
+  corpus_file: corpus_manual_chunk128_o32.jsonl
+  eval_file: manual_eval_v2.jsonl
+  index_name: manual_v2_chunk128_o32_index
+
+dataset:
+  smoke_max_docs: 240
+  smoke_max_eval: 200
+  generate_eval: false
+
+chunking:
+  chunk_size: 128
+  overlap: 32
+
+experiment:
+  retrieval_mode: vector
+  prompt_style: grounded

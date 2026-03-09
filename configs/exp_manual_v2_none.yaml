@@ -1,0 +1,21 @@
+base_config: base.yaml
+
+paths:
+  corpus_file: corpus_manual_v1.jsonl
+  eval_file: manual_eval_v2.jsonl
+  index_name: manual_v1_index
+
+dataset:
+  smoke_max_docs: 240
+  smoke_max_eval: 200
+  generate_eval: false
+  max_docs_per_source: 80
+  allowed_languages:
+    tydiqa_primary_task:
+      - english
+    uz_wiki:
+      - uz
+
+experiment:
+  retrieval_mode: none
+  prompt_style: baseline
