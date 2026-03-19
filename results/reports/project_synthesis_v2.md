@@ -1,5 +1,18 @@
 # Culturally Grounded Multilingual RAG Evaluation: Project Synthesis V2
 
+---
+## ⚠️ PARTIAL RETRACTION: English Supplement Results Invalid (March 2026)
+
+**Status:** The English supplement (v1) evaluation results have been retracted.
+
+**Issue:** Synthetic documents contained gold_answer text (data leakage). Results claiming 100% English recall are invalid.
+
+**Valid Results:** Uzbek supplementation (39% → 98%) and all baseline comparisons remain valid.
+
+**Correction:** English supplement v2 using real MIRACL sources is in progress.
+
+---
+
 ## Executive Summary
 
 This project demonstrates that **corpus coverage dominates model choice** for culturally grounded retrieval-augmented question answering. Through systematic experimentation on a bilingual benchmark (English and Uzbek) across four domains (governance, history, institutions, culture), we show that targeted knowledge source curation produces transformational improvements (59% absolute gain for Uzbek) that model optimisation cannot match (7.5% gain from better embeddings). The findings have direct implications for AI funding priorities, evaluation standards, and deployment strategies for underrepresented languages and cultural contexts.

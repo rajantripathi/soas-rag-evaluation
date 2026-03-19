@@ -123,7 +123,6 @@ python scripts/generate_research_outputs.py
 ### Statistical and Methodological Reports
 - **Statistical analysis:** [results/reports/statistical_analysis.md](results/reports/statistical_analysis.md) - Bootstrap confidence intervals, effect sizes, significance tests
 - **LLM judge evaluation:** [results/reports/llm_judge_evaluation.md](results/reports/llm_judge_evaluation.md) - LLM-as-judge scoring on 100 items (or prompts for offline scoring)
-- **Full supplement comparison:** [results/reports/full_supplement_comparison.md](results/reports/full_supplement_comparison.md) - Comparison of UZ-only vs full supplement
 
 ### Policy and Dissemination Outputs
 - **Policy brief:** [research_outputs/policy_brief_culturally_grounded_ai.md](research_outputs/policy_brief_culturally_grounded_ai.md) - 2-page non-technical brief for funding panels (AHRC, UNESCO, British Academy)
@@ -137,6 +136,11 @@ python scripts/generate_research_outputs.py
 - **Pipeline diagram:** [assets/pipeline_overview.svg](assets/pipeline_overview.svg) - System architecture overview
 
 ## Phase 3: English Supplementation and Statistical Rigour
+
+### ⚠️ RETRACTION: English Supplement Invalid (March 2026)
+
+Status: The English supplement (v1) has been retracted due to data leakage. The synthetic documents used gold_answer text from the evaluation set. A corrected version (v2) using real MIRACL source documents is in progress. The Uzbek results (39% → 98%) remain valid. See results/eval_20260319T194731Z_c4dbb855748e/RETRACTED.md for details.
+
 
 ### New Experiments (March 2026)
 - **English corpus gap analysis:** Identified 74 missing English documents (37% gap)
@@ -153,12 +157,12 @@ python scripts/generate_research_outputs.py
 
 ### New Files Created
 - `scripts/analyze_english_corpus_gaps.py`: English gap analysis script
-- `scripts/build_english_supplement.py`: English supplement corpus builder
+- `scripts/build_english_supplement_INVALID.py (RETRACTED - data leakage)`: English supplement corpus builder
 - `scripts/compute_statistics.py`: Statistical analysis (bootstrap CIs, significance tests)
 - `scripts/run_llm_judge.py`: LLM-as-judge evaluation script
 - `configs/exp_manual_v5_vector_grounded_e5_full_supplement.yaml`: Full supplement experiment config
-- `data/processed/corpus_english_supplement.jsonl`: English supplement corpus (74 documents)
-- `data/processed/corpus_manual_v1_uzsupp_v2_ensupp.jsonl`: Merged corpus (375 documents)
+- `data/processed/corpus_english_supplement_INVALID_synthetic.jsonl (RETRACTED)`: English supplement corpus (74 documents)
+- `data/processed/corpus_manual_v1_uzsupp_v2_ensupp_INVALID.jsonl (RETRACTED)`: Merged corpus (375 documents)
 
 ## Limitations
 - The public repository excludes full raw datasets, processed corpora, and index artifacts
