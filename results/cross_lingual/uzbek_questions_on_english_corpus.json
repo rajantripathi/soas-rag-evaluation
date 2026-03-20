@@ -1,0 +1,2807 @@
+{
+  "total": 200,
+  "correct": 0,
+  "results": [
+    {
+      "id": "uz_00",
+      "question": "Oʻzbekiston nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "793"
+      ],
+      "retrieved_docs": [
+        "12#35",
+        "12#79",
+        "12#0"
+      ]
+    },
+    {
+      "id": "uz_01",
+      "question": "Xorazm nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1031"
+      ],
+      "retrieved_docs": [
+        "12#35",
+        "12#43",
+        "12#0"
+      ]
+    },
+    {
+      "id": "uz_02",
+      "question": "Toshkent nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1038"
+      ],
+      "retrieved_docs": [
+        "12#79",
+        "12#65",
+        "12#0"
+      ]
+    },
+    {
+      "id": "uz_03",
+      "question": "Qoraqalpogʻiston nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1046"
+      ],
+      "retrieved_docs": [
+        "12#35",
+        "12#43",
+        "12#79"
+      ]
+    },
+    {
+      "id": "uz_04",
+      "question": "Fargʻona viloyati nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1047"
+      ],
+      "retrieved_docs": [
+        "12#37",
+        "12#35",
+        "12#46"
+      ]
+    },
+    {
+      "id": "uz_05",
+      "question": "Namangan viloyati nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1048"
+      ],
+      "retrieved_docs": [
+        "12#35",
+        "12#43",
+        "12#72"
+      ]
+    },
+    {
+      "id": "uz_06",
+      "question": "Toshkent viloyati nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1049"
+      ],
+      "retrieved_docs": [
+        "12#35",
+        "12#45",
+        "12#46"
+      ]
+    },
+    {
+      "id": "uz_07",
+      "question": "Oʻzbek tili qaysi til?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1482"
+      ],
+      "retrieved_docs": [
+        "12#49",
+        "12#54",
+        "12#35"
+      ]
+    },
+    {
+      "id": "uz_08",
+      "question": "Turk tili nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1484"
+      ],
+      "retrieved_docs": [
+        "12#35",
+        "12#56",
+        "12#46"
+      ]
+    },
+    {
+      "id": "uz_09",
+      "question": "Qoʻqon nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1485"
+      ],
+      "retrieved_docs": [
+        "12#43",
+        "12#0",
+        "12#62"
+      ]
+    },
+    {
+      "id": "uz_10",
+      "question": "Samarqand nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1516"
+      ],
+      "retrieved_docs": [
+        "12#58",
+        "12#35",
+        "12#79"
+      ]
+    },
+    {
+      "id": "uz_11",
+      "question": "Rus tili nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1543"
+      ],
+      "retrieved_docs": [
+        "12#59",
+        "12#45",
+        "12#76"
+      ]
+    },
+    {
+      "id": "uz_12",
+      "question": "Tojik tili nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1550"
+      ],
+      "retrieved_docs": [
+        "12#58",
+        "12#79",
+        "12#46"
+      ]
+    },
+    {
+      "id": "uz_13",
+      "question": "Turkiya nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1551"
+      ],
+      "retrieved_docs": [
+        "12#35",
+        "12#79",
+        "12#56"
+      ]
+    },
+    {
+      "id": "uz_14",
+      "question": "Andijon viloyati nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1553"
+      ],
+      "retrieved_docs": [
+        "12#35",
+        "12#43",
+        "12#46"
+      ]
+    },
+    {
+      "id": "uz_15",
+      "question": "Buxoro viloyati nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1556"
+      ],
+      "retrieved_docs": [
+        "12#21",
+        "12#35",
+        "12#46"
+      ]
+    },
+    {
+      "id": "uz_16",
+      "question": "Jizzax viloyati nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1564"
+      ],
+      "retrieved_docs": [
+        "12#35",
+        "12#46",
+        "12#10"
+      ]
+    },
+    {
+      "id": "uz_17",
+      "question": "Navoiy viloyati nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1566"
+      ],
+      "retrieved_docs": [
+        "12#35",
+        "12#9",
+        "12#45"
+      ]
+    },
+    {
+      "id": "uz_18",
+      "question": "Qashqadaryo viloyati nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1568"
+      ],
+      "retrieved_docs": [
+        "12#35",
+        "12#46",
+        "12#45"
+      ]
+    },
+    {
+      "id": "uz_19",
+      "question": "Xorazm viloyati nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1577"
+      ],
+      "retrieved_docs": [
+        "12#35",
+        "12#43",
+        "12#45"
+      ]
+    },
+    {
+      "id": "uz_20",
+      "question": "Bosh Sahifa nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1"
+      ],
+      "retrieved_docs": [
+        "12#58",
+        "12#79",
+        "12#65"
+      ]
+    },
+    {
+      "id": "uz_21",
+      "question": "-1 nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1036"
+      ],
+      "retrieved_docs": [
+        "12#58",
+        "12#47",
+        "12#79"
+      ]
+    },
+    {
+      "id": "uz_22",
+      "question": "2 (son) nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1037"
+      ],
+      "retrieved_docs": [
+        "12#58",
+        "12#47",
+        "12#65"
+      ]
+    },
+    {
+      "id": "uz_23",
+      "question": "Rossiya nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1045"
+      ],
+      "retrieved_docs": [
+        "12#59",
+        "12#65",
+        "12#45"
+      ]
+    },
+    {
+      "id": "uz_24",
+      "question": "Gagra nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1053"
+      ],
+      "retrieved_docs": [
+        "12#58",
+        "12#79",
+        "12#0"
+      ]
+    },
+    {
+      "id": "uz_25",
+      "question": "Vikipediya qanday muassasa yoki tashkilot?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1486"
+      ],
+      "retrieved_docs": [
+        "12#0",
+        "12#59",
+        "12#79"
+      ]
+    },
+    {
+      "id": "uz_26",
+      "question": "Yevropa nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1518"
+      ],
+      "retrieved_docs": [
+        "12#78",
+        "12#72",
+        "12#56"
+      ]
+    },
+    {
+      "id": "uz_27",
+      "question": "Litva nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1519"
+      ],
+      "retrieved_docs": [
+        "12#79",
+        "12#25",
+        "12#56"
+      ]
+    },
+    {
+      "id": "uz_28",
+      "question": "Vladivostok nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1542"
+      ],
+      "retrieved_docs": [
+        "12#58",
+        "12#35",
+        "12#71"
+      ]
+    },
+    {
+      "id": "uz_29",
+      "question": "Samarqand viloyati nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1570"
+      ],
+      "retrieved_docs": [
+        "12#35",
+        "12#72",
+        "12#45"
+      ]
+    },
+    {
+      "id": "uz_30",
+      "question": "Sirdaryo (viloyat) nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1572"
+      ],
+      "retrieved_docs": [
+        "12#58",
+        "12#49",
+        "12#35"
+      ]
+    },
+    {
+      "id": "uz_31",
+      "question": "Surxondaryo viloyati nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1574"
+      ],
+      "retrieved_docs": [
+        "12#35",
+        "12#43",
+        "12#45"
+      ]
+    },
+    {
+      "id": "uz_32",
+      "question": "Guliston nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1581"
+      ],
+      "retrieved_docs": [
+        "12#35",
+        "12#79",
+        "12#56"
+      ]
+    },
+    {
+      "id": "uz_33",
+      "question": "Ingliz tili nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1587"
+      ],
+      "retrieved_docs": [
+        "12#79",
+        "12#56",
+        "12#77"
+      ]
+    },
+    {
+      "id": "uz_34",
+      "question": "Google qanday muassasa yoki tashkilot?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1634"
+      ],
+      "retrieved_docs": [
+        "12#0",
+        "12#49",
+        "12#59"
+      ]
+    },
+    {
+      "id": "uz_35",
+      "question": "HTML nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1662"
+      ],
+      "retrieved_docs": [
+        "12#58",
+        "12#0",
+        "12#79"
+      ]
+    },
+    {
+      "id": "uz_36",
+      "question": "Abdulvohid Yahyo (Rene Genon) nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1673"
+      ],
+      "retrieved_docs": [
+        "12#58",
+        "12#56",
+        "12#46"
+      ]
+    },
+    {
+      "id": "uz_37",
+      "question": "KISI qanday muassasa yoki tashkilot?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1675"
+      ],
+      "retrieved_docs": [
+        "12#0",
+        "12#79",
+        "12#1"
+      ]
+    },
+    {
+      "id": "uz_38",
+      "question": "Antik davr tarixda nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1786"
+      ],
+      "retrieved_docs": [
+        "12#68",
+        "12#65",
+        "12#56"
+      ]
+    },
+    {
+      "id": "uz_39",
+      "question": "Tarixshunoslik tarixda nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1802"
+      ],
+      "retrieved_docs": [
+        "12#68",
+        "12#79",
+        "12#56"
+      ]
+    },
+    {
+      "id": "uz_40",
+      "question": "Muhammad nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1819"
+      ],
+      "retrieved_docs": [
+        "12#58",
+        "12#56",
+        "12#46"
+      ]
+    },
+    {
+      "id": "uz_41",
+      "question": "Turkiston tarixda nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1823"
+      ],
+      "retrieved_docs": [
+        "12#68",
+        "12#35",
+        "12#56"
+      ]
+    },
+    {
+      "id": "uz_42",
+      "question": "Oʻzbekistondagi universitetlar qanday muassasa yoki tashkilot?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1887"
+      ],
+      "retrieved_docs": [
+        "12#35",
+        "12#59",
+        "12#25"
+      ]
+    },
+    {
+      "id": "uz_43",
+      "question": "Jahon iqtisodiyoti va diplomatiya universiteti qanday muassasa yoki tashkilot?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1903"
+      ],
+      "retrieved_docs": [
+        "12#0",
+        "12#34",
+        "12#25"
+      ]
+    },
+    {
+      "id": "uz_44",
+      "question": "Xudoybergan Devonov nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1920"
+      ],
+      "retrieved_docs": [
+        "12#49",
+        "12#35",
+        "12#43"
+      ]
+    },
+    {
+      "id": "uz_45",
+      "question": "Oʻzbekiston siyosiy partiyalari tarixda nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1921"
+      ],
+      "retrieved_docs": [
+        "12#35",
+        "12#59",
+        "12#79"
+      ]
+    },
+    {
+      "id": "uz_46",
+      "question": "Alisher Navoiy nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1929"
+      ],
+      "retrieved_docs": [
+        "12#58",
+        "12#35",
+        "12#56"
+      ]
+    },
+    {
+      "id": "uz_47",
+      "question": "Linux nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1963"
+      ],
+      "retrieved_docs": [
+        "12#57",
+        "12#58",
+        "12#79"
+      ]
+    },
+    {
+      "id": "uz_48",
+      "question": "Muhammadsharif Soʻfizoda tarixda nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "2036"
+      ],
+      "retrieved_docs": [
+        "12#5",
+        "12#9",
+        "12#3"
+      ]
+    },
+    {
+      "id": "uz_49",
+      "question": "Xurshid Davron nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "2065"
+      ],
+      "retrieved_docs": [
+        "12#35",
+        "12#43",
+        "12#56"
+      ]
+    },
+    {
+      "id": "uz_50",
+      "question": "Birlashgan Millatlar Tashkilotining Nizomi qanday muassasa yoki tashkilot?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "2067"
+      ],
+      "retrieved_docs": [
+        "12#35",
+        "12#46",
+        "12#25"
+      ]
+    },
+    {
+      "id": "uz_51",
+      "question": "Google Scholar qanday muassasa yoki tashkilot?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "2126"
+      ],
+      "retrieved_docs": [
+        "12#49",
+        "12#46",
+        "12#77"
+      ]
+    },
+    {
+      "id": "uz_52",
+      "question": "Java nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "2135"
+      ],
+      "retrieved_docs": [
+        "12#57",
+        "12#58",
+        "12#46"
+      ]
+    },
+    {
+      "id": "uz_53",
+      "question": "Choy nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "2142"
+      ],
+      "retrieved_docs": [
+        "12#58",
+        "12#65",
+        "12#56"
+      ]
+    },
+    {
+      "id": "uz_54",
+      "question": "Kompyuter nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "2166"
+      ],
+      "retrieved_docs": [
+        "12#58",
+        "12#0",
+        "12#79"
+      ]
+    },
+    {
+      "id": "uz_55",
+      "question": "Symbian OS nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "2173"
+      ],
+      "retrieved_docs": [
+        "12#58",
+        "12#46",
+        "12#79"
+      ]
+    },
+    {
+      "id": "uz_56",
+      "question": "UNIX nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "2177"
+      ],
+      "retrieved_docs": [
+        "12#58",
+        "12#0",
+        "12#47"
+      ]
+    },
+    {
+      "id": "uz_57",
+      "question": "PHP nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "2195"
+      ],
+      "retrieved_docs": [
+        "12#58",
+        "12#35",
+        "12#0"
+      ]
+    },
+    {
+      "id": "uz_58",
+      "question": "Microsoft Windows nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "2198"
+      ],
+      "retrieved_docs": [
+        "12#46",
+        "12#79",
+        "12#25"
+      ]
+    },
+    {
+      "id": "uz_59",
+      "question": "Buyuk Ipak yoʻli tarixda nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "2277"
+      ],
+      "retrieved_docs": [
+        "12#62",
+        "12#45",
+        "12#46"
+      ]
+    },
+    {
+      "id": "uz_60",
+      "question": "Oʻzbekiston tarixi tarixda nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "2325"
+      ],
+      "retrieved_docs": [
+        "12#68",
+        "12#54",
+        "12#59"
+      ]
+    },
+    {
+      "id": "uz_61",
+      "question": "Tayammum nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "2638"
+      ],
+      "retrieved_docs": [
+        "12#58",
+        "12#79",
+        "12#65"
+      ]
+    },
+    {
+      "id": "uz_62",
+      "question": "Avesto tarixda nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "2699"
+      ],
+      "retrieved_docs": [
+        "12#5",
+        "12#56",
+        "12#46"
+      ]
+    },
+    {
+      "id": "uz_63",
+      "question": "Oʻrxun-Enasoy obidalari tarixda nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "2704"
+      ],
+      "retrieved_docs": [
+        "12#54",
+        "12#13",
+        "12#33"
+      ]
+    },
+    {
+      "id": "uz_64",
+      "question": "Oʻzbek adabiyoti tarixda nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "2708"
+      ],
+      "retrieved_docs": [
+        "12#54",
+        "12#59",
+        "12#51"
+      ]
+    },
+    {
+      "id": "uz_65",
+      "question": "Ahmad Yassaviy nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "2709"
+      ],
+      "retrieved_docs": [
+        "12#58",
+        "12#35",
+        "12#56"
+      ]
+    },
+    {
+      "id": "uz_66",
+      "question": "Lutfiy nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "2716"
+      ],
+      "retrieved_docs": [
+        "12#58",
+        "12#79",
+        "12#56"
+      ]
+    },
+    {
+      "id": "uz_67",
+      "question": "Xorazmiy nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "2717"
+      ],
+      "retrieved_docs": [
+        "12#66",
+        "12#43",
+        "12#0"
+      ]
+    },
+    {
+      "id": "uz_68",
+      "question": "Bobur nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "2723"
+      ],
+      "retrieved_docs": [
+        "12#58",
+        "12#46",
+        "12#62"
+      ]
+    },
+    {
+      "id": "uz_69",
+      "question": "Gadoiy nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "2730"
+      ],
+      "retrieved_docs": [
+        "12#58",
+        "12#79",
+        "12#65"
+      ]
+    },
+    {
+      "id": "uz_70",
+      "question": "Ipak yo'li radiosi tarixda nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "2765"
+      ],
+      "retrieved_docs": [
+        "12#35",
+        "12#45",
+        "12#46"
+      ]
+    },
+    {
+      "id": "uz_71",
+      "question": "Munavvarqori Abdurashidxon oʻgʻli qanday muassasa yoki tashkilot?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "2826"
+      ],
+      "retrieved_docs": [
+        "12#35",
+        "12#46",
+        "12#43"
+      ]
+    },
+    {
+      "id": "uz_72",
+      "question": "Xizrxon tarixda nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "3553"
+      ],
+      "retrieved_docs": [
+        "12#5",
+        "12#52",
+        "12#54"
+      ]
+    },
+    {
+      "id": "uz_73",
+      "question": "Ahmadxon ibn Xizrxon tarixda nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "3554"
+      ],
+      "retrieved_docs": [
+        "12#5",
+        "12#54",
+        "12#35"
+      ]
+    },
+    {
+      "id": "uz_74",
+      "question": "Ibrohim ibn Husayn tarixda nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "3571"
+      ],
+      "retrieved_docs": [
+        "12#5",
+        "12#79",
+        "12#0"
+      ]
+    },
+    {
+      "id": "uz_75",
+      "question": "Turk xoqonligi tarixda nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "3721"
+      ],
+      "retrieved_docs": [
+        "12#5",
+        "12#35",
+        "12#28"
+      ]
+    },
+    {
+      "id": "uz_76",
+      "question": "Soʻgʻd tarixda nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "3722"
+      ],
+      "retrieved_docs": [
+        "12#68",
+        "12#65",
+        "12#28"
+      ]
+    },
+    {
+      "id": "uz_77",
+      "question": "Markaziy Osiyoning Rossiya tomonidan zabt etilishi tarixda nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "3735"
+      ],
+      "retrieved_docs": [
+        "12#21",
+        "12#17",
+        "12#45"
+      ]
+    },
+    {
+      "id": "uz_78",
+      "question": "Coldplay qanday muassasa yoki tashkilot?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "4080"
+      ],
+      "retrieved_docs": [
+        "12#34",
+        "12#35",
+        "12#33"
+      ]
+    },
+    {
+      "id": "uz_79",
+      "question": "Xuroson tarixda nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "4355"
+      ],
+      "retrieved_docs": [
+        "12#5",
+        "12#73",
+        "12#56"
+      ]
+    },
+    {
+      "id": "uz_80",
+      "question": "Oʻzbekiston milliy teleradiokompaniyasi qanday muassasa yoki tashkilot?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "5309"
+      ],
+      "retrieved_docs": [
+        "12#35",
+        "12#59",
+        "12#79"
+      ]
+    },
+    {
+      "id": "uz_81",
+      "question": "Oʻzbekcha Vikipediya qanday muassasa yoki tashkilot?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "5342"
+      ],
+      "retrieved_docs": [
+        "12#35",
+        "12#59",
+        "12#25"
+      ]
+    },
+    {
+      "id": "uz_82",
+      "question": "1477 qanday muassasa yoki tashkilot?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "8090"
+      ],
+      "retrieved_docs": [
+        "12#46",
+        "12#59",
+        "12#15"
+      ]
+    },
+    {
+      "id": "uz_83",
+      "question": "1917 qanday muassasa yoki tashkilot?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "8855"
+      ],
+      "retrieved_docs": [
+        "12#59",
+        "12#24",
+        "12#25"
+      ]
+    },
+    {
+      "id": "uz_84",
+      "question": "1972 tarixda nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "8963"
+      ],
+      "retrieved_docs": [
+        "12#12",
+        "12#62",
+        "12#33"
+      ]
+    },
+    {
+      "id": "uz_85",
+      "question": "Ruscha Vikipediya qanday muassasa yoki tashkilot?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "12559"
+      ],
+      "retrieved_docs": [
+        "12#49",
+        "12#59",
+        "12#25"
+      ]
+    },
+    {
+      "id": "uz_86",
+      "question": "Polyakcha Vikipediya qanday muassasa yoki tashkilot?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "13589"
+      ],
+      "retrieved_docs": [
+        "12#59",
+        "12#43",
+        "12#79"
+      ]
+    },
+    {
+      "id": "uz_87",
+      "question": "Italyancha Vikipediya qanday muassasa yoki tashkilot?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "13596"
+      ],
+      "retrieved_docs": [
+        "12#49",
+        "12#79",
+        "12#25"
+      ]
+    },
+    {
+      "id": "uz_88",
+      "question": "Mošovce tarixda nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "13833"
+      ],
+      "retrieved_docs": [
+        "12#5",
+        "12#71",
+        "12#50"
+      ]
+    },
+    {
+      "id": "uz_89",
+      "question": "Gmail qanday muassasa yoki tashkilot?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "13959"
+      ],
+      "retrieved_docs": [
+        "12#0",
+        "12#49",
+        "12#43"
+      ]
+    },
+    {
+      "id": "uz_90",
+      "question": "Sovet Ittifoqi Madhiyasi tarixda nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "14266"
+      ],
+      "retrieved_docs": [
+        "12#35",
+        "12#45",
+        "12#46"
+      ]
+    },
+    {
+      "id": "uz_91",
+      "question": "Din tarixda nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "14333"
+      ],
+      "retrieved_docs": [
+        "12#57",
+        "12#68",
+        "12#56"
+      ]
+    },
+    {
+      "id": "uz_92",
+      "question": "Universitet qanday muassasa yoki tashkilot?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "14515"
+      ],
+      "retrieved_docs": [
+        "12#59",
+        "12#1",
+        "12#77"
+      ]
+    },
+    {
+      "id": "uz_93",
+      "question": "Institut qanday muassasa yoki tashkilot?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "14516"
+      ],
+      "retrieved_docs": [
+        "12#0",
+        "12#79",
+        "12#53"
+      ]
+    },
+    {
+      "id": "uz_94",
+      "question": "Google Talk qanday muassasa yoki tashkilot?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "14626"
+      ],
+      "retrieved_docs": [
+        "12#46",
+        "12#59",
+        "12#47"
+      ]
+    },
+    {
+      "id": "uz_95",
+      "question": "Teatr qanday muassasa yoki tashkilot?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "14791"
+      ],
+      "retrieved_docs": [
+        "12#46",
+        "12#59",
+        "12#79"
+      ]
+    },
+    {
+      "id": "uz_96",
+      "question": "Aktyor qanday muassasa yoki tashkilot?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "14794"
+      ],
+      "retrieved_docs": [
+        "12#46",
+        "12#79",
+        "12#25"
+      ]
+    },
+    {
+      "id": "uz_97",
+      "question": "Inglizcha Vikipediya qanday muassasa yoki tashkilot?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "15346"
+      ],
+      "retrieved_docs": [
+        "12#49",
+        "12#46",
+        "12#79"
+      ]
+    },
+    {
+      "id": "uz_98",
+      "question": "Nobel mukofoti qanday muassasa yoki tashkilot?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "15403"
+      ],
+      "retrieved_docs": [
+        "12#0",
+        "12#25",
+        "12#46"
+      ]
+    },
+    {
+      "id": "uz_99",
+      "question": "Nagoya universiteti qanday muassasa yoki tashkilot?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "15418"
+      ],
+      "retrieved_docs": [
+        "12#35",
+        "12#46",
+        "12#25"
+      ]
+    },
+    {
+      "id": "uz_governance_v4_00",
+      "question": "Oʻzbekiston qanday hudud, davlat yoki siyosiy birlik?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "793"
+      ],
+      "retrieved_docs": [
+        "12#49",
+        "12#35",
+        "12#43"
+      ]
+    },
+    {
+      "id": "uz_governance_v4_01",
+      "question": "Toshkent siyosiy-geografik jihatdan nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1038"
+      ],
+      "retrieved_docs": [
+        "12#35",
+        "12#79",
+        "12#0"
+      ]
+    },
+    {
+      "id": "uz_governance_v4_02",
+      "question": "Qoraqalpogʻiston qanday hudud, davlat yoki siyosiy birlik?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1046"
+      ],
+      "retrieved_docs": [
+        "12#0",
+        "12#35",
+        "12#43"
+      ]
+    },
+    {
+      "id": "uz_governance_v4_03",
+      "question": "Fargʻona viloyati siyosiy-geografik jihatdan nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1047"
+      ],
+      "retrieved_docs": [
+        "12#37",
+        "12#35",
+        "12#0"
+      ]
+    },
+    {
+      "id": "uz_governance_v4_04",
+      "question": "Namangan viloyati qanday hudud, davlat yoki siyosiy birlik?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1048"
+      ],
+      "retrieved_docs": [
+        "12#0",
+        "12#35",
+        "12#43"
+      ]
+    },
+    {
+      "id": "uz_governance_v4_05",
+      "question": "Toshkent viloyati siyosiy-geografik jihatdan nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1049"
+      ],
+      "retrieved_docs": [
+        "12#35",
+        "12#43",
+        "12#79"
+      ]
+    },
+    {
+      "id": "uz_governance_v4_06",
+      "question": "Turkiya qanday hudud, davlat yoki siyosiy birlik?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1551"
+      ],
+      "retrieved_docs": [
+        "12#0",
+        "12#35",
+        "12#56"
+      ]
+    },
+    {
+      "id": "uz_governance_v4_07",
+      "question": "Andijon viloyati siyosiy-geografik jihatdan nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1553"
+      ],
+      "retrieved_docs": [
+        "12#0",
+        "12#35",
+        "12#43"
+      ]
+    },
+    {
+      "id": "uz_governance_v4_08",
+      "question": "Buxoro viloyati qanday hudud, davlat yoki siyosiy birlik?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1556"
+      ],
+      "retrieved_docs": [
+        "12#0",
+        "12#35",
+        "12#46"
+      ]
+    },
+    {
+      "id": "uz_governance_v4_09",
+      "question": "Jizzax viloyati siyosiy-geografik jihatdan nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1564"
+      ],
+      "retrieved_docs": [
+        "12#0",
+        "12#35",
+        "12#79"
+      ]
+    },
+    {
+      "id": "uz_governance_v4_10",
+      "question": "Navoiy viloyati qanday hudud, davlat yoki siyosiy birlik?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1566"
+      ],
+      "retrieved_docs": [
+        "12#0",
+        "12#35",
+        "12#45"
+      ]
+    },
+    {
+      "id": "uz_governance_v4_11",
+      "question": "Qashqadaryo viloyati siyosiy-geografik jihatdan nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1568"
+      ],
+      "retrieved_docs": [
+        "12#0",
+        "12#35",
+        "12#43"
+      ]
+    },
+    {
+      "id": "uz_governance_v4_12",
+      "question": "Xorazm viloyati qanday hudud, davlat yoki siyosiy birlik?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1577"
+      ],
+      "retrieved_docs": [
+        "12#0",
+        "12#35",
+        "12#43"
+      ]
+    },
+    {
+      "id": "uz_governance_v4_13",
+      "question": "Bosh Sahifa siyosiy-geografik jihatdan nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1"
+      ],
+      "retrieved_docs": [
+        "12#68",
+        "12#79",
+        "12#1"
+      ]
+    },
+    {
+      "id": "uz_governance_v4_14",
+      "question": "-1 qanday hudud, davlat yoki siyosiy birlik?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1036"
+      ],
+      "retrieved_docs": [
+        "12#35",
+        "12#47",
+        "12#79"
+      ]
+    },
+    {
+      "id": "uz_governance_v4_15",
+      "question": "2 (son) siyosiy-geografik jihatdan nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1037"
+      ],
+      "retrieved_docs": [
+        "12#68",
+        "12#79",
+        "12#0"
+      ]
+    },
+    {
+      "id": "uz_governance_v4_16",
+      "question": "Rossiya qanday hudud, davlat yoki siyosiy birlik?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1045"
+      ],
+      "retrieved_docs": [
+        "12#35",
+        "12#59",
+        "12#45"
+      ]
+    },
+    {
+      "id": "uz_governance_v4_17",
+      "question": "Gagra siyosiy-geografik jihatdan nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1053"
+      ],
+      "retrieved_docs": [
+        "12#78",
+        "12#69",
+        "12#66"
+      ]
+    },
+    {
+      "id": "uz_governance_v4_18",
+      "question": "Yevropa qanday hudud, davlat yoki siyosiy birlik?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1518"
+      ],
+      "retrieved_docs": [
+        "12#0",
+        "12#78",
+        "12#35"
+      ]
+    },
+    {
+      "id": "uz_governance_v4_19",
+      "question": "Litva siyosiy-geografik jihatdan nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1519"
+      ],
+      "retrieved_docs": [
+        "12#34",
+        "12#63",
+        "12#43"
+      ]
+    },
+    {
+      "id": "uz_governance_v4_20",
+      "question": "Vladivostok qanday hudud, davlat yoki siyosiy birlik?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1542"
+      ],
+      "retrieved_docs": [
+        "12#35",
+        "12#45",
+        "12#0"
+      ]
+    },
+    {
+      "id": "uz_governance_v4_21",
+      "question": "Samarqand viloyati siyosiy-geografik jihatdan nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1570"
+      ],
+      "retrieved_docs": [
+        "12#37",
+        "12#35",
+        "12#66"
+      ]
+    },
+    {
+      "id": "uz_governance_v4_22",
+      "question": "Sirdaryo (viloyat) qanday hudud, davlat yoki siyosiy birlik?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1572"
+      ],
+      "retrieved_docs": [
+        "12#49",
+        "12#35",
+        "12#46"
+      ]
+    },
+    {
+      "id": "uz_governance_v4_23",
+      "question": "Surxondaryo viloyati siyosiy-geografik jihatdan nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1574"
+      ],
+      "retrieved_docs": [
+        "12#0",
+        "12#35",
+        "12#43"
+      ]
+    },
+    {
+      "id": "uz_governance_v4_24",
+      "question": "Guliston qanday hudud, davlat yoki siyosiy birlik?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1581"
+      ],
+      "retrieved_docs": [
+        "12#0",
+        "12#35",
+        "12#46"
+      ]
+    },
+    {
+      "id": "uz_history_v4_00",
+      "question": "Xorazm tarixiy jihatdan nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1031"
+      ],
+      "retrieved_docs": [
+        "12#5",
+        "12#54",
+        "12#35"
+      ]
+    },
+    {
+      "id": "uz_history_v4_01",
+      "question": "Qoʻqon tarixiy kontekstda nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1485"
+      ],
+      "retrieved_docs": [
+        "12#54",
+        "12#62",
+        "12#56"
+      ]
+    },
+    {
+      "id": "uz_history_v4_02",
+      "question": "Samarqand tarixiy jihatdan nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1516"
+      ],
+      "retrieved_docs": [
+        "12#5",
+        "12#54",
+        "12#35"
+      ]
+    },
+    {
+      "id": "uz_history_v4_03",
+      "question": "Antik davr tarixiy kontekstda nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1786"
+      ],
+      "retrieved_docs": [
+        "12#68",
+        "12#69",
+        "12#56"
+      ]
+    },
+    {
+      "id": "uz_history_v4_04",
+      "question": "Tarixshunoslik tarixiy jihatdan nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1802"
+      ],
+      "retrieved_docs": [
+        "12#68",
+        "12#79",
+        "12#0"
+      ]
+    },
+    {
+      "id": "uz_history_v4_05",
+      "question": "Turkiston tarixiy kontekstda nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1823"
+      ],
+      "retrieved_docs": [
+        "12#68",
+        "12#35",
+        "12#56"
+      ]
+    },
+    {
+      "id": "uz_history_v4_06",
+      "question": "Oʻzbekiston siyosiy partiyalari tarixiy jihatdan nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1921"
+      ],
+      "retrieved_docs": [
+        "12#35",
+        "12#59",
+        "12#79"
+      ]
+    },
+    {
+      "id": "uz_history_v4_07",
+      "question": "Muhammadsharif Soʻfizoda tarixiy kontekstda nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "2036"
+      ],
+      "retrieved_docs": [
+        "12#5",
+        "12#9",
+        "12#76"
+      ]
+    },
+    {
+      "id": "uz_history_v4_08",
+      "question": "Buyuk Ipak yoʻli tarixiy jihatdan nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "2277"
+      ],
+      "retrieved_docs": [
+        "12#43",
+        "12#45",
+        "12#46"
+      ]
+    },
+    {
+      "id": "uz_history_v4_09",
+      "question": "Oʻzbekiston tarixi tarixiy kontekstda nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "2325"
+      ],
+      "retrieved_docs": [
+        "12#54",
+        "12#59",
+        "12#45"
+      ]
+    },
+    {
+      "id": "uz_history_v4_10",
+      "question": "Avesto tarixiy jihatdan nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "2699"
+      ],
+      "retrieved_docs": [
+        "12#5",
+        "12#56",
+        "12#64"
+      ]
+    },
+    {
+      "id": "uz_history_v4_11",
+      "question": "Oʻrxun-Enasoy obidalari tarixiy kontekstda nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "2704"
+      ],
+      "retrieved_docs": [
+        "12#69",
+        "12#54",
+        "12#13"
+      ]
+    },
+    {
+      "id": "uz_history_v4_12",
+      "question": "Oʻzbek adabiyoti tarixiy jihatdan nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "2708"
+      ],
+      "retrieved_docs": [
+        "12#54",
+        "12#59",
+        "12#50"
+      ]
+    },
+    {
+      "id": "uz_history_v4_13",
+      "question": "Ipak yo'li radiosi tarixiy kontekstda nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "2765"
+      ],
+      "retrieved_docs": [
+        "12#69",
+        "12#72",
+        "12#45"
+      ]
+    },
+    {
+      "id": "uz_history_v4_14",
+      "question": "Xizrxon tarixiy jihatdan nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "3553"
+      ],
+      "retrieved_docs": [
+        "12#5",
+        "12#52",
+        "12#54"
+      ]
+    },
+    {
+      "id": "uz_history_v4_15",
+      "question": "Ahmadxon ibn Xizrxon tarixiy kontekstda nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "3554"
+      ],
+      "retrieved_docs": [
+        "12#5",
+        "12#54",
+        "12#35"
+      ]
+    },
+    {
+      "id": "uz_history_v4_16",
+      "question": "Ibrohim ibn Husayn tarixiy jihatdan nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "3571"
+      ],
+      "retrieved_docs": [
+        "12#5",
+        "12#0",
+        "12#79"
+      ]
+    },
+    {
+      "id": "uz_history_v4_17",
+      "question": "Turk xoqonligi tarixiy kontekstda nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "3721"
+      ],
+      "retrieved_docs": [
+        "12#5",
+        "12#35",
+        "12#72"
+      ]
+    },
+    {
+      "id": "uz_history_v4_18",
+      "question": "Soʻgʻd tarixiy jihatdan nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "3722"
+      ],
+      "retrieved_docs": [
+        "12#68",
+        "12#65",
+        "12#0"
+      ]
+    },
+    {
+      "id": "uz_history_v4_19",
+      "question": "Markaziy Osiyoning Rossiya tomonidan zabt etilishi tarixiy kontekstda nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "3735"
+      ],
+      "retrieved_docs": [
+        "12#21",
+        "12#17",
+        "12#45"
+      ]
+    },
+    {
+      "id": "uz_history_v4_20",
+      "question": "Xuroson tarixiy jihatdan nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "4355"
+      ],
+      "retrieved_docs": [
+        "12#5",
+        "12#43",
+        "12#0"
+      ]
+    },
+    {
+      "id": "uz_history_v4_21",
+      "question": "1972 tarixiy kontekstda nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "8963"
+      ],
+      "retrieved_docs": [
+        "12#12",
+        "12#62",
+        "12#33"
+      ]
+    },
+    {
+      "id": "uz_history_v4_22",
+      "question": "Mošovce tarixiy jihatdan nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "13833"
+      ],
+      "retrieved_docs": [
+        "12#5",
+        "12#50",
+        "12#45"
+      ]
+    },
+    {
+      "id": "uz_history_v4_23",
+      "question": "Sovet Ittifoqi Madhiyasi tarixiy kontekstda nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "14266"
+      ],
+      "retrieved_docs": [
+        "12#72",
+        "12#45",
+        "12#46"
+      ]
+    },
+    {
+      "id": "uz_history_v4_24",
+      "question": "Din tarixiy jihatdan nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "14333"
+      ],
+      "retrieved_docs": [
+        "12#57",
+        "12#68",
+        "12#56"
+      ]
+    },
+    {
+      "id": "uz_culture_v4_00",
+      "question": "Oʻzbek tili madaniy yoki ijtimoiy jihatdan nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1482"
+      ],
+      "retrieved_docs": [
+        "12#68",
+        "12#54",
+        "12#79"
+      ]
+    },
+    {
+      "id": "uz_culture_v4_01",
+      "question": "Turk tili qanday madaniy tushuncha yoki mavzu?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1484"
+      ],
+      "retrieved_docs": [
+        "12#54",
+        "12#35",
+        "12#76"
+      ]
+    },
+    {
+      "id": "uz_culture_v4_02",
+      "question": "Rus tili madaniy yoki ijtimoiy jihatdan nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1543"
+      ],
+      "retrieved_docs": [
+        "12#54",
+        "12#59",
+        "12#17"
+      ]
+    },
+    {
+      "id": "uz_culture_v4_03",
+      "question": "Tojik tili qanday madaniy tushuncha yoki mavzu?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1550"
+      ],
+      "retrieved_docs": [
+        "12#49",
+        "12#76",
+        "12#46"
+      ]
+    },
+    {
+      "id": "uz_culture_v4_04",
+      "question": "Ingliz tili madaniy yoki ijtimoiy jihatdan nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1587"
+      ],
+      "retrieved_docs": [
+        "12#36",
+        "12#66",
+        "12#77"
+      ]
+    },
+    {
+      "id": "uz_culture_v4_05",
+      "question": "HTML qanday madaniy tushuncha yoki mavzu?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1662"
+      ],
+      "retrieved_docs": [
+        "12#54",
+        "12#47",
+        "12#65"
+      ]
+    },
+    {
+      "id": "uz_culture_v4_06",
+      "question": "Abdulvohid Yahyo (Rene Genon) madaniy yoki ijtimoiy jihatdan nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1673"
+      ],
+      "retrieved_docs": [
+        "12#66",
+        "12#56",
+        "12#0"
+      ]
+    },
+    {
+      "id": "uz_culture_v4_07",
+      "question": "Muhammad qanday madaniy tushuncha yoki mavzu?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1819"
+      ],
+      "retrieved_docs": [
+        "12#66",
+        "12#9",
+        "12#67"
+      ]
+    },
+    {
+      "id": "uz_culture_v4_08",
+      "question": "Xudoybergan Devonov madaniy yoki ijtimoiy jihatdan nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1920"
+      ],
+      "retrieved_docs": [
+        "12#71",
+        "12#56",
+        "12#50"
+      ]
+    },
+    {
+      "id": "uz_culture_v4_09",
+      "question": "Alisher Navoiy qanday madaniy tushuncha yoki mavzu?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1929"
+      ],
+      "retrieved_docs": [
+        "12#47",
+        "12#56",
+        "12#76"
+      ]
+    },
+    {
+      "id": "uz_culture_v4_10",
+      "question": "Linux madaniy yoki ijtimoiy jihatdan nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1963"
+      ],
+      "retrieved_docs": [
+        "12#68",
+        "12#65",
+        "12#67"
+      ]
+    },
+    {
+      "id": "uz_culture_v4_11",
+      "question": "Xurshid Davron qanday madaniy tushuncha yoki mavzu?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "2065"
+      ],
+      "retrieved_docs": [
+        "12#54",
+        "12#66",
+        "12#9"
+      ]
+    },
+    {
+      "id": "uz_culture_v4_12",
+      "question": "Java madaniy yoki ijtimoiy jihatdan nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "2135"
+      ],
+      "retrieved_docs": [
+        "12#68",
+        "12#0",
+        "12#66"
+      ]
+    },
+    {
+      "id": "uz_culture_v4_13",
+      "question": "Choy qanday madaniy tushuncha yoki mavzu?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "2142"
+      ],
+      "retrieved_docs": [
+        "12#68",
+        "12#66",
+        "12#65"
+      ]
+    },
+    {
+      "id": "uz_culture_v4_14",
+      "question": "Kompyuter madaniy yoki ijtimoiy jihatdan nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "2166"
+      ],
+      "retrieved_docs": [
+        "12#68",
+        "12#66",
+        "12#79"
+      ]
+    },
+    {
+      "id": "uz_culture_v4_15",
+      "question": "Symbian OS qanday madaniy tushuncha yoki mavzu?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "2173"
+      ],
+      "retrieved_docs": [
+        "12#68",
+        "12#66",
+        "12#65"
+      ]
+    },
+    {
+      "id": "uz_culture_v4_16",
+      "question": "UNIX madaniy yoki ijtimoiy jihatdan nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "2177"
+      ],
+      "retrieved_docs": [
+        "12#68",
+        "12#2",
+        "12#47"
+      ]
+    },
+    {
+      "id": "uz_culture_v4_17",
+      "question": "PHP qanday madaniy tushuncha yoki mavzu?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "2195"
+      ],
+      "retrieved_docs": [
+        "12#68",
+        "12#47",
+        "12#0"
+      ]
+    },
+    {
+      "id": "uz_culture_v4_18",
+      "question": "Microsoft Windows madaniy yoki ijtimoiy jihatdan nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "2198"
+      ],
+      "retrieved_docs": [
+        "12#68",
+        "12#0",
+        "12#79"
+      ]
+    },
+    {
+      "id": "uz_culture_v4_19",
+      "question": "Tayammum qanday madaniy tushuncha yoki mavzu?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "2638"
+      ],
+      "retrieved_docs": [
+        "12#68",
+        "12#79",
+        "12#65"
+      ]
+    },
+    {
+      "id": "uz_culture_v4_20",
+      "question": "Ahmad Yassaviy madaniy yoki ijtimoiy jihatdan nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "2709"
+      ],
+      "retrieved_docs": [
+        "12#71",
+        "12#66",
+        "12#50"
+      ]
+    },
+    {
+      "id": "uz_culture_v4_21",
+      "question": "Lutfiy qanday madaniy tushuncha yoki mavzu?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "2716"
+      ],
+      "retrieved_docs": [
+        "12#47",
+        "12#56",
+        "12#67"
+      ]
+    },
+    {
+      "id": "uz_culture_v4_22",
+      "question": "Xorazmiy madaniy yoki ijtimoiy jihatdan nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "2717"
+      ],
+      "retrieved_docs": [
+        "12#68",
+        "12#66",
+        "12#33"
+      ]
+    },
+    {
+      "id": "uz_culture_v4_23",
+      "question": "Bobur qanday madaniy tushuncha yoki mavzu?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "2723"
+      ],
+      "retrieved_docs": [
+        "12#43",
+        "12#47",
+        "12#46"
+      ]
+    },
+    {
+      "id": "uz_culture_v4_24",
+      "question": "Gadoiy madaniy yoki ijtimoiy jihatdan nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "2730"
+      ],
+      "retrieved_docs": [
+        "12#68",
+        "12#66",
+        "12#79"
+      ]
+    },
+    {
+      "id": "uz_institutions_v4_00",
+      "question": "Vikipediya qanday institut, muassasa yoki tashkilot?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1486"
+      ],
+      "retrieved_docs": [
+        "12#0",
+        "12#43",
+        "12#79"
+      ]
+    },
+    {
+      "id": "uz_institutions_v4_01",
+      "question": "Google institutsional jihatdan nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1634"
+      ],
+      "retrieved_docs": [
+        "12#66",
+        "12#47",
+        "12#79"
+      ]
+    },
+    {
+      "id": "uz_institutions_v4_02",
+      "question": "KISI qanday institut, muassasa yoki tashkilot?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1675"
+      ],
+      "retrieved_docs": [
+        "12#0",
+        "12#79",
+        "12#46"
+      ]
+    },
+    {
+      "id": "uz_institutions_v4_03",
+      "question": "Oʻzbekistondagi universitetlar institutsional jihatdan nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1887"
+      ],
+      "retrieved_docs": [
+        "12#78",
+        "12#79",
+        "12#53"
+      ]
+    },
+    {
+      "id": "uz_institutions_v4_04",
+      "question": "Jahon iqtisodiyoti va diplomatiya universiteti qanday institut, muassasa yoki tashkilot?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "1903"
+      ],
+      "retrieved_docs": [
+        "12#0",
+        "12#34",
+        "12#59"
+      ]
+    },
+    {
+      "id": "uz_institutions_v4_05",
+      "question": "Birlashgan Millatlar Tashkilotining Nizomi institutsional jihatdan nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "2067"
+      ],
+      "retrieved_docs": [
+        "12#0",
+        "12#78",
+        "12#43"
+      ]
+    },
+    {
+      "id": "uz_institutions_v4_06",
+      "question": "Google Scholar qanday institut, muassasa yoki tashkilot?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "2126"
+      ],
+      "retrieved_docs": [
+        "12#49",
+        "12#46",
+        "12#77"
+      ]
+    },
+    {
+      "id": "uz_institutions_v4_07",
+      "question": "Munavvarqori Abdurashidxon oʻgʻli institutsional jihatdan nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "2826"
+      ],
+      "retrieved_docs": [
+        "12#43",
+        "12#9",
+        "12#77"
+      ]
+    },
+    {
+      "id": "uz_institutions_v4_08",
+      "question": "Coldplay qanday institut, muassasa yoki tashkilot?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "4080"
+      ],
+      "retrieved_docs": [
+        "12#53",
+        "12#33",
+        "12#77"
+      ]
+    },
+    {
+      "id": "uz_institutions_v4_09",
+      "question": "Oʻzbekiston milliy teleradiokompaniyasi institutsional jihatdan nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "5309"
+      ],
+      "retrieved_docs": [
+        "12#0",
+        "12#35",
+        "12#79"
+      ]
+    },
+    {
+      "id": "uz_institutions_v4_10",
+      "question": "Oʻzbekcha Vikipediya qanday institut, muassasa yoki tashkilot?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "5342"
+      ],
+      "retrieved_docs": [
+        "12#35",
+        "12#59",
+        "12#79"
+      ]
+    },
+    {
+      "id": "uz_institutions_v4_11",
+      "question": "1477 institutsional jihatdan nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "8090"
+      ],
+      "retrieved_docs": [
+        "12#69",
+        "12#79",
+        "12#15"
+      ]
+    },
+    {
+      "id": "uz_institutions_v4_12",
+      "question": "1917 qanday institut, muassasa yoki tashkilot?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "8855"
+      ],
+      "retrieved_docs": [
+        "12#59",
+        "12#25",
+        "12#15"
+      ]
+    },
+    {
+      "id": "uz_institutions_v4_13",
+      "question": "Ruscha Vikipediya institutsional jihatdan nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "12559"
+      ],
+      "retrieved_docs": [
+        "12#35",
+        "12#43",
+        "12#59"
+      ]
+    },
+    {
+      "id": "uz_institutions_v4_14",
+      "question": "Polyakcha Vikipediya qanday institut, muassasa yoki tashkilot?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "13589"
+      ],
+      "retrieved_docs": [
+        "12#46",
+        "12#43",
+        "12#79"
+      ]
+    },
+    {
+      "id": "uz_institutions_v4_15",
+      "question": "Italyancha Vikipediya institutsional jihatdan nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "13596"
+      ],
+      "retrieved_docs": [
+        "12#46",
+        "12#43",
+        "12#79"
+      ]
+    },
+    {
+      "id": "uz_institutions_v4_16",
+      "question": "Gmail qanday institut, muassasa yoki tashkilot?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "13959"
+      ],
+      "retrieved_docs": [
+        "12#43",
+        "12#79",
+        "12#47"
+      ]
+    },
+    {
+      "id": "uz_institutions_v4_17",
+      "question": "Universitet institutsional jihatdan nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "14515"
+      ],
+      "retrieved_docs": [
+        "12#78",
+        "12#79",
+        "12#53"
+      ]
+    },
+    {
+      "id": "uz_institutions_v4_18",
+      "question": "Institut qanday institut, muassasa yoki tashkilot?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "14516"
+      ],
+      "retrieved_docs": [
+        "12#47",
+        "12#79",
+        "12#53"
+      ]
+    },
+    {
+      "id": "uz_institutions_v4_19",
+      "question": "Google Talk institutsional jihatdan nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "14626"
+      ],
+      "retrieved_docs": [
+        "12#46",
+        "12#47",
+        "12#79"
+      ]
+    },
+    {
+      "id": "uz_institutions_v4_20",
+      "question": "Teatr qanday institut, muassasa yoki tashkilot?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "14791"
+      ],
+      "retrieved_docs": [
+        "12#46",
+        "12#59",
+        "12#79"
+      ]
+    },
+    {
+      "id": "uz_institutions_v4_21",
+      "question": "Aktyor institutsional jihatdan nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "14794"
+      ],
+      "retrieved_docs": [
+        "12#46",
+        "12#79",
+        "12#53"
+      ]
+    },
+    {
+      "id": "uz_institutions_v4_22",
+      "question": "Inglizcha Vikipediya qanday institut, muassasa yoki tashkilot?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "15346"
+      ],
+      "retrieved_docs": [
+        "12#0",
+        "12#43",
+        "12#79"
+      ]
+    },
+    {
+      "id": "uz_institutions_v4_23",
+      "question": "Nobel mukofoti institutsional jihatdan nima?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "15403"
+      ],
+      "retrieved_docs": [
+        "12#0",
+        "12#35",
+        "12#43"
+      ]
+    },
+    {
+      "id": "uz_institutions_v4_24",
+      "question": "Nagoya universiteti qanday institut, muassasa yoki tashkilot?",
+      "language": "uz",
+      "correct": false,
+      "gold_docs": [
+        "15418"
+      ],
+      "retrieved_docs": [
+        "12#0",
+        "12#8",
+        "12#77"
+      ]
+    }
+  ],
+  "accuracy": 0.0
+}

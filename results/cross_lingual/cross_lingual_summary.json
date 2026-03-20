@@ -1,0 +1,12 @@
+{
+  "uzbek_questions_on_english_corpus": {
+    "accuracy": 0.0,
+    "correct": 0,
+    "total": 200
+  },
+  "english_questions_on_uzbek_corpus": {
+    "accuracy": 0.0,
+    "correct": 0,
+    "total": 200
+  }
+}
