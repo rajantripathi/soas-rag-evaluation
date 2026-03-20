@@ -32,3 +32,4 @@ logs/*
 .ipynb_checkpoints/
 
 ._*
+_archive/

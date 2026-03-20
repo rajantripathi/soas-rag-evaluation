@@ -38,7 +38,7 @@ The experiments consistently point to the same answer: corpus coverage of cultur
 - Vector retrieval (TF-IDF, sentence embeddings)
 - Chunking variants (256/64, 128/32)
 - Embedding comparison (mpnet, multilingual-e5-large)
-- Corpus supplementation (Uzbek v1, Uzbek v2, English v1)
+- Corpus supplementation (Uzbek v1, Uzbek v2)
 - BM25 and hybrid retrieval
 
 ## Dataset Versions
@@ -56,23 +56,21 @@ The experiments consistently point to the same answer: corpus coverage of cultur
 **Corpus coverage dominates model choice for culturally grounded multilingual retrieval.**
 
 ### Detailed Findings
-- **Uzbek supplementation:** Recall improved from 39% to 98% through targeted corpus supplementation (61 point improvement)
-- **English supplementation:** Recall improved from baseline [63%] to [X]% through corpus supplementation (expected improvement in history and institutions)
-- **Model optimisation:** Embedding changes and chunking variants produced minimal gains by comparison
+- **Uzbek supplementation:** Recall improved from 39% to 98% through targeted corpus supplementation (59 percentage point improvement, p < 0.001, Cohen's d = 2.91)
+- **Model optimisation:** Embedding changes produced only a 7.5 percentage point gain (Cohen's d = 0.31). The corpus supplementation effect is 7.9 times larger than the model effect.
+- **English baseline:** 63% recall at baseline, with a 37% gap identified in history and institutions domains. English supplementation was attempted but results were retracted due to data leakage.
 - **Best overall performance:** 79.5% recall with Uzbek supplement v2 + e5-large embeddings
 - **Weakest domains:** History and institutions showed lowest coverage before supplementation
 - **Retriever collapse:** When sources missing, retrieval collapses onto generic hub documents rather than failing independently
-- **Statistical significance:** All supplementation effects statistically significant (p < 0.001, bootstrap CIs)
+- **Statistical significance:** All supplementation effects statistically significant (bootstrap CIs, p < 0.001)
 
-### Per-Domain Performance (Best Setup)
+### Per-Domain Performance (Best Setup: Uzbek supplement v2 + e5-large)
 | Domain | English | Uzbek |
 |--------|---------|-------|
 | Governance | 80% | 98% |
-| History | 40% → [X]% | 96% |
-| Institutions | 32% → [Y]% | 96% |
+| History | 40% | 96% |
+| Institutions | 32% | 96% |
 | Culture | 100% | 94% |
-
-*Note: English values in brackets show expected improvement after supplementation (evaluation in progress)*
 
 ## Repository Structure
 - `assets/`: lightweight visual assets such as the pipeline overview diagram
@@ -80,7 +78,7 @@ The experiments consistently point to the same answer: corpus coverage of cultur
 - `data/eval/sample/`: public sample of the bilingual evaluation data
 - `docs/`: benchmark, methodology, results, and limitations documentation
 - `prompts/`: prompt templates
-- `research_outputs/`: summary tables, figures, concept note, and workshop outline
+- `research_outputs/`: summary tables, figures, concept note, and workshop paper
 - `results/reports/`: synthesis reports retained in-repo
 - `scripts/`: CLI entrypoints and lightweight report generators
 - `slurm/`: Slurm templates for cluster execution
@@ -114,20 +112,27 @@ python scripts/generate_research_outputs.py
 
 ## Research Outputs
 
+### Workshop Paper
+- **Workshop paper:** [research_outputs/workshop_paper_2026/paper_final.md](research_outputs/workshop_paper_2026/paper_final.md) - 4-page workshop paper based on validated Uzbek supplementation results
+
 ### Synthesis and Analysis Reports
-- **Updated synthesis:** [results/reports/project_synthesis_v2.md](results/reports/project_synthesis_v2.md) - Comprehensive results with all new findings
-- **Original synthesis:** [results/reports/project_synthesis_20260309.md](results/reports/project_synthesis_20260309.md) - Original results before Phase 3
+- **Updated synthesis:** [results/reports/project_synthesis_v2.md](results/reports/project_synthesis_v2.md) - Comprehensive results with corrected English status
+- **Original synthesis:** [results/reports/project_synthesis_20260309.md](results/reports/project_synthesis_20260309.md) - Original validated results
 - **Error analysis:** [results/reports/manual_eval_v2_error_analysis_20260308.md](results/reports/manual_eval_v2_error_analysis_20260308.md) - Failure cases and patterns
-- **English gap analysis:** [results/reports/english_corpus_gap_analysis.md](results/reports/english_corpus_gap_analysis.md) - English corpus coverage gaps
+- **English gap analysis:** [results/reports/english_corpus_gap_analysis.md](results/reports/english_corpus_gap_analysis.md) - English corpus coverage gaps (baseline only)
 
 ### Statistical and Methodological Reports
 - **Statistical analysis:** [results/reports/statistical_analysis.md](results/reports/statistical_analysis.md) - Bootstrap confidence intervals, effect sizes, significance tests
-- **LLM judge evaluation:** [results/reports/llm_judge_evaluation.md](results/reports/llm_judge_evaluation.md) - LLM-as-judge scoring on 100 items (or prompts for offline scoring)
 
 ### Policy and Dissemination Outputs
 - **Policy brief:** [research_outputs/policy_brief_culturally_grounded_ai.md](research_outputs/policy_brief_culturally_grounded_ai.md) - 2-page non-technical brief for funding panels (AHRC, UNESCO, British Academy)
-- **Workshop paper outline:** [research_outputs/workshop_paper_outline.md](research_outputs/workshop_paper_outline.md) - Structured outline for 4-page workshop paper (LREC/ACL/EMNLP)
+- **Workshop outline:** [research_outputs/workshop_outline_20260309.md](research_outputs/workshop_outline_20260309.md) - Structured outline for workshop papers
 - **Concept note:** [research_outputs/concept_note_20260309.md](research_outputs/concept_note_20260309.md) - Original project concept
+
+### Audit and Quality Outputs
+- **Audit summary:** [research_outputs/audit_summary_20260309.md](research_outputs/audit_summary_20260309.md) - Dataset quality audit
+- **Failure taxonomy:** [research_outputs/failure_taxonomy_20260309.md](research_outputs/failure_taxonomy_20260309.md) - Systematic failure classification
+- **V5 enrichment spec:** [research_outputs/v5_enrichment_spec_20260309.md](research_outputs/v5_enrichment_spec_20260309.md) - Dataset version 5 schema additions
 
 ### Figures and Tables
 - **Summary tables:** [research_outputs/summary_tables.md](research_outputs/summary_tables.md) - Key metrics and comparisons
@@ -135,48 +140,38 @@ python scripts/generate_research_outputs.py
 - **Language/domain figure:** [research_outputs/figure_language_domain_comparison.svg](research_outputs/figure_language_domain_comparison.svg) - Per-language, per-domain comparison
 - **Pipeline diagram:** [assets/pipeline_overview.svg](assets/pipeline_overview.svg) - System architecture overview
 
-## Phase 3: English Supplementation and Statistical Rigour
+## Methodological Notes
 
-### ⚠️ RETRACTION: English Supplement Invalid (March 2026)
+### Retraction: English Supplement Invalid (March 2026)
 
-Status: The English supplement (v1) has been retracted due to data leakage. The synthetic documents used gold_answer text from the evaluation set. A corrected version (v2) using real MIRACL source documents is in progress. The Uzbek results (39% → 98%) remain valid. See results/eval_20260319T194731Z_c4dbb855748e/RETRACTED.md for details.
+An initial English supplementation attempt was conducted but results have been retracted. The synthetic documents used contained gold_answer text from the evaluation set, introducing data leakage. Results claiming 100% English recall are invalid. The Uzbek supplementation results (39% to 98%) remain valid. English results are therefore reported at baseline only.
 
+### Validated Results
+The following results are validated and reported:
+- Uzbek supplementation v2: 59 percentage point improvement (39% to 98%, d = 2.91)
+- Embedding model comparison: 7.5 percentage point improvement (d = 0.31)
+- Chunking variations: no significant difference (p = 1.000)
+- Hybrid vs vector retrieval: no significant difference (p = 1.000)
 
-### New Experiments (March 2026)
-- **English corpus gap analysis:** Identified 74 missing English documents (37% gap)
-- **English supplementation:** Built synthetic supplement corpus (74 documents)
-- **Full supplement evaluation:** Merged corpus (375 documents) with UZ + EN supplements
-- **Statistical analysis:** Bootstrap confidence intervals and significance tests for all comparisons
-- **LLM-as-judge:** Structured evaluation of 100 items using local LLM or prompt generation
-
-### Key Improvements
-- **English history:** Expected improvement from 40% to [X]% after supplementation
-- **English institutions:** Expected improvement from 32% to [Y]% after supplementation
-- **Statistical rigour:** All major comparisons now include 95% bootstrap CIs and p-values
-- **Methodological upgrade:** LLM-as-judge evaluation beyond token overlap metrics
-
-### New Files Created
-- `scripts/analyze_english_corpus_gaps.py`: English gap analysis script
-- `scripts/build_english_supplement_INVALID.py (RETRACTED - data leakage)`: English supplement corpus builder
-- `scripts/compute_statistics.py`: Statistical analysis (bootstrap CIs, significance tests)
-- `scripts/run_llm_judge.py`: LLM-as-judge evaluation script
-- `configs/exp_manual_v5_vector_grounded_e5_full_supplement.yaml`: Full supplement experiment config
-- `data/processed/corpus_english_supplement_INVALID_synthetic.jsonl (RETRACTED)`: English supplement corpus (74 documents)
-- `data/processed/corpus_manual_v1_uzsupp_v2_ensupp_INVALID.jsonl (RETRACTED)`: Merged corpus (375 documents)
+### Not Attempted
+The following experiments were not attempted:
+- Cross-lingual retrieval (English questions on Uzbek corpus, or vice versa)
+- LLM-as-judge evaluation (infrastructure exists but not executed)
+- Human evaluation
 
 ## Limitations
 - The public repository excludes full raw datasets, processed corpora, and index artifacts
-- Evaluation currently relies on retrieval recall and heuristic grounding-oriented metrics rather than a full judge model (LLM-as-judge in progress)
-- Generation is a stub (returns first retrieved sentence) - answer quality metrics should be interpreted cautiously
-- Statistical power limited by benchmark size (400 items) - larger benchmarks needed for definitive conclusions
-- English supplements are synthetic (Q+A pairs) rather than extracted from raw sources
+- Evaluation currently relies on retrieval recall and heuristic grounding-oriented metrics
+- Generation is a stub (returns first retrieved sentence), so answer quality metrics should be interpreted cautiously
+- Statistical power limited by benchmark size (400 items) - larger benchmarks would yield narrower confidence intervals
+- English was not successfully supplemented (baseline results only)
 - Findings based on only 2 languages (English, Uzbek) - may not generalise to other language families
 
 ## Citation
 If you use this repository, cite it as a research benchmark and software artifact. A starter citation file is provided in [CITATION.cff](CITATION.cff).
 
 ## Funding and Acknowledgements
-This work was prepared for submission to AHRC, ESRC, and British Academy funding calls. Centre for AI Futures, SOAS University of London. Contact: rt1@soas.ac.uk
+This work used the Isambard-AI supercomputer under the u6ef project. Centre for AI Futures, SOAS University of London. Contact: rt1@soas.ac.uk
 
 ## License
 See [LICENSE](LICENSE) file for details.
