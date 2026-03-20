@@ -1,19 +1,3 @@
-# Phase 3 Completion Summary: Partial Retraction
-
-## IMPORTANT RETRACTION (March 2026)
-
-**English supplement v1 results have been retracted due to data leakage.**
-
-- **Invalid:** English supplement v1 used synthetic documents containing gold_answer text
-- **Retracted:** Claims of 100% English recall and related improvements
-- **Valid:** Uzbek supplementation (39% to 98%, p < 0.001) remains validated
-- **Status:** English supplement v2 attempted but MIRACL lacks required documents
-
-See RETRACTED.md in results directories for full details.
-
----
-
-
 # Phase 3 Completion Summary: Strengthen Benchmark for Publication and Funding
 
 ## Executive Summary
