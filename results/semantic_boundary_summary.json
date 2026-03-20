@@ -1,0 +1,64 @@
+{
+  "hypothesis": "Cultural-conceptual domains > Technical-scientific domains",
+  "results": {
+    "cultural": {
+      "correct": 174,
+      "total": 240,
+      "accuracy": 72.5
+    },
+    "technical": {
+      "correct": 145,
+      "total": 300,
+      "accuracy": 48.333333333333336
+    },
+    "gap": 24.166666666666664,
+    "z_score": 5.675294486023183
+  },
+  "by_domain": {
+    "geography": {
+      "correct": 51,
+      "total": 60,
+      "type": "cultural"
+    },
+    "cities": {
+      "correct": 50,
+      "total": 60,
+      "type": "cultural"
+    },
+    "culture": {
+      "correct": 37,
+      "total": 60,
+      "type": "cultural"
+    },
+    "orgs": {
+      "correct": 36,
+      "total": 60,
+      "type": "cultural"
+    },
+    "physics": {
+      "correct": 30,
+      "total": 60,
+      "type": "technical"
+    },
+    "chemistry": {
+      "correct": 26,
+      "total": 60,
+      "type": "technical"
+    },
+    "biology": {
+      "correct": 29,
+      "total": 60,
+      "type": "technical"
+    },
+    "medicine": {
+      "correct": 28,
+      "total": 60,
+      "type": "technical"
+    },
+    "computing": {
+      "correct": 32,
+      "total": 60,
+      "type": "technical"
+    }
+  }
+}
