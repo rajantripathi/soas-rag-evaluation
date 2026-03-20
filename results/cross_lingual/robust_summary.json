@@ -1,0 +1,4240 @@
+{
+  "summary": {
+    "uz_base": {
+      "correct": 64,
+      "total": 66,
+      "accuracy": 0.9696969696969697,
+      "name": "Uzbek Q -> Uzbek Corpus"
+    },
+    "en_base": {
+      "correct": 66,
+      "total": 66,
+      "accuracy": 1.0,
+      "name": "English Q -> English Corpus"
+    },
+    "uz_on_en": {
+      "correct": 63,
+      "total": 66,
+      "accuracy": 0.9545454545454546,
+      "name": "Uzbek Q -> English Corpus"
+    },
+    "en_on_uz": {
+      "correct": 63,
+      "total": 66,
+      "accuracy": 0.9545454545454546,
+      "name": "English Q -> Uzbek Corpus"
+    }
+  },
+  "confidence_intervals": {
+    "uz_base": {
+      "accuracy": 0.9696969696969697,
+      "correct": 64,
+      "total": 66,
+      "ci_95_low": 0.8960728112941316,
+      "ci_95_high": 0.9916502649240535
+    },
+    "en_base": {
+      "accuracy": 1.0,
+      "correct": 66,
+      "total": 66,
+      "ci_95_low": 0.9449955327483907,
+      "ci_95_high": 1
+    },
+    "uz_on_en": {
+      "accuracy": 0.9545454545454546,
+      "correct": 63,
+      "total": 66,
+      "ci_95_low": 0.8746648398478928,
+      "ci_95_high": 0.9844220081051896
+    },
+    "en_on_uz": {
+      "accuracy": 0.9545454545454546,
+      "correct": 63,
+      "total": 66,
+      "ci_95_low": 0.8746648398478928,
+      "ci_95_high": 0.9844220081051896
+    }
+  },
+  "by_domain": {
+    "('uz_base', 'geo')": [
+      19,
+      19
+    ],
+    "('uz_base', 'cities')": [
+      10,
+      11
+    ],
+    "('uz_base', 'lang')": [
+      6,
+      6
+    ],
+    "('uz_base', 'science')": [
+      9,
+      10
+    ],
+    "('uz_base', 'tech')": [
+      8,
+      8
+    ],
+    "('uz_base', 'culture')": [
+      6,
+      6
+    ],
+    "('uz_base', 'org')": [
+      4,
+      4
+    ],
+    "('uz_base', 'other')": [
+      2,
+      2
+    ],
+    "('en_base', 'geo')": [
+      19,
+      19
+    ],
+    "('en_base', 'cities')": [
+      11,
+      11
+    ],
+    "('en_base', 'lang')": [
+      6,
+      6
+    ],
+    "('en_base', 'science')": [
+      10,
+      10
+    ],
+    "('en_base', 'tech')": [
+      8,
+      8
+    ],
+    "('en_base', 'culture')": [
+      6,
+      6
+    ],
+    "('en_base', 'org')": [
+      4,
+      4
+    ],
+    "('en_base', 'other')": [
+      2,
+      2
+    ],
+    "('uz_on_en', 'geo')": [
+      19,
+      19
+    ],
+    "('uz_on_en', 'cities')": [
+      11,
+      11
+    ],
+    "('uz_on_en', 'lang')": [
+      6,
+      6
+    ],
+    "('uz_on_en', 'science')": [
+      7,
+      10
+    ],
+    "('uz_on_en', 'tech')": [
+      8,
+      8
+    ],
+    "('uz_on_en', 'culture')": [
+      6,
+      6
+    ],
+    "('uz_on_en', 'org')": [
+      4,
+      4
+    ],
+    "('uz_on_en', 'other')": [
+      2,
+      2
+    ],
+    "('en_on_uz', 'geo')": [
+      19,
+      19
+    ],
+    "('en_on_uz', 'cities')": [
+      10,
+      11
+    ],
+    "('en_on_uz', 'lang')": [
+      6,
+      6
+    ],
+    "('en_on_uz', 'science')": [
+      8,
+      10
+    ],
+    "('en_on_uz', 'tech')": [
+      8,
+      8
+    ],
+    "('en_on_uz', 'culture')": [
+      6,
+      6
+    ],
+    "('en_on_uz', 'org')": [
+      4,
+      4
+    ],
+    "('en_on_uz', 'other')": [
+      2,
+      2
+    ]
+  },
+  "by_qtype": {
+    "('uz_base', 'factual')": [
+      7,
+      8
+    ],
+    "('uz_base', 'direct')": [
+      32,
+      32
+    ],
+    "('uz_base', 'keyword')": [
+      22,
+      23
+    ],
+    "('uz_base', 'list')": [
+      2,
+      2
+    ],
+    "('uz_base', 'location')": [
+      1,
+      1
+    ],
+    "('en_base', 'factual')": [
+      8,
+      8
+    ],
+    "('en_base', 'direct')": [
+      32,
+      32
+    ],
+    "('en_base', 'keyword')": [
+      23,
+      23
+    ],
+    "('en_base', 'list')": [
+      2,
+      2
+    ],
+    "('en_base', 'location')": [
+      1,
+      1
+    ],
+    "('uz_on_en', 'factual')": [
+      7,
+      8
+    ],
+    "('uz_on_en', 'direct')": [
+      30,
+      32
+    ],
+    "('uz_on_en', 'keyword')": [
+      23,
+      23
+    ],
+    "('uz_on_en', 'list')": [
+      2,
+      2
+    ],
+    "('uz_on_en', 'location')": [
+      1,
+      1
+    ],
+    "('en_on_uz', 'factual')": [
+      7,
+      8
+    ],
+    "('en_on_uz', 'direct')": [
+      31,
+      32
+    ],
+    "('en_on_uz', 'keyword')": [
+      22,
+      23
+    ],
+    "('en_on_uz', 'list')": [
+      2,
+      2
+    ],
+    "('en_on_uz', 'location')": [
+      1,
+      1
+    ]
+  },
+  "details": {
+    "uz_base": [
+      {
+        "id": "uz_base_0",
+        "question": "O\u02bbzbekiston poytaxti qayer?",
+        "target": "O\u02bbzbekiston",
+        "retrieved": [
+          "O\u02bbzbekiston",
+          "O\u02bbzbekiston viloyatlari",
+          "Toshkent",
+          "Samarqand",
+          "Qoraqalpog\u02bbiston"
+        ],
+        "correct": true,
+        "domain": "geo",
+        "qtype": "factual"
+      },
+      {
+        "id": "uz_base_1",
+        "question": "O\u02bbzbekiston",
+        "target": "O\u02bbzbekiston",
+        "retrieved": [
+          "O\u02bbzbekiston",
+          "O\u02bbzbekiston viloyatlari",
+          "Toshkent viloyati",
+          "Qozog\u02bbiston",
+          "Rossiya"
+        ],
+        "correct": true,
+        "domain": "geo",
+        "qtype": "direct"
+      },
+      {
+        "id": "uz_base_2",
+        "question": "Rossiya maydoni qancha?",
+        "target": "Rossiya",
+        "retrieved": [
+          "Rossiya",
+          "Qozog\u02bbiston",
+          "O\u02bbzbekiston",
+          "Markaziy Osiyoning Rossiya tomonidan zabt etilishi",
+          "Yevropa"
+        ],
+        "correct": true,
+        "domain": "geo",
+        "qtype": "factual"
+      },
+      {
+        "id": "uz_base_3",
+        "question": "Rossiya poytaxti",
+        "target": "Rossiya",
+        "retrieved": [
+          "Rossiya",
+          "Toshkent",
+          "Vladivostok",
+          "O\u02bbzbekiston",
+          "Rus tili"
+        ],
+        "correct": true,
+        "domain": "geo",
+        "qtype": "keyword"
+      },
+      {
+        "id": "uz_base_4",
+        "question": "Rossiya",
+        "target": "Rossiya",
+        "retrieved": [
+          "Rossiya",
+          "Rus tili",
+          "KISI",
+          "O\u02bbzbekiston",
+          "Markaziy Osiyo"
+        ],
+        "correct": true,
+        "domain": "geo",
+        "qtype": "direct"
+      },
+      {
+        "id": "uz_base_5",
+        "question": "Qozog\u02bbiston poytaxti",
+        "target": "Qozog\u02bbiston",
+        "retrieved": [
+          "Qozog\u02bbiston",
+          "Qoraqalpog\u02bbiston",
+          "Toshkent",
+          "Qo\u02bbqon",
+          "O\u02bbzbekiston"
+        ],
+        "correct": true,
+        "domain": "geo",
+        "qtype": "keyword"
+      },
+      {
+        "id": "uz_base_6",
+        "question": "Qozog\u02bbiston",
+        "target": "Qozog\u02bbiston",
+        "retrieved": [
+          "Qozog\u02bbiston",
+          "Qoraqalpog\u02bbiston",
+          "O\u02bbzbekiston",
+          "KISI",
+          "Markaziy Osiyo"
+        ],
+        "correct": true,
+        "domain": "geo",
+        "qtype": "direct"
+      },
+      {
+        "id": "uz_base_7",
+        "question": "Turkiya qaysi qit\u02bcada?",
+        "target": "Turkiya",
+        "retrieved": [
+          "Turkiya",
+          "Markaziy Osiyo",
+          "Turk tili",
+          "Turkiston",
+          "Osiyo"
+        ],
+        "correct": true,
+        "domain": "geo",
+        "qtype": "factual"
+      },
+      {
+        "id": "uz_base_8",
+        "question": "Turkiya",
+        "target": "Turkiya",
+        "retrieved": [
+          "Turkiya",
+          "Turk tili",
+          "O\u02bbzbekiston",
+          "Toshkent viloyati",
+          "Toshkent"
+        ],
+        "correct": true,
+        "domain": "geo",
+        "qtype": "direct"
+      },
+      {
+        "id": "uz_base_9",
+        "question": "Amerika aholisi",
+        "target": "Amerika",
+        "retrieved": [
+          "Amerika",
+          "Bosh Sahifa",
+          "Ingliz tili",
+          "Vikipediya",
+          "O\u02bbzbekiston"
+        ],
+        "correct": true,
+        "domain": "geo",
+        "qtype": "factual"
+      },
+      {
+        "id": "uz_base_10",
+        "question": "Amerika",
+        "target": "Amerika",
+        "retrieved": [
+          "Amerika",
+          "Bosh Sahifa",
+          "Osiyo",
+          "Vikipediya",
+          "Ingliz tili"
+        ],
+        "correct": true,
+        "domain": "geo",
+        "qtype": "direct"
+      },
+      {
+        "id": "uz_base_11",
+        "question": "Yevropa davlatlari",
+        "target": "Yevropa",
+        "retrieved": [
+          "Yevropa",
+          "Bosh Sahifa",
+          "Ingliz tili",
+          "Markaziy Osiyo",
+          "Rossiya"
+        ],
+        "correct": true,
+        "domain": "geo",
+        "qtype": "list"
+      },
+      {
+        "id": "uz_base_12",
+        "question": "Yevropa",
+        "target": "Yevropa",
+        "retrieved": [
+          "Yevropa",
+          "Ingliz tili",
+          "Bosh Sahifa",
+          "Amerika",
+          "Rossiya"
+        ],
+        "correct": true,
+        "domain": "geo",
+        "qtype": "direct"
+      },
+      {
+        "id": "uz_base_13",
+        "question": "Osiyo maydoni",
+        "target": "Osiyo",
+        "retrieved": [
+          "Osiyo",
+          "O\u02bbzbekiston",
+          "KISI",
+          "Markaziy Osiyo",
+          "Qozog\u02bbiston"
+        ],
+        "correct": true,
+        "domain": "geo",
+        "qtype": "factual"
+      },
+      {
+        "id": "uz_base_14",
+        "question": "Osiyo",
+        "target": "Osiyo",
+        "retrieved": [
+          "Osiyo",
+          "Amerika",
+          "Markaziy Osiyo",
+          "O\u02bbzbekiston",
+          "Rossiya"
+        ],
+        "correct": true,
+        "domain": "geo",
+        "qtype": "direct"
+      },
+      {
+        "id": "uz_base_15",
+        "question": "Markaziy Osiyo davlatlari",
+        "target": "Markaziy Osiyo",
+        "retrieved": [
+          "Markaziy Osiyo",
+          "KISI",
+          "Qozog\u02bbiston",
+          "O\u02bbzbekiston",
+          "Osiyo"
+        ],
+        "correct": true,
+        "domain": "geo",
+        "qtype": "list"
+      },
+      {
+        "id": "uz_base_16",
+        "question": "Markaziy Osiyo",
+        "target": "Markaziy Osiyo",
+        "retrieved": [
+          "Markaziy Osiyo",
+          "KISI",
+          "Osiyo",
+          "O\u02bbzbekiston",
+          "Qozog\u02bbiston"
+        ],
+        "correct": true,
+        "domain": "geo",
+        "qtype": "direct"
+      },
+      {
+        "id": "uz_base_17",
+        "question": "Antarktida aholisi",
+        "target": "Antarktida",
+        "retrieved": [
+          "Antarktida",
+          "Amerika",
+          "Rossiya",
+          "Ingliz tili",
+          "Osiyo"
+        ],
+        "correct": true,
+        "domain": "geo",
+        "qtype": "factual"
+      },
+      {
+        "id": "uz_base_18",
+        "question": "Antarktida",
+        "target": "Antarktida",
+        "retrieved": [
+          "Antarktida",
+          "Amerika",
+          "Osmon",
+          "Osiyo",
+          "Rossiya"
+        ],
+        "correct": true,
+        "domain": "geo",
+        "qtype": "direct"
+      },
+      {
+        "id": "uz_base_19",
+        "question": "Toshkent aholisi",
+        "target": "Toshkent",
+        "retrieved": [
+          "Toshkent",
+          "Toshkent viloyati",
+          "O\u02bbzbekiston",
+          "Chirchiq",
+          "Buxoro"
+        ],
+        "correct": true,
+        "domain": "cities",
+        "qtype": "factual"
+      },
+      {
+        "id": "uz_base_20",
+        "question": "Toshkent qaerda?",
+        "target": "Toshkent",
+        "retrieved": [
+          "Toshkent",
+          "Toshkent viloyati",
+          "O\u02bbzbekiston viloyatlari",
+          "O\u02bbzbekiston",
+          "Samarqand"
+        ],
+        "correct": true,
+        "domain": "cities",
+        "qtype": "location"
+      },
+      {
+        "id": "uz_base_21",
+        "question": "Toshkent",
+        "target": "Toshkent",
+        "retrieved": [
+          "Toshkent",
+          "Toshkent viloyati",
+          "O\u02bbzbekiston",
+          "Samarqand",
+          "Buxoro"
+        ],
+        "correct": true,
+        "domain": "cities",
+        "qtype": "direct"
+      },
+      {
+        "id": "uz_base_22",
+        "question": "Samarqand tarixi",
+        "target": "Samarqand",
+        "retrieved": [
+          "Samarqand",
+          "Samarqand viloyati",
+          "Ahmadxon ibn Xizrxon",
+          "Xizrxon",
+          "Xorazm viloyati"
+        ],
+        "correct": true,
+        "domain": "cities",
+        "qtype": "keyword"
+      },
+      {
+        "id": "uz_base_23",
+        "question": "Samarqand",
+        "target": "Samarqand",
+        "retrieved": [
+          "Samarqand",
+          "Samarqand viloyati",
+          "So\u02bbg\u02bbd",
+          "Surxondaryo viloyati",
+          "Xizrxon"
+        ],
+        "correct": true,
+        "domain": "cities",
+        "qtype": "direct"
+      },
+      {
+        "id": "uz_base_24",
+        "question": "Buxoro qadimiy shahar",
+        "target": "Buxoro",
+        "retrieved": [
+          "Buxoro",
+          "Buxoro viloyati",
+          "Xorazm",
+          "Samarqand",
+          "Xorazm viloyati"
+        ],
+        "correct": true,
+        "domain": "cities",
+        "qtype": "keyword"
+      },
+      {
+        "id": "uz_base_25",
+        "question": "Buxoro",
+        "target": "Buxoro",
+        "retrieved": [
+          "Buxoro",
+          "Buxoro viloyati",
+          "Toshkent viloyati",
+          "Toshkent",
+          "Samarqand"
+        ],
+        "correct": true,
+        "domain": "cities",
+        "qtype": "direct"
+      },
+      {
+        "id": "uz_base_26",
+        "question": "Xorazm viloyati",
+        "target": "Xorazm",
+        "retrieved": [
+          "Xorazm viloyati",
+          "Jizzax viloyati",
+          "Buxoro viloyati",
+          "Toshkent viloyati",
+          "Andijon viloyati"
+        ],
+        "correct": false,
+        "domain": "cities",
+        "qtype": "keyword"
+      },
+      {
+        "id": "uz_base_27",
+        "question": "Xorazm",
+        "target": "Xorazm",
+        "retrieved": [
+          "Xorazm viloyati",
+          "Xorazm",
+          "Jizzax viloyati",
+          "Xizrxon",
+          "Samarqand viloyati"
+        ],
+        "correct": true,
+        "domain": "cities",
+        "qtype": "direct"
+      },
+      {
+        "id": "uz_base_28",
+        "question": "Farg\u02bbona vodiysi",
+        "target": "Farg\u02bbona",
+        "retrieved": [
+          "Farg\u02bbona",
+          "Farg\u02bbona viloyati",
+          "Yozyovon",
+          "Novqat (Farg\u02bbona)",
+          "So\u02bbg\u02bbd"
+        ],
+        "correct": true,
+        "domain": "cities",
+        "qtype": "keyword"
+      },
+      {
+        "id": "uz_base_29",
+        "question": "Farg\u02bbona",
+        "target": "Farg\u02bbona",
+        "retrieved": [
+          "Farg\u02bbona",
+          "Farg\u02bbona viloyati",
+          "Yozyovon",
+          "Qo\u02bbqon",
+          "So\u02bbg\u02bbd"
+        ],
+        "correct": true,
+        "domain": "cities",
+        "qtype": "direct"
+      },
+      {
+        "id": "uz_base_30",
+        "question": "O\u02bbzbek tili lotin yozuvi",
+        "target": "O\u02bbzbek tili",
+        "retrieved": [
+          "O\u02bbzbek tili",
+          "O\u02bbzbekcha Vikipediya",
+          "O\u02bbrxun-Enasoy obidalari",
+          "Bosh Sahifa",
+          "O\u02bbzbekiston"
+        ],
+        "correct": true,
+        "domain": "lang",
+        "qtype": "keyword"
+      },
+      {
+        "id": "uz_base_31",
+        "question": "O\u02bbzbek tili",
+        "target": "O\u02bbzbek tili",
+        "retrieved": [
+          "O\u02bbzbek tili",
+          "O\u02bbzbekiston",
+          "O\u02bbzbekcha Vikipediya",
+          "Tojik tili",
+          "O\u02bbsh (shahar)"
+        ],
+        "correct": true,
+        "domain": "lang",
+        "qtype": "direct"
+      },
+      {
+        "id": "uz_base_32",
+        "question": "Rus tili harflari",
+        "target": "Rus tili",
+        "retrieved": [
+          "Rus tili",
+          "2 (son)",
+          "Ruscha Vikipediya",
+          "Turk tili",
+          "Rossiya"
+        ],
+        "correct": true,
+        "domain": "lang",
+        "qtype": "keyword"
+      },
+      {
+        "id": "uz_base_33",
+        "question": "Rus tili",
+        "target": "Rus tili",
+        "retrieved": [
+          "Rus tili",
+          "Ruscha Vikipediya",
+          "Ingliz tili",
+          "Rossiya",
+          "Tojik tili"
+        ],
+        "correct": true,
+        "domain": "lang",
+        "qtype": "direct"
+      },
+      {
+        "id": "uz_base_34",
+        "question": "Ingliz tili grammatikasi",
+        "target": "Ingliz tili",
+        "retrieved": [
+          "Ingliz tili",
+          "Inglizcha Vikipediya",
+          "Bosh Sahifa",
+          "HTML",
+          "Kilometr"
+        ],
+        "correct": true,
+        "domain": "lang",
+        "qtype": "keyword"
+      },
+      {
+        "id": "uz_base_35",
+        "question": "Ingliz tili",
+        "target": "Ingliz tili",
+        "retrieved": [
+          "Ingliz tili",
+          "Inglizcha Vikipediya",
+          "Bosh Sahifa",
+          "Vikipediya",
+          "HTML"
+        ],
+        "correct": true,
+        "domain": "lang",
+        "qtype": "direct"
+      },
+      {
+        "id": "uz_base_36",
+        "question": "Biologiya fanidan",
+        "target": "Biologiya",
+        "retrieved": [
+          "Biologiya",
+          "Fizika",
+          "Bosh Sahifa",
+          "-1",
+          "Astronomiya"
+        ],
+        "correct": true,
+        "domain": "science",
+        "qtype": "keyword"
+      },
+      {
+        "id": "uz_base_37",
+        "question": "Biologiya",
+        "target": "Biologiya",
+        "retrieved": [
+          "Biologiya",
+          "Bosh Sahifa",
+          "2 (son)",
+          "-1",
+          "Fizika"
+        ],
+        "correct": true,
+        "domain": "science",
+        "qtype": "direct"
+      },
+      {
+        "id": "uz_base_38",
+        "question": "Fizika asoslari",
+        "target": "Fizika",
+        "retrieved": [
+          "Fizika",
+          "Massa",
+          "Nur",
+          "-1",
+          "Bosh Sahifa"
+        ],
+        "correct": true,
+        "domain": "science",
+        "qtype": "keyword"
+      },
+      {
+        "id": "uz_base_39",
+        "question": "Fizika",
+        "target": "Fizika",
+        "retrieved": [
+          "Fizika",
+          "Massa",
+          "Nur",
+          "Astronom",
+          "Astronomiya"
+        ],
+        "correct": true,
+        "domain": "science",
+        "qtype": "direct"
+      },
+      {
+        "id": "uz_base_40",
+        "question": "Astronomiya fani",
+        "target": "Astronomiya",
+        "retrieved": [
+          "Astronomiya",
+          "Astronom",
+          "Osmon",
+          "Bosh Sahifa",
+          "Fizika"
+        ],
+        "correct": true,
+        "domain": "science",
+        "qtype": "keyword"
+      },
+      {
+        "id": "uz_base_41",
+        "question": "Astronomiya",
+        "target": "Astronomiya",
+        "retrieved": [
+          "Astronom",
+          "Astronomiya",
+          "Osmon",
+          "Sayyora",
+          "Asr"
+        ],
+        "correct": true,
+        "domain": "science",
+        "qtype": "direct"
+      },
+      {
+        "id": "uz_base_42",
+        "question": "Koinot yoshi",
+        "target": "Koinot",
+        "retrieved": [
+          "KISI",
+          "O\u02bbzbek adabiyoti",
+          "Jizzax viloyati",
+          "Farg\u02bbona viloyati",
+          "Turk xoqonligi"
+        ],
+        "correct": false,
+        "domain": "science",
+        "qtype": "factual"
+      },
+      {
+        "id": "uz_base_43",
+        "question": "Koinot",
+        "target": "Koinot",
+        "retrieved": [
+          "Koinot",
+          "Qozog\u02bbiston",
+          "Farg\u02bbona viloyati",
+          "Osmon",
+          "Turk xoqonligi"
+        ],
+        "correct": true,
+        "domain": "science",
+        "qtype": "direct"
+      },
+      {
+        "id": "uz_base_44",
+        "question": "Quyosh tarkibi",
+        "target": "Quyosh",
+        "retrieved": [
+          "Quyosh",
+          "Osmon",
+          "Sayyora",
+          "Bosh Sahifa",
+          "Asr"
+        ],
+        "correct": true,
+        "domain": "science",
+        "qtype": "keyword"
+      },
+      {
+        "id": "uz_base_45",
+        "question": "Quyosh",
+        "target": "Quyosh",
+        "retrieved": [
+          "Quyosh",
+          "Osmon",
+          "Bosh Sahifa",
+          "Nur",
+          "O\u02bbzbek adabiyoti"
+        ],
+        "correct": true,
+        "domain": "science",
+        "qtype": "direct"
+      },
+      {
+        "id": "uz_base_46",
+        "question": "Internet tarixi",
+        "target": "Internet",
+        "retrieved": [
+          "Internet",
+          "Google",
+          "Bosh Sahifa",
+          "Gmail",
+          "Vikipediya"
+        ],
+        "correct": true,
+        "domain": "tech",
+        "qtype": "keyword"
+      },
+      {
+        "id": "uz_base_47",
+        "question": "Internet",
+        "target": "Internet",
+        "retrieved": [
+          "Internet",
+          "Google",
+          "Bosh Sahifa",
+          "Gmail",
+          "HTML"
+        ],
+        "correct": true,
+        "domain": "tech",
+        "qtype": "direct"
+      },
+      {
+        "id": "uz_base_48",
+        "question": "Google qidiruv tizimi",
+        "target": "Google",
+        "retrieved": [
+          "Google",
+          "Google Scholar",
+          "Google Talk",
+          "Gmail",
+          "Bosh Sahifa"
+        ],
+        "correct": true,
+        "domain": "tech",
+        "qtype": "keyword"
+      },
+      {
+        "id": "uz_base_49",
+        "question": "Google",
+        "target": "Google",
+        "retrieved": [
+          "Google",
+          "Google Talk",
+          "Gmail",
+          "Google Scholar",
+          "Bosh Sahifa"
+        ],
+        "correct": true,
+        "domain": "tech",
+        "qtype": "direct"
+      },
+      {
+        "id": "uz_base_50",
+        "question": "Linux operatsion tizim",
+        "target": "Linux",
+        "retrieved": [
+          "Linux",
+          "UNIX",
+          "Symbian OS",
+          "Microsoft Windows",
+          "Java"
+        ],
+        "correct": true,
+        "domain": "tech",
+        "qtype": "keyword"
+      },
+      {
+        "id": "uz_base_51",
+        "question": "Linux",
+        "target": "Linux",
+        "retrieved": [
+          "Linux",
+          "UNIX",
+          "Microsoft Windows",
+          "Symbian OS",
+          "Java"
+        ],
+        "correct": true,
+        "domain": "tech",
+        "qtype": "direct"
+      },
+      {
+        "id": "uz_base_52",
+        "question": "Kompyuter qismlari",
+        "target": "Kompyuter",
+        "retrieved": [
+          "Kompyuter",
+          "2 (son)",
+          "Bosh Sahifa",
+          "Microsoft Windows",
+          "UNIX"
+        ],
+        "correct": true,
+        "domain": "tech",
+        "qtype": "keyword"
+      },
+      {
+        "id": "uz_base_53",
+        "question": "Kompyuter",
+        "target": "Kompyuter",
+        "retrieved": [
+          "Kompyuter",
+          "Microsoft Windows",
+          "Linux",
+          "Google",
+          "2 (son)"
+        ],
+        "correct": true,
+        "domain": "tech",
+        "qtype": "direct"
+      },
+      {
+        "id": "uz_base_54",
+        "question": "Alisher Navoiy asarlari",
+        "target": "Alisher Navoiy",
+        "retrieved": [
+          "Alisher Navoiy",
+          "Bosh Sahifa",
+          "O\u02bbzbek tili",
+          "Xorazmiy",
+          "Ixtikor"
+        ],
+        "correct": true,
+        "domain": "culture",
+        "qtype": "keyword"
+      },
+      {
+        "id": "uz_base_55",
+        "question": "Alisher Navoiy",
+        "target": "Alisher Navoiy",
+        "retrieved": [
+          "Alisher Navoiy",
+          "Astronom",
+          "Lutfiy",
+          "Bosh Sahifa",
+          "Muallif"
+        ],
+        "correct": true,
+        "domain": "culture",
+        "qtype": "direct"
+      },
+      {
+        "id": "uz_base_56",
+        "question": "Bobur nomi",
+        "target": "Bobur",
+        "retrieved": [
+          "Buxoro",
+          "Bobur",
+          "Bosh Sahifa",
+          "Muallif",
+          "Alisher Navoiy"
+        ],
+        "correct": true,
+        "domain": "culture",
+        "qtype": "keyword"
+      },
+      {
+        "id": "uz_base_57",
+        "question": "Bobur",
+        "target": "Bobur",
+        "retrieved": [
+          "Bobur",
+          "Buxoro",
+          "Buxoro viloyati",
+          "Muallif",
+          "So\u02bbg\u02bbd"
+        ],
+        "correct": true,
+        "domain": "culture",
+        "qtype": "direct"
+      },
+      {
+        "id": "uz_base_58",
+        "question": "Ipak yo\u02bbli tarixi",
+        "target": "Buyuk Ipak yo\u02bbli",
+        "retrieved": [
+          "Ipak yo'li radiosi",
+          "Buyuk Ipak yo\u02bbli",
+          "Bosh Sahifa",
+          "Turk xoqonligi",
+          "Internet"
+        ],
+        "correct": true,
+        "domain": "culture",
+        "qtype": "keyword"
+      },
+      {
+        "id": "uz_base_59",
+        "question": "Buyuk Ipak yo\u02bbli",
+        "target": "Buyuk Ipak yo\u02bbli",
+        "retrieved": [
+          "Buyuk Ipak yo\u02bbli",
+          "Ipak yo'li radiosi",
+          "Bosh Sahifa",
+          "Turk xoqonligi",
+          "Internet"
+        ],
+        "correct": true,
+        "domain": "culture",
+        "qtype": "direct"
+      },
+      {
+        "id": "uz_base_60",
+        "question": "BMT a\u02bczo davlatlari",
+        "target": "Birlashgan Millatlar Tashkiloti",
+        "retrieved": [
+          "Birlashgan Millatlar Tashkiloti",
+          "Birlashgan Millatlar Tashkilotining Nizomi",
+          "Bosh Sahifa",
+          "O\u02bbzbekiston",
+          "Mustaqil davlatlar hamdo\u02bbstligi"
+        ],
+        "correct": true,
+        "domain": "org",
+        "qtype": "keyword"
+      },
+      {
+        "id": "uz_base_61",
+        "question": "Birlashgan Millatlar Tashkiloti",
+        "target": "Birlashgan Millatlar Tashkiloti",
+        "retrieved": [
+          "Birlashgan Millatlar Tashkiloti",
+          "Birlashgan Millatlar Tashkilotining Nizomi",
+          "Bosh Sahifa",
+          "KISI",
+          "Mustaqil davlatlar hamdo\u02bbstligi"
+        ],
+        "correct": true,
+        "domain": "org",
+        "qtype": "direct"
+      },
+      {
+        "id": "uz_base_62",
+        "question": "Vikipediya maqolalari",
+        "target": "Vikipediya",
+        "retrieved": [
+          "Bosh Sahifa",
+          "Vikipediya",
+          "Inglizcha Vikipediya",
+          "Polyakcha Vikipediya",
+          "Google Scholar"
+        ],
+        "correct": true,
+        "domain": "org",
+        "qtype": "keyword"
+      },
+      {
+        "id": "uz_base_63",
+        "question": "Vikipediya",
+        "target": "Vikipediya",
+        "retrieved": [
+          "Vikipediya",
+          "Polyakcha Vikipediya",
+          "Inglizcha Vikipediya",
+          "Ruscha Vikipediya",
+          "O\u02bbzbekcha Vikipediya"
+        ],
+        "correct": true,
+        "domain": "org",
+        "qtype": "direct"
+      },
+      {
+        "id": "uz_base_64",
+        "question": "Nobel mukofoti sovrindorlari",
+        "target": "Nobel mukofoti",
+        "retrieved": [
+          "Nobel mukofoti",
+          "Bosh Sahifa",
+          "Astronom",
+          "1972",
+          "Muallif"
+        ],
+        "correct": true,
+        "domain": "other",
+        "qtype": "keyword"
+      },
+      {
+        "id": "uz_base_65",
+        "question": "Nobel mukofoti",
+        "target": "Nobel mukofoti",
+        "retrieved": [
+          "Nobel mukofoti",
+          "Bosh Sahifa",
+          "Astronom",
+          "2 (son)",
+          "Nagoya universiteti"
+        ],
+        "correct": true,
+        "domain": "other",
+        "qtype": "direct"
+      }
+    ],
+    "en_base": [
+      {
+        "id": "en_base_0",
+        "question": "What is the capital of Uzbekistan?",
+        "target": "Uzbekistan",
+        "retrieved": [
+          "Uzbekistan",
+          "Tashkent",
+          "Bukhara",
+          "Fergana",
+          "Samarkand"
+        ],
+        "correct": true,
+        "domain": "geo",
+        "qtype": "factual"
+      },
+      {
+        "id": "en_base_1",
+        "question": "Uzbekistan",
+        "target": "Uzbekistan",
+        "retrieved": [
+          "Uzbekistan",
+          "Tashkent",
+          "Bukhara",
+          "Central Asia",
+          "Uzbek language"
+        ],
+        "correct": true,
+        "domain": "geo",
+        "qtype": "direct"
+      },
+      {
+        "id": "en_base_2",
+        "question": "What is the area of Russia?",
+        "target": "Russia",
+        "retrieved": [
+          "Russia",
+          "Russian language",
+          "Asia",
+          "Khwarezm",
+          "Europe"
+        ],
+        "correct": true,
+        "domain": "geo",
+        "qtype": "factual"
+      },
+      {
+        "id": "en_base_3",
+        "question": "Capital of Russia",
+        "target": "Russia",
+        "retrieved": [
+          "Russia",
+          "Russian language",
+          "Tashkent",
+          "India",
+          "China"
+        ],
+        "correct": true,
+        "domain": "geo",
+        "qtype": "keyword"
+      },
+      {
+        "id": "en_base_4",
+        "question": "Russia",
+        "target": "Russia",
+        "retrieved": [
+          "Russia",
+          "Russian language",
+          "China",
+          "Kazakhstan",
+          "Asia"
+        ],
+        "correct": true,
+        "domain": "geo",
+        "qtype": "direct"
+      },
+      {
+        "id": "en_base_5",
+        "question": "Capital of Kazakhstan",
+        "target": "Kazakhstan",
+        "retrieved": [
+          "Kazakhstan",
+          "Tashkent",
+          "Uzbekistan",
+          "Central Asia",
+          "Samarkand"
+        ],
+        "correct": true,
+        "domain": "geo",
+        "qtype": "keyword"
+      },
+      {
+        "id": "en_base_6",
+        "question": "Kazakhstan",
+        "target": "Kazakhstan",
+        "retrieved": [
+          "Kazakhstan",
+          "Central Asia",
+          "Uzbekistan",
+          "Khwarezm",
+          "Tashkent"
+        ],
+        "correct": true,
+        "domain": "geo",
+        "qtype": "direct"
+      },
+      {
+        "id": "en_base_7",
+        "question": "Which continent is Turkey in?",
+        "target": "Turkey",
+        "retrieved": [
+          "Turkey",
+          "Europe",
+          "Asia",
+          "Australia",
+          "Central Asia"
+        ],
+        "correct": true,
+        "domain": "geo",
+        "qtype": "factual"
+      },
+      {
+        "id": "en_base_8",
+        "question": "Turkey",
+        "target": "Turkey",
+        "retrieved": [
+          "Turkey",
+          "Central Asia",
+          "Kazakhstan",
+          "Russia",
+          "Bukhara"
+        ],
+        "correct": true,
+        "domain": "geo",
+        "qtype": "direct"
+      },
+      {
+        "id": "en_base_9",
+        "question": "Population of United States",
+        "target": "United States",
+        "retrieved": [
+          "United States",
+          "Russia",
+          "United Nations",
+          "Europe",
+          "India"
+        ],
+        "correct": true,
+        "domain": "geo",
+        "qtype": "factual"
+      },
+      {
+        "id": "en_base_10",
+        "question": "United States",
+        "target": "United States",
+        "retrieved": [
+          "United States",
+          "United Nations",
+          "Russia",
+          "India",
+          "Europe"
+        ],
+        "correct": true,
+        "domain": "geo",
+        "qtype": "direct"
+      },
+      {
+        "id": "en_base_11",
+        "question": "European countries",
+        "target": "Europe",
+        "retrieved": [
+          "Europe",
+          "Russia",
+          "China",
+          "United States",
+          "Asia"
+        ],
+        "correct": true,
+        "domain": "geo",
+        "qtype": "list"
+      },
+      {
+        "id": "en_base_12",
+        "question": "Europe",
+        "target": "Europe",
+        "retrieved": [
+          "Europe",
+          "Russia",
+          "Asia",
+          "United States",
+          "Central Asia"
+        ],
+        "correct": true,
+        "domain": "geo",
+        "qtype": "direct"
+      },
+      {
+        "id": "en_base_13",
+        "question": "Area of Asia",
+        "target": "Asia",
+        "retrieved": [
+          "Asia",
+          "Russia",
+          "Central Asia",
+          "Europe",
+          "China"
+        ],
+        "correct": true,
+        "domain": "geo",
+        "qtype": "factual"
+      },
+      {
+        "id": "en_base_14",
+        "question": "Asia",
+        "target": "Asia",
+        "retrieved": [
+          "Asia",
+          "Central Asia",
+          "India",
+          "China",
+          "Europe"
+        ],
+        "correct": true,
+        "domain": "geo",
+        "qtype": "direct"
+      },
+      {
+        "id": "en_base_15",
+        "question": "Central Asian countries",
+        "target": "Central Asia",
+        "retrieved": [
+          "Central Asia",
+          "Kazakhstan",
+          "Khwarezm",
+          "Uzbekistan",
+          "China"
+        ],
+        "correct": true,
+        "domain": "geo",
+        "qtype": "list"
+      },
+      {
+        "id": "en_base_16",
+        "question": "Central Asia",
+        "target": "Central Asia",
+        "retrieved": [
+          "Central Asia",
+          "Kazakhstan",
+          "Khwarezm",
+          "Uzbekistan",
+          "Fergana"
+        ],
+        "correct": true,
+        "domain": "geo",
+        "qtype": "direct"
+      },
+      {
+        "id": "en_base_17",
+        "question": "Antarctica population",
+        "target": "Antarctica",
+        "retrieved": [
+          "Antarctica",
+          "Australia",
+          "Europe",
+          "United States",
+          "Asia"
+        ],
+        "correct": true,
+        "domain": "geo",
+        "qtype": "factual"
+      },
+      {
+        "id": "en_base_18",
+        "question": "Antarctica",
+        "target": "Antarctica",
+        "retrieved": [
+          "Antarctica",
+          "Australia",
+          "Europe",
+          "United States",
+          "Asia"
+        ],
+        "correct": true,
+        "domain": "geo",
+        "qtype": "direct"
+      },
+      {
+        "id": "en_base_19",
+        "question": "Population of Tashkent",
+        "target": "Tashkent",
+        "retrieved": [
+          "Tashkent",
+          "Uzbekistan",
+          "Kazakhstan",
+          "Central Asia",
+          "Samarkand"
+        ],
+        "correct": true,
+        "domain": "cities",
+        "qtype": "factual"
+      },
+      {
+        "id": "en_base_20",
+        "question": "Where is Tashkent?",
+        "target": "Tashkent",
+        "retrieved": [
+          "Tashkent",
+          "Uzbekistan",
+          "Central Asia",
+          "Kazakhstan",
+          "Turkey"
+        ],
+        "correct": true,
+        "domain": "cities",
+        "qtype": "location"
+      },
+      {
+        "id": "en_base_21",
+        "question": "Tashkent",
+        "target": "Tashkent",
+        "retrieved": [
+          "Tashkent",
+          "Uzbekistan",
+          "Samarkand",
+          "Fergana",
+          "Central Asia"
+        ],
+        "correct": true,
+        "domain": "cities",
+        "qtype": "direct"
+      },
+      {
+        "id": "en_base_22",
+        "question": "History of Samarkand",
+        "target": "Samarkand",
+        "retrieved": [
+          "Samarkand",
+          "Silk Road",
+          "Tashkent",
+          "Fergana",
+          "Khwarezm"
+        ],
+        "correct": true,
+        "domain": "cities",
+        "qtype": "keyword"
+      },
+      {
+        "id": "en_base_23",
+        "question": "Samarkand",
+        "target": "Samarkand",
+        "retrieved": [
+          "Samarkand",
+          "Tashkent",
+          "Fergana",
+          "Uzbekistan",
+          "Silk Road"
+        ],
+        "correct": true,
+        "domain": "cities",
+        "qtype": "direct"
+      },
+      {
+        "id": "en_base_24",
+        "question": "Bukhara ancient city",
+        "target": "Bukhara",
+        "retrieved": [
+          "Bukhara",
+          "Samarkand",
+          "Silk Road",
+          "Uzbekistan",
+          "Babur"
+        ],
+        "correct": true,
+        "domain": "cities",
+        "qtype": "keyword"
+      },
+      {
+        "id": "en_base_25",
+        "question": "Bukhara",
+        "target": "Bukhara",
+        "retrieved": [
+          "Bukhara",
+          "Uzbekistan",
+          "Babur",
+          "Russia",
+          "Central Asia"
+        ],
+        "correct": true,
+        "domain": "cities",
+        "qtype": "direct"
+      },
+      {
+        "id": "en_base_26",
+        "question": "Khwarezm region",
+        "target": "Khwarezm",
+        "retrieved": [
+          "Khwarezm",
+          "Central Asia",
+          "Fergana",
+          "Uzbekistan",
+          "Samarkand"
+        ],
+        "correct": true,
+        "domain": "cities",
+        "qtype": "keyword"
+      },
+      {
+        "id": "en_base_27",
+        "question": "Khwarezm",
+        "target": "Khwarezm",
+        "retrieved": [
+          "Khwarezm",
+          "Samarkand",
+          "Alisher Navoi",
+          "Bukhara",
+          "Anarchism"
+        ],
+        "correct": true,
+        "domain": "cities",
+        "qtype": "direct"
+      },
+      {
+        "id": "en_base_28",
+        "question": "Fergana Valley",
+        "target": "Fergana",
+        "retrieved": [
+          "Fergana",
+          "Central Asia",
+          "Samarkand",
+          "Khwarezm",
+          "Bukhara"
+        ],
+        "correct": true,
+        "domain": "cities",
+        "qtype": "keyword"
+      },
+      {
+        "id": "en_base_29",
+        "question": "Fergana",
+        "target": "Fergana",
+        "retrieved": [
+          "Fergana",
+          "Samarkand",
+          "Uzbekistan",
+          "Central Asia",
+          "Bukhara"
+        ],
+        "correct": true,
+        "domain": "cities",
+        "qtype": "direct"
+      },
+      {
+        "id": "en_base_30",
+        "question": "Uzbek Latin script",
+        "target": "Uzbek language",
+        "retrieved": [
+          "Uzbek language",
+          "Uzbekistan",
+          "Russian language",
+          "Khwarezm",
+          "Alisher Navoi"
+        ],
+        "correct": true,
+        "domain": "lang",
+        "qtype": "keyword"
+      },
+      {
+        "id": "en_base_31",
+        "question": "Uzbek language",
+        "target": "Uzbek language",
+        "retrieved": [
+          "Uzbek language",
+          "Uzbekistan",
+          "Russian language",
+          "Tashkent",
+          "Kazakhstan"
+        ],
+        "correct": true,
+        "domain": "lang",
+        "qtype": "direct"
+      },
+      {
+        "id": "en_base_32",
+        "question": "Russian alphabet",
+        "target": "Russian language",
+        "retrieved": [
+          "Russian language",
+          "Russia",
+          "Uzbek language",
+          "Khwarezm",
+          "Uzbekistan"
+        ],
+        "correct": true,
+        "domain": "lang",
+        "qtype": "keyword"
+      },
+      {
+        "id": "en_base_33",
+        "question": "Russian language",
+        "target": "Russian language",
+        "retrieved": [
+          "Russian language",
+          "Russia",
+          "Uzbek language",
+          "English language",
+          "Uzbekistan"
+        ],
+        "correct": true,
+        "domain": "lang",
+        "qtype": "direct"
+      },
+      {
+        "id": "en_base_34",
+        "question": "English grammar",
+        "target": "English language",
+        "retrieved": [
+          "English language",
+          "United States",
+          "Biology",
+          "Chemistry",
+          "Russian language"
+        ],
+        "correct": true,
+        "domain": "lang",
+        "qtype": "keyword"
+      },
+      {
+        "id": "en_base_35",
+        "question": "English language",
+        "target": "English language",
+        "retrieved": [
+          "English language",
+          "Russian language",
+          "United States",
+          "India",
+          "Uzbek language"
+        ],
+        "correct": true,
+        "domain": "lang",
+        "qtype": "direct"
+      },
+      {
+        "id": "en_base_36",
+        "question": "Biology science",
+        "target": "Biology",
+        "retrieved": [
+          "Biology",
+          "Chemistry",
+          "Medicine",
+          "Astronomy",
+          "Mathematics"
+        ],
+        "correct": true,
+        "domain": "science",
+        "qtype": "keyword"
+      },
+      {
+        "id": "en_base_37",
+        "question": "Biology",
+        "target": "Biology",
+        "retrieved": [
+          "Biology",
+          "Chemistry",
+          "Medicine",
+          "Astronomy",
+          "Mathematics"
+        ],
+        "correct": true,
+        "domain": "science",
+        "qtype": "direct"
+      },
+      {
+        "id": "en_base_38",
+        "question": "Physics fundamentals",
+        "target": "Physics",
+        "retrieved": [
+          "Physics",
+          "Chemistry",
+          "Biology",
+          "Mathematics",
+          "Astronomy"
+        ],
+        "correct": true,
+        "domain": "science",
+        "qtype": "keyword"
+      },
+      {
+        "id": "en_base_39",
+        "question": "Physics",
+        "target": "Physics",
+        "retrieved": [
+          "Physics",
+          "Chemistry",
+          "Mathematics",
+          "Biology",
+          "Medicine"
+        ],
+        "correct": true,
+        "domain": "science",
+        "qtype": "direct"
+      },
+      {
+        "id": "en_base_40",
+        "question": "Astronomy science",
+        "target": "Astronomy",
+        "retrieved": [
+          "Astronomy",
+          "Chemistry",
+          "Biology",
+          "Medicine",
+          "Physics"
+        ],
+        "correct": true,
+        "domain": "science",
+        "qtype": "keyword"
+      },
+      {
+        "id": "en_base_41",
+        "question": "Astronomy",
+        "target": "Astronomy",
+        "retrieved": [
+          "Astronomy",
+          "Chemistry",
+          "Mathematics",
+          "Physics",
+          "Biology"
+        ],
+        "correct": true,
+        "domain": "science",
+        "qtype": "direct"
+      },
+      {
+        "id": "en_base_42",
+        "question": "Age of universe",
+        "target": "Universe",
+        "retrieved": [
+          "Universe",
+          "Astronomy",
+          "Physics",
+          "Biology",
+          "Medicine"
+        ],
+        "correct": true,
+        "domain": "science",
+        "qtype": "factual"
+      },
+      {
+        "id": "en_base_43",
+        "question": "Universe",
+        "target": "Universe",
+        "retrieved": [
+          "Universe",
+          "Astronomy",
+          "Physics",
+          "Biology",
+          "Europe"
+        ],
+        "correct": true,
+        "domain": "science",
+        "qtype": "direct"
+      },
+      {
+        "id": "en_base_44",
+        "question": "Composition of Sun",
+        "target": "Sun",
+        "retrieved": [
+          "Sun",
+          "Chemistry",
+          "Universe",
+          "Medicine",
+          "Physics"
+        ],
+        "correct": true,
+        "domain": "science",
+        "qtype": "keyword"
+      },
+      {
+        "id": "en_base_45",
+        "question": "Sun",
+        "target": "Sun",
+        "retrieved": [
+          "Sun",
+          "Astronomy",
+          "Europe",
+          "Antarctica",
+          "Russia"
+        ],
+        "correct": true,
+        "domain": "science",
+        "qtype": "direct"
+      },
+      {
+        "id": "en_base_46",
+        "question": "History of Internet",
+        "target": "Internet",
+        "retrieved": [
+          "Internet",
+          "Wikipedia",
+          "Google",
+          "Computer",
+          "English language"
+        ],
+        "correct": true,
+        "domain": "tech",
+        "qtype": "keyword"
+      },
+      {
+        "id": "en_base_47",
+        "question": "Internet",
+        "target": "Internet",
+        "retrieved": [
+          "Internet",
+          "Wikipedia",
+          "Google",
+          "Computer",
+          "India"
+        ],
+        "correct": true,
+        "domain": "tech",
+        "qtype": "direct"
+      },
+      {
+        "id": "en_base_48",
+        "question": "Google search engine",
+        "target": "Google",
+        "retrieved": [
+          "Google",
+          "Wikipedia",
+          "Internet",
+          "Computer",
+          "Linux"
+        ],
+        "correct": true,
+        "domain": "tech",
+        "qtype": "keyword"
+      },
+      {
+        "id": "en_base_49",
+        "question": "Google",
+        "target": "Google",
+        "retrieved": [
+          "Google",
+          "Internet",
+          "India",
+          "Linux",
+          "Computer"
+        ],
+        "correct": true,
+        "domain": "tech",
+        "qtype": "direct"
+      },
+      {
+        "id": "en_base_50",
+        "question": "Linux operating system",
+        "target": "Linux",
+        "retrieved": [
+          "Linux",
+          "Computer",
+          "Internet",
+          "Google",
+          "Mathematics"
+        ],
+        "correct": true,
+        "domain": "tech",
+        "qtype": "keyword"
+      },
+      {
+        "id": "en_base_51",
+        "question": "Linux",
+        "target": "Linux",
+        "retrieved": [
+          "Linux",
+          "Computer",
+          "Internet",
+          "Google",
+          "Wikipedia"
+        ],
+        "correct": true,
+        "domain": "tech",
+        "qtype": "direct"
+      },
+      {
+        "id": "en_base_52",
+        "question": "Computer parts",
+        "target": "Computer",
+        "retrieved": [
+          "Computer",
+          "Mathematics",
+          "Physics",
+          "Linux",
+          "Chemistry"
+        ],
+        "correct": true,
+        "domain": "tech",
+        "qtype": "keyword"
+      },
+      {
+        "id": "en_base_53",
+        "question": "Computer",
+        "target": "Computer",
+        "retrieved": [
+          "Computer",
+          "Wikipedia",
+          "Internet",
+          "Physics",
+          "Linux"
+        ],
+        "correct": true,
+        "domain": "tech",
+        "qtype": "direct"
+      },
+      {
+        "id": "en_base_54",
+        "question": "Works of Alisher Navoi",
+        "target": "Alisher Navoi",
+        "retrieved": [
+          "Alisher Navoi",
+          "Khwarezm",
+          "Nobel Prize",
+          "Anarchism",
+          "Babur"
+        ],
+        "correct": true,
+        "domain": "culture",
+        "qtype": "keyword"
+      },
+      {
+        "id": "en_base_55",
+        "question": "Alisher Navoi",
+        "target": "Alisher Navoi",
+        "retrieved": [
+          "Alisher Navoi",
+          "Samarkand",
+          "Google",
+          "India",
+          "Nobel Prize"
+        ],
+        "correct": true,
+        "domain": "culture",
+        "qtype": "direct"
+      },
+      {
+        "id": "en_base_56",
+        "question": "Babur name",
+        "target": "Babur",
+        "retrieved": [
+          "Babur",
+          "Bukhara",
+          "Khwarezm",
+          "Alisher Navoi",
+          "India"
+        ],
+        "correct": true,
+        "domain": "culture",
+        "qtype": "keyword"
+      },
+      {
+        "id": "en_base_57",
+        "question": "Babur",
+        "target": "Babur",
+        "retrieved": [
+          "Babur",
+          "Bukhara",
+          "Samarkand",
+          "India",
+          "Alisher Navoi"
+        ],
+        "correct": true,
+        "domain": "culture",
+        "qtype": "direct"
+      },
+      {
+        "id": "en_base_58",
+        "question": "Silk Road history",
+        "target": "Silk Road",
+        "retrieved": [
+          "Silk Road",
+          "Samarkand",
+          "Central Asia",
+          "Bukhara",
+          "China"
+        ],
+        "correct": true,
+        "domain": "culture",
+        "qtype": "keyword"
+      },
+      {
+        "id": "en_base_59",
+        "question": "Silk Road",
+        "target": "Silk Road",
+        "retrieved": [
+          "Silk Road",
+          "Central Asia",
+          "Samarkand",
+          "China",
+          "Bukhara"
+        ],
+        "correct": true,
+        "domain": "culture",
+        "qtype": "direct"
+      },
+      {
+        "id": "en_base_60",
+        "question": "UN member states",
+        "target": "United Nations",
+        "retrieved": [
+          "United Nations",
+          "United States",
+          "Europe",
+          "Russia",
+          "India"
+        ],
+        "correct": true,
+        "domain": "org",
+        "qtype": "keyword"
+      },
+      {
+        "id": "en_base_61",
+        "question": "United Nations",
+        "target": "United Nations",
+        "retrieved": [
+          "United Nations",
+          "United States",
+          "Russian language",
+          "English language",
+          "Russia"
+        ],
+        "correct": true,
+        "domain": "org",
+        "qtype": "direct"
+      },
+      {
+        "id": "en_base_62",
+        "question": "Wikipedia articles",
+        "target": "Wikipedia",
+        "retrieved": [
+          "Wikipedia",
+          "Computer",
+          "Internet",
+          "United States",
+          "India"
+        ],
+        "correct": true,
+        "domain": "org",
+        "qtype": "keyword"
+      },
+      {
+        "id": "en_base_63",
+        "question": "Wikipedia",
+        "target": "Wikipedia",
+        "retrieved": [
+          "Wikipedia",
+          "Internet",
+          "Google",
+          "Linux",
+          "Computer"
+        ],
+        "correct": true,
+        "domain": "org",
+        "qtype": "direct"
+      },
+      {
+        "id": "en_base_64",
+        "question": "Nobel Prize winners",
+        "target": "Nobel Prize",
+        "retrieved": [
+          "Nobel Prize",
+          "Physics",
+          "Medicine",
+          "Mathematics",
+          "India"
+        ],
+        "correct": true,
+        "domain": "other",
+        "qtype": "keyword"
+      },
+      {
+        "id": "en_base_65",
+        "question": "Nobel Prize",
+        "target": "Nobel Prize",
+        "retrieved": [
+          "Nobel Prize",
+          "Physics",
+          "Medicine",
+          "India",
+          "United Nations"
+        ],
+        "correct": true,
+        "domain": "other",
+        "qtype": "direct"
+      }
+    ],
+    "uz_on_en": [
+      {
+        "id": "uz_on_en_0",
+        "question": "O\u02bbzbekiston poytaxti qayer?",
+        "target": "Uzbekistan",
+        "retrieved": [
+          "Uzbekistan",
+          "Tashkent",
+          "Kazakhstan",
+          "Samarkand",
+          "Fergana"
+        ],
+        "correct": true,
+        "domain": "geo",
+        "qtype": "factual"
+      },
+      {
+        "id": "uz_on_en_1",
+        "question": "O\u02bbzbekiston",
+        "target": "Uzbekistan",
+        "retrieved": [
+          "Uzbekistan",
+          "Uzbek language",
+          "Russia",
+          "India",
+          "Tashkent"
+        ],
+        "correct": true,
+        "domain": "geo",
+        "qtype": "direct"
+      },
+      {
+        "id": "uz_on_en_2",
+        "question": "Rossiya maydoni qancha?",
+        "target": "Russia",
+        "retrieved": [
+          "Russia",
+          "Russian language",
+          "Central Asia",
+          "Uzbekistan",
+          "Tashkent"
+        ],
+        "correct": true,
+        "domain": "geo",
+        "qtype": "factual"
+      },
+      {
+        "id": "uz_on_en_3",
+        "question": "Rossiya poytaxti",
+        "target": "Russia",
+        "retrieved": [
+          "Russia",
+          "Russian language",
+          "Tashkent",
+          "Uzbekistan",
+          "Fergana"
+        ],
+        "correct": true,
+        "domain": "geo",
+        "qtype": "keyword"
+      },
+      {
+        "id": "uz_on_en_4",
+        "question": "Rossiya",
+        "target": "Russia",
+        "retrieved": [
+          "Russia",
+          "Russian language",
+          "Uzbekistan",
+          "India",
+          "China"
+        ],
+        "correct": true,
+        "domain": "geo",
+        "qtype": "direct"
+      },
+      {
+        "id": "uz_on_en_5",
+        "question": "Qozog\u02bbiston poytaxti",
+        "target": "Kazakhstan",
+        "retrieved": [
+          "Tashkent",
+          "Uzbekistan",
+          "Kazakhstan",
+          "Samarkand",
+          "Fergana"
+        ],
+        "correct": true,
+        "domain": "geo",
+        "qtype": "keyword"
+      },
+      {
+        "id": "uz_on_en_6",
+        "question": "Qozog\u02bbiston",
+        "target": "Kazakhstan",
+        "retrieved": [
+          "Uzbekistan",
+          "Kazakhstan",
+          "Central Asia",
+          "Russia",
+          "Tashkent"
+        ],
+        "correct": true,
+        "domain": "geo",
+        "qtype": "direct"
+      },
+      {
+        "id": "uz_on_en_7",
+        "question": "Turkiya qaysi qit\u02bcada?",
+        "target": "Turkey",
+        "retrieved": [
+          "Turkey",
+          "Central Asia",
+          "Europe",
+          "Egypt",
+          "Tashkent"
+        ],
+        "correct": true,
+        "domain": "geo",
+        "qtype": "factual"
+      },
+      {
+        "id": "uz_on_en_8",
+        "question": "Turkiya",
+        "target": "Turkey",
+        "retrieved": [
+          "Turkey",
+          "Central Asia",
+          "China",
+          "Kazakhstan",
+          "Uzbekistan"
+        ],
+        "correct": true,
+        "domain": "geo",
+        "qtype": "direct"
+      },
+      {
+        "id": "uz_on_en_9",
+        "question": "Amerika aholisi",
+        "target": "United States",
+        "retrieved": [
+          "United States",
+          "Europe",
+          "India",
+          "Asia",
+          "Russia"
+        ],
+        "correct": true,
+        "domain": "geo",
+        "qtype": "factual"
+      },
+      {
+        "id": "uz_on_en_10",
+        "question": "Amerika",
+        "target": "United States",
+        "retrieved": [
+          "United States",
+          "India",
+          "Brazil",
+          "Europe",
+          "China"
+        ],
+        "correct": true,
+        "domain": "geo",
+        "qtype": "direct"
+      },
+      {
+        "id": "uz_on_en_11",
+        "question": "Yevropa davlatlari",
+        "target": "Europe",
+        "retrieved": [
+          "Europe",
+          "Russia",
+          "Japan",
+          "United States",
+          "India"
+        ],
+        "correct": true,
+        "domain": "geo",
+        "qtype": "list"
+      },
+      {
+        "id": "uz_on_en_12",
+        "question": "Yevropa",
+        "target": "Europe",
+        "retrieved": [
+          "Europe",
+          "Russia",
+          "Central Asia",
+          "Asia",
+          "United States"
+        ],
+        "correct": true,
+        "domain": "geo",
+        "qtype": "direct"
+      },
+      {
+        "id": "uz_on_en_13",
+        "question": "Osiyo maydoni",
+        "target": "Asia",
+        "retrieved": [
+          "Asia",
+          "Central Asia",
+          "Samarkand",
+          "Tashkent",
+          "Japan"
+        ],
+        "correct": true,
+        "domain": "geo",
+        "qtype": "factual"
+      },
+      {
+        "id": "uz_on_en_14",
+        "question": "Osiyo",
+        "target": "Asia",
+        "retrieved": [
+          "Asia",
+          "Central Asia",
+          "India",
+          "Australia",
+          "China"
+        ],
+        "correct": true,
+        "domain": "geo",
+        "qtype": "direct"
+      },
+      {
+        "id": "uz_on_en_15",
+        "question": "Markaziy Osiyo davlatlari",
+        "target": "Central Asia",
+        "retrieved": [
+          "Central Asia",
+          "Uzbekistan",
+          "Kazakhstan",
+          "Khwarezm",
+          "Tashkent"
+        ],
+        "correct": true,
+        "domain": "geo",
+        "qtype": "list"
+      },
+      {
+        "id": "uz_on_en_16",
+        "question": "Markaziy Osiyo",
+        "target": "Central Asia",
+        "retrieved": [
+          "Central Asia",
+          "Uzbekistan",
+          "Kazakhstan",
+          "Asia",
+          "Tashkent"
+        ],
+        "correct": true,
+        "domain": "geo",
+        "qtype": "direct"
+      },
+      {
+        "id": "uz_on_en_17",
+        "question": "Antarktida aholisi",
+        "target": "Antarctica",
+        "retrieved": [
+          "Antarctica",
+          "Europe",
+          "Australia",
+          "Russia",
+          "United States"
+        ],
+        "correct": true,
+        "domain": "geo",
+        "qtype": "factual"
+      },
+      {
+        "id": "uz_on_en_18",
+        "question": "Antarktida",
+        "target": "Antarctica",
+        "retrieved": [
+          "Antarctica",
+          "Australia",
+          "Europe",
+          "Russia",
+          "Asia"
+        ],
+        "correct": true,
+        "domain": "geo",
+        "qtype": "direct"
+      },
+      {
+        "id": "uz_on_en_19",
+        "question": "Toshkent aholisi",
+        "target": "Tashkent",
+        "retrieved": [
+          "Tashkent",
+          "Uzbekistan",
+          "Samarkand",
+          "Turkey",
+          "Bukhara"
+        ],
+        "correct": true,
+        "domain": "cities",
+        "qtype": "factual"
+      },
+      {
+        "id": "uz_on_en_20",
+        "question": "Toshkent qaerda?",
+        "target": "Tashkent",
+        "retrieved": [
+          "Tashkent",
+          "Uzbekistan",
+          "Central Asia",
+          "Turkey",
+          "Samarkand"
+        ],
+        "correct": true,
+        "domain": "cities",
+        "qtype": "location"
+      },
+      {
+        "id": "uz_on_en_21",
+        "question": "Toshkent",
+        "target": "Tashkent",
+        "retrieved": [
+          "Tashkent",
+          "Uzbekistan",
+          "Samarkand",
+          "Bukhara",
+          "Fergana"
+        ],
+        "correct": true,
+        "domain": "cities",
+        "qtype": "direct"
+      },
+      {
+        "id": "uz_on_en_22",
+        "question": "Samarqand tarixi",
+        "target": "Samarkand",
+        "retrieved": [
+          "Samarkand",
+          "Khwarezm",
+          "Babur",
+          "Bukhara",
+          "Tashkent"
+        ],
+        "correct": true,
+        "domain": "cities",
+        "qtype": "keyword"
+      },
+      {
+        "id": "uz_on_en_23",
+        "question": "Samarqand",
+        "target": "Samarkand",
+        "retrieved": [
+          "Samarkand",
+          "Tashkent",
+          "Khwarezm",
+          "Bukhara",
+          "Uzbekistan"
+        ],
+        "correct": true,
+        "domain": "cities",
+        "qtype": "direct"
+      },
+      {
+        "id": "uz_on_en_24",
+        "question": "Buxoro qadimiy shahar",
+        "target": "Bukhara",
+        "retrieved": [
+          "Samarkand",
+          "Bukhara",
+          "Tashkent",
+          "Uzbekistan",
+          "Babur"
+        ],
+        "correct": true,
+        "domain": "cities",
+        "qtype": "keyword"
+      },
+      {
+        "id": "uz_on_en_25",
+        "question": "Buxoro",
+        "target": "Bukhara",
+        "retrieved": [
+          "Bukhara",
+          "Samarkand",
+          "Babur",
+          "Uzbekistan",
+          "Tashkent"
+        ],
+        "correct": true,
+        "domain": "cities",
+        "qtype": "direct"
+      },
+      {
+        "id": "uz_on_en_26",
+        "question": "Xorazm viloyati",
+        "target": "Khwarezm",
+        "retrieved": [
+          "Uzbekistan",
+          "Samarkand",
+          "Khwarezm",
+          "Fergana",
+          "Central Asia"
+        ],
+        "correct": true,
+        "domain": "cities",
+        "qtype": "keyword"
+      },
+      {
+        "id": "uz_on_en_27",
+        "question": "Xorazm",
+        "target": "Khwarezm",
+        "retrieved": [
+          "Samarkand",
+          "Khwarezm",
+          "Uzbekistan",
+          "Bukhara",
+          "Tashkent"
+        ],
+        "correct": true,
+        "domain": "cities",
+        "qtype": "direct"
+      },
+      {
+        "id": "uz_on_en_28",
+        "question": "Farg\u02bbona vodiysi",
+        "target": "Fergana",
+        "retrieved": [
+          "Fergana",
+          "Khwarezm",
+          "Samarkand",
+          "Russia",
+          "India"
+        ],
+        "correct": true,
+        "domain": "cities",
+        "qtype": "keyword"
+      },
+      {
+        "id": "uz_on_en_29",
+        "question": "Farg\u02bbona",
+        "target": "Fergana",
+        "retrieved": [
+          "Fergana",
+          "Samarkand",
+          "India",
+          "Bukhara",
+          "United States"
+        ],
+        "correct": true,
+        "domain": "cities",
+        "qtype": "direct"
+      },
+      {
+        "id": "uz_on_en_30",
+        "question": "O\u02bbzbek tili lotin yozuvi",
+        "target": "Uzbek language",
+        "retrieved": [
+          "Uzbek language",
+          "Russian language",
+          "Uzbekistan",
+          "English language",
+          "United Nations"
+        ],
+        "correct": true,
+        "domain": "lang",
+        "qtype": "keyword"
+      },
+      {
+        "id": "uz_on_en_31",
+        "question": "O\u02bbzbek tili",
+        "target": "Uzbek language",
+        "retrieved": [
+          "Uzbek language",
+          "Uzbekistan",
+          "Russian language",
+          "Tashkent",
+          "English language"
+        ],
+        "correct": true,
+        "domain": "lang",
+        "qtype": "direct"
+      },
+      {
+        "id": "uz_on_en_32",
+        "question": "Rus tili harflari",
+        "target": "Russian language",
+        "retrieved": [
+          "Russian language",
+          "Russia",
+          "Uzbek language",
+          "Mathematics",
+          "United Nations"
+        ],
+        "correct": true,
+        "domain": "lang",
+        "qtype": "keyword"
+      },
+      {
+        "id": "uz_on_en_33",
+        "question": "Rus tili",
+        "target": "Russian language",
+        "retrieved": [
+          "Russian language",
+          "Russia",
+          "Uzbek language",
+          "English language",
+          "India"
+        ],
+        "correct": true,
+        "domain": "lang",
+        "qtype": "direct"
+      },
+      {
+        "id": "uz_on_en_34",
+        "question": "Ingliz tili grammatikasi",
+        "target": "English language",
+        "retrieved": [
+          "English language",
+          "United States",
+          "Mathematics",
+          "India",
+          "Biology"
+        ],
+        "correct": true,
+        "domain": "lang",
+        "qtype": "keyword"
+      },
+      {
+        "id": "uz_on_en_35",
+        "question": "Ingliz tili",
+        "target": "English language",
+        "retrieved": [
+          "English language",
+          "India",
+          "United States",
+          "Wikipedia",
+          "Russian language"
+        ],
+        "correct": true,
+        "domain": "lang",
+        "qtype": "direct"
+      },
+      {
+        "id": "uz_on_en_36",
+        "question": "Biologiya fanidan",
+        "target": "Biology",
+        "retrieved": [
+          "Biology",
+          "Chemistry",
+          "Medicine",
+          "Physics",
+          "Mathematics"
+        ],
+        "correct": true,
+        "domain": "science",
+        "qtype": "keyword"
+      },
+      {
+        "id": "uz_on_en_37",
+        "question": "Biologiya",
+        "target": "Biology",
+        "retrieved": [
+          "Biology",
+          "Chemistry",
+          "Medicine",
+          "Mathematics",
+          "Astronomy"
+        ],
+        "correct": true,
+        "domain": "science",
+        "qtype": "direct"
+      },
+      {
+        "id": "uz_on_en_38",
+        "question": "Fizika asoslari",
+        "target": "Physics",
+        "retrieved": [
+          "Physics",
+          "Chemistry",
+          "Mathematics",
+          "Biology",
+          "Astronomy"
+        ],
+        "correct": true,
+        "domain": "science",
+        "qtype": "keyword"
+      },
+      {
+        "id": "uz_on_en_39",
+        "question": "Fizika",
+        "target": "Physics",
+        "retrieved": [
+          "Physics",
+          "Chemistry",
+          "Mathematics",
+          "Astronomy",
+          "Medicine"
+        ],
+        "correct": true,
+        "domain": "science",
+        "qtype": "direct"
+      },
+      {
+        "id": "uz_on_en_40",
+        "question": "Astronomiya fani",
+        "target": "Astronomy",
+        "retrieved": [
+          "Astronomy",
+          "Universe",
+          "Mathematics",
+          "Physics",
+          "Chemistry"
+        ],
+        "correct": true,
+        "domain": "science",
+        "qtype": "keyword"
+      },
+      {
+        "id": "uz_on_en_41",
+        "question": "Astronomiya",
+        "target": "Astronomy",
+        "retrieved": [
+          "Astronomy",
+          "Universe",
+          "Mathematics",
+          "Physics",
+          "Chemistry"
+        ],
+        "correct": true,
+        "domain": "science",
+        "qtype": "direct"
+      },
+      {
+        "id": "uz_on_en_42",
+        "question": "Koinot yoshi",
+        "target": "Universe",
+        "retrieved": [
+          "Russia",
+          "Japan",
+          "United Nations",
+          "Egypt",
+          "United States"
+        ],
+        "correct": false,
+        "domain": "science",
+        "qtype": "factual"
+      },
+      {
+        "id": "uz_on_en_43",
+        "question": "Koinot",
+        "target": "Universe",
+        "retrieved": [
+          "Russia",
+          "China",
+          "United Nations",
+          "United States",
+          "India"
+        ],
+        "correct": false,
+        "domain": "science",
+        "qtype": "direct"
+      },
+      {
+        "id": "uz_on_en_44",
+        "question": "Quyosh tarkibi",
+        "target": "Sun",
+        "retrieved": [
+          "Sun",
+          "Universe",
+          "Chemistry",
+          "Astronomy",
+          "Antarctica"
+        ],
+        "correct": true,
+        "domain": "science",
+        "qtype": "keyword"
+      },
+      {
+        "id": "uz_on_en_45",
+        "question": "Quyosh",
+        "target": "Sun",
+        "retrieved": [
+          "Astronomy",
+          "China",
+          "Alisher Navoi",
+          "Khwarezm",
+          "Uzbekistan"
+        ],
+        "correct": false,
+        "domain": "science",
+        "qtype": "direct"
+      },
+      {
+        "id": "uz_on_en_46",
+        "question": "Internet tarixi",
+        "target": "Internet",
+        "retrieved": [
+          "Internet",
+          "Wikipedia",
+          "Google",
+          "Computer",
+          "Linux"
+        ],
+        "correct": true,
+        "domain": "tech",
+        "qtype": "keyword"
+      },
+      {
+        "id": "uz_on_en_47",
+        "question": "Internet",
+        "target": "Internet",
+        "retrieved": [
+          "Internet",
+          "Wikipedia",
+          "Google",
+          "Computer",
+          "India"
+        ],
+        "correct": true,
+        "domain": "tech",
+        "qtype": "direct"
+      },
+      {
+        "id": "uz_on_en_48",
+        "question": "Google qidiruv tizimi",
+        "target": "Google",
+        "retrieved": [
+          "Google",
+          "Internet",
+          "Wikipedia",
+          "Linux",
+          "India"
+        ],
+        "correct": true,
+        "domain": "tech",
+        "qtype": "keyword"
+      },
+      {
+        "id": "uz_on_en_49",
+        "question": "Google",
+        "target": "Google",
+        "retrieved": [
+          "Google",
+          "Internet",
+          "India",
+          "Linux",
+          "Computer"
+        ],
+        "correct": true,
+        "domain": "tech",
+        "qtype": "direct"
+      },
+      {
+        "id": "uz_on_en_50",
+        "question": "Linux operatsion tizim",
+        "target": "Linux",
+        "retrieved": [
+          "Linux",
+          "Computer",
+          "Internet",
+          "Google",
+          "Mathematics"
+        ],
+        "correct": true,
+        "domain": "tech",
+        "qtype": "keyword"
+      },
+      {
+        "id": "uz_on_en_51",
+        "question": "Linux",
+        "target": "Linux",
+        "retrieved": [
+          "Linux",
+          "Computer",
+          "Internet",
+          "Google",
+          "Wikipedia"
+        ],
+        "correct": true,
+        "domain": "tech",
+        "qtype": "direct"
+      },
+      {
+        "id": "uz_on_en_52",
+        "question": "Kompyuter qismlari",
+        "target": "Computer",
+        "retrieved": [
+          "Computer",
+          "Mathematics",
+          "Linux",
+          "Internet",
+          "Google"
+        ],
+        "correct": true,
+        "domain": "tech",
+        "qtype": "keyword"
+      },
+      {
+        "id": "uz_on_en_53",
+        "question": "Kompyuter",
+        "target": "Computer",
+        "retrieved": [
+          "Computer",
+          "Internet",
+          "Google",
+          "Linux",
+          "Wikipedia"
+        ],
+        "correct": true,
+        "domain": "tech",
+        "qtype": "direct"
+      },
+      {
+        "id": "uz_on_en_54",
+        "question": "Alisher Navoiy asarlari",
+        "target": "Alisher Navoi",
+        "retrieved": [
+          "Alisher Navoi",
+          "Astronomy",
+          "Nobel Prize",
+          "Khwarezm",
+          "Samarkand"
+        ],
+        "correct": true,
+        "domain": "culture",
+        "qtype": "keyword"
+      },
+      {
+        "id": "uz_on_en_55",
+        "question": "Alisher Navoiy",
+        "target": "Alisher Navoi",
+        "retrieved": [
+          "Alisher Navoi",
+          "Babur",
+          "Nobel Prize",
+          "Russian language",
+          "Khwarezm"
+        ],
+        "correct": true,
+        "domain": "culture",
+        "qtype": "direct"
+      },
+      {
+        "id": "uz_on_en_56",
+        "question": "Bobur nomi",
+        "target": "Babur",
+        "retrieved": [
+          "Babur",
+          "India",
+          "Russia",
+          "Nobel Prize",
+          "Alisher Navoi"
+        ],
+        "correct": true,
+        "domain": "culture",
+        "qtype": "keyword"
+      },
+      {
+        "id": "uz_on_en_57",
+        "question": "Bobur",
+        "target": "Babur",
+        "retrieved": [
+          "Babur",
+          "Bukhara",
+          "India",
+          "Russia",
+          "Uzbekistan"
+        ],
+        "correct": true,
+        "domain": "culture",
+        "qtype": "direct"
+      },
+      {
+        "id": "uz_on_en_58",
+        "question": "Ipak yo\u02bbli tarixi",
+        "target": "Silk Road",
+        "retrieved": [
+          "Silk Road",
+          "Samarkand",
+          "Central Asia",
+          "Tashkent",
+          "Internet"
+        ],
+        "correct": true,
+        "domain": "culture",
+        "qtype": "keyword"
+      },
+      {
+        "id": "uz_on_en_59",
+        "question": "Buyuk Ipak yo\u02bbli",
+        "target": "Silk Road",
+        "retrieved": [
+          "Tashkent",
+          "Silk Road",
+          "Samarkand",
+          "Uzbekistan",
+          "China"
+        ],
+        "correct": true,
+        "domain": "culture",
+        "qtype": "direct"
+      },
+      {
+        "id": "uz_on_en_60",
+        "question": "BMT a\u02bczo davlatlari",
+        "target": "United Nations",
+        "retrieved": [
+          "United Nations",
+          "United States",
+          "Uzbekistan",
+          "India",
+          "Russia"
+        ],
+        "correct": true,
+        "domain": "org",
+        "qtype": "keyword"
+      },
+      {
+        "id": "uz_on_en_61",
+        "question": "Birlashgan Millatlar Tashkiloti",
+        "target": "United Nations",
+        "retrieved": [
+          "United Nations",
+          "United States",
+          "Russian language",
+          "Antarctica",
+          "Russia"
+        ],
+        "correct": true,
+        "domain": "org",
+        "qtype": "direct"
+      },
+      {
+        "id": "uz_on_en_62",
+        "question": "Vikipediya maqolalari",
+        "target": "Wikipedia",
+        "retrieved": [
+          "Wikipedia",
+          "Mathematics",
+          "Biology",
+          "Physics",
+          "Astronomy"
+        ],
+        "correct": true,
+        "domain": "org",
+        "qtype": "keyword"
+      },
+      {
+        "id": "uz_on_en_63",
+        "question": "Vikipediya",
+        "target": "Wikipedia",
+        "retrieved": [
+          "Wikipedia",
+          "Google",
+          "Internet",
+          "Linux",
+          "Mathematics"
+        ],
+        "correct": true,
+        "domain": "org",
+        "qtype": "direct"
+      },
+      {
+        "id": "uz_on_en_64",
+        "question": "Nobel mukofoti sovrindorlari",
+        "target": "Nobel Prize",
+        "retrieved": [
+          "Nobel Prize",
+          "Physics",
+          "Medicine",
+          "Mathematics",
+          "United Nations"
+        ],
+        "correct": true,
+        "domain": "other",
+        "qtype": "keyword"
+      },
+      {
+        "id": "uz_on_en_65",
+        "question": "Nobel mukofoti",
+        "target": "Nobel Prize",
+        "retrieved": [
+          "Nobel Prize",
+          "United Nations",
+          "Medicine",
+          "Astronomy",
+          "Physics"
+        ],
+        "correct": true,
+        "domain": "other",
+        "qtype": "direct"
+      }
+    ],
+    "en_on_uz": [
+      {
+        "id": "en_on_uz_0",
+        "question": "What is the capital of Uzbekistan?",
+        "target": "O\u02bbzbekiston",
+        "retrieved": [
+          "O\u02bbzbekiston",
+          "Qoraqalpog\u02bbiston",
+          "O\u02bbzbekiston viloyatlari",
+          "Qozog\u02bbiston",
+          "Samarqand"
+        ],
+        "correct": true,
+        "domain": "geo",
+        "qtype": "factual"
+      },
+      {
+        "id": "en_on_uz_1",
+        "question": "Uzbekistan",
+        "target": "O\u02bbzbekiston",
+        "retrieved": [
+          "O\u02bbzbekiston",
+          "O\u02bbzbekiston viloyatlari",
+          "Qozog\u02bbiston",
+          "Markaziy Osiyo",
+          "Rossiya"
+        ],
+        "correct": true,
+        "domain": "geo",
+        "qtype": "direct"
+      },
+      {
+        "id": "en_on_uz_2",
+        "question": "What is the area of Russia?",
+        "target": "Rossiya",
+        "retrieved": [
+          "Rossiya",
+          "Rus tili",
+          "O\u02bbzbekiston",
+          "Yevropa",
+          "Farg\u02bbona"
+        ],
+        "correct": true,
+        "domain": "geo",
+        "qtype": "factual"
+      },
+      {
+        "id": "en_on_uz_3",
+        "question": "Capital of Russia",
+        "target": "Rossiya",
+        "retrieved": [
+          "Rossiya",
+          "Vladivostok",
+          "Toshkent",
+          "O\u02bbzbekiston",
+          "Rus tili"
+        ],
+        "correct": true,
+        "domain": "geo",
+        "qtype": "keyword"
+      },
+      {
+        "id": "en_on_uz_4",
+        "question": "Russia",
+        "target": "Rossiya",
+        "retrieved": [
+          "Rossiya",
+          "KISI",
+          "Rus tili",
+          "Markaziy Osiyo",
+          "O\u02bbzbekiston"
+        ],
+        "correct": true,
+        "domain": "geo",
+        "qtype": "direct"
+      },
+      {
+        "id": "en_on_uz_5",
+        "question": "Capital of Kazakhstan",
+        "target": "Qozog\u02bbiston",
+        "retrieved": [
+          "Qozog\u02bbiston",
+          "Qoraqalpog\u02bbiston",
+          "O\u02bbzbekiston",
+          "KISI",
+          "Toshkent"
+        ],
+        "correct": true,
+        "domain": "geo",
+        "qtype": "keyword"
+      },
+      {
+        "id": "en_on_uz_6",
+        "question": "Kazakhstan",
+        "target": "Qozog\u02bbiston",
+        "retrieved": [
+          "Qozog\u02bbiston",
+          "KISI",
+          "O\u02bbzbekiston",
+          "Qoraqalpog\u02bbiston",
+          "Markaziy Osiyo"
+        ],
+        "correct": true,
+        "domain": "geo",
+        "qtype": "direct"
+      },
+      {
+        "id": "en_on_uz_7",
+        "question": "Which continent is Turkey in?",
+        "target": "Turkiya",
+        "retrieved": [
+          "Turkiya",
+          "Markaziy Osiyo",
+          "Yevropa",
+          "Osiyo",
+          "Buyuk Ipak yo\u02bbli"
+        ],
+        "correct": true,
+        "domain": "geo",
+        "qtype": "factual"
+      },
+      {
+        "id": "en_on_uz_8",
+        "question": "Turkey",
+        "target": "Turkiya",
+        "retrieved": [
+          "Turkiya",
+          "Turk tili",
+          "Turk xoqonligi",
+          "O\u02bbzbekiston",
+          "Toshkent"
+        ],
+        "correct": true,
+        "domain": "geo",
+        "qtype": "direct"
+      },
+      {
+        "id": "en_on_uz_9",
+        "question": "Population of United States",
+        "target": "Amerika",
+        "retrieved": [
+          "Amerika",
+          "Bosh Sahifa",
+          "O\u02bbzbekiston",
+          "Birlashgan Millatlar Tashkilotining Nizomi",
+          "Birlashgan Millatlar Tashkiloti"
+        ],
+        "correct": true,
+        "domain": "geo",
+        "qtype": "factual"
+      },
+      {
+        "id": "en_on_uz_10",
+        "question": "United States",
+        "target": "Amerika",
+        "retrieved": [
+          "Amerika",
+          "Birlashgan Millatlar Tashkiloti",
+          "Bosh Sahifa",
+          "Ingliz tili",
+          "Birlashgan Millatlar Tashkilotining Nizomi"
+        ],
+        "correct": true,
+        "domain": "geo",
+        "qtype": "direct"
+      },
+      {
+        "id": "en_on_uz_11",
+        "question": "European countries",
+        "target": "Yevropa",
+        "retrieved": [
+          "Yevropa",
+          "Bosh Sahifa",
+          "Amerika",
+          "Markaziy Osiyo",
+          "Turkiya"
+        ],
+        "correct": true,
+        "domain": "geo",
+        "qtype": "list"
+      },
+      {
+        "id": "en_on_uz_12",
+        "question": "Europe",
+        "target": "Yevropa",
+        "retrieved": [
+          "Yevropa",
+          "Bosh Sahifa",
+          "Amerika",
+          "Buyuk Ipak yo\u02bbli",
+          "KISI"
+        ],
+        "correct": true,
+        "domain": "geo",
+        "qtype": "direct"
+      },
+      {
+        "id": "en_on_uz_13",
+        "question": "Area of Asia",
+        "target": "Osiyo",
+        "retrieved": [
+          "Osiyo",
+          "Asr",
+          "O\u02bbzbekiston",
+          "Amerika",
+          "Rossiya"
+        ],
+        "correct": true,
+        "domain": "geo",
+        "qtype": "factual"
+      },
+      {
+        "id": "en_on_uz_14",
+        "question": "Asia",
+        "target": "Osiyo",
+        "retrieved": [
+          "Osiyo",
+          "Amerika",
+          "Markaziy Osiyo",
+          "Osmon",
+          "Bosh Sahifa"
+        ],
+        "correct": true,
+        "domain": "geo",
+        "qtype": "direct"
+      },
+      {
+        "id": "en_on_uz_15",
+        "question": "Central Asian countries",
+        "target": "Markaziy Osiyo",
+        "retrieved": [
+          "Markaziy Osiyo",
+          "KISI",
+          "O\u02bbzbekiston",
+          "Qozog\u02bbiston",
+          "Turk xoqonligi"
+        ],
+        "correct": true,
+        "domain": "geo",
+        "qtype": "list"
+      },
+      {
+        "id": "en_on_uz_16",
+        "question": "Central Asia",
+        "target": "Markaziy Osiyo",
+        "retrieved": [
+          "Markaziy Osiyo",
+          "KISI",
+          "Osiyo",
+          "Markaziy Osiyoning Rossiya tomonidan zabt etilishi",
+          "O\u02bbzbekiston"
+        ],
+        "correct": true,
+        "domain": "geo",
+        "qtype": "direct"
+      },
+      {
+        "id": "en_on_uz_17",
+        "question": "Antarctica population",
+        "target": "Antarktida",
+        "retrieved": [
+          "Antarktida",
+          "Ingliz tili",
+          "Turkiya",
+          "Rossiya",
+          "Bosh Sahifa"
+        ],
+        "correct": true,
+        "domain": "geo",
+        "qtype": "factual"
+      },
+      {
+        "id": "en_on_uz_18",
+        "question": "Antarctica",
+        "target": "Antarktida",
+        "retrieved": [
+          "Antarktida",
+          "Amerika",
+          "Ingliz tili",
+          "Bosh Sahifa",
+          "Yevropa"
+        ],
+        "correct": true,
+        "domain": "geo",
+        "qtype": "direct"
+      },
+      {
+        "id": "en_on_uz_19",
+        "question": "Population of Tashkent",
+        "target": "Toshkent",
+        "retrieved": [
+          "Toshkent",
+          "Toshkent viloyati",
+          "Turkiya",
+          "O\u02bbzbekiston",
+          "O\u02bbsh (shahar)"
+        ],
+        "correct": true,
+        "domain": "cities",
+        "qtype": "factual"
+      },
+      {
+        "id": "en_on_uz_20",
+        "question": "Where is Tashkent?",
+        "target": "Toshkent",
+        "retrieved": [
+          "Toshkent viloyati",
+          "Toshkent",
+          "O\u02bbzbekiston viloyatlari",
+          "Turkiya",
+          "O\u02bbzbekiston"
+        ],
+        "correct": true,
+        "domain": "cities",
+        "qtype": "location"
+      },
+      {
+        "id": "en_on_uz_21",
+        "question": "Tashkent",
+        "target": "Toshkent",
+        "retrieved": [
+          "Toshkent",
+          "Toshkent viloyati",
+          "Namangan",
+          "O\u02bbsh (shahar)",
+          "Samarqand"
+        ],
+        "correct": true,
+        "domain": "cities",
+        "qtype": "direct"
+      },
+      {
+        "id": "en_on_uz_22",
+        "question": "History of Samarkand",
+        "target": "Samarqand",
+        "retrieved": [
+          "Samarqand",
+          "Samarqand viloyati",
+          "Bosh Sahifa",
+          "Ahmadxon ibn Xizrxon",
+          "Guliston"
+        ],
+        "correct": true,
+        "domain": "cities",
+        "qtype": "keyword"
+      },
+      {
+        "id": "en_on_uz_23",
+        "question": "Samarkand",
+        "target": "Samarqand",
+        "retrieved": [
+          "Samarqand",
+          "Samarqand viloyati",
+          "So\u02bbg\u02bbd",
+          "Rossiya",
+          "Andijon viloyati"
+        ],
+        "correct": true,
+        "domain": "cities",
+        "qtype": "direct"
+      },
+      {
+        "id": "en_on_uz_24",
+        "question": "Bukhara ancient city",
+        "target": "Buxoro",
+        "retrieved": [
+          "Buxoro",
+          "Antik davr",
+          "Bosh Sahifa",
+          "Samarqand",
+          "So\u02bbg\u02bbd"
+        ],
+        "correct": true,
+        "domain": "cities",
+        "qtype": "keyword"
+      },
+      {
+        "id": "en_on_uz_25",
+        "question": "Bukhara",
+        "target": "Buxoro",
+        "retrieved": [
+          "Buxoro",
+          "Buxoro viloyati",
+          "Gagra",
+          "Rossiya",
+          "Markaziy Osiyo"
+        ],
+        "correct": true,
+        "domain": "cities",
+        "qtype": "direct"
+      },
+      {
+        "id": "en_on_uz_26",
+        "question": "Khwarezm region",
+        "target": "Xorazm",
+        "retrieved": [
+          "Xorazm viloyati",
+          "Toshkent viloyati",
+          "Qashqadaryo viloyati",
+          "Bosh Sahifa",
+          "O\u02bbzbekiston"
+        ],
+        "correct": false,
+        "domain": "cities",
+        "qtype": "keyword"
+      },
+      {
+        "id": "en_on_uz_27",
+        "question": "Khwarezm",
+        "target": "Xorazm",
+        "retrieved": [
+          "Tayammum",
+          "Xurshid Davron",
+          "Ibrohim ibn Husayn",
+          "Xorazm",
+          "Bosh Sahifa"
+        ],
+        "correct": true,
+        "domain": "cities",
+        "qtype": "direct"
+      },
+      {
+        "id": "en_on_uz_28",
+        "question": "Fergana Valley",
+        "target": "Farg\u02bbona",
+        "retrieved": [
+          "Farg\u02bbona",
+          "Farg\u02bbona viloyati",
+          "Gagra",
+          "So\u02bbg\u02bbd",
+          "Namangan"
+        ],
+        "correct": true,
+        "domain": "cities",
+        "qtype": "keyword"
+      },
+      {
+        "id": "en_on_uz_29",
+        "question": "Fergana",
+        "target": "Farg\u02bbona",
+        "retrieved": [
+          "Farg\u02bbona",
+          "Gagra",
+          "Farg\u02bbona viloyati",
+          "Qo\u02bbqon",
+          "So\u02bbg\u02bbd"
+        ],
+        "correct": true,
+        "domain": "cities",
+        "qtype": "direct"
+      },
+      {
+        "id": "en_on_uz_30",
+        "question": "Uzbek Latin script",
+        "target": "O\u02bbzbek tili",
+        "retrieved": [
+          "O\u02bbzbek tili",
+          "O\u02bbzbekcha Vikipediya",
+          "O\u02bbzbekiston",
+          "Sovet Ittifoqi Madhiyasi",
+          "O\u02bbrxun-Enasoy obidalari"
+        ],
+        "correct": true,
+        "domain": "lang",
+        "qtype": "keyword"
+      },
+      {
+        "id": "en_on_uz_31",
+        "question": "Uzbek language",
+        "target": "O\u02bbzbek tili",
+        "retrieved": [
+          "O\u02bbzbekiston",
+          "O\u02bbzbek tili",
+          "O\u02bbzbekcha Vikipediya",
+          "Rus tili",
+          "Tojik tili"
+        ],
+        "correct": true,
+        "domain": "lang",
+        "qtype": "direct"
+      },
+      {
+        "id": "en_on_uz_32",
+        "question": "Russian alphabet",
+        "target": "Rus tili",
+        "retrieved": [
+          "Rus tili",
+          "2 (son)",
+          "Ruscha Vikipediya",
+          "Sovet Ittifoqi Madhiyasi",
+          "Rossiya"
+        ],
+        "correct": true,
+        "domain": "lang",
+        "qtype": "keyword"
+      },
+      {
+        "id": "en_on_uz_33",
+        "question": "Russian language",
+        "target": "Rus tili",
+        "retrieved": [
+          "Rus tili",
+          "Ruscha Vikipediya",
+          "Rossiya",
+          "Google Talk",
+          "Turk tili"
+        ],
+        "correct": true,
+        "domain": "lang",
+        "qtype": "direct"
+      },
+      {
+        "id": "en_on_uz_34",
+        "question": "English grammar",
+        "target": "Ingliz tili",
+        "retrieved": [
+          "Ingliz tili",
+          "Bosh Sahifa",
+          "Google Scholar",
+          "Inglizcha Vikipediya",
+          "2 (son)"
+        ],
+        "correct": true,
+        "domain": "lang",
+        "qtype": "keyword"
+      },
+      {
+        "id": "en_on_uz_35",
+        "question": "English language",
+        "target": "Ingliz tili",
+        "retrieved": [
+          "Ingliz tili",
+          "Inglizcha Vikipediya",
+          "Vikipediya",
+          "Rus tili",
+          "Bosh Sahifa"
+        ],
+        "correct": true,
+        "domain": "lang",
+        "qtype": "direct"
+      },
+      {
+        "id": "en_on_uz_36",
+        "question": "Biology science",
+        "target": "Biologiya",
+        "retrieved": [
+          "Bosh Sahifa",
+          "Biologiya",
+          "Nur",
+          "2 (son)",
+          "Fizika"
+        ],
+        "correct": true,
+        "domain": "science",
+        "qtype": "keyword"
+      },
+      {
+        "id": "en_on_uz_37",
+        "question": "Biology",
+        "target": "Biologiya",
+        "retrieved": [
+          "Biologiya",
+          "Bosh Sahifa",
+          "2 (son)",
+          "Nur",
+          "Fizika"
+        ],
+        "correct": true,
+        "domain": "science",
+        "qtype": "direct"
+      },
+      {
+        "id": "en_on_uz_38",
+        "question": "Physics fundamentals",
+        "target": "Fizika",
+        "retrieved": [
+          "Fizika",
+          "Nur",
+          "Bosh Sahifa",
+          "Massa",
+          "-1"
+        ],
+        "correct": true,
+        "domain": "science",
+        "qtype": "keyword"
+      },
+      {
+        "id": "en_on_uz_39",
+        "question": "Physics",
+        "target": "Fizika",
+        "retrieved": [
+          "Nur",
+          "Fizika",
+          "Massa",
+          "Bosh Sahifa",
+          "Astronomiya"
+        ],
+        "correct": true,
+        "domain": "science",
+        "qtype": "direct"
+      },
+      {
+        "id": "en_on_uz_40",
+        "question": "Astronomy science",
+        "target": "Astronomiya",
+        "retrieved": [
+          "Astronom",
+          "Astronomiya",
+          "Bosh Sahifa",
+          "Osmon",
+          "Nur"
+        ],
+        "correct": true,
+        "domain": "science",
+        "qtype": "keyword"
+      },
+      {
+        "id": "en_on_uz_41",
+        "question": "Astronomy",
+        "target": "Astronomiya",
+        "retrieved": [
+          "Astronom",
+          "Astronomiya",
+          "Bosh Sahifa",
+          "Osmon",
+          "Nur"
+        ],
+        "correct": true,
+        "domain": "science",
+        "qtype": "direct"
+      },
+      {
+        "id": "en_on_uz_42",
+        "question": "Age of universe",
+        "target": "Koinot",
+        "retrieved": [
+          "Asr",
+          "Bosh Sahifa",
+          "Osmon",
+          "Antik davr",
+          "Nur"
+        ],
+        "correct": false,
+        "domain": "science",
+        "qtype": "factual"
+      },
+      {
+        "id": "en_on_uz_43",
+        "question": "Universe",
+        "target": "Koinot",
+        "retrieved": [
+          "Osmon",
+          "Nur",
+          "Astronom",
+          "Astronomiya",
+          "Bosh Sahifa"
+        ],
+        "correct": false,
+        "domain": "science",
+        "qtype": "direct"
+      },
+      {
+        "id": "en_on_uz_44",
+        "question": "Composition of Sun",
+        "target": "Quyosh",
+        "retrieved": [
+          "Quyosh",
+          "Osmon",
+          "Bosh Sahifa",
+          "Nur",
+          "Asr"
+        ],
+        "correct": true,
+        "domain": "science",
+        "qtype": "keyword"
+      },
+      {
+        "id": "en_on_uz_45",
+        "question": "Sun",
+        "target": "Quyosh",
+        "retrieved": [
+          "Quyosh",
+          "Osmon",
+          "Astronom",
+          "Nur",
+          "Sayyora"
+        ],
+        "correct": true,
+        "domain": "science",
+        "qtype": "direct"
+      },
+      {
+        "id": "en_on_uz_46",
+        "question": "History of Internet",
+        "target": "Internet",
+        "retrieved": [
+          "Internet",
+          "Bosh Sahifa",
+          "Google",
+          "Vikipediya",
+          "Gmail"
+        ],
+        "correct": true,
+        "domain": "tech",
+        "qtype": "keyword"
+      },
+      {
+        "id": "en_on_uz_47",
+        "question": "Internet",
+        "target": "Internet",
+        "retrieved": [
+          "Internet",
+          "Google",
+          "Bosh Sahifa",
+          "Gmail",
+          "HTML"
+        ],
+        "correct": true,
+        "domain": "tech",
+        "qtype": "direct"
+      },
+      {
+        "id": "en_on_uz_48",
+        "question": "Google search engine",
+        "target": "Google",
+        "retrieved": [
+          "Google",
+          "Google Scholar",
+          "Google Talk",
+          "Bosh Sahifa",
+          "Gmail"
+        ],
+        "correct": true,
+        "domain": "tech",
+        "qtype": "keyword"
+      },
+      {
+        "id": "en_on_uz_49",
+        "question": "Google",
+        "target": "Google",
+        "retrieved": [
+          "Google",
+          "Google Talk",
+          "Gmail",
+          "Google Scholar",
+          "Bosh Sahifa"
+        ],
+        "correct": true,
+        "domain": "tech",
+        "qtype": "direct"
+      },
+      {
+        "id": "en_on_uz_50",
+        "question": "Linux operating system",
+        "target": "Linux",
+        "retrieved": [
+          "Linux",
+          "UNIX",
+          "Symbian OS",
+          "Microsoft Windows",
+          "Java"
+        ],
+        "correct": true,
+        "domain": "tech",
+        "qtype": "keyword"
+      },
+      {
+        "id": "en_on_uz_51",
+        "question": "Linux",
+        "target": "Linux",
+        "retrieved": [
+          "Linux",
+          "UNIX",
+          "Microsoft Windows",
+          "Symbian OS",
+          "Java"
+        ],
+        "correct": true,
+        "domain": "tech",
+        "qtype": "direct"
+      },
+      {
+        "id": "en_on_uz_52",
+        "question": "Computer parts",
+        "target": "Kompyuter",
+        "retrieved": [
+          "Kompyuter",
+          "Bosh Sahifa",
+          "Microsoft Windows",
+          "2 (son)",
+          "Google Scholar"
+        ],
+        "correct": true,
+        "domain": "tech",
+        "qtype": "keyword"
+      },
+      {
+        "id": "en_on_uz_53",
+        "question": "Computer",
+        "target": "Kompyuter",
+        "retrieved": [
+          "Kompyuter",
+          "Microsoft Windows",
+          "2 (son)",
+          "Bosh Sahifa",
+          "UNIX"
+        ],
+        "correct": true,
+        "domain": "tech",
+        "qtype": "direct"
+      },
+      {
+        "id": "en_on_uz_54",
+        "question": "Works of Alisher Navoi",
+        "target": "Alisher Navoiy",
+        "retrieved": [
+          "Alisher Navoiy",
+          "Bosh Sahifa",
+          "Muallif",
+          "O\u02bbzbek adabiyoti",
+          "Avesto"
+        ],
+        "correct": true,
+        "domain": "culture",
+        "qtype": "keyword"
+      },
+      {
+        "id": "en_on_uz_55",
+        "question": "Alisher Navoi",
+        "target": "Alisher Navoiy",
+        "retrieved": [
+          "Alisher Navoiy",
+          "Bosh Sahifa",
+          "Muallif",
+          "O\u02bbzbek adabiyoti",
+          "Avesto"
+        ],
+        "correct": true,
+        "domain": "culture",
+        "qtype": "direct"
+      },
+      {
+        "id": "en_on_uz_56",
+        "question": "Babur name",
+        "target": "Bobur",
+        "retrieved": [
+          "Buxoro",
+          "Bobur",
+          "Ibrohim ibn Husayn",
+          "Xorazm",
+          "Bosh Sahifa"
+        ],
+        "correct": true,
+        "domain": "culture",
+        "qtype": "keyword"
+      },
+      {
+        "id": "en_on_uz_57",
+        "question": "Babur",
+        "target": "Bobur",
+        "retrieved": [
+          "Buxoro",
+          "Bobur",
+          "Muallif",
+          "Alisher Navoiy",
+          "Ibrohim ibn Husayn"
+        ],
+        "correct": true,
+        "domain": "culture",
+        "qtype": "direct"
+      },
+      {
+        "id": "en_on_uz_58",
+        "question": "Silk Road history",
+        "target": "Buyuk Ipak yo\u02bbli",
+        "retrieved": [
+          "Buyuk Ipak yo\u02bbli",
+          "Bosh Sahifa",
+          "Ipak yo'li radiosi",
+          "Markaziy Osiyoning Rossiya tomonidan zabt etilishi",
+          "Turk xoqonligi"
+        ],
+        "correct": true,
+        "domain": "culture",
+        "qtype": "keyword"
+      },
+      {
+        "id": "en_on_uz_59",
+        "question": "Silk Road",
+        "target": "Buyuk Ipak yo\u02bbli",
+        "retrieved": [
+          "Buyuk Ipak yo\u02bbli",
+          "Bosh Sahifa",
+          "Markaziy Osiyoning Rossiya tomonidan zabt etilishi",
+          "Internet",
+          "Markaziy Osiyo"
+        ],
+        "correct": true,
+        "domain": "culture",
+        "qtype": "direct"
+      },
+      {
+        "id": "en_on_uz_60",
+        "question": "UN member states",
+        "target": "Birlashgan Millatlar Tashkiloti",
+        "retrieved": [
+          "Birlashgan Millatlar Tashkilotining Nizomi",
+          "Birlashgan Millatlar Tashkiloti",
+          "O\u02bbzbekiston",
+          "Bosh Sahifa",
+          "Mustaqil davlatlar hamdo\u02bbstligi"
+        ],
+        "correct": true,
+        "domain": "org",
+        "qtype": "keyword"
+      },
+      {
+        "id": "en_on_uz_61",
+        "question": "United Nations",
+        "target": "Birlashgan Millatlar Tashkiloti",
+        "retrieved": [
+          "Birlashgan Millatlar Tashkiloti",
+          "Birlashgan Millatlar Tashkilotining Nizomi",
+          "Bosh Sahifa",
+          "Kilometr",
+          "Qozog\u02bbiston"
+        ],
+        "correct": true,
+        "domain": "org",
+        "qtype": "direct"
+      },
+      {
+        "id": "en_on_uz_62",
+        "question": "Wikipedia articles",
+        "target": "Vikipediya",
+        "retrieved": [
+          "Bosh Sahifa",
+          "Vikipediya",
+          "Inglizcha Vikipediya",
+          "Google Scholar",
+          "Polyakcha Vikipediya"
+        ],
+        "correct": true,
+        "domain": "org",
+        "qtype": "keyword"
+      },
+      {
+        "id": "en_on_uz_63",
+        "question": "Wikipedia",
+        "target": "Vikipediya",
+        "retrieved": [
+          "Vikipediya",
+          "Inglizcha Vikipediya",
+          "Polyakcha Vikipediya",
+          "Ruscha Vikipediya",
+          "Bosh Sahifa"
+        ],
+        "correct": true,
+        "domain": "org",
+        "qtype": "direct"
+      },
+      {
+        "id": "en_on_uz_64",
+        "question": "Nobel Prize winners",
+        "target": "Nobel mukofoti",
+        "retrieved": [
+          "Bosh Sahifa",
+          "Nobel mukofoti",
+          "1972",
+          "Astronom",
+          "1917"
+        ],
+        "correct": true,
+        "domain": "other",
+        "qtype": "keyword"
+      },
+      {
+        "id": "en_on_uz_65",
+        "question": "Nobel Prize",
+        "target": "Nobel mukofoti",
+        "retrieved": [
+          "Nobel mukofoti",
+          "Nur",
+          "Bosh Sahifa",
+          "Nagoya universiteti",
+          "2 (son)"
+        ],
+        "correct": true,
+        "domain": "other",
+        "qtype": "direct"
+      }
+    ]
+  }
+}
