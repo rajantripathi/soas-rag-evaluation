@@ -1,0 +1,20 @@
+base_config: base.yaml
+
+paths:
+  corpus_file: corpus_english_only.jsonl
+  eval_file: manual_eval_v5.jsonl
+  index_name: cross_lingual_english_only_index
+
+dataset:
+  smoke_max_docs: 500
+  smoke_max_eval: 500
+  generate_eval: false
+
+retrieval:
+  backend: embedding
+  model_name: intfloat/multilingual-e5-large
+
+experiment:
+  retrieval_mode: vector
+  prompt_style: grounded
+  cross_lingual: "uz_on_en"  # Uzbek questions on English corpus
