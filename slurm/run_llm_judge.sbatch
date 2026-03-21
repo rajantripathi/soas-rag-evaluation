@@ -17,7 +17,7 @@ date
 
 # Use the best experiment run (will need to update this path after eval completes)
 python scripts/run_llm_judge.py \
-  --predictions results/eval_20260308T212654Z_65999103ae4c/predictions.jsonl \
+  --predictions results/eval_20260308T212757Z_65999103ae4c/predictions.jsonl \
   --output results/eval_llm_judge/scores.jsonl \
   --model mistralai/Mistral-7B-Instruct-v0.3 \
   --n-items 100
