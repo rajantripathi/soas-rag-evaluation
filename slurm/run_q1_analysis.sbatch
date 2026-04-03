@@ -1,14 +1,14 @@
 #!/bin/bash
 #SBATCH --job-name=q1-analysis
 #SBATCH --account=u6ef
-#SBATCH --partition=gh200
-#SBATCH --nodes=1
-#SBATCH --gpus-per-node=0
 #SBATCH --time=00:30:00
+#SBATCH --cpus-per-task=4
+#SBATCH --mem=16G
 #SBATCH --output=results/logs/q1_analysis_%j.out
 #SBATCH --error=results/logs/q1_analysis_%j.err
 
 set -euo pipefail
+mkdir -p results/logs
 
 echo "=== Q1 Analysis: Extended Metrics + Cultural Specificity ==="
 echo "Job ID: ${SLURM_JOB_ID}"
@@ -16,10 +16,7 @@ echo "Start: $(date)"
 
 source .venv/bin/activate
 
-# Create output directory
-mkdir -p results/q1_experiments
-
-# Step 1: Compute extended metrics for ALL conditions
+# Step 1: Extended metrics for ALL conditions
 echo "--- Computing extended metrics ---"
 python scripts/compute_extended_metrics.py \
     --results-dir results \
