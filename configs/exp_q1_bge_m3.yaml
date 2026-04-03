@@ -5,8 +5,10 @@ paths:
   eval_data_dir: data/eval
   index_dir: data/indexes
   results_dir: results
-  corpus_file: corpus.jsonl
+  logs_dir: results/logs
+  corpus_file: corpus_manual_v1.jsonl
   eval_file: manual_eval_v5.jsonl
+  index_name: q1_bge_m3
 
 retrieval:
   backend: embedding

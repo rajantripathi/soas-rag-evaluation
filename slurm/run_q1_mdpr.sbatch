@@ -1,23 +1,19 @@
 #!/bin/bash
 #SBATCH --job-name=q1-mdpr
-#SBATCH --account=u6ef
-#SBATCH --partition=workq
-#SBATCH --nodes=1
+#SBATCH --output=logs/q1_mdpr_%j.out
+#SBATCH --error=logs/q1_mdpr_%j.err
 #SBATCH --time=04:00:00
 #SBATCH --cpus-per-task=8
 #SBATCH --mem=64G
-#SBATCH --output=results/logs/q1_mdpr_%j.out
-#SBATCH --error=results/logs/q1_mdpr_%j.err
 
 set -euo pipefail
-mkdir -p results/logs
+mkdir -p logs
 
-echo "=== mDPR Baseline Experiment (E3) ==="
-echo "Job ID: ${SLURM_JOB_ID}"
+echo "=== E3: mDPR Baseline ==="
+echo "Job ID: ${SLURM_JOB_ID:-local}"
 echo "Node: $(hostname)"
 echo "Start: $(date)"
 
-module load cray-python/3.11.7 || true
 source .venv/bin/activate
 
 python scripts/run_mdpr_baseline.py \

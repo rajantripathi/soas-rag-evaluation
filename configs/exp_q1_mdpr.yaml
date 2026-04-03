@@ -5,13 +5,14 @@ paths:
   eval_data_dir: data/eval
   index_dir: data/indexes
   results_dir: results
-  corpus_file: corpus.jsonl
+  logs_dir: results/logs
+  corpus_file: corpus_manual_v1.jsonl
   eval_file: manual_eval_v5.jsonl
+  index_name: q1_mdpr
 
 retrieval:
   backend: embedding
-  query_model: intfloat/multilingual-e5-large
-  passage_model: intfloat/multilingual-e5-large
+  model_name: intfloat/multilingual-e5-large
   top_k: 10
 
 generation:

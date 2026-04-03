@@ -121,7 +121,8 @@ def compute_metrics_for_condition(
 
         relevant_ids = set(eval_item.get("source_doc_ids", []))
         # Get retrieved doc IDs from contexts
-        contexts = pred.get("contexts", [])
+        # Handle both field names: 'contexts' (old format) and 'retrieved_contexts' (current format)
+        contexts = pred.get("retrieved_contexts") or pred.get("contexts", [])
         retrieved_ids = [str(c.get("doc_id", "")) for c in contexts]
         language = eval_item.get("language", "unknown")
         specificity = eval_item.get("cultural_specificity", "unknown")
