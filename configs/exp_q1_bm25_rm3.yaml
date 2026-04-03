@@ -1,0 +1,23 @@
+# BM25+RM3 baseline configuration for Q1 paper experiments
+paths:
+  raw_data_dir: data/raw
+  processed_data_dir: data/processed
+  eval_data_dir: data/eval
+  index_dir: data/indexes
+  results_dir: results
+  corpus_file: corpus.jsonl
+  eval_file: manual_eval_v5.jsonl
+
+retrieval:
+  backend: bm25
+  top_k: 10
+
+generation:
+  backend: stub
+
+experiment:
+  retrieval_mode: vector
+  prompt_style: grounded
+  rm3_fb_docs: 10
+  rm3_fb_terms: 20
+  rm3_original_query_weight: 0.5
