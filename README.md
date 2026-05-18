@@ -1,12 +1,52 @@
-# Culturally Grounded Multilingual RAG Evaluation
+# SOAS RAG Evaluation — Bilingual Benchmark (English + Uzbek)
 
-## Overview
-This repository presents a reproducible bilingual retrieval benchmark for culturally grounded question answering in English and Uzbek. It packages a conservative RAG evaluation pipeline, balanced manual evaluation sets, experiment configurations, and research-facing summaries designed for collaborators, workshop submission, and future corpus expansion work.
+> **Headline result:** Uzbek retrieval recall improved from **39% → 98%** via Wikipedia corpus supplementation. Cohen's *d* = **2.91**. Effect size **7.9x larger** than model-swap optimisation on the same task.
 
-## Why This Benchmark Matters
-Multilingual AI systems are often evaluated on generic benchmarks that underrepresent local institutional, historical, and cultural knowledge. This project asks a more specific question: when retrieval fails on culturally grounded queries, is the main bottleneck model choice or knowledge source coverage?
+## TL;DR
 
-The experiments consistently point to the same answer: corpus coverage of culturally grounded sources matters more than chunking, embedding swaps, or hybrid retrieval design.
+| Metric | English | Uzbek (before) | Uzbek (after corpus supplementation) |
+|---|---|---|---|
+| Retrieval Recall | ~92% | 39% | **98%** |
+| Effect Size (Cohen's d) | — | baseline | **2.91** |
+
+**Why this matters:** For low-resource languages, corpus engineering dominates model selection. We measured a 7.9x larger effect from corpus supplementation than from changing the underlying embedding/LLM model.
+
+## What is in this repo
+
+- Bilingual evaluation harness (English + Uzbek) for RAG retrieval quality
+- Reproducible methodology with corpus supplementation pipeline
+- Gold answer set with quality audit
+- Scripts to compute Recall@k, MRR, and effect size statistics
+
+## Reproduce the headline result
+
+Environment bootstrap on Isambard:
+
+```bash
+bash scripts/check_env.sh
+bash scripts/bootstrap_env.sh
+source .venv/bin/activate
+```
+
+Smoke path:
+
+```bash
+python scripts/fetch_datasets.py --config configs/base.yaml
+python scripts/build_corpus.py --config configs/exp_smoke.yaml
+python scripts/build_index.py --config configs/exp_smoke.yaml
+python scripts/run_eval.py --config configs/exp_smoke.yaml
+```
+
+Research-output regeneration:
+
+```bash
+python scripts/generate_research_outputs.py
+```
+
+## Citation
+
+Affiliations: (1) AI² Lab, School of Digital Technologies, American University in Tashkent; (2) Bikal Technologies Ltd, Coventry, UK; (3) Centre for AI Futures, SOAS University of London.
+Contact: rajantripathi22@gmail.com
 
 ## Benchmark Design
 
