@@ -34,3 +34,4 @@ logs/*
 ._*
 _archive/
 results/q1_experiments/
+core

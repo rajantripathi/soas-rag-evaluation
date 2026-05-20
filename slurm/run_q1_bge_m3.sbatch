@@ -7,7 +7,7 @@
 #SBATCH --mem=64G
 
 set -euo pipefail
-mkdir -p logs
+mkdir -p logs results/q1_experiments
 
 echo "=== E2: BGE-M3 Baseline ==="
 echo "Job ID: ${SLURM_JOB_ID:-local}"
