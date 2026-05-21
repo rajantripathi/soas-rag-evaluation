@@ -18,6 +18,15 @@
 - Gold answer set with quality audit
 - Scripts to compute Recall@k, MRR, and effect size statistics
 
+## Technical Architecture
+
+Architecture and reproducibility notes are documented separately:
+
+- [`docs/architecture_blueprints.md`](docs/architecture_blueprints.md): pipeline, Isambard execution topology, evaluation control plane, and publication data flow
+- [`docs/technical_architecture.md`](docs/technical_architecture.md): components, data model, retrieval backends, evaluation loop, and reproducibility controls
+- [`docs/isambard_reproducibility.md`](docs/isambard_reproducibility.md): known GitHub/local/Isambard locations and cluster rehydration checklist
+- [`docs/technical_q_and_a.md`](docs/technical_q_and_a.md): technical discussion notes, limitations, and claims to avoid
+
 ## Reproduce the headline result
 
 Environment bootstrap on Isambard:
