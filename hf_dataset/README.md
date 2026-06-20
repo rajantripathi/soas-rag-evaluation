@@ -3,7 +3,6 @@ language:
   - en
   - uz
 task_categories:
-  - question-answering
   - text-retrieval
 tags:
   - retrieval-augmented-generation
@@ -19,9 +18,9 @@ pretty_name: When Corpus Coverage Matters More Than Model Choice
 
 ## Dataset Summary
 
-This folder documents a bilingual English-Uzbek retrieval evaluation benchmark for culturally grounded RAG systems. The full 400-item dataset is prepared but is not included in this public branch while license and source-clearance review is pending.
+This folder documents a bilingual English-Uzbek retrieval evaluation benchmark for culturally grounded RAG systems. The 400-row public release candidate is retrieval-only: it contains questions and source-document targets, but it intentionally excludes answer, context, excerpt, and source-text fields.
 
-The current public JSONL file is a preview sample only. It contains questions and source-document metadata, but it deliberately omits `gold_answer` values because some reference-answer text is source-derived and needs manual clearance before public dataset release.
+The full QA version remains pending license and source-clearance review. `gold_answer` and `reference_answer` fields are not included in the release candidate because earlier review found source-derived answer text that needs manual clearance before publication.
 
 The benchmark is designed to test whether a RAG pipeline retrieves the relevant supporting source document. In this benchmark setting, targeted Uzbek source curation produced an observed improvement in Uzbek retrieval recall from 39% to 98% without changing the underlying model. The result should be interpreted as evidence from this evaluation set, not as evidence for all low-resource RAG systems.
 
@@ -34,7 +33,9 @@ The benchmark is designed to test whether a RAG pipeline retrieves the relevant 
 
 Primary task: RAG retrieval evaluation.
 
-The core evaluation question is whether the retrieved document IDs include the item-level `source_doc_ids`. The dataset can also support grounding, faithfulness, and answer-quality evaluation when users supply retrieved contexts and generated answers from their own RAG systems.
+The core evaluation question is whether retrieved document IDs include the item-level `source_doc_ids`.
+
+This release candidate does not support answer correctness, faithfulness, or reference-answer metrics by itself because `gold_answer`, `reference_answer`, retrieved contexts, generated answers, source text, and excerpts are intentionally excluded.
 
 ## Intended Uses
 
@@ -47,7 +48,8 @@ The core evaluation question is whether the retrieved document IDs include the i
 ## Out-of-Scope Uses
 
 - Do not use the dataset to claim general Uzbek QA competence.
-- Do not use it as a full generative answer-quality benchmark without additional generated answers and human or metric-based answer evaluation.
+- Do not use this retrieval-only release candidate as a generated-answer quality benchmark.
+- Do not compute answer correctness, faithfulness, or reference-answer metrics from these files alone.
 - Do not cite the retracted English supplementation results as evidence.
 - Do not treat the English and Uzbek halves as parallel translations.
 - Do not generalize the findings to all low-resource languages without further evaluation.
@@ -56,21 +58,25 @@ The core evaluation question is whether the retrieved document IDs include the i
 
 Current files:
 
-- `manual_eval_v5_sample.jsonl`: 30-item public preview sample with `gold_answer` omitted.
-- `dataset_info.json`: auxiliary draft metadata for release planning.
+- `manual_eval_v5_retrieval_only.jsonl`: 400-row retrieval-only public release candidate.
+- `manual_eval_v5_sample.jsonl`: 30-row public preview sample with the same retrieval-only field set.
+- `dataset_info.json`: auxiliary draft metadata for release planning. It is not a Hugging Face-generated `dataset_infos.json` file.
 
 Not included in this branch:
 
-- `manual_eval_v5.jsonl`: full 400-item dataset file. It is withheld from the public branch pending license/source-clearance review.
+- `manual_eval_v5.jsonl`: internal full QA dataset file with `gold_answer`. It is withheld from the public release candidate pending license/source-clearance review.
 
-No custom loading script is required for the current preview file. It can be loaded with the standard JSON loader:
+No custom loading script is required. The retrieval-only candidate can be loaded with the standard JSON loader:
 
 ```python
 from datasets import load_dataset
 
 dataset = load_dataset(
     "json",
-    data_files={"preview": "manual_eval_v5_sample.jsonl"},
+    data_files={
+        "train": "manual_eval_v5_retrieval_only.jsonl",
+        "preview": "manual_eval_v5_sample.jsonl",
+    },
 )
 ```
 
@@ -78,16 +84,16 @@ Auxiliary metadata:
 
 - `dataset_info.json` is auxiliary draft release metadata for review and upload planning.
 - It is not a Hugging Face-generated `dataset_infos.json` file.
-- The dataset card and preview JSONL file are the only public dataset materials in this branch.
+- The dataset card, retrieval-only JSONL candidate, and preview JSONL file are the public dataset materials in this branch.
 
-The prepared full benchmark is balanced across English and Uzbek, but the full JSONL is under release review and is not included here:
+The retrieval-only candidate is balanced across English and Uzbek:
 
 | Language | Items |
 | --- | ---: |
 | English | 200 |
 | Uzbek | 200 |
 
-The prepared full benchmark is also balanced across four domains per language:
+The retrieval-only candidate is also balanced across four domains per language:
 
 | Domain | English | Uzbek |
 | --- | ---: | ---: |
@@ -96,9 +102,9 @@ The prepared full benchmark is also balanced across four domains per language:
 | institutions | 50 | 50 |
 | culture | 50 | 50 |
 
-## Preview Fields
+## Dataset Fields
 
-The current public preview preserves the non-answer metadata fields from the existing repository schema:
+The retrieval-only release candidate contains exactly these fields:
 
 | Field | Type | Description |
 | --- | --- | --- |
@@ -113,9 +119,19 @@ The current public preview preserves the non-answer metadata fields from the exi
 | `difficulty` | string | Deterministic heuristic label: `easy`, `medium`, or `hard`. |
 | `quality_flag` | string or null | Audit-derived flag such as `domain_misclassification` or `question_quality`. |
 
-The full release is expected to include `gold_answer` after clearance. The preview intentionally omits it.
+Excluded fields:
 
-No `split` field is present in the preview data. For Hugging Face loading, treat the current file as a `preview` split.
+- `gold_answer`
+- `reference_answer`
+- `answer`
+- `context`
+- `excerpt`
+- `source_text`
+- `source_document`
+
+The full QA release may include answer/reference fields after clearance. This retrieval-only candidate intentionally omits them.
+
+No `split` field is present in the data rows. For Hugging Face loading, treat `manual_eval_v5_retrieval_only.jsonl` as the main split and `manual_eval_v5_sample.jsonl` as a preview split.
 
 ## Data Sources
 
@@ -126,7 +142,7 @@ The repository documents source staging from:
 - Uzbek Wikipedia material through `yakhyo/uz-wiki`.
 - Targeted and structured Uzbek source enrichment used for the validated supplementation experiment.
 
-The public preview file contains evaluation questions and source identifiers. It does not include reference answers, the full raw corpora, processed indexes, or complete HPC run outputs.
+The public retrieval-only files contain evaluation questions and source identifiers. They do not include reference answers, source text, the full raw corpora, processed indexes, or complete HPC run outputs.
 
 ## Evaluation Methodology
 
@@ -134,7 +150,9 @@ Primary metric: retrieval recall@k.
 
 An item is counted as retrieved when at least one retrieved document ID matches `source_doc_ids`. This isolates retrieval and source-coverage behavior from downstream generation.
 
-The repository reports bootstrap confidence intervals, paired comparisons, and effect sizes in the checked-in reports. The public dataset card does not introduce new evaluation results and does not claim that the full dataset has been released.
+The repository reports bootstrap confidence intervals, paired comparisons, and effect sizes in the checked-in reports. The public dataset card does not introduce new evaluation results.
+
+This release candidate does not provide answer references. Users who want answer correctness, faithfulness, or reference-answer metrics need a separately cleared QA release or their own approved reference answers.
 
 ## Results Summary
 
@@ -162,9 +180,9 @@ Careful interpretation:
 
 ## Release Risk Review
 
-TODO: Confirm dataset-license compatibility before upload. The JSONL files include reference-answer text derived from source corpora, and the release license should be compatible with those sources.
+TODO: Confirm dataset-license compatibility before upload. The retrieval-only candidate excludes source-derived reference answers, but the source corpora and source-document identifiers still need release review.
 
-TODO: Review long `gold_answer` values before public Hugging Face upload. The current preview omits `gold_answer`, but the prepared full dataset includes some extended source-derived excerpts rather than short answer spans.
+TODO: Review long `gold_answer` values before any future full QA Hugging Face upload. The prepared internal full QA dataset includes some extended source-derived excerpts rather than short answer spans.
 
 TODO: Confirm that all included records come from public or release-cleared sources and do not include private Isambard paths, credentials, or non-public notes.
 
@@ -174,7 +192,9 @@ No obvious personal private data, credentials, or local filesystem paths were ad
 
 - The benchmark has 400 items and is moderate in size.
 - It covers only English and Uzbek.
-- The full 400-row JSONL is not included in this branch pending source-clearance review.
+- This is a retrieval-only release candidate.
+- It does not support answer correctness, faithfulness, or reference-answer metrics by itself.
+- The full QA JSONL with answer/reference fields is not included pending source-clearance review.
 - Full raw corpora, processed indexes, and HPC execution artifacts are not included in this release folder.
 - `source_title` resolution is incomplete for some English items.
 - Difficulty labels are deterministic heuristics, not human difficulty judgments.

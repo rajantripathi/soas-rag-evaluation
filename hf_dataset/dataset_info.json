@@ -2,40 +2,57 @@
   "dataset_name": "soas-english-uzbek-rag-evaluation",
   "metadata_role": "auxiliary_draft_release_metadata",
   "not_huggingface_generated_dataset_infos": true,
-  "release_status": "preview_only_full_data_pending_license_source_clearance",
+  "release_status": "retrieval_only_candidate_full_qa_pending_license_source_clearance",
   "title": "When Corpus Coverage Matters More Than Model Choice: An English-Uzbek Low-Resource RAG Evaluation Dataset",
   "version": "manual_eval_v5",
-  "description": "Auxiliary draft metadata for a prepared 400-item English-Uzbek retrieval evaluation benchmark. The public branch currently includes only a preview sample without gold_answer fields while full release clearance is pending.",
+  "description": "Auxiliary draft metadata for a 400-row English-Uzbek retrieval-only evaluation candidate. The public candidate excludes gold_answer, reference_answer, answer, context, excerpt, and source-text fields while full QA release clearance is pending.",
   "languages": [
     "en",
     "uz"
   ],
   "task": "RAG retrieval evaluation",
   "data_files": {
+    "train": "manual_eval_v5_retrieval_only.jsonl",
     "preview": "manual_eval_v5_sample.jsonl"
   },
-  "recommended_split": "preview",
+  "recommended_split": "train",
   "features": {
     "id": "string",
     "language": "string",
     "domain": "string",
     "question": "string",
     "source_doc_ids": "list[string]",
+    "source_title": "string|null",
     "answerable": "boolean",
     "cultural_specificity": "string",
-    "source_title": "string|null",
     "difficulty": "string",
     "quality_flag": "string|null"
   },
+  "excluded_fields": [
+    "gold_answer",
+    "reference_answer",
+    "answer",
+    "context",
+    "excerpt",
+    "source_text",
+    "source_document"
+  ],
   "size": {
     "preview_rows": 30,
-    "prepared_full_benchmark_rows": 400
+    "retrieval_only_candidate_rows": 400,
+    "prepared_internal_full_qa_rows": 400
   },
-  "planned_full_release": {
+  "release_candidate": {
+    "file": "manual_eval_v5_retrieval_only.jsonl",
+    "rows": 400,
+    "scope": "retrieval_only_source_document_matching"
+  },
+  "planned_full_qa_release": {
     "status": "pending_license_source_clearance",
-    "withheld_file": "manual_eval_v5.jsonl",
+    "withheld_internal_file": "data/eval/manual_eval_v5.jsonl",
     "planned_rows": 400,
-    "planned_additional_field": "gold_answer"
+    "planned_additional_field": "gold_answer",
+    "note": "Answer/reference fields are excluded from the public candidate until source-derived text is manually cleared."
   },
   "results_summary": {
     "english_baseline_recall": "63%",
@@ -44,7 +61,8 @@
     "english_supplementation_status": "retracted_due_to_synthetic_leakage"
   },
   "limitations": [
-    "Retrieval-side benchmark only; not a full generated-answer quality benchmark.",
+    "Retrieval-only candidate; not a full generated-answer quality benchmark.",
+    "Does not support answer correctness, faithfulness, or reference-answer metrics without separately cleared references.",
     "Full raw corpora, indexes, and HPC run artifacts are not included in this release folder.",
     "Covers English and Uzbek only.",
     "English supplementation results are retracted and should not be cited."
