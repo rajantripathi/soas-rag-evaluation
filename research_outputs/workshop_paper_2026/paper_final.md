@@ -1,6 +1,6 @@
 # Corpus Coverage Dominates Model Choice in Culturally Grounded Multilingual Retrieval
 
-**Authors:** Rajan Tripathi (Centre for AI Futures, SOAS University of London; AI2 Innovation Lab, American University of Technology)
+**Authors:** Rajan Tripathi (Centre for AI Futures, SOAS University of London; AI2 Innovation Lab, American University of Technology, Uzbekistan)
 
 ---
 
@@ -227,4 +227,4 @@ Robertson, S., & Zaragoza, H. (2009). The probabilistic relevance framework: BM2
 
 **Data availability:** Benchmark samples and code are available at https://github.com/rajantripathi/soas-rag-evaluation
 
-**Contact:** rt1@soas.ac.uk | Centre for AI Futures, SOAS University of London
+**Affiliation:** Centre for AI Futures, SOAS University of London

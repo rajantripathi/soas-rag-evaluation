@@ -1,0 +1,55 @@
+{
+  "dataset_name": "soas-english-uzbek-rag-evaluation",
+  "metadata_role": "auxiliary_draft_release_metadata",
+  "not_huggingface_generated_dataset_infos": true,
+  "release_status": "preview_only_full_data_pending_license_source_clearance",
+  "title": "When Corpus Coverage Matters More Than Model Choice: An English-Uzbek Low-Resource RAG Evaluation Dataset",
+  "version": "manual_eval_v5",
+  "description": "Auxiliary draft metadata for a prepared 400-item English-Uzbek retrieval evaluation benchmark. The public branch currently includes only a preview sample without gold_answer fields while full release clearance is pending.",
+  "languages": [
+    "en",
+    "uz"
+  ],
+  "task": "RAG retrieval evaluation",
+  "data_files": {
+    "preview": "manual_eval_v5_sample.jsonl"
+  },
+  "recommended_split": "preview",
+  "features": {
+    "id": "string",
+    "language": "string",
+    "domain": "string",
+    "question": "string",
+    "source_doc_ids": "list[string]",
+    "answerable": "boolean",
+    "cultural_specificity": "string",
+    "source_title": "string|null",
+    "difficulty": "string",
+    "quality_flag": "string|null"
+  },
+  "size": {
+    "preview_rows": 30,
+    "prepared_full_benchmark_rows": 400
+  },
+  "planned_full_release": {
+    "status": "pending_license_source_clearance",
+    "withheld_file": "manual_eval_v5.jsonl",
+    "planned_rows": 400,
+    "planned_additional_field": "gold_answer"
+  },
+  "results_summary": {
+    "english_baseline_recall": "63%",
+    "uzbek_baseline_recall": "39%",
+    "uzbek_after_corpus_supplementation_recall": "98%",
+    "english_supplementation_status": "retracted_due_to_synthetic_leakage"
+  },
+  "limitations": [
+    "Retrieval-side benchmark only; not a full generated-answer quality benchmark.",
+    "Full raw corpora, indexes, and HPC run artifacts are not included in this release folder.",
+    "Covers English and Uzbek only.",
+    "English supplementation results are retracted and should not be cited."
+  ],
+  "license": "TODO: Confirm final dataset license before upload.",
+  "citation": "TODO: Add exact citation after the technical report or dataset release is finalized.",
+  "source_repository": "https://github.com/rajantripathi/soas-rag-evaluation"
+}
