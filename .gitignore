@@ -33,3 +33,33 @@ logs/*
 
 ._*
 _archive/
+
+# Publication safety: local credentials, databases, raw artifacts, and full run outputs
+.env
+.env.*
+*.sqlite
+*.db
+*.faiss
+*.parquet
+*.csv
+*.tsv
+*.jsonl
+!hf_dataset/*.jsonl
+data/*
+results/*
+research_outputs/policy_brief_submission/
+!README.md
+!.gitkeep
+!data/eval/
+!data/raw/
+!data/raw/.gitkeep
+!data/processed/
+!data/processed/.gitkeep
+!data/indexes/
+!data/indexes/.gitkeep
+!docs/**/*.csv
+!research_outputs/**/*.csv
+!results/gold_answer_quality_flags.json
+!results/logs/
+!results/reports/
+!results/reports/**

@@ -429,6 +429,6 @@ Rationale:
 
 - `manual_eval_v5.jsonl` contains exactly 400 rows and preserves all v4 content
 - every row has `source_title`, `difficulty`, and `quality_flag`
-- the validation report proves language and domain balance
+- the validation report shows language and domain balance
 - the sample file contains exactly 30 rows with full-cell coverage
 - the dataset card documents the new schema, limitations, exclusions, and examples clearly enough for external review
