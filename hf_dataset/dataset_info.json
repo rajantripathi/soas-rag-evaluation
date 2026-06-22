@@ -5,6 +5,11 @@
   "release_status": "retrieval_only_candidate_full_qa_pending_license_source_clearance",
   "title": "When Corpus Coverage Matters More Than Model Choice: An English-Uzbek Low-Resource RAG Evaluation Dataset",
   "version": "manual_eval_v5",
+  "dataset_type": "retrieval-only",
+  "public_candidate_file": "hf_dataset/manual_eval_v5_retrieval_only.jsonl",
+  "sample_file": "hf_dataset/manual_eval_v5_sample.jsonl",
+  "provenance_status": "pending manual confirmation",
+  "full_qa_release_status": "pending licence and source-clearance review",
   "description": "Auxiliary draft metadata for a 400-row English-Uzbek retrieval-only evaluation candidate. The public candidate excludes gold_answer, reference_answer, answer, context, excerpt, and source-text fields while full QA release clearance is pending.",
   "languages": [
     "en",
@@ -43,16 +48,52 @@
     "prepared_internal_full_qa_rows": 400
   },
   "release_candidate": {
-    "file": "manual_eval_v5_retrieval_only.jsonl",
+    "file": "hf_dataset/manual_eval_v5_retrieval_only.jsonl",
     "rows": 400,
-    "scope": "retrieval_only_source_document_matching"
+    "scope": "retrieval_only_source_document_matching",
+    "supports": [
+      "retrieval recall",
+      "source-document matching using source_doc_ids"
+    ],
+    "does_not_support": [
+      "answer correctness",
+      "faithfulness",
+      "reference-answer metrics"
+    ]
   },
   "planned_full_qa_release": {
-    "status": "pending_license_source_clearance",
+    "status": "pending licence and source-clearance review",
     "withheld_internal_file": "data/eval/manual_eval_v5.jsonl",
     "planned_rows": 400,
     "planned_additional_field": "gold_answer",
     "note": "Answer/reference fields are excluded from the public candidate until source-derived text is manually cleared."
+  },
+  "source_title_status": {
+    "unique_non_null_source_titles": 163,
+    "null_source_title_rows": 74,
+    "ambiguous_examples": [
+      "-1",
+      "1477",
+      "1917",
+      "1972",
+      "Din",
+      "Bosh Sahifa"
+    ],
+    "review_note": "source_title is retrieval metadata, not source text, but final provenance review is still needed before Hugging Face upload."
+  },
+  "provenance_review": {
+    "status": "pending manual confirmation",
+    "known_upstream_source_families_to_confirm": [
+      "MIRACL / MIRACL corpus",
+      "TyDi QA, if present in the released rows",
+      "Uzbek Wikipedia-derived sources such as yakhyo/uz-wiki, if present in the released rows",
+      "targeted and structured Uzbek enrichment corpus material used in this repository"
+    ],
+    "notes": [
+      "The public candidate contains questions and source metadata only.",
+      "The public candidate does not contain source text, excerpts, contexts, answers, or reference answers.",
+      "Per-record upstream provenance should be documented before upload."
+    ]
   },
   "results_summary": {
     "english_baseline_recall": "63%",
@@ -67,7 +108,18 @@
     "Covers English and Uzbek only.",
     "English supplementation results are retracted and should not be cited."
   ],
-  "license": "TODO: Confirm final dataset license before upload.",
+  "license": "TODO: Confirm final dataset-content licence before upload; repository software licence may differ.",
+  "licence": "TODO: Confirm final dataset-content licence before upload; repository software licence may differ.",
+  "license_review": {
+    "status": "TODO",
+    "conservative_options_to_review": [
+      "CC BY-SA 4.0 if Uzbek Wikipedia-derived metadata is confirmed in the released dataset",
+      "mixed-provenance dataset notes if upstream sources carry different attribution or redistribution terms",
+      "more permissive dataset-content licence only after confirming compatibility of retained questions and source metadata"
+    ],
+    "not_legal_advice": true
+  },
   "citation": "TODO: Add exact citation after the technical report or dataset release is finalized.",
+  "upstream_attribution": "TODO: Add upstream-source attribution notes after provenance confirmation.",
   "source_repository": "https://github.com/rajantripathi/soas-rag-evaluation"
 }

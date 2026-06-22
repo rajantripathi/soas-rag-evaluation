@@ -24,6 +24,12 @@ The full QA version remains pending license and source-clearance review. `gold_a
 
 The benchmark is designed to test whether a RAG pipeline retrieves the relevant supporting source document. In this benchmark setting, targeted Uzbek source curation produced an observed improvement in Uzbek retrieval recall from 39% to 98% without changing the underlying model. The result should be interpreted as evidence from this evaluation set, not as evidence for all low-resource RAG systems.
 
+## Retrieval-Only Release Scope
+
+This is a retrieval-only dataset release candidate. It supports retrieval recall and source-document matching by comparing retrieved document IDs against `source_doc_ids`.
+
+It does not include answer text, reference-answer text, source text, retrieved contexts, or excerpts. This version therefore does not support answer correctness, faithfulness, or reference-answer metrics. The full QA version remains pending licence and source-clearance review.
+
 ## Languages
 
 - English (`en`)
@@ -133,16 +139,30 @@ The full QA release may include answer/reference fields after clearance. This re
 
 No `split` field is present in the data rows. For Hugging Face loading, treat `manual_eval_v5_retrieval_only.jsonl` as the main split and `manual_eval_v5_sample.jsonl` as a preview split.
 
-## Data Sources
+## Upstream Provenance
 
-The repository documents source staging from:
+The source repository documents or references the following upstream source families that need final per-source confirmation before upload:
 
-- MIRACL English raw corpus material.
-- TyDi QA primary task material.
-- Uzbek Wikipedia material through `yakhyo/uz-wiki`.
-- Targeted and structured Uzbek source enrichment used for the validated supplementation experiment.
+- MIRACL / MIRACL corpus material.
+- TyDi QA material, if it is present in the released rows.
+- Uzbek Wikipedia-derived material, including `yakhyo/uz-wiki`, if it is present in the released rows.
+- Targeted and structured Uzbek enrichment corpus material used in this repository.
 
 The public retrieval-only files contain evaluation questions and source identifiers. They do not include reference answers, source text, the full raw corpora, processed indexes, or complete HPC run outputs.
+
+TODO: Confirm per-record upstream provenance before Hugging Face upload.
+
+TODO: Confirm whether TyDi QA-derived material is present in the public retrieval-only rows.
+
+TODO: Confirm whether Uzbek Wikipedia-derived metadata is present and whether share-alike dataset-content terms are required.
+
+## Attribution and Source Notes
+
+Users should cite this dataset and respect the terms of the upstream sources used to construct or enrich the benchmark. The source repository software licence and the dataset-content licence may differ.
+
+`source_doc_ids` and `source_title` are retrieval target metadata. They are not source text. They still need provenance review because they may identify upstream source documents.
+
+The retrieval-only candidate has 200 unique source document IDs and 163 unique non-null source titles. `source_title` is unresolved for 74 rows. Some resolved titles are short or ambiguous, for example `-1`, `1477`, `1917`, `1972`, `Din`, and `Bosh Sahifa`. These values are retained for retrieval traceability but should be reviewed before final publication.
 
 ## Evaluation Methodology
 
@@ -180,7 +200,7 @@ Careful interpretation:
 
 ## Release Risk Review
 
-TODO: Confirm dataset-license compatibility before upload. The retrieval-only candidate excludes source-derived reference answers, but the source corpora and source-document identifiers still need release review.
+TODO: Confirm dataset-content licence compatibility before upload. The retrieval-only candidate excludes source-derived reference answers, but the source corpora, source-document identifiers, and source titles still need release review.
 
 TODO: Review long `gold_answer` values before any future full QA Hugging Face upload. The prepared internal full QA dataset includes some extended source-derived excerpts rather than short answer spans.
 
@@ -196,21 +216,32 @@ No obvious personal private data, credentials, or local filesystem paths were ad
 - It does not support answer correctness, faithfulness, or reference-answer metrics by itself.
 - The full QA JSONL with answer/reference fields is not included pending source-clearance review.
 - Full raw corpora, processed indexes, and HPC execution artifacts are not included in this release folder.
-- `source_title` resolution is incomplete for some English items.
+- `source_title` resolution is incomplete for 74 rows.
+- Some `source_title` values are ambiguous and need final provenance review.
 - Difficulty labels are deterministic heuristics, not human difficulty judgments.
 - English supplementation was retracted due to data leakage; English performance should be reported only at the valid baseline.
 - Cross-lingual retrieval was not evaluated.
 - Human evaluation and LLM-as-judge evaluation are not completed.
 
-## Licensing
+## Dataset Content Licence
 
-TODO: Add final dataset license before upload. The source repository currently includes an MIT software license, but the dataset release license should be confirmed separately because source materials may carry their own terms.
+TODO: Add final dataset-content licence before upload. The source repository currently includes an MIT software licence for repository code, but the dataset-content licence should be confirmed separately because source materials may carry their own terms.
+
+Recommended conservative directions to review:
+
+- Use a share-alike dataset-content licence such as CC BY-SA 4.0 if Uzbek Wikipedia-derived metadata is confirmed in the released dataset.
+- Document mixed provenance if the public candidate combines sources with different attribution or redistribution terms.
+- Use a more permissive dataset-content licence only if the retained questions and source metadata are confirmed to be compatible with that choice.
+
+Do not treat this draft dataset card as legal advice or final clearance.
 
 ## Citation
 
 TODO: Add exact citation after the technical report or dataset release is finalized.
 
 Starter repository citation metadata is available in `CITATION.cff` in the source repository.
+
+TODO: Add upstream-source attribution notes after provenance confirmation.
 
 ## Contact and Maintainers
 
