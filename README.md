@@ -1,5 +1,18 @@
 # SOAS RAG Evaluation — Bilingual Benchmark (English + Uzbek)
 
+<!-- badges-start -->
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![Python](https://img.shields.io/badge/python-3.10-blue.svg)
+![Last Commit](https://img.shields.io/github/last-commit/rajantripathi/soas-rag-evaluation)
+![Stars](https://img.shields.io/github/stars/rajantripathi/soas-rag-evaluation?style=social)
+![Issues](https://img.shields.io/github/issues/rajantripathi/soas-rag-evaluation)
+![Code Style: ruff](https://img.shields.io/badge/code%20style-ruff-261230.svg)
+![rag](https://img.shields.io/badge/rag-informational.svg)
+![uzbek](https://img.shields.io/badge/uzbek-informational.svg)
+![benchmark](https://img.shields.io/badge/benchmark-informational.svg)
+<!-- badges-end -->
+
+
 > **Headline result:** Uzbek retrieval recall improved from **39% → 98%** via Wikipedia corpus supplementation. Cohen's *d* = **2.91**. Effect size **7.9x larger** than model-swap optimisation on the same task.
 
 ## TL;DR
