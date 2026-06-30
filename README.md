@@ -81,7 +81,7 @@ python scripts/generate_research_outputs.py
 
 ## Citation
 
-Affiliations: (1) AI² Lab, School of Digital Technologies, American University in Tashkent; (2) Bikal Technologies Ltd, Coventry, UK; (3) Centre for AI Futures, SOAS University of London.
+Affiliations: (1) AI² Lab, School of Digital Technologies, American University of Technology, Uzbekistan; (2) Bikal Technologies Ltd, Coventry, UK; (3) Centre for AI Futures, SOAS University of London.
 Contact: rajantripathi22@gmail.com
 
 ## Benchmark Design
