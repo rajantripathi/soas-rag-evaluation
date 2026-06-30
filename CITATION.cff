@@ -1,13 +1,18 @@
 cff-version: 1.2.0
-message: "If you use this benchmark or repository, please cite it using the metadata below."
-title: "Culturally Grounded Multilingual RAG Evaluation"
-type: software
+message: "If you use this benchmark, dataset, or repository, please cite it using the metadata below."
+title: "SOAS English-Uzbek RAG Evaluation (Retrieval-Only)"
+type: dataset
 authors:
   - family-names: "Tripathi"
-    given-names: "Rajan"
+    given-names: "Rajan Prasad"
+doi: "10.5281/zenodo.21067667"
+url: "https://doi.org/10.5281/zenodo.21067667"
+version: "manual_eval_v5"
+date-released: "2026-06-30"
 repository-code: "https://github.com/rajantripathi/soas-rag-evaluation"
+repository-artifact: "https://zenodo.org/records/21067667"
 abstract: "A reproducible bilingual English-Uzbek retrieval benchmark and experiment suite for culturally grounded multilingual RAG evaluation."
-license: "MIT"
+license: "CC-BY-4.0"
 keywords:
   - multilingual retrieval
   - retrieval augmented generation

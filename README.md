@@ -2,6 +2,7 @@
 
 <!-- badges-start -->
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21067667.svg)](https://doi.org/10.5281/zenodo.21067667)
 ![Python](https://img.shields.io/badge/python-3.10-blue.svg)
 ![Last Commit](https://img.shields.io/github/last-commit/rajantripathi/soas-rag-evaluation)
 ![Stars](https://img.shields.io/github/stars/rajantripathi/soas-rag-evaluation?style=social)
@@ -26,6 +27,8 @@ print(ds)
 ```
 
 License: CC-BY-4.0.
+
+Dataset DOI: [10.5281/zenodo.21067667](https://doi.org/10.5281/zenodo.21067667).
 
 > **Headline result:** Uzbek retrieval recall improved from **39% → 98%** via Wikipedia corpus supplementation. Cohen's *d* = **2.91**. Effect size **7.9x larger** than model-swap optimisation on the same task.
 
@@ -80,6 +83,20 @@ python scripts/generate_research_outputs.py
 ```
 
 ## Citation
+
+Dataset DOI: [10.5281/zenodo.21067667](https://doi.org/10.5281/zenodo.21067667)
+
+```bibtex
+@dataset{tripathi_2026_soas_en_uz_rag,
+  author       = {Tripathi, Rajan Prasad},
+  title        = {SOAS English-Uzbek RAG Evaluation (Retrieval-Only)},
+  year         = {2026},
+  publisher    = {Zenodo},
+  version      = {manual_eval_v5},
+  doi          = {10.5281/zenodo.21067667},
+  url          = {https://doi.org/10.5281/zenodo.21067667}
+}
+```
 
 Affiliations: (1) AI² Lab, School of Digital Technologies, American University of Technology, Uzbekistan; (2) Bikal Technologies Ltd, Coventry, UK; (3) Centre for AI Futures, SOAS University of London.
 Contact: rajantripathi22@gmail.com

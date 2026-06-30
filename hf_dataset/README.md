@@ -10,8 +10,8 @@ tags:
   - multilingual
   - low-resource
   - uzbek
-license: other
-pretty_name: When Corpus Coverage Matters More Than Model Choice
+license: cc-by-4.0
+pretty_name: SOAS English-Uzbek RAG Evaluation (Retrieval-Only)
 ---
 
 # When Corpus Coverage Matters More Than Model Choice: An English-Uzbek Low-Resource RAG Evaluation Dataset
@@ -204,24 +204,29 @@ No obvious personal private data, credentials, or local filesystem paths were ad
 
 ## Licensing
 
-TODO: Add final dataset license before upload. The source repository currently includes an MIT software license, but the dataset release license should be confirmed separately because source materials may carry their own terms.
+CC-BY-4.0 (dataset), MIT (code).
+
+Dataset DOI: [10.5281/zenodo.21067667](https://doi.org/10.5281/zenodo.21067667)
 
 ## Citation
 
-TODO: Add exact citation after the technical report or dataset release is finalized.
-
-Starter repository citation metadata is available in `CITATION.cff` in the source repository.
+```bibtex
+@dataset{tripathi_2026_soas_en_uz_rag,
+  author       = {Tripathi, Rajan Prasad},
+  title        = {SOAS English-Uzbek RAG Evaluation (Retrieval-Only)},
+  year         = {2026},
+  publisher    = {Zenodo},
+  version      = {manual_eval_v5},
+  doi          = {10.5281/zenodo.21067667},
+  url          = {https://doi.org/10.5281/zenodo.21067667}
+}
+```
 
 ## Contact and Maintainers
 
-TODO: Add final Hugging Face dataset URL after upload.
-TODO: Confirm final dataset repository ID before upload.
-
 Maintainer: Rajan Prasad Tripathi.
 
-Affiliations:
+Affiliations: AUT AI² Lab, School of Digital Technologies, American University of Technology, Uzbekistan; Centre for AI Futures, SOAS University of London.
 
-- SOAS University of London
-- American University of Technology, Uzbekistan
-
+Hugging Face dataset: `https://huggingface.co/datasets/Rajan2026/soas-english-uzbek-rag-evaluation`
 Source repository: `https://github.com/rajantripathi/soas-rag-evaluation`
