@@ -12,6 +12,20 @@
 ![benchmark](https://img.shields.io/badge/benchmark-informational.svg)
 <!-- badges-end -->
 
+## Hugging Face Dataset
+
+The 400-row bilingual evaluation set is available on Hugging Face:
+
+[![HF Dataset](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Dataset-blue)](https://huggingface.co/datasets/Rajan2026/soas-english-uzbek-rag-evaluation)
+
+```python
+from datasets import load_dataset
+
+ds = load_dataset("Rajan2026/soas-english-uzbek-rag-evaluation")
+print(ds)
+```
+
+License: CC-BY-4.0.
 
 > **Headline result:** Uzbek retrieval recall improved from **39% → 98%** via Wikipedia corpus supplementation. Cohen's *d* = **2.91**. Effect size **7.9x larger** than model-swap optimisation on the same task.
 
