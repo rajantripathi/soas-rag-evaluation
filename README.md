@@ -45,7 +45,7 @@ Dataset DOI: [10.5281/zenodo.21067667](https://doi.org/10.5281/zenodo.21067667).
 
 - Bilingual evaluation harness (English + Uzbek) for RAG retrieval quality
 - Reproducible methodology with corpus supplementation pipeline
-- Gold answer set with quality audit
+- Internal full-QA evaluation assets and quality-audit notes
 - Scripts to compute Recall@k, MRR, and effect size statistics
 
 ## Technical Architecture
@@ -113,12 +113,15 @@ Contact: rajantripathi22@gmail.com
 - `manual_eval_v4`: Uzbek supplement v2, 400 items
 - `manual_eval_v5`: Enriched schema with difficulty, quality_flag, source_title (400 items)
 
-### Core Schema (v5)
+### Internal Core Schema (v5)
+
+The internal evaluation schema includes reference-answer fields for QA analysis. The public Hugging Face dataset is retrieval-only and intentionally excludes answer text to reduce leakage and source-clearance risk.
+
 - `id`: Unique identifier
 - `language`: "en" or "uz"
 - `domain`: "governance", "history", "institutions", "culture"
 - `question`: Culturally grounded question
-- `gold_answer`: Reference answer
+- `gold_answer`: Internal reference answer, excluded from the public retrieval-only Hugging Face dataset
 - `source_doc_ids`: Wikipedia article IDs for gold sources
 - `answerable`: Boolean flag
 - `cultural_specificity`: "unknown", "low", "medium", "high"
