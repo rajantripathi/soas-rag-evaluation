@@ -12,7 +12,6 @@ REQUIRED_FIELDS = {
     "language",
     "domain",
     "question",
-    "gold_answer",
     "source_doc_ids",
     "answerable",
     "cultural_specificity",
@@ -54,11 +53,10 @@ def validate_rows(rows: list[dict[str, Any]]) -> None:
 
 
 def to_ragas_preview(row: dict[str, Any]) -> dict[str, Any]:
-    """Return a RAGAS-style record shape without claiming metrics are runnable yet."""
+    """Return a retrieval-only adapter preview without claiming answer metrics are runnable."""
 
     return {
         "user_input": row["question"],
-        "reference": row["gold_answer"],
         "retrieved_contexts": [],
         "response": "",
         "metadata": {
@@ -76,12 +74,13 @@ def to_ragas_preview(row: dict[str, Any]) -> dict[str, Any]:
 def main() -> None:
     parser = argparse.ArgumentParser(
         description=(
-            "Validate SOAS English-Uzbek evaluation rows and preview a RAGAS-style "
-            "adapter shape. This does not run RAGAS metrics because retrieved contexts "
-            "and generated answers are pipeline outputs, not dataset fields."
+            "Validate SOAS English-Uzbek retrieval-only rows and preview an adapter "
+            "shape for downstream RAGAS examples. This does not run answer metrics "
+            "because references, retrieved contexts, and generated answers are not "
+            "public dataset fields."
         )
     )
-    parser.add_argument("--input", default="data/eval/sample/manual_eval_v5_sample.jsonl")
+    parser.add_argument("--input", default="hf_dataset/manual_eval_v5_sample.jsonl")
     parser.add_argument("--limit", type=int, default=3)
     args = parser.parse_args()
 

@@ -30,6 +30,22 @@ License: CC-BY-4.0.
 
 Dataset DOI: [10.5281/zenodo.21067667](https://doi.org/10.5281/zenodo.21067667).
 
+## Reuse Path for Builders
+
+- [Industry brief](docs/industry_brief.md): concise engineering framing for AI teams evaluating multilingual RAG.
+- [Retrieval-only dataset card](hf_dataset/README.md): public schema, intended uses, limitations, and citation.
+- [Recall@k evaluator](scripts/compute_retrieval_recall.py): minimal scorer for retrieved document IDs against `source_doc_ids`.
+- [LinkedIn visibility drafts](docs/linkedin_visibility_posts.md): four grounded posts for industry-facing dissemination.
+- External OSS trail: [RAGAS PR #2795](https://github.com/vibrantlabsai/ragas/pull/2795) and [LangChain issue #38572](https://github.com/langchain-ai/langchain/issues/38572).
+
+Evaluator smoke check:
+
+```bash
+python scripts/compute_retrieval_recall.py --oracle-check --k 5
+```
+
+The smoke check validates scorer wiring by using `source_doc_ids` as retrieved IDs. It is not a model result.
+
 > **Headline result:** Uzbek retrieval recall improved from **39% → 98%** via Wikipedia corpus supplementation. Cohen's *d* = **2.91**. Effect size **7.9x larger** than model-swap optimisation on the same task.
 
 ## TL;DR
@@ -171,8 +187,8 @@ The internal evaluation schema includes reference-answer fields for QA analysis.
 ## Repository Structure
 - `assets/`: lightweight visual assets such as the pipeline overview diagram
 - `configs/`: YAML experiment configurations
-- `data/eval/sample/`: public sample of the bilingual evaluation data
 - `docs/`: benchmark, methodology, results, and limitations documentation
+- `hf_dataset/`: public retrieval-only Hugging Face dataset card and JSONL files
 - `prompts/`: prompt templates
 - `research_outputs/`: summary tables, figures, concept note, and workshop paper
 - `results/reports/`: synthesis reports retained in-repo

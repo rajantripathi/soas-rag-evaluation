@@ -1,27 +1,26 @@
 # Example Usage for RAGAS Contribution
 
-This example shows how the checked-in English-Uzbek evaluation rows can be adapted for RAGAS-style evaluation without changing the repository schema.
+This example shows how the public English-Uzbek retrieval-only rows can be adapted for RAGAS-style retrieval workflows without changing the dataset schema.
 
 ## Local Data
 
-Use the public sample first:
+Use the public retrieval-only sample first:
 
 ```bash
-python ragas_contribution/minimal_example.py --input data/eval/sample/manual_eval_v5_sample.jsonl --limit 5
+python ragas_contribution/minimal_example.py --input hf_dataset/manual_eval_v5_sample.jsonl --limit 5
 ```
 
-Use the full checked-in evaluation set for inspection:
+Use the full retrieval-only candidate for inspection:
 
 ```bash
-python ragas_contribution/minimal_example.py --input data/eval/manual_eval_v5.jsonl --limit 5
+python ragas_contribution/minimal_example.py --input hf_dataset/manual_eval_v5_retrieval_only.jsonl --limit 5
 ```
 
-The script validates required fields and prints preview records with the shape:
+The script validates required retrieval-only fields and prints preview records with the shape:
 
 ```json
 {
   "user_input": "question text",
-  "reference": "gold answer text",
   "retrieved_contexts": [],
   "response": "",
   "metadata": {
@@ -41,37 +40,36 @@ The script validates required fields and prints preview records with the shape:
 | Repository field | RAGAS-style use |
 | --- | --- |
 | `question` | `user_input` |
-| `gold_answer` | `reference` |
-| retrieved passage text from a RAG system | `retrieved_contexts` |
-| generated answer from a RAG system | `response` |
 | `source_doc_ids` | retrieval target in metadata |
 | `language`, `domain`, `difficulty`, `quality_flag` | analysis slices in metadata |
+| retrieved passage text from a RAG system | `retrieved_contexts`, supplied externally |
+| generated answer from a RAG system | `response`, supplied externally |
 
-The committed dataset contains questions, references, and source identifiers. It does not contain retrieved contexts or generated answers for arbitrary user systems. Those fields must be supplied by the user's RAG pipeline before running context or answer metrics.
+The public Hugging Face dataset contains questions and source identifiers. It does not contain reference answers, retrieved contexts, source text, or generated answers. Those fields must be supplied by a user's RAG pipeline or a separately cleared QA release before running context or answer metrics.
 
 ## Suggested Evaluation Flow
 
-1. Load `manual_eval_v5.jsonl`.
+1. Load `hf_dataset/manual_eval_v5_retrieval_only.jsonl` or the Hugging Face dataset.
 2. Run each `question` through a RAG pipeline.
-3. Store retrieved contexts and document IDs.
+3. Store retrieved document IDs as `retrieved_doc_ids`.
 4. Compute retrieval recall by checking whether any retrieved document ID matches `source_doc_ids`.
-5. Pass `user_input`, `retrieved_contexts`, `response`, and `reference` to RAGAS metrics that match the available evidence.
-6. Report results by language and domain.
+5. Add retrieved contexts, responses, and references only if they are available from the user's pipeline or a cleared QA release.
+6. Report retrieval-side results by language and domain.
 
 ## Metrics Fit
 
-Appropriate when retrieved contexts and answers are available:
+Appropriate when retrieved contexts, answers, and references are supplied externally:
 
 - context relevance or context precision-style checks
 - faithfulness checks against retrieved contexts
-- answer correctness or semantic similarity checks against `gold_answer`
+- answer correctness or semantic similarity checks against separately cleared references
 
 Appropriate from repository fields alone:
 
 - schema validation
 - language/domain slicing
 - retrieval-target preparation
-- source coverage analysis through `source_doc_ids`
+- retrieval recall and source coverage analysis through `source_doc_ids`
 
 Not supported by repository fields alone:
 
@@ -93,8 +91,10 @@ Avoid wording:
 - Proof-style claims about all low-resource RAG settings.
 - Claims about best-in-class answer generation.
 
-## TODOs
+## Current External Trail
 
-TODO: Add final Hugging Face dataset URL after upload.
-TODO: Add exact RAGAS PR path after maintainer guidance.
-TODO: Add an end-to-end RAGAS metric example only after retrieved contexts and generated answers are included.
+- Hugging Face dataset: https://huggingface.co/datasets/Rajan2026/soas-english-uzbek-rag-evaluation
+- RAGAS PR: https://github.com/vibrantlabsai/ragas/pull/2795
+- LangChain issue: https://github.com/langchain-ai/langchain/issues/38572
+
+TODO: Add an end-to-end RAGAS metric example only after retrieved contexts, generated answers, and references are available from a user pipeline or a separately cleared QA release.

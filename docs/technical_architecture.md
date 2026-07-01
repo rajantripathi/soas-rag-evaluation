@@ -13,7 +13,7 @@ The validated result is that targeted Uzbek corpus supplementation improved retr
 | Component | Location | Responsibility |
 | --- | --- | --- |
 | Dataset and corpus builders | `scripts/fetch_datasets.py`, `scripts/build_corpus.py`, supplement builders | Stage raw datasets, normalize documents, and build corpus JSONL files |
-| Evaluation data | `data/eval/sample/`, full cluster artifacts | Store bilingual question-answer examples with source document IDs |
+| Evaluation data | `data/eval/`, `hf_dataset/`, full cluster artifacts | Store internal QA examples and public retrieval-only question/source-target rows |
 | Retrieval backends | `src/retrieval.py` | Implement TF-IDF-style vector retrieval, BM25, embedding retrieval, and hybrid retrieval |
 | Evaluation runner | `src/orchestration.py`, `scripts/run_eval.py` | Run retrieval, generation stub, scoring, and metric aggregation |
 | Metrics | `src/evaluation.py`, `scripts/compute_statistics.py` | Compute Recall@k, grounding heuristics, hallucination heuristics, CIs, and effect sizes |
@@ -52,6 +52,8 @@ The validated result is that targeted Uzbek corpus supplementation improved retr
 ```
 
 The v5 benchmark enrichment adds `source_title`, `difficulty`, and `quality_flag` fields so quality issues remain auditable instead of being silently removed.
+
+The public Hugging Face release uses a retrieval-only subset of this schema. It keeps `question`, `source_doc_ids`, and audit fields, but excludes `gold_answer`, retrieved contexts, source text, excerpts, and generated answers.
 
 ## Retrieval Architecture
 
@@ -113,7 +115,7 @@ The strongest validated result is the Uzbek supplement v2 improvement:
 | Git commit logging | Evaluation logs include the current Git commit |
 | Timestamped run directories | Outputs are written under timestamped `results/eval_*` directories |
 | Fixed configs | Experiment settings live in `configs/` |
-| Small public sample | `data/eval/sample/` preserves a shareable benchmark sample |
+| Small public sample | `hf_dataset/manual_eval_v5_sample.jsonl` preserves a shareable retrieval-only benchmark sample |
 | Large artifact exclusion | Raw corpora, processed corpora, indexes, and full run directories remain outside Git |
 
 ## Known Technical Boundaries
