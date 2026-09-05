@@ -28,10 +28,10 @@
 
 | quality_flag | count |
 | --- | --- |
-| domain_misclassification | 12 |
+| domain_misclassification | 16 |
 | question_quality | 4 |
 | gold_answer_quality | 0 |
-| clean | 384 |
+| clean | 380 |
 
 ## Source Title Resolution
 

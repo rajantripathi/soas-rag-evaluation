@@ -37,6 +37,8 @@ VALID_QUALITY_FLAGS = {
 
 # Derived from the Stage 1 audit outputs.
 SEED_QUALITY_FLAGS = {
+    "en_20": "domain_misclassification",
+    "en_62": "domain_misclassification",
     "uz_82": "domain_misclassification",
     "uz_83": "domain_misclassification",
     "uz_78": "domain_misclassification",
@@ -425,14 +427,10 @@ def dataset_card_overview() -> str:
     )
 
 
-def write_dataset_card(path: Path, rows: list[dict[str, Any]], sample_rows: list[dict[str, Any]], stats: dict[str, Any]) -> None:
+def write_dataset_card(path: Path, rows: list[dict[str, Any]], stats: dict[str, Any]) -> None:
     difficulty_counts = Counter(row["difficulty"] for row in rows)
     quality_counts = Counter(row["quality_flag"] for row in rows)
     total_resolved = sum(stats["resolution_counts"][language]["resolved"] for language in LANGUAGES)
-
-    examples_en = [row for row in sample_rows if row["language"] == "en"][:2]
-    examples_uz = [row for row in sample_rows if row["language"] == "uz"][:2]
-    example_rows = examples_en + examples_uz
 
     schema_rows = [
         ["id", "str", "Stable item identifier."],
@@ -449,7 +447,7 @@ def write_dataset_card(path: Path, rows: list[dict[str, Any]], sample_rows: list
     ]
 
     with path.open("w", encoding="utf-8") as handle:
-        handle.write("# Dataset Card: manual_eval_v5\n\n")
+        handle.write("# Internal QA Schema Note: manual_eval_v5\n\n")
         handle.write("## Overview\n\n")
         handle.write(dataset_card_overview() + "\n\n")
         handle.write("## Languages\n\n")
@@ -519,12 +517,12 @@ def write_dataset_card(path: Path, rows: list[dict[str, Any]], sample_rows: list
         handle.write("- The difficulty heuristic is coarse and should not be treated as a human judgment label.\n")
         handle.write("- Source title coverage depends on the supplied corpus and may be incomplete.\n")
         handle.write("- Retrieval and answer-quality evaluation remain separable concerns when stub generation is used.\n\n")
-        handle.write("## Example Entries\n\n")
-        for row in example_rows:
-            handle.write(f"### {row['id']}\n\n")
-            handle.write("```json\n")
-            handle.write(json.dumps(row, ensure_ascii=False, indent=2))
-            handle.write("\n```\n\n")
+        handle.write("## Publication Boundary\n\n")
+        handle.write(
+            "This document describes an internal schema only. The full QA rows and answer-bearing sample are "
+            "excluded from the public branch pending source and license clearance. Use `hf_dataset/README.md` "
+            "and the retrieval-only JSONL files for the public release.\n"
+        )
 
 
 def print_resolution_summary(stats: dict[str, dict[str, int]]) -> None:
@@ -613,7 +611,7 @@ def main() -> int:
     write_jsonl(output_path, enriched_rows)
     write_jsonl(sample_path, sample_rows)
     write_validation_report(validation_path, stats)
-    write_dataset_card(dataset_card_path, enriched_rows, sample_rows, stats)
+    write_dataset_card(dataset_card_path, enriched_rows, stats)
 
     print_final_summary(stats, output_path)
     return 0

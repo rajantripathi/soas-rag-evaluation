@@ -20,11 +20,12 @@ soas_rag_eval.egg-info/
 data/raw/
 data/processed/
 data/indexes/
-data/eval/*.jsonl
+# Internal QA rows and samples contain reference-answer text. Keep them local
+# until source and license clearance is complete.
+data/eval/**/*.jsonl
 !data/eval/.gitkeep
-!data/eval/sample/
-!data/eval/sample/*.jsonl
 results/eval_*/
+results/gold_answer_quality_flags.json
 results/logs/*
 !results/logs/.gitkeep
 logs/*
@@ -59,7 +60,6 @@ research_outputs/policy_brief_submission/
 !data/indexes/.gitkeep
 !docs/**/*.csv
 !research_outputs/**/*.csv
-!results/gold_answer_quality_flags.json
 !results/logs/
 !results/reports/
 !results/reports/**

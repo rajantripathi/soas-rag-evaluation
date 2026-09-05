@@ -30,6 +30,8 @@ License: CC-BY-4.0.
 
 Dataset DOI: [10.5281/zenodo.21067667](https://doi.org/10.5281/zenodo.21067667).
 
+> **Pilot benchmark:** The 400 rows are published for transparent retrieval research, but they are not all equally clean. Template-generated questions and domain mismatches are documented through `quality_flag` metadata and the [dataset quality audit](research_outputs/dataset_quality_audit_20260309.md). Treat flagged rows as diagnostic cases, and do not use this release as a polished general-purpose QA benchmark. The current flags are known to be incomplete and will be expanded in a later cleaned release.
+
 ## Reuse Path for Builders
 
 - [Industry brief](docs/industry_brief.md): concise engineering framing for AI teams evaluating multilingual RAG.
@@ -52,7 +54,7 @@ The smoke check validates scorer wiring by using `source_doc_ids` as retrieved I
 
 | Metric | English | Uzbek (before) | Uzbek (after corpus supplementation) |
 |---|---|---|---|
-| Retrieval Recall | ~92% | 39% | **98%** |
+| Retrieval Recall | 63% | 39% | **98%** |
 | Effect Size (Cohen's d) | — | baseline | **2.91** |
 
 **Why this matters:** For low-resource languages, corpus engineering dominates model selection. We measured a 7.9x larger effect from corpus supplementation than from changing the underlying embedding/LLM model.
@@ -61,7 +63,7 @@ The smoke check validates scorer wiring by using `source_doc_ids` as retrieved I
 
 - Bilingual evaluation harness (English + Uzbek) for RAG retrieval quality
 - Reproducible methodology with corpus supplementation pipeline
-- Internal full-QA evaluation assets and quality-audit notes
+- Public retrieval-only benchmark files and quality-audit notes
 - Scripts to compute Recall@k, MRR, and effect size statistics
 
 ## Technical Architecture
@@ -197,6 +199,7 @@ The internal evaluation schema includes reference-answer fields for QA analysis.
 - `src/`: retrieval, evaluation, orchestration, and dataset modules
 
 Large HPC artifacts such as raw datasets, processed corpora, indexes, and full experiment run directories are intentionally excluded from version control.
+The internal full-QA datasets and answer-bearing prediction files are also excluded pending source and license clearance.
 
 ## Quickstart
 Environment bootstrap on Isambard:
@@ -230,7 +233,7 @@ python scripts/generate_research_outputs.py
 ### Synthesis and Analysis Reports
 - **Updated synthesis:** [results/reports/project_synthesis_v2.md](results/reports/project_synthesis_v2.md) - Comprehensive results with corrected English status
 - **Original synthesis:** [results/reports/project_synthesis_20260309.md](results/reports/project_synthesis_20260309.md) - Original validated results
-- **Error analysis:** [results/reports/manual_eval_v2_error_analysis_20260308.md](results/reports/manual_eval_v2_error_analysis_20260308.md) - Failure cases and patterns
+- **Error analysis:** [results/reports/manual_eval_v2_error_analysis_20260308.md](results/reports/manual_eval_v2_error_analysis_20260308.md) - Retrieval-side failure cases with answer and source excerpts removed
 - **English gap analysis:** [results/reports/english_corpus_gap_analysis.md](results/reports/english_corpus_gap_analysis.md) - English corpus coverage gaps (baseline only)
 
 ### Statistical and Methodological Reports
@@ -272,6 +275,7 @@ The following experiments were not attempted:
 - Human evaluation
 
 ## Limitations
+- This is a pilot benchmark with documented template artifacts, domain mismatches, and incomplete quality flags; the 400 rows should not be treated as equally clean
 - The public repository excludes full raw datasets, processed corpora, and index artifacts
 - Evaluation currently relies on retrieval recall and heuristic grounding-oriented metrics
 - Generation is a stub (returns first retrieved sentence), so answer quality metrics should be interpreted cautiously

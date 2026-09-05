@@ -2,11 +2,11 @@
 
 ## Top Findings
 
-- The most common failure cause in the v2 retrieval-failure report is domain/template misclassification, but the single dominant systems-level root cause is still corpus absence in the baseline index, especially for Uzbek items where all 10 misses collapse onto the same hub documents ([failure_taxonomy_20260309.md](/Users/Freelance%20Project/soas_rag_eval/research_outputs/failure_taxonomy_20260309.md)).
-- Several benchmark items are structurally invalid because their domain template does not match the entity at all, including `en_61`, `uz_71`, `uz_78`, `uz_82`, `uz_83`, and `uz_89` ([dataset_quality_audit_20260309.md](/Users/Freelance%20Project/soas_rag_eval/research_outputs/dataset_quality_audit_20260309.md)).
-- v4 gold-answer rewriting improves many noisy v1 answers, but some rewritten answers are over-compressed and less specific than the originals ([dataset_quality_audit_20260309.md](/Users/Freelance%20Project/soas_rag_eval/research_outputs/dataset_quality_audit_20260309.md)).
-- The current evaluation setup conflates retrieval success with answer-generation artifacts because the stub generator emits only the first sentence while scoring relies on token overlap ([dataset_quality_audit_20260309.md](/Users/Freelance%20Project/soas_rag_eval/research_outputs/dataset_quality_audit_20260309.md)).
-- v5 should add deterministic `source_title`, `difficulty`, and `quality_flag` fields so the dataset becomes more auditable and the known bad items remain traceable rather than silently mixed into the clean set ([v5_enrichment_spec_20260309.md](/Users/Freelance%20Project/soas_rag_eval/research_outputs/v5_enrichment_spec_20260309.md)).
+- The most common failure cause in the v2 retrieval-failure report is domain/template misclassification, but the single dominant systems-level root cause is still corpus absence in the baseline index, especially for Uzbek items where all 10 misses collapse onto the same hub documents ([failure taxonomy](failure_taxonomy_20260309.md)).
+- Several benchmark items are structurally invalid because their domain template does not match the entity at all, including `en_20`, `en_61`, `en_62`, `uz_71`, `uz_78`, `uz_82`, `uz_83`, and `uz_89` ([dataset quality audit](dataset_quality_audit_20260309.md)).
+- v4 gold-answer rewriting improves many noisy v1 answers, but some rewritten answers are over-compressed and less specific than the originals ([dataset quality audit](dataset_quality_audit_20260309.md)).
+- The current evaluation setup conflates retrieval success with answer-generation artifacts because the stub generator emits only the first sentence while scoring relies on token overlap ([dataset quality audit](dataset_quality_audit_20260309.md)).
+- v5 adds deterministic `source_title`, `difficulty`, and `quality_flag` fields so the dataset becomes more auditable and known bad items remain traceable rather than silently mixed into the clean set ([v5 enrichment specification](v5_enrichment_spec_20260309.md)).
 
 ## Failure Causes
 

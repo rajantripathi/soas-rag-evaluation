@@ -10,7 +10,7 @@ The script must preserve all v4 fields exactly and add three new fields to every
 - `difficulty`
 - `quality_flag`
 
-It must also emit a balanced public sample, a validation report, and a dataset card.
+It must also emit a balanced internal QA sample, a validation report, and an internal schema note. Answer-bearing outputs remain untracked pending source and license clearance.
 
 ## Script Metadata
 
@@ -161,6 +161,8 @@ Hardcode a seed-item flag map based on the audit:
 
 ```python
 QUALITY_FLAGS = {
+    "en_20": "domain_misclassification",
+    "en_62": "domain_misclassification",
     "uz_82": "domain_misclassification",
     "uz_83": "domain_misclassification",
     "uz_78": "domain_misclassification",
@@ -344,7 +346,7 @@ def write_dataset_card_v5(
 - Quality flags
 - Changelog from v4 to v5
 - Known limitations
-- Example entries
+- Publication boundary (no answer-bearing example entries while clearance is pending)
 
 ### Schema Section Requirements
 
@@ -377,16 +379,11 @@ Carry forward the current limitations from `docs/limitations.md` and add the new
 - some benchmark items remain quality-flagged rather than removed
 - retrieval and answer evaluation should still be interpreted separately when using stub generation
 - English and Uzbek source schemas were historically asymmetric
-- the public sample is a communication artifact, not a substitute for the full 400-item dataset
+- the internal QA sample is not a public release artifact
 
-### Example Entries Section
+### Publication Boundary Section
 
-Show 4 complete example entries:
-
-- 2 English
-- 2 Uzbek
-
-Each example must display every field, including the new v5 fields.
+Do not embed answer-bearing example entries in tracked documentation while source and license clearance is pending. Point readers to the retrieval-only files under `hf_dataset/` instead.
 
 ## Deliberate Exclusions From v5
 

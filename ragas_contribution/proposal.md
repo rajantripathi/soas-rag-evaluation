@@ -66,7 +66,6 @@ The public repository includes:
 - `hf_dataset/manual_eval_v5_retrieval_only.jsonl`
 - `hf_dataset/manual_eval_v5_sample.jsonl`
 - `hf_dataset/README.md`
-- `docs/dataset_card_v5.md`
 - `docs/results.md`
 - `results/reports/statistical_analysis.md`
 - `results/reports/manual_eval_v5_validation.md`

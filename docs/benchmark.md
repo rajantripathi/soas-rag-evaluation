@@ -19,16 +19,20 @@ Domains:
 
 `manual_eval_v4` preserves the `manual_eval_v2` benchmark and adds deterministic alternate phrasings to test stability under modest question variation.
 
-## Example Schema
-Each evaluation item includes:
+## Public Retrieval-Only Schema
+
+Each public evaluation item includes:
 
 - `id`
 - `language`
 - `domain`
 - `question`
-- `gold_answer`
 - `cultural_specificity`
 - `answerable`
 - `source_doc_ids`
+- `source_title`
+- `difficulty`
+- `quality_flag`
 
 This schema supports direct retrieval recall analysis against intended source documents.
+Reference-answer fields used in internal QA work are excluded from the public branch pending source and license clearance.

@@ -1,4 +1,4 @@
-# Dataset Card: manual_eval_v5
+# Internal QA Schema Note: manual_eval_v5
 
 ## Overview
 
@@ -50,10 +50,10 @@ Quality flags preserve known audit findings without mutating the benchmark conte
 
 | quality_flag | count |
 | --- | --- |
-| domain_misclassification | 12 |
+| domain_misclassification | 16 |
 | question_quality | 4 |
 | gold_answer_quality | 0 |
-| clean | 384 |
+| clean | 380 |
 
 ## Source Title Resolution
 
@@ -85,85 +85,6 @@ Resolved titles: 326 / 400. Null values indicate that `source_doc_ids[0]` could 
 - Source title coverage depends on the supplied corpus and may be incomplete.
 - Retrieval and answer-quality evaluation remain separable concerns when stub generation is used.
 
-## Example Entries
+## Publication Boundary
 
-### en_00
-
-```json
-{
-  "id": "en_00",
-  "language": "en",
-  "domain": "culture",
-  "question": "What is Art Deco?",
-  "gold_answer": "Art Deco, sometimes referred to as Deco, is a style of visual arts, architecture and design that first appeared in France just before World War I",
-  "source_doc_ids": [
-    "Art Deco"
-  ],
-  "answerable": true,
-  "cultural_specificity": "high",
-  "source_title": "Art Deco",
-  "difficulty": "medium",
-  "quality_flag": null
-}
-```
-
-### en_03
-
-```json
-{
-  "id": "en_03",
-  "language": "en",
-  "domain": "history",
-  "question": "What is the Château de Brest?",
-  "gold_answer": "Coordinates: \n\nThe Château de Brest is a castle in Brest, Finistère, France",
-  "source_doc_ids": [
-    "Château de Brest"
-  ],
-  "answerable": true,
-  "cultural_specificity": "high",
-  "source_title": "Château de Brest",
-  "difficulty": "hard",
-  "quality_flag": null
-}
-```
-
-### uz_00
-
-```json
-{
-  "id": "uz_00",
-  "language": "uz",
-  "domain": "governance",
-  "question": "Oʻzbekiston nima?",
-  "gold_answer": "Oʻzbekiston (rasman: Oʻzbekiston Respublikasi,) — Markaziy Osiyoning markaziy qismida joylashgan mamlakat",
-  "source_doc_ids": [
-    "793"
-  ],
-  "answerable": true,
-  "cultural_specificity": "high",
-  "source_title": "Oʻzbekiston",
-  "difficulty": "easy",
-  "quality_flag": null
-}
-```
-
-### uz_01
-
-```json
-{
-  "id": "uz_01",
-  "language": "uz",
-  "domain": "history",
-  "question": "Xorazm nima?",
-  "gold_answer": "Xorazm () – Amudaryo sohillarida markazga ega Oʻrta Osiyo qadimiy mintaqasi – qadimiy davlat va rivojlangan irrigatsiyali dehqonchilik, hunarmandlik va savdo mintaqasi",
-  "source_doc_ids": [
-    "1031"
-  ],
-  "answerable": true,
-  "cultural_specificity": "high",
-  "source_title": "Xorazm",
-  "difficulty": "hard",
-  "quality_flag": null
-}
-```
-
+This document describes an internal schema only. The full QA rows and answer-bearing sample are excluded from the public branch pending source and license clearance. Use `hf_dataset/README.md` and the retrieval-only JSONL files for the public release.

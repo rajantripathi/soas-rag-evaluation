@@ -1,12 +1,12 @@
 # Dataset Quality Audit
 
-This audit cross-checks the public v4 sample (`data/eval/sample/manual_eval_v4_sample.jsonl`), the original v1 seed set on Isambard (`data/eval/manual_eval_v1.jsonl`), the deterministic v4 expansion logic in `scripts/build_manual_eval_v4.py`, and the scoring/generation code in `src/evaluation.py` and `src/generation.py`.
+This audit cross-checks an internal v4 QA sample, the original v1 seed set on Isambard, the deterministic v4 expansion logic in `scripts/build_manual_eval_v4.py`, and the scoring/generation code in `src/evaluation.py` and `src/generation.py`. The answer-bearing source files are not part of the public branch pending source and license clearance.
 
 ## Gold Answer Quality
 
-### Overlap Between v1 and the Public v4 Sample
+### Overlap Between v1 and the Internal v4 Sample
 
-The public v4 sample contains 25 items. Of these, 23 are seed items that also appear in v1:
+The internal v4 sample contains 25 items. Of these, 23 are seed items that also appear in v1:
 
 `en_00`, `en_01`, `en_02`, `en_03`, `en_04`, `en_05`, `en_06`, `en_07`, `en_08`, `en_09`, `en_10`, `en_11`, `en_12`, `en_19`, `uz_00`, `uz_01`, `uz_02`, `uz_03`, `uz_04`, `uz_07`, `uz_08`, `uz_09`, `uz_10`.
 
@@ -16,11 +16,11 @@ The two non-overlapping sample items are `en_20` and `en_23`.
 
 The v1 seed set contains obvious Wikipedia or template artifacts for at least these overlapping items:
 
-- `en_01`: gold answer begins with `"Part of a series on theFrench language ..."`
-- `en_03`: gold answer begins with `"Coordinates:"`
-- `en_05`: gold answer begins with `"Part of a series onIslam ..."`
-- `en_12`: gold answer contains long template/navigation material, including `"Issues"`, `"Governance"`, `"Institutions"`, `"Military"`, `"Culture"`, and `"portalvt"`
-- `en_19`: gold answer begins with `"Part of a series onPaleontology ... Categoryvt"`
+- `en_01`: the answer begins with a language-series navigation template.
+- `en_03`: the answer begins with coordinate metadata.
+- `en_05`: the answer begins with a religion-series navigation template.
+- `en_12`: the answer contains a long page-navigation template.
+- `en_19`: the answer begins with a science-series navigation template.
 
 These are not concise answers. They are page-level navigation or template dumps.
 
@@ -39,10 +39,10 @@ These items are especially problematic because they turn answer quality into a f
 
 The v4 sample improves cleanliness substantially, but some rewrites over-compress the answer and lose specificity:
 
-- `en_07`: v1 says `Surfers Paradise is a suburb within the local government area of City of Gold Coast in Queensland, Australia`; v4 reduces this to `an urban locality and administrative place in Queensland, Australia`
-- `en_09`: v1 says `one of the 31 states ... of Mexico`; v4 reduces this to `a political and territorial entity in Mexico`
-- `en_10`: v1 says `the largest province of the 31 provinces of Iran`; v4 reduces this to `a province and administrative region in Iran`
-- `en_03`: v4 removes the `Coordinates:` artifact, which is good, but the new answer `a historic castle and fortress associated with the history of Brest` is less precise than the original location-bearing statement
+- `en_07`: the v4 rewrite drops useful locality and jurisdiction detail.
+- `en_09`: the v4 rewrite drops the entity's constitutional and numerical context.
+- `en_10`: the v4 rewrite drops the source's comparative-size detail.
+- `en_03`: the v4 rewrite removes coordinate residue but also loses useful location detail.
 
 These are usable, but weaker than they should be for a retrieval benchmark that depends on interpretable gold answers.
 
@@ -51,7 +51,7 @@ These are usable, but weaker than they should be for a retrieval benchmark that 
 The v4 sample clearly rewrites many v1 answers into short declarative summaries. This generally improves quality:
 
 - `en_01`, `en_05`, `en_12`, and `en_19` are much cleaner in v4 than in v1
-- `uz_03` improves materially: v1 gold answer is just `Qoraqalpogʻiston — Maydoni 166,6 ming km²`, while v4 rewrites it to `Qoraqalpogʻiston Oʻzbekiston tarkibidagi suveren respublikadir`
+- `uz_03` improves materially from a fragment containing only an area measurement to a complete statement of the entity's status.
 
 But the rewriting is not uniformly beneficial:
 
@@ -68,6 +68,7 @@ These items have domain labels or domain templates that do not fit the entity ty
 
 - `en_20`: `"What place, state, or political entity is Quantum field theory?"`
 - `en_61`: `"What place, state, or political entity is List of battleships of the United States Navy?"`
+- `en_62`: `"What institution, organization, or formal body is Ron Rivera?"`
 - `uz_71`: `"Munavvarqori Abdurashidxon oʻgʻli qanday muassasa yoki tashkilot?"`
 - `uz_78`: `"Coldplay qanday muassasa yoki tashkilot?"`
 - `uz_82`: `"1477 qanday muassasa yoki tashkilot?"`
@@ -82,6 +83,7 @@ The following questions are grammatically well-formed but semantically nonsensic
 
 - `en_20`
 - `en_61`
+- `en_62`
 - `uz_71`
 - `uz_78`
 - `uz_82`
@@ -209,12 +211,12 @@ This distinction should be stated explicitly in both methodology and limitations
 
 | issue_type | severity | item_count | example_ids | recommended_action |
 |------------|----------|------------|-------------|-------------------|
-| Domain misclassification | critical | 7 | `en_20`, `en_61`, `uz_71`, `uz_78`, `uz_82`, `uz_83`, `uz_89` | Remove, relabel, or rewrite these items before publication. |
+| Domain misclassification | critical | 8 | `en_20`, `en_61`, `en_62`, `uz_71`, `uz_78`, `uz_82`, `uz_83`, `uz_89` | Remove, relabel, or rewrite these items before a cleaned release. |
 | Wikipedia navigation artifacts in v1 gold answers | moderate | 5 | `en_01`, `en_03`, `en_05`, `en_12`, `en_19` | Keep the v4 rewrites, but add manual QA to verify factual completeness after cleanup. |
 | Raw passage dumps in v1 | moderate | 4 | `en_01`, `en_05`, `en_12`, `en_19` | Replace page dumps with concise, entity-specific answers. |
 | Over-compressed v4 gold answers | minor | 4 | `en_03`, `en_07`, `en_09`, `en_10` | Revise for specificity rather than maximal brevity. |
 | Overly generic question formulation | moderate | 1 | `uz_93` | Rewrite as a specific definitional item or remove it from retrieval evaluation. |
-| Template-propagated broken variants | critical | 14 | `en_61`, `en_governance_v4_19`, `uz_71`, `uz_institutions_v4_07`, `uz_78`, `uz_institutions_v4_08` | Propagate quality flags and exclude these from any "clean" subset. |
+| Template-propagated broken variants | critical | 16 | `en_20`, `en_governance_v4_03`, `en_62`, `en_institutions_v4_07`, `uz_71`, `uz_institutions_v4_07` | Propagate quality flags and exclude these from any "clean" subset. |
 | Schema asymmetry for Uzbek doc IDs | moderate | 200 | `uz_00`, `uz_71`, `uz_82` | Add `source_title` in v5 and show both ID and title in reports. |
 | Public sample not representative | moderate | 3 | missing cells: `uz/institutions`, underfilled `uz/history`, `uz/culture` | Rebuild the public sample with enforced language-domain balance. |
 | Retrieval/generation metric conflation | critical | 12 | `en_00`, `en_01`, `en_05`, `en_21` | Separate retrieval evaluation from answer evaluation in methodology, reporting, and score interpretation. |

@@ -2,10 +2,10 @@
   "dataset_name": "soas-english-uzbek-rag-evaluation",
   "metadata_role": "auxiliary_draft_release_metadata",
   "not_huggingface_generated_dataset_infos": true,
-  "release_status": "retrieval_only_candidate_full_qa_pending_license_source_clearance",
+  "release_status": "retrieval_only_pilot_release_full_qa_pending_license_source_clearance",
   "title": "When Corpus Coverage Matters More Than Model Choice: An English-Uzbek Low-Resource RAG Evaluation Dataset",
   "version": "manual_eval_v5",
-  "description": "Auxiliary draft metadata for a 400-row English-Uzbek retrieval-only evaluation candidate. The public candidate excludes gold_answer, reference_answer, answer, context, excerpt, and source-text fields while full QA release clearance is pending.",
+  "description": "Auxiliary metadata for a 400-row English-Uzbek retrieval-only pilot benchmark. The public release excludes gold_answer, reference_answer, answer, context, excerpt, and source-text fields while full QA release clearance is pending. Documented quality flags are not yet exhaustive.",
   "languages": [
     "en",
     "uz"
@@ -39,10 +39,10 @@
   ],
   "size": {
     "preview_rows": 30,
-    "retrieval_only_candidate_rows": 400,
+    "retrieval_only_public_rows": 400,
     "prepared_internal_full_qa_rows": 400
   },
-  "release_candidate": {
+  "public_release": {
     "file": "manual_eval_v5_retrieval_only.jsonl",
     "rows": 400,
     "scope": "retrieval_only_source_document_matching"
@@ -52,7 +52,7 @@
     "withheld_internal_file": "data/eval/manual_eval_v5.jsonl",
     "planned_rows": 400,
     "planned_additional_field": "gold_answer",
-    "note": "Answer/reference fields are excluded from the public candidate until source-derived text is manually cleared."
+    "note": "Answer/reference fields are excluded from the public release until source-derived text is manually cleared."
   },
   "results_summary": {
     "english_baseline_recall": "63%",
@@ -61,7 +61,9 @@
     "english_supplementation_status": "retracted_due_to_synthetic_leakage"
   },
   "limitations": [
-    "Retrieval-only candidate; not a full generated-answer quality benchmark.",
+    "Pilot benchmark with template-generated questions, domain mismatches, and uneven item quality.",
+    "The quality_flag field is useful but not exhaustive; unflagged does not necessarily mean manually validated.",
+    "Retrieval-only pilot release; not a full generated-answer quality benchmark.",
     "Does not support answer correctness, faithfulness, or reference-answer metrics without separately cleared references.",
     "Full raw corpora, indexes, and HPC run artifacts are not included in this release folder.",
     "Covers English and Uzbek only.",

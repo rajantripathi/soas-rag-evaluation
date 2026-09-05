@@ -18,15 +18,15 @@ When RAG systems fail in culturally grounded domains, the default assumption is 
 
 To test this hypothesis, we built a bilingual benchmark for English and Uzbek focusing on culturally grounded knowledge. We then conducted a controlled experiment sequence systematically varying retrieval parameters: chunking strategy, embedding model, retrieval algorithm, and corpus coverage. By isolating each variable, we can quantify which interventions produce meaningful improvements.
 
-We make three contributions. First, we release a bilingual benchmark with 400 items across four domains, each with quality audit metadata. Second, we provide a controlled ablation study isolating the effects of different RAG design choices. Third, we demonstrate that corpus supplementation produces effect sizes nearly eight times larger than embedding model improvements, with direct implications for AI funding priorities and evaluation standards.
+We make three contributions. First, we release a retrieval-only bilingual pilot benchmark with 400 items across four domains and documented quality-audit metadata. Second, we provide a controlled ablation study isolating the effects of different RAG design choices. Third, we demonstrate that corpus supplementation produces effect sizes nearly eight times larger than embedding model improvements, with direct implications for AI funding priorities and evaluation standards.
 
 ---
 
 ## 2. Related Work
 
-**Multilingual retrieval.** MIRACL (Zhang et al., 2023) and TyDi QA (Clark et al., 2021) advanced multilingual retrieval evaluation, but their coverage of culturally grounded topics is uneven. XOR-QA (Asai et al., 2021) addressed cross-lingual retrieval but focused on answerable questions rather than corpus adequacy. These benchmarks assume the corpus contains relevant documents, which is often false for culturally grounded knowledge.
+**Multilingual retrieval.** MIRACL (Zhang et al., 2022) and TyDi QA (Clark et al., 2020) advanced multilingual retrieval evaluation, but their coverage of culturally grounded topics is uneven. XOR-QA (Asai et al., 2020) addressed cross-lingual retrieval but focused on answerable questions rather than corpus adequacy. These benchmarks assume the corpus contains relevant documents, which is often false for culturally grounded knowledge.
 
-**RAG evaluation.** RAGAS (Es et al., 2023) and faithfulness metrics (Honovich et al., 2023) measure generation quality, but they implicitly assume corpus adequacy. When retrieval returns nothing relevant, faithfulness metrics cannot distinguish between model failure and corpus absence. Dense Passage Retrieval (DOR; Karpukhin et al., 2020) and RAG (Lewis et al., 2020) focused on architecture rather than corpus coverage.
+**RAG evaluation.** RAGAS (Es et al., 2024) and factual-consistency metrics (Honovich et al., 2022) measure generation quality, but they implicitly assume corpus adequacy. When retrieval returns nothing relevant, these metrics cannot distinguish between model failure and corpus absence. Dense Passage Retrieval (DPR; Karpukhin et al., 2020) and RAG (Lewis et al., 2020) focused on architecture rather than corpus coverage.
 
 **Cultural bias in NLP.** Hershcovich et al. (2022) documented cultural gaps in NLP systems, particularly for underrepresented languages. However, existing work has not systematically tested corpus coverage versus model choice for retrieval tasks. Our work fills this gap by isolating corpus effects from model effects.
 
@@ -44,7 +44,7 @@ Our benchmark covers two languages (English and Uzbek) across four domains: gove
 
 The benchmark was constructed in three phases. Version 1 (v1) contained 200 items with 25 items per language-domain cell. Version 2 (v2) added quality audit metadata. Version 4 (v4) expanded to 400 items with 50 items per language-domain cell by introducing template variants. The final version (v5) enriched the schema with source titles, difficulty ratings, and quality flags.
 
-Each evaluation item contains: question text, gold answer, source document IDs, language label, domain label, cultural specificity rating, and answerability flag. The quality audit process identified 16 domain or question flags and 38 gold answer artefact flags across the 400 items.
+The public retrieval-only release contains question text, source document IDs, language and domain labels, cultural-specificity ratings, answerability flags, and audit metadata. Reference answers used in internal QA analysis are withheld pending source and license clearance. The current metadata identifies 20 domain or question flags, including four late corrections for two seed items and their generated variants; an internal answer-quality audit separately identified 38 artefact flags.
 
 ### 3.3 Corpus Sources
 
@@ -78,15 +78,15 @@ Our primary metric is retrieval recall@k, where k=10. This measures whether the 
 
 ### 4.3 Experimental Conditions
 
-We ran seven experimental conditions, each changing one variable:
+We ran eight experimental conditions, each changing one variable:
 
 1. **No retrieval**: Returns empty set (baseline for recall measurement)
 2. **Vector baseline**: Simple vector retrieval with default chunking (512 tokens, 256 overlap)
-3. **e5-large**: Upgraded embedding model to intfloat/multilingual-e5-large
-4. **mpnet**: Alternative embedding model (sentence-transformers/paraphrase-multilingual-mpnet-base-v2)
+3. **e5-large**: Upgraded embedding model to intfloat/multilingual-e5-large (Wang et al., 2024)
+4. **mpnet**: Alternative multilingual embedding model (Reimers & Gurevych, 2020)
 5. **Supplement v1**: Baseline corpus plus manually curated Uzbek supplement
 6. **Supplement v2**: Baseline corpus plus structured Uzbek supplement (improved curation)
-7. **BM25**: Lexical retrieval on supplement v2 corpus
+7. **BM25**: Lexical retrieval on supplement v2 corpus (Robertson & Zaragoza, 2009)
 8. **Hybrid**: Combined BM25 and vector retrieval on supplement v2 corpus
 
 All experiments used the grounded prompt template. Chunking experiments tested smaller chunk sizes (128/32 and 256/64) against the baseline.
@@ -177,7 +177,7 @@ First, the benchmark contains only 400 items across two languages. While suffici
 
 Second, we used a stub generator rather than full LLM generation. This isolates retrieval effects but does not measure end-to-end generation quality.
 
-Third, template-based expansion for v4 introduced quality issues including domain misclassification. These have been documented for v6 cleanup.
+Third, this is a pilot benchmark rather than a uniformly clean QA set. Template-based expansion for v4 introduced quality issues including domain misclassification, and the current quality flags are not exhaustive. These limitations are documented for a later cleaned release.
 
 Fourth, English was not successfully supplemented. The 37% English gap remains unaddressed due to the retraction of synthetic supplement results.
 
@@ -199,21 +199,23 @@ Our benchmark and code are publicly available. Future work should expand to addi
 
 ## References
 
-Asai, A., Xie, N., Aribandi, R., Voskarides, N., Yang, K., Wang, P., ... & Yih, W. T. (2021). XOR QA: Cross-lingual open-question answering. arXiv preprint arXiv:2106.05587.
+Asai, A., Kasai, J., Clark, J. H., Lee, K., Choi, E., & Hajishirzi, H. (2020). XOR QA: Cross-lingual open-retrieval question answering. arXiv preprint arXiv:2010.11856.
 
-Clark, J. H., Yaghoobzadeh, Y., & Cheney, J. (2021). TyDi QA: A benchmark for information retrieval in typologically diverse languages. Transactions of the Association for Computational Linguistics, 9, 1117-1132.
+Clark, J. H., Choi, E., Collins, M., Garrette, D., Kwiatkowski, T., Nikolaev, V., & Palomaki, J. (2020). TyDi QA: A benchmark for information-seeking question answering in typologically diverse languages. arXiv preprint arXiv:2003.05002.
 
-Es, Y. D., Aksitov, K., Karpukhin, V., & Yih, W. T. (2023). RAGAS: Automated evaluation of retrieval augmented generation. arXiv preprint arXiv:2309.15217.
+Es, S., James, J., Espinosa-Anke, L., & Schockaert, S. (2024). RAGAS: Automated evaluation of retrieval augmented generation. Proceedings of the 18th Conference of the European Chapter of the Association for Computational Linguistics: System Demonstrations, 150-158.
 
-Hershcovich, D., Aizenberg, Y., Dreyer, M., & Baldridge, J. (2022). Cultural differences in NLP. Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics, 4083-4099.
+Hershcovich, D., Frank, S., Lent, H., de Lhoneux, M., Abdou, M., Brandl, S., Bugliarello, E., Cabello Piqueras, L., Chalkidis, I., Cui, R., Fierro, C., Margatina, K., Rust, P., & Søgaard, A. (2022). Challenges and strategies in cross-cultural NLP. arXiv preprint arXiv:2203.10020.
+
+Honovich, O., Aharoni, R., Herzig, J., Taitelbaum, H., Kukliansy, D., Cohen, V., Scialom, T., Szpektor, I., Hassidim, A., & Matias, Y. (2022). TRUE: Re-evaluating factual consistency evaluation. arXiv preprint arXiv:2204.04991.
 
 Karpukhin, V., Oguz, B., Min, S., Lewis, P., Wu, L., Edunov, S., ... & Yih, W. T. (2020). Dense passage retrieval for open-domain question answering. Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing, 6769-6782.
 
 Lewis, P., Perez, E., Piktus, A., Petroni, F., Karpukhin, V., Goyal, N., ... & Kiela, D. (2020). Retrieval-augmented generation for knowledge-intensive NLP tasks. Advances in Neural Information Processing Systems, 33, 9459-9474.
 
-Zhang, X., Thakur, N., Oguz, B., Kocetkov, D., Almazrouei, A., & Yih, W. T. (2023). MIRACL: A multilingual retrieval benchmark covering 18 languages. arXiv preprint arXiv:2308.13248.
+Zhang, X., Thakur, N., Ogundepo, O., Kamalloo, E., Alfonso-Hermelo, D., Li, X., Liu, Q., Rezagholizadeh, M., & Lin, J. (2022). Making a MIRACL: Multilingual information retrieval across a continuum of languages. arXiv preprint arXiv:2210.09984.
 
-Wang, J., Chen, X., Li, Y., & Zhang, Y. (2022). intfloat/multilingual-e5-large: A strong multilingual text embedding model. arXiv preprint arXiv:2207.05765.
+Wang, L., Yang, N., Huang, X., Yang, L., Majumder, R., & Wei, F. (2024). Multilingual E5 text embeddings: A technical report. arXiv preprint arXiv:2402.05672.
 
 Reimers, N., & Gurevych, I. (2020). Making monolingual sentence embeddings multilingual using knowledge distillation. Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing, 7144-7152.
 
