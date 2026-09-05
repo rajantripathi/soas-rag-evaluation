@@ -10,8 +10,20 @@ tags:
   - multilingual
   - low-resource
   - uzbek
+  - central-asia
+  - culturally-grounded
+  - benchmark
 license: cc-by-4.0
 pretty_name: SOAS English-Uzbek RAG Evaluation (Retrieval-Only)
+size_categories:
+  - n<1K
+configs:
+  - config_name: default
+    data_files:
+      - split: train
+        path: "manual_eval_v5_retrieval_only.jsonl"
+      - split: preview
+        path: "manual_eval_v5_sample.jsonl"
 ---
 
 # When Corpus Coverage Matters More Than Model Choice: An English-Uzbek Low-Resource RAG Evaluation Dataset
