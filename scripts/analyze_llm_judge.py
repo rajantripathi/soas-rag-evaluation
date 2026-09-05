@@ -9,7 +9,7 @@ import numpy as np
 from scipy.stats import spearmanr
 
 import sys
-sys.path.insert(0, '/home/u6ef/rajantripathi.u6ef/soas_rag_eval')
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from src.utils import ensure_dir, read_jsonl, write_jsonl
 

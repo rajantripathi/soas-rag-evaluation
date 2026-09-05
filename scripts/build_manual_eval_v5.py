@@ -79,7 +79,7 @@ def load_required_rows(path: Path, label: str) -> list[dict[str, Any]]:
 
 
 def build_title_lookup(corpus_rows: list[dict[str, Any]]) -> dict[str, str]:
-    from src.datasets import detect_id, detect_title
+    from src.soas_datasets import detect_id, detect_title
 
     title_lookup: dict[str, str] = {}
     seen_ids: set[str] = set()
@@ -520,8 +520,9 @@ def write_dataset_card(path: Path, rows: list[dict[str, Any]], stats: dict[str, 
         handle.write("## Publication Boundary\n\n")
         handle.write(
             "This document describes an internal schema only. The full QA rows and answer-bearing sample are "
-            "excluded from the public branch pending source and license clearance. Use `hf_dataset/README.md` "
-            "and the retrieval-only JSONL files for the public release.\n"
+            "excluded from the public branch pending source and licence clearance. Use `hf_dataset/README.md` "
+            "and the retrieval-only JSONL files for the public release. The public release is a pilot with "
+            "known template-generated examples, domain mismatches, and incomplete quality flags.\n"
         )
 
 

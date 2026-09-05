@@ -2,9 +2,12 @@
 from __future__ import annotations
 
 import argparse
+import sys
 from pathlib import Path
 
-from src.datasets import (
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
+from src.soas_datasets import (
     DATASET_SPECS,
     detect_answer,
     detect_id,

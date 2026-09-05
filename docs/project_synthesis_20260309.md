@@ -1,4 +1,4 @@
-# Culturally Grounded Multilingual RAG Evaluation for Global South Knowledge
+# English-Uzbek Retrieval Evaluation: Project Synthesis
 
 ## Project Scope
 This project built a reproducible multilingual RAG evaluation pipeline on Isambard for English and Uzbek, with a primary focus on culturally grounded retrieval quality. The experimental sequence covered:
@@ -11,7 +11,7 @@ This project built a reproducible multilingual RAG evaluation pipeline on Isamba
 - hybrid lexical plus vector retrieval
 - benchmark expansion from `manual_eval_v2` to `manual_eval_v4`
 
-The central empirical result is consistent across the full sequence: retrieval quality depended much more on corpus coverage of culturally grounded knowledge sources than on chunking, embedding selection, or hybrid retrieval design.
+The central validated result is that targeted Uzbek corpus supplementation increased retrieval recall from 39% to 98% (59 percentage points; *p* < 0.001; Cohen's *d* = 2.91). The compared embedding models differed by 7.5 percentage points overall (Cohen's *d* = 0.31). These results concern this retrieval setting and not generated-answer quality.
 
 ## Experimental Summary
 Two benchmark phases were used:
@@ -49,7 +49,7 @@ Interpretation:
 
 - English stayed flat across supplement conditions.
 - Uzbek improved sharply as culturally grounded Uzbek source coverage increased.
-- The improvement pattern isolates corpus coverage as the main driver.
+- Corpus supplementation produced the largest observed gain in this experiment sequence.
 
 ## Table 2: Language Comparison Under Best Setup
 `manual_eval_v4`, supplement v2 corpus, `intfloat/multilingual-e5-large`, grounded prompt
@@ -90,13 +90,13 @@ This matters for culturally grounded AI because:
 
 In practical terms, this means that culturally grounded performance is partly a corpus construction problem, not only a model selection problem.
 
-## Why Corpus Coverage Dominated
+## Comparison of Corpus and Retrieval Interventions
 Several comparisons converged on the same conclusion:
 
 1. Chunking changes had little or no effect on the hardest Uzbek domains.
 2. Embedding changes produced only modest gains.
 3. Hybrid retrieval matched vector retrieval but did not exceed it.
-4. Corpus supplements produced the largest improvements by far.
+4. Corpus supplements produced the largest observed improvements in this setting.
 
 The strongest evidence came from the corpus gap analysis:
 
@@ -120,12 +120,12 @@ Taken together, these results suggest an order of operations for multilingual RA
 3. then optimize prompting and generation
 
 ## Main Contribution
-The main contribution of this project is an empirical demonstration that culturally grounded AI performance depends primarily on knowledge source coverage rather than model choice.
+The main contribution is a controlled comparison showing that source coverage was an important retrieval constraint in this English-Uzbek evaluation setting.
 
 More specifically, the project shows that:
 
 - a multilingual RAG system can appear weak on culturally grounded evaluation because the relevant local documents are missing
-- targeted supplementary corpora can dramatically improve retrieval quality without changing the overall pipeline
+- targeted supplementary corpora can improve retrieval quality without changing the overall pipeline
 - once coverage improves, additional model-side changes produce smaller marginal gains
 
 This reframes part of the multilingual AI problem from “which model should we use?” to “which knowledge sources are actually represented?”
@@ -144,8 +144,8 @@ This reframes part of the multilingual AI problem from “which model should we 
 - evaluate whether multilingual systems preserve culturally specific meaning when the same topic is represented unevenly across languages
 
 ## Conclusion
-Across all major experiments, the same pattern held: the most important determinant of culturally grounded retrieval quality was whether the system had access to the right culturally grounded documents. Once those documents were added, retrieval performance improved far more than it did under chunking, embedding, or hybrid retrieval changes.
+Across the reported experiments, the largest observed retrieval gain came from adding missing Uzbek source material. The 59-percentage-point gain was approximately 7.9 times the 7.5-point gain observed from embedding-model variation; this is a ratio of absolute recall gains, not Cohen's *d* values.
 
 For workshop or concept-note framing, the project supports a clear claim:
 
-**Culturally grounded AI depends first on culturally grounded knowledge sources.**
+**In this English-Uzbek evaluation setting, corpus coverage merited explicit testing alongside model and retrieval choices.**

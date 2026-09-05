@@ -1,25 +1,24 @@
-# Isambard and Repository Locations
+# Historical Isambard Reproducibility Notes
 
-## Known Locations
+## Public and Environment-Specific Locations
 
 | Environment | Location |
 | --- | --- |
-| Local active Git repo | `/Users/rajantripathi/Projects/soas-rag-evaluation` |
 | GitHub remote | `https://github.com/rajantripathi/soas-rag-evaluation.git` |
-| Isambard working path referenced by scripts | `/home/u6ef/rajantripathi.u6ef/soas_rag_eval` |
+| Working directory | `<project-directory>` |
+| Historical Isambard working directory | site- and account-specific; not published |
 | Isambard project acknowledgement | `u6ef` |
-| Local loose staging scripts | `/Users/rajantripathi/soas-rag-evaluation-staging` |
 
-The staging directory contains older loose experiment scripts and Slurm templates. The active repository is the Git-managed project under `/Users/rajantripathi/Projects/soas-rag-evaluation`.
+The computations reported in this repository used Isambard-AI under project `u6ef`. This is a historical reproducibility note, not a statement of current or future access. Users must obtain their own authorised compute allocation and adapt paths and scheduler settings to their environment.
 
 ## Isambard Verification Note
 
-From the current local environment, the `isambard` SSH hostname was not resolvable, so the cluster filesystem was not directly inspected during this documentation update. The Isambard path above is taken from tracked scripts and reports in the repository.
+No new Isambard run was performed for the public-release audit. The checked-in reports describe the historical experimental results; reproduction requires independent access to a suitable environment and the excluded source corpora and indexes.
 
 ## Expected Cluster Workflow
 
 ```bash
-cd /home/u6ef/rajantripathi.u6ef/soas_rag_eval
+cd <project-directory>
 bash scripts/check_env.sh
 bash scripts/bootstrap_env.sh
 source .venv/bin/activate
@@ -52,7 +51,7 @@ Tracked in Git:
 - docs
 - selected reports
 - figures
-- small evaluation samples
+- the 400-row retrieval-only pilot benchmark and preview sample
 
 Not tracked in Git:
 
@@ -63,7 +62,7 @@ Not tracked in Git:
 - cluster logs
 - model caches
 
-This split keeps the public repository lightweight while preserving enough information to reproduce the methodology on the cluster.
+This split keeps the public repository lightweight and documents the method, but it is not a complete archival snapshot of the historical cluster state.
 
 ## Rehydration Checklist
 
@@ -80,4 +79,4 @@ This split keeps the public repository lightweight while preserving enough infor
 
 - Embedding retrieval expects SentenceTransformer models to be available locally on the cluster when `local_files_only=True` is used.
 - Large run outputs should remain on Isambard storage and be summarized into tracked reports.
-- Any new supplement must be checked for leakage against evaluation `gold_answer` fields before results are reported.
+- Any new supplement must be checked for leakage against internal answer-bearing evaluation fields before results are reported.

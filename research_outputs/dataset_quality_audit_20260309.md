@@ -1,6 +1,6 @@
 # Dataset Quality Audit
 
-This audit cross-checks an internal v4 QA sample, the original v1 seed set on Isambard, the deterministic v4 expansion logic in `scripts/build_manual_eval_v4.py`, and the scoring/generation code in `src/evaluation.py` and `src/generation.py`. The answer-bearing source files are not part of the public branch pending source and license clearance.
+This audit cross-checks an internal v4 QA sample, the original v1 seed set on Isambard, the deterministic v4 expansion logic in `scripts/build_manual_eval_v4.py`, and the scoring/generation code in `src/evaluation.py` and `src/generation.py`. The answer-bearing source files are not part of the public branch pending source and licence clearance.
 
 ## Gold Answer Quality
 

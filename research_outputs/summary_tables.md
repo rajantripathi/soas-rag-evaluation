@@ -3,7 +3,7 @@
 ## Baseline vs Supplement Gains
 | Condition | Overall Recall@k | English Recall@k | Uzbek Recall@k |
 | --- | ---: | ---: | ---: |
-| baseline_vector | 0.5100 | 0.6300 | 0.3900 |
+| e5_baseline | 0.5100 | 0.6300 | 0.3900 |
 | supplement_v1 | 0.7150 | 0.6300 | 0.8000 |
 | supplement_v2 | 0.8050 | 0.6300 | 0.9800 |
 

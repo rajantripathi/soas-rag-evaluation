@@ -2,10 +2,13 @@
 from __future__ import annotations
 
 import argparse
+import sys
 import traceback
 from pathlib import Path
 
-from src.datasets import DATASET_SPECS, fetch_dataset, write_manifest
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
+from src.soas_datasets import DATASET_SPECS, fetch_dataset, write_manifest
 from src.utils import ensure_dir, load_config
 
 

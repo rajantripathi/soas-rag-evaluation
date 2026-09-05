@@ -2,9 +2,12 @@
 from __future__ import annotations
 
 import argparse
+import sys
 from pathlib import Path
 
 from datasets import load_from_disk
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from src.utils import ensure_dir, read_jsonl, write_jsonl
 

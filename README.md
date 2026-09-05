@@ -1,21 +1,15 @@
-# SOAS RAG Evaluation — Bilingual Benchmark (English + Uzbek)
+# SOAS RAG Evaluation — English-Uzbek Retrieval Pilot
 
 <!-- badges-start -->
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21067667.svg)](https://doi.org/10.5281/zenodo.21067667)
 ![Python](https://img.shields.io/badge/python-3.10-blue.svg)
 ![Last Commit](https://img.shields.io/github/last-commit/rajantripathi/soas-rag-evaluation)
-![Stars](https://img.shields.io/github/stars/rajantripathi/soas-rag-evaluation?style=social)
-![Issues](https://img.shields.io/github/issues/rajantripathi/soas-rag-evaluation)
-![Code Style: ruff](https://img.shields.io/badge/code%20style-ruff-261230.svg)
-![rag](https://img.shields.io/badge/rag-informational.svg)
-![uzbek](https://img.shields.io/badge/uzbek-informational.svg)
-![benchmark](https://img.shields.io/badge/benchmark-informational.svg)
 <!-- badges-end -->
 
 ## Hugging Face Dataset
 
-The 400-row bilingual evaluation set is available on Hugging Face:
+The 400-row pilot bilingual retrieval benchmark is available on Hugging Face:
 
 [![HF Dataset](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Dataset-blue)](https://huggingface.co/datasets/Rajan2026/soas-english-uzbek-rag-evaluation)
 
@@ -32,13 +26,11 @@ Dataset DOI: [10.5281/zenodo.21067667](https://doi.org/10.5281/zenodo.21067667).
 
 > **Pilot benchmark:** The 400 rows are published for transparent retrieval research, but they are not all equally clean. Template-generated questions and domain mismatches are documented through `quality_flag` metadata and the [dataset quality audit](research_outputs/dataset_quality_audit_20260309.md). Treat flagged rows as diagnostic cases, and do not use this release as a polished general-purpose QA benchmark. The current flags are known to be incomplete and will be expanded in a later cleaned release.
 
-## Reuse Path for Builders
+## Public Research Assets
 
 - [Industry brief](docs/industry_brief.md): concise engineering framing for AI teams evaluating multilingual RAG.
 - [Retrieval-only dataset card](hf_dataset/README.md): public schema, intended uses, limitations, and citation.
 - [Recall@k evaluator](scripts/compute_retrieval_recall.py): minimal scorer for retrieved document IDs against `source_doc_ids`.
-- [LinkedIn visibility drafts](docs/linkedin_visibility_posts.md): four grounded posts for industry-facing dissemination.
-- External OSS trail: [RAGAS PR #2795](https://github.com/vibrantlabsai/ragas/pull/2795) and [LangChain issue #38572](https://github.com/langchain-ai/langchain/issues/38572).
 
 Evaluator smoke check:
 
@@ -48,7 +40,7 @@ python scripts/compute_retrieval_recall.py --oracle-check --k 5
 
 The smoke check validates scorer wiring by using `source_doc_ids` as retrieved IDs. It is not a model result.
 
-> **Headline result:** Uzbek retrieval recall improved from **39% → 98%** via Wikipedia corpus supplementation. Cohen's *d* = **2.91**. Effect size **7.9x larger** than model-swap optimisation on the same task.
+> **Headline result:** In this English-Uzbek evaluation setting, Uzbek retrieval recall improved from **39% to 98%** after targeted corpus supplementation: an absolute gain of **59 percentage points** (*p* < 0.001; Cohen's *d* = **2.91**).
 
 ## TL;DR
 
@@ -57,14 +49,14 @@ The smoke check validates scorer wiring by using `source_doc_ids` as retrieved I
 | Retrieval Recall | 63% | 39% | **98%** |
 | Effect Size (Cohen's d) | — | baseline | **2.91** |
 
-**Why this matters:** For low-resource languages, corpus engineering dominates model selection. We measured a 7.9x larger effect from corpus supplementation than from changing the underlying embedding/LLM model.
+The 59-percentage-point gain from corpus supplementation was approximately 7.9 times the 7.5-point gain observed from embedding-model variation. This comparison concerns absolute recall gains, not a ratio of Cohen's *d* values, and it does not compare different generation LLMs.
 
 ## What is in this repo
 
 - Bilingual evaluation harness (English + Uzbek) for RAG retrieval quality
 - Reproducible methodology with corpus supplementation pipeline
 - Public retrieval-only benchmark files and quality-audit notes
-- Scripts to compute Recall@k, MRR, and effect size statistics
+- Scripts to compute Recall@k and effect-size statistics
 
 ## Technical Architecture
 
@@ -72,12 +64,12 @@ Architecture and reproducibility notes are documented separately:
 
 - [`docs/architecture_blueprints.md`](docs/architecture_blueprints.md): pipeline, Isambard execution topology, evaluation control plane, and publication data flow
 - [`docs/technical_architecture.md`](docs/technical_architecture.md): components, data model, retrieval backends, evaluation loop, and reproducibility controls
-- [`docs/isambard_reproducibility.md`](docs/isambard_reproducibility.md): known GitHub/local/Isambard locations and cluster rehydration checklist
+- [`docs/isambard_reproducibility.md`](docs/isambard_reproducibility.md): historical execution environment and cluster rehydration guidance
 - [`docs/technical_q_and_a.md`](docs/technical_q_and_a.md): technical discussion notes, limitations, and claims to avoid
 
-## Reproduce the headline result
+## Local Smoke Workflow
 
-Environment bootstrap on Isambard:
+Environment bootstrap:
 
 ```bash
 bash scripts/check_env.sh
@@ -100,6 +92,8 @@ Research-output regeneration:
 python scripts/generate_research_outputs.py
 ```
 
+This smoke workflow validates the public code path; it does not reproduce the historical Isambard-AI experiment from the public repository alone. The reported run also requires the source corpora and indexes that are intentionally excluded. See the [historical reproducibility notes](docs/isambard_reproducibility.md).
+
 ## Citation
 
 Dataset DOI: [10.5281/zenodo.21067667](https://doi.org/10.5281/zenodo.21067667)
@@ -116,8 +110,9 @@ Dataset DOI: [10.5281/zenodo.21067667](https://doi.org/10.5281/zenodo.21067667)
 }
 ```
 
-Affiliations: (1) AI² Lab, School of Digital Technologies, American University of Technology, Uzbekistan; (2) Bikal Technologies Ltd, Coventry, UK; (3) Centre for AI Futures, SOAS University of London.
-Contact: rajantripathi22@gmail.com
+Author affiliations: (1) AI² Lab, American University of Technology, Uzbekistan; (2) Centre for AI Futures, SOAS University of London.
+
+This repository is a research artifact maintained by the author. It does not represent an official institutional position of SOAS University of London or the American University of Technology.
 
 ## Benchmark Design
 
@@ -127,8 +122,8 @@ Contact: rajantripathi22@gmail.com
 
 ### Evaluation Sets
 - `manual_eval_v1`: Initial 200-item set (100 EN, 100 UZ)
-- `manual_eval_v2`: Quality audit, failure taxonomy
-- `manual_eval_v4`: Uzbek supplement v2, 400 items
+- `manual_eval_v2`: 200-item set used for the validated supplementation comparison and error analysis
+- `manual_eval_v4`: Expanded 400-item set used for robustness analysis
 - `manual_eval_v5`: Enriched schema with difficulty, quality_flag, source_title (400 items)
 
 ### Internal Core Schema (v5)
@@ -161,22 +156,22 @@ The internal evaluation schema includes reference-answer fields for QA analysis.
 |---------|------|--------------|----------|
 | v1 | 200 items | Initial balanced set | Baseline experiments |
 | v2 | 200 items | Quality audit, failure taxonomy | Error analysis |
-| v4 | 400 items | Uzbek supplement v2 | Current best performance |
-| v5 | 400 items | Enriched schema (difficulty, quality_flag, source_title) | Final experiments, publication |
+| v4 | 400 items | Expanded evaluation set | Robustness analysis |
+| v5 | 400 items | Enriched schema (difficulty, quality_flag, source_title) | Public pilot release |
 
 ## Key Findings
 
 ### Core Result
-**Corpus coverage dominates model choice for culturally grounded multilingual retrieval.**
+**In this evaluation setting, corpus supplementation produced substantially larger retrieval gains than embedding-model variation.**
 
 ### Detailed Findings
 - **Uzbek supplementation:** Recall improved from 39% to 98% through targeted corpus supplementation (59 percentage point improvement, p < 0.001, Cohen's d = 2.91)
-- **Model optimisation:** Embedding changes produced only a 7.5 percentage point gain (Cohen's d = 0.31). The corpus supplementation effect is 7.9 times larger than the model effect.
+- **Embedding-model comparison:** The observed overall recall difference was 7.5 percentage points (Cohen's d = 0.31). The 59-point supplementation gain was approximately 7.9 times this absolute difference; the Cohen's *d* values are reported separately and are not used to form that ratio.
 - **English baseline:** 63% recall at baseline, with a 37% gap identified in history and institutions domains. English supplementation was attempted but results were retracted due to data leakage.
-- **Best overall performance:** 79.5% recall with Uzbek supplement v2 + e5-large embeddings
+- **Expanded v4 setup:** 79.5% overall recall with Uzbek supplement v2 + e5-large embeddings; the separate 200-item v2 phase reached 80.5%
 - **Weakest domains:** History and institutions showed lowest coverage before supplementation
 - **Retriever collapse:** When sources missing, retrieval collapses onto generic hub documents rather than failing independently
-- **Statistical significance:** All supplementation effects statistically significant (bootstrap CIs, p < 0.001)
+- **Statistical significance:** The validated Uzbek supplement v2 comparison was statistically significant (*p* < 0.001)
 
 ### Per-Domain Performance (Best Setup: Uzbek supplement v2 + e5-large)
 | Domain | English | Uzbek |
@@ -199,31 +194,7 @@ The internal evaluation schema includes reference-answer fields for QA analysis.
 - `src/`: retrieval, evaluation, orchestration, and dataset modules
 
 Large HPC artifacts such as raw datasets, processed corpora, indexes, and full experiment run directories are intentionally excluded from version control.
-The internal full-QA datasets and answer-bearing prediction files are also excluded pending source and license clearance.
-
-## Quickstart
-Environment bootstrap on Isambard:
-
-```bash
-bash scripts/check_env.sh
-bash scripts/bootstrap_env.sh
-source .venv/bin/activate
-```
-
-Smoke path:
-
-```bash
-python scripts/fetch_datasets.py --config configs/base.yaml
-python scripts/build_corpus.py --config configs/exp_smoke.yaml
-python scripts/build_index.py --config configs/exp_smoke.yaml
-python scripts/run_eval.py --config configs/exp_smoke.yaml
-```
-
-Research-output regeneration:
-
-```bash
-python scripts/generate_research_outputs.py
-```
+The internal full-QA datasets and answer-bearing prediction files are also excluded pending source and licence clearance.
 
 ## Research Outputs
 
@@ -239,8 +210,8 @@ python scripts/generate_research_outputs.py
 ### Statistical and Methodological Reports
 - **Statistical analysis:** [results/reports/statistical_analysis.md](results/reports/statistical_analysis.md) - Bootstrap confidence intervals, effect sizes, significance tests
 
-### Policy and Dissemination Outputs
-- **Policy brief:** [research_outputs/policy_brief_culturally_grounded_ai.md](research_outputs/policy_brief_culturally_grounded_ai.md) - 2-page non-technical brief for funding panels (AHRC, UNESCO, British Academy)
+### Policy and Research Framing
+- **Policy brief:** [research_outputs/policy_brief_culturally_grounded_ai.md](research_outputs/policy_brief_culturally_grounded_ai.md) - non-technical interpretation of the validated retrieval findings
 - **Workshop outline:** [research_outputs/workshop_outline_20260309.md](research_outputs/workshop_outline_20260309.md) - Structured outline for workshop papers
 - **Concept note:** [research_outputs/concept_note_20260309.md](research_outputs/concept_note_20260309.md) - Original project concept
 
@@ -277,8 +248,9 @@ The following experiments were not attempted:
 ## Limitations
 - This is a pilot benchmark with documented template artifacts, domain mismatches, and incomplete quality flags; the 400 rows should not be treated as equally clean
 - The public repository excludes full raw datasets, processed corpora, and index artifacts
-- Evaluation currently relies on retrieval recall and heuristic grounding-oriented metrics
-- Generation is a stub (returns first retrieved sentence), so answer quality metrics should be interpreted cautiously
+- The validated results concern retrieval recall, not generated-answer quality
+- No human evaluation or LLM-as-judge evaluation has been completed
+- Generation is a stub that returns the first retrieved sentence; heuristic answer-oriented metrics are not part of the headline claim
 - Statistical power limited by benchmark size (400 items) - larger benchmarks would yield narrower confidence intervals
 - English was not successfully supplemented (baseline results only)
 - Findings based on only 2 languages (English, Uzbek) - may not generalise to other language families
@@ -286,8 +258,8 @@ The following experiments were not attempted:
 ## Citation
 If you use this repository, cite it as a research benchmark and software artifact. A starter citation file is provided in [CITATION.cff](CITATION.cff).
 
-## Funding and Acknowledgements
-This work used the Isambard-AI supercomputer under the u6ef project. Centre for AI Futures, SOAS University of London. Contact: rt1@soas.ac.uk
+## Acknowledgements
+The computations reported in this repository used the Isambard-AI supercomputer under project u6ef. This historical acknowledgement does not imply current or future access to Isambard-AI.
 
 ## License
-See [LICENSE](LICENSE) file for details.
+Code is released under the [MIT License](LICENSE). The public dataset is released under CC BY 4.0, as recorded in its [dataset card](hf_dataset/README.md) and DOI metadata.

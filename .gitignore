@@ -49,6 +49,17 @@ _archive/
 data/*
 results/*
 research_outputs/policy_brief_submission/
+# Internal dissemination and grant-working material
+docs/linkedin_visibility_posts.md
+
+# Retracted or obsolete local workflows retained outside the public branch
+scripts/build_targeted_supplement.py
+scripts/generate_comparison_report.py
+scripts/merge_corpus.py
+slurm/build_index_full_supp.sbatch
+slurm/eval_cross_lingual.sbatch
+slurm/run_cross_lingual_eval.sbatch
+slurm/run_eval_full_supp.sbatch
 !README.md
 !.gitkeep
 !data/eval/
@@ -63,3 +74,10 @@ research_outputs/policy_brief_submission/
 !results/logs/
 !results/reports/
 !results/reports/**
+
+# Internal/retracted reports stay local despite the public reports allowlist
+results/reports/full_supplement_comparison.md
+results/reports/manual_eval_report_20260308.md
+results/reports/progress_*.md
+results/reports/publish_note_*.md
+results/reports/session_progress_*.md

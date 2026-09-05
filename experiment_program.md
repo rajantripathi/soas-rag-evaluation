@@ -1,9 +1,10 @@
 # Experiment Program
-Project: Culturally Grounded Multilingual RAG Evaluation
+Project: English-Uzbek Retrieval Evaluation
 
 Goal
-Evaluate whether retrieval grounded generation improves factual accuracy
-for culturally grounded knowledge sources, especially in underrepresented languages.
+Evaluate retrieval against intended source-document identifiers for culturally
+grounded English and Uzbek questions. Generated-answer quality is out of scope
+for the validated results.
 
 Languages
 - English
@@ -39,13 +40,16 @@ prompt_style:
 Evaluation Metrics
 
 Primary
-- grounded_answer_score
+- retrieval_recall_at_k
 
 Secondary
 - hallucination_rate
 - unsupported_claim_rate
-- retrieval_recall_at_k
 - latency
+
+The grounded-answer, hallucination, and unsupported-claim scores are heuristic
+diagnostics produced with a generation stub. No human or LLM-as-judge evaluation
+has been completed.
 
 Experiment Rules
 

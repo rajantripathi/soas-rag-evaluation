@@ -1,7 +1,7 @@
 # Benchmark
 
 ## Purpose
-This benchmark evaluates culturally grounded retrieval for multilingual RAG with an emphasis on English and Uzbek. It is designed to measure how access to relevant source documents affects answer grounding and retrieval quality for questions that depend on local institutional, historical, and cultural knowledge.
+This 400-row pilot benchmark evaluates culturally grounded retrieval in English and Uzbek. It is designed to measure whether relevant source documents are retrieved for questions that depend on local institutional, historical, and cultural knowledge. It does not measure generated-answer quality.
 
 ## Languages and Domains
 - English
@@ -35,4 +35,4 @@ Each public evaluation item includes:
 - `quality_flag`
 
 This schema supports direct retrieval recall analysis against intended source documents.
-Reference-answer fields used in internal QA work are excluded from the public branch pending source and license clearance.
+Reference-answer fields used in internal QA work are excluded from the public branch pending source and licence clearance. Template-generated questions, domain mismatches, and incomplete quality flags are known pilot limitations.

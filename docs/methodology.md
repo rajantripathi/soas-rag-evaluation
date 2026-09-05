@@ -1,7 +1,7 @@
-# Methodology
+# Retrieval Methodology
 
 ## Pipeline
-The repository implements a config-driven experimental pipeline on Isambard:
+The repository implements a config-driven experimental pipeline used historically on Isambard-AI:
 
 1. inspect environment
 2. stage datasets on-cluster
@@ -26,11 +26,13 @@ The experiment sequence included:
 ## Retrieval Scoring
 Primary retrieval analysis used `retrieval_recall_at_k` based on whether the intended source document appeared among retrieved contexts.
 
-Supporting metrics included:
+Exploratory heuristic metrics included:
 
 - grounded answer score
 - hallucination rate
 - unsupported claim rate
+
+These heuristics use a first-sentence generation stub and are not evidence of end-to-end answer quality. No human evaluation or LLM-as-judge evaluation has been completed.
 
 ## Corpus Intervention Strategy
 The core methodological contribution was to compare model-side changes against corpus-side interventions:

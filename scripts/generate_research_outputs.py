@@ -7,7 +7,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 REPORTS_DIR = ROOT / "results" / "reports"
-OUTPUT_DIR = REPORTS_DIR / "research_outputs"
+OUTPUT_DIR = ROOT / "research_outputs"
 SUMMARY_CSV = REPORTS_DIR / "project_synthesis_summary_20260309.csv"
 
 
@@ -22,7 +22,7 @@ def read_summary_rows() -> list[dict[str, str]]:
 
 def write_csv(path: Path, rows: list[dict[str, str]], fieldnames: list[str]) -> None:
     with path.open("w", encoding="utf-8", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=fieldnames)
+        writer = csv.DictWriter(handle, fieldnames=fieldnames, lineterminator="\n")
         writer.writeheader()
         writer.writerows(rows)
 
@@ -94,10 +94,10 @@ def build_summary_tables(rows: list[dict[str, str]]) -> None:
 
     baseline_rows = [
         {
-            "condition": "baseline_vector",
-            "overall_recall_at_k": lookup["vector_baseline"]["overall_recall_at_k"],
-            "english_recall_at_k": lookup["vector_baseline"]["english_recall_at_k"],
-            "uzbek_recall_at_k": lookup["vector_baseline"]["uzbek_recall_at_k"],
+            "condition": "e5_baseline",
+            "overall_recall_at_k": lookup["e5_large"]["overall_recall_at_k"],
+            "english_recall_at_k": lookup["e5_large"]["english_recall_at_k"],
+            "uzbek_recall_at_k": lookup["e5_large"]["uzbek_recall_at_k"],
         },
         {
             "condition": "supplement_v1",
@@ -139,7 +139,7 @@ def build_summary_tables(rows: list[dict[str, str]]) -> None:
 ## Baseline vs Supplement Gains
 | Condition | Overall Recall@k | English Recall@k | Uzbek Recall@k |
 | --- | ---: | ---: | ---: |
-| baseline_vector | 0.5100 | 0.6300 | 0.3900 |
+| e5_baseline | 0.5100 | 0.6300 | 0.3900 |
 | supplement_v1 | 0.7150 | 0.6300 | 0.8000 |
 | supplement_v2 | 0.8050 | 0.6300 | 0.9800 |
 
@@ -164,14 +164,14 @@ def build_figures(rows: list[dict[str, str]]) -> None:
         title="Recall Improvement from Corpus Supplementation",
         categories=["Overall", "English", "Uzbek"],
         series=[
-            ("Baseline", [0.51, 0.63, 0.39], "#c97b63"),
+            ("E5 baseline", [0.51, 0.63, 0.39], "#c97b63"),
             ("Supplement v1", [0.715, 0.63, 0.80], "#4f772d"),
             ("Supplement v2", [0.805, 0.63, 0.98], "#1d4e89"),
         ],
         output_path=OUTPUT_DIR / "figure_baseline_vs_supplement.svg",
     )
     make_bar_chart_svg(
-        title="Language Differences Under Best Setup",
+        title="Recall by Language and Domain (v4 Setup)",
         categories=["Governance", "History", "Institutions", "Culture"],
         series=[
             ("English", [0.80, 0.40, 0.32, 1.00], "#7c3aed"),

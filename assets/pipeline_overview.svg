@@ -38,6 +38,6 @@
 
   <rect x="170" y="270" width="760" height="90" rx="16" fill="#fffdf7" stroke="#d6d3d1" stroke-width="2"/>
   <text x="550" y="304" text-anchor="middle" font-family="Georgia, serif" font-size="22" fill="#111827">Main Empirical Finding</text>
-  <text x="550" y="334" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#374151">Culturally grounded retrieval quality depended primarily on knowledge source coverage</text>
-  <text x="550" y="356" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#6b7280">larger gains came from corpus supplementation than from chunking, embedding swaps, or hybrid retrieval</text>
+  <text x="550" y="334" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#374151">Largest observed gain in this setting: Uzbek corpus supplementation</text>
+  <text x="550" y="356" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#6b7280">59-point supplementation gain; 7.5-point difference between compared embedding models</text>
 </svg>

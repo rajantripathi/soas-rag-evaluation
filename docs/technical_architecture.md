@@ -6,7 +6,7 @@ This repository implements a bilingual RAG evaluation pipeline for culturally gr
 
 > When retrieval fails for culturally grounded multilingual questions, is the main bottleneck the retrieval model or the availability of the right source documents?
 
-The validated result is that targeted Uzbek corpus supplementation improved retrieval recall much more than retriever or embedding changes.
+The validated result is that targeted Uzbek corpus supplementation improved retrieval recall from 39% to 98% (59 percentage points; *p* < 0.001; Cohen's *d* = 2.91). The compared embedding models differed by 7.5 percentage points overall (Cohen's *d* = 0.31).
 
 ## Main Components
 
@@ -115,7 +115,7 @@ The strongest validated result is the Uzbek supplement v2 improvement:
 | Git commit logging | Evaluation logs include the current Git commit |
 | Timestamped run directories | Outputs are written under timestamped `results/eval_*` directories |
 | Fixed configs | Experiment settings live in `configs/` |
-| Small public sample | `hf_dataset/manual_eval_v5_sample.jsonl` preserves a shareable retrieval-only benchmark sample |
+| Public pilot data | `hf_dataset/manual_eval_v5_retrieval_only.jsonl` contains all 400 retrieval-only rows; the 30-row file is a preview |
 | Large artifact exclusion | Raw corpora, processed corpora, indexes, and full run directories remain outside Git |
 
 ## Known Technical Boundaries
@@ -123,4 +123,4 @@ The strongest validated result is the Uzbek supplement v2 improvement:
 - The generator is a controlled stub, so this is primarily a retrieval evaluation project.
 - Public Git does not contain full raw datasets, indexes, or complete cluster run directories.
 - English supplementation results were retracted because the attempted supplement leaked gold-answer text.
-- LLM-as-judge infrastructure exists, but it is not part of the validated headline result.
+- LLM-as-judge infrastructure exists, but it has not been executed; no human evaluation has been completed.

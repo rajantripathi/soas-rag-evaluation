@@ -4,7 +4,7 @@
 - Motivation: multilingual AI systems often underperform on culturally grounded questions because relevant local knowledge is missing or weakly represented.
 - Problem statement: standard RAG evaluations often confound model quality with corpus coverage.
 - Research question: in bilingual English-Uzbek RAG evaluation, does retrieval quality depend more on model choice or knowledge source coverage?
-- Main claim: culturally grounded AI performance depends primarily on coverage of culturally grounded sources.
+- Main claim: in this evaluation setting, Uzbek corpus supplementation produced a larger retrieval gain than the compared model and retrieval interventions.
 
 ## 2. Related Work
 - Multilingual QA and retrieval benchmarks
@@ -54,7 +54,7 @@
 - Uzbek weak domains improve sharply once missing documents are added
 
 ## 7. Discussion
-- Why corpus coverage dominates in culturally grounded retrieval
+- Why corpus coverage produced the largest observed gain in this setting
 - Knowledge representation as a corpus design problem
 - Limits of model-only optimization when local knowledge is absent
 - Implications for multilingual AI evaluation in underrepresented settings
@@ -64,6 +64,8 @@
 - Manual benchmark scope remains moderate
 - English source coverage remains thinner in some domains
 - Supplement design currently tied to available Wikipedia-like sources
+- Public release is a pilot with known template and domain-quality issues
+- No human evaluation or LLM-as-judge evaluation completed
 
 ## 9. Future Work
 - Expand culturally grounded corpora with institutional, legal, and historical sources
@@ -73,5 +75,5 @@
 
 ## 10. Conclusion
 - Restate the main empirical takeaway:
-- culturally grounded AI systems depend first on culturally grounded knowledge coverage
-- model choice matters, but only after the relevant knowledge is present
+- corpus coverage and model choice should be tested as distinct retrieval interventions
+- broader claims require replication across languages, corpora, and end-to-end generation settings

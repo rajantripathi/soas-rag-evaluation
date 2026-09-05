@@ -11,7 +11,7 @@ version: "manual_eval_v5"
 date-released: "2026-06-30"
 repository-code: "https://github.com/rajantripathi/soas-rag-evaluation"
 repository-artifact: "https://zenodo.org/records/21067667"
-abstract: "A reproducible bilingual English-Uzbek retrieval benchmark and experiment suite for culturally grounded multilingual RAG evaluation."
+abstract: "A reproducible 400-row pilot bilingual English-Uzbek retrieval benchmark and experiment suite for culturally grounded multilingual RAG evaluation."
 license: "CC-BY-4.0"
 keywords:
   - multilingual retrieval

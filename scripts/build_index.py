@@ -2,8 +2,11 @@
 from __future__ import annotations
 
 import argparse
+import sys
 import json
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from src.retrieval import build_index
 from src.utils import ensure_dir, load_config, read_jsonl

@@ -4,7 +4,8 @@
 
 - **Bootstrap confidence intervals**: 1000 resamples, 95% CI
 - **McNemar's test**: For paired binary comparisons between conditions
-- **Effect size**: Absolute difference in recall@k proportions
+- **Absolute gain**: Difference in recall@k proportions, reported in percentage points
+- **Standardised effect size**: Cohen's *d*, reported separately from absolute gain
 - **Sample size**: 400 items (200 English, 200 Uzbek) for v4 experiments, 200 items for v2 experiments
 
 ## Key Experimental Findings
@@ -128,15 +129,15 @@ def bootstrap_recall(recalls, n_resamples=1000, ci=0.95):
 
 ## Key Takeaways
 
-1. **Corpus supplementation produces the largest effect sizes** (d = 2.91 for Uzbek), far exceeding model improvements (d = 0.31)
+1. **Uzbek corpus supplementation produced a large standardised effect in this setting** (d = 2.91); the embedding-model comparison had d = 0.31
 
-2. **Statistical significance confirmed** for all major findings: supplementation (p < 0.001), embedding improvements (p < 0.05), vector vs BM25 (p < 0.001)
+2. **The validated Uzbek supplementation comparison was statistically significant** (p < 0.001); the embedding comparison and vector-versus-BM25 results have their own tests above
 
 3. **No significant difference** from chunking variations (p = 1.0) or hybrid retrieval (p = 1.0)
 
 4. **English-Uzbek asymmetry**: Uzbek shows dramatic improvements from supplementation; English shows smaller effects and different failure modes
 
-5. **Domain-specific patterns**: History and institutions are the weakest domains for both languages, confirming corpus coverage as the bottleneck
+5. **Domain-specific patterns**: English history and institutions were the weakest English domains; the supplemented Uzbek setup showed high recall across all four domains
 
 ---
 

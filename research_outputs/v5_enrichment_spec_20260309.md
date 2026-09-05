@@ -10,7 +10,7 @@ The script must preserve all v4 fields exactly and add three new fields to every
 - `difficulty`
 - `quality_flag`
 
-It must also emit a balanced internal QA sample, a validation report, and an internal schema note. Answer-bearing outputs remain untracked pending source and license clearance.
+It must also emit a balanced internal QA sample, a validation report, and an internal schema note. Answer-bearing outputs remain untracked pending source and licence clearance.
 
 ## Script Metadata
 
@@ -383,7 +383,7 @@ Carry forward the current limitations from `docs/limitations.md` and add the new
 
 ### Publication Boundary Section
 
-Do not embed answer-bearing example entries in tracked documentation while source and license clearance is pending. Point readers to the retrieval-only files under `hf_dataset/` instead.
+Do not embed answer-bearing example entries in tracked documentation while source and licence clearance is pending. Point readers to the retrieval-only files under `hf_dataset/` instead.
 
 ## Deliberate Exclusions From v5
 
@@ -427,5 +427,5 @@ Rationale:
 - `manual_eval_v5.jsonl` contains exactly 400 rows and preserves all v4 content
 - every row has `source_title`, `difficulty`, and `quality_flag`
 - the validation report shows language and domain balance
-- the sample file contains exactly 30 rows with full-cell coverage
-- the dataset card documents the new schema, limitations, exclusions, and examples clearly enough for external review
+- the public preview file contains exactly 30 retrieval-only rows with full-cell coverage
+- the dataset card documents the public schema, limitations, exclusions, and release boundary clearly enough for external review

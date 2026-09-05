@@ -15,21 +15,21 @@
 
 ## Executive Summary
 
-This project demonstrates that **corpus coverage dominates model choice** for culturally grounded retrieval-augmented question answering. Through systematic experimentation on a bilingual benchmark (English and Uzbek) across four domains (governance, history, institutions, culture), we show that targeted knowledge source curation produces transformational improvements (59% absolute gain for Uzbek) that model optimisation cannot match (7.5% gain from better embeddings). The findings have direct implications for AI funding priorities, evaluation standards, and deployment strategies for underrepresented languages and cultural contexts.
+This project reports evidence from a 400-row pilot bilingual retrieval benchmark in English and Uzbek across governance, history, institutions, and culture. In the validated v2 comparison, targeted Uzbek corpus supplementation increased retrieval recall from 39% to 98% (59 percentage points; *p* < 0.001; Cohen's *d* = 2.91). The observed overall difference between the compared embedding models was 7.5 percentage points (Cohen's *d* = 0.31). These findings concern retrieval in this evaluation setting, not generated-answer quality or all low-resource languages.
 
 ## Key Contributions
 
-1. **Bilingual benchmark**: 400-item eval set (manual_eval_v5) with enriched schema including difficulty, quality flags, and source titles
+1. **Pilot bilingual retrieval benchmark**: 400-item evaluation set (`manual_eval_v5`) with difficulty, quality flags, and source titles
 
 2. **Empirical demonstration**: Uzbek recall improved from 39% to 98% through corpus supplementation (p < 0.001, d = 2.91)
 
 3. **English gap analysis**: Identified 74 missing English documents (37% gap), with weakest coverage in history (40%) and institutions (32%)
 
-4. **Statistical rigour**: All major comparisons include bootstrap confidence intervals, effect sizes, and significance tests
+4. **Statistical analysis**: Key reported comparisons include bootstrap confidence intervals, effect sizes, and significance tests
 
-5. **Policy implications**: Knowledge curation > model scaling for culturally grounded AI
+5. **Research implication**: Corpus coverage merits explicit testing alongside retrieval-model choices
 
-6. **Publication-ready outputs**: Policy brief, workshop paper outline, updated README
+6. **Public research outputs**: Policy brief, workshop paper draft, reports, code, and retrieval-only dataset
 
 ## Experimental Summary
 
@@ -39,8 +39,8 @@ This project demonstrates that **corpus coverage dominates model choice** for cu
 |---------|------|--------------|---------|
 | v1 | 200 items | Initial balanced set | Baseline experiments |
 | v2 | 200 items | Quality audit, failure taxonomy | Error analysis |
-| v4 | 400 items | Uzbek supplement v2 | Best performance before Phase 3 |
-| v5 | 400 items | Enriched schema (difficulty, quality_flag, source_title) | Final experiments |
+| v4 | 400 items | Expanded evaluation set | Robustness analysis |
+| v5 | 400 items | Enriched schema (difficulty, quality_flag, source_title) | Public pilot release |
 
 ### Overall Recall@k Across All Conditions
 
@@ -83,19 +83,19 @@ This project demonstrates that **corpus coverage dominates model choice** for cu
 
 **Baseline (before supplementation):**
 - Overall: 39.0%
-- Governance: [~50%]%
-- History: [~30%]%
-- Institutions: [~25%]%
-- Culture: [~50%]%
+- Governance: 100.0%
+- History: 16.0%
+- Institutions: 12.0%
+- Culture: 28.0%
 
-**After Uzbek supplementation v2:**
-- Overall: 96.0%
-- Governance: 98.0%
+**After Uzbek supplementation v2 (validated v2 comparison):**
+- Overall: 98.0%
+- Governance: 100.0%
 - History: 96.0%
 - Institutions: 96.0%
-- Culture: 94.0%
+- Culture: 100.0%
 
-**Key insight:** Uzbek supplementation produced dramatic, uniform improvements across all domains. The 59% absolute improvement (d = 2.91) is one of the largest effects documented in retrieval-augmented QA literature.
+**Interpretation:** Uzbek supplementation produced gains across history, institutions, and culture in this evaluation setting. The absolute improvement was 59 percentage points (Cohen's *d* = 2.91).
 
 ## Per-Domain Analysis
 
@@ -103,12 +103,12 @@ This project demonstrates that **corpus coverage dominates model choice** for cu
 
 | Domain | English | Uzbek | English-Uzbek Gap |
 |--------|---------|-------|-------------------|
-| Governance | 80% | ~50% | +30% |
-| History | 40% | ~30% | +10% |
-| Institutions | 32% | ~25% | +7% |
-| Culture | 100% | ~50% | +50% |
+| Governance | 80% | 100% | -20% |
+| History | 40% | 16% | +24% |
+| Institutions | 32% | 12% | +20% |
+| Culture | 100% | 28% | +72% |
 
-### After Uzbek Supplementation
+### Expanded v4 Evaluation under the Supplemented Setup
 
 | Domain | English | Uzbek | English-Uzbek Gap |
 |--------|---------|-------|-------------------|
@@ -117,7 +117,7 @@ This project demonstrates that **corpus coverage dominates model choice** for cu
 | Institutions | 32% | 96% | +64% |
 | Culture | 100% | 94% | +6% |
 
-**Pattern:** History and institutions are the weakest domains for both languages, confirming that corpus coverage (not model quality) is the bottleneck. Culture shows the opposite pattern. English is fully covered but Uzbek was not before supplementation.
+**Interpretation:** The v4 evaluation used 400 items and should not be compared directly with the 200-item v2 phase. Its 96% Uzbek result is distinct from the validated v2 supplementation comparison, which reached 98%. English history and institutions remained weaker than the other English domains.
 
 ## Failure Taxonomy
 
@@ -140,11 +140,11 @@ This project demonstrates that **corpus coverage dominates model choice** for cu
 3. **Retriever Collapse** (10 items): Collapsed onto hub documents (doc IDs 1790, 1570, 1798)
    - Resolved through supplementation for Uzbek
 
-4. **Quality Issues** (1 item): Generic questions (e.g., "Institut" in Uzbek)
-   - Flagged for v6 enrichment with quality_flag field
+4. **Question-quality flags** (4 public rows): Known question-quality issues retained in the pilot release
+   - Documented through the `quality_flag` field
 
-5. **Domain Misclassification** (6 items): Wrong domain templates assigned
-   - Documented for v6 cleanup
+5. **Domain misclassification flags** (16 public rows): Seed-item and generated-variant domain mismatches
+   - Documented through the `quality_flag` field; the audit is not exhaustive
 
 ## Methodological Limitations
 
@@ -198,21 +198,21 @@ This project demonstrates that **corpus coverage dominates model choice** for cu
 3. **Human evaluation**: Do LLM-as-judge scores correlate with human assessments of answer quality?
 4. **Cost-benefit analysis**: Is corpus supplementation more cost-effective than model scaling at scale?
 
-## Policy Implications
+## Research and Policy Considerations
 
-### For Funders (AHRC, ESRC, British Academy)
+### For Research Programmes
 
-1. **Fund knowledge curation**: Investment in corpus curation yields larger improvements than model training for underrepresented languages
+1. **Test knowledge curation**: Include corpus-coverage interventions in multilingual retrieval research designs
 
 2. **Community-led documentation**: Support local communities to document their own knowledge in machine-readable formats
 
-3. **Evaluation standards**: Require cultural coverage audits as part of AI funding requirements
+3. **Evaluation standards**: Consider cultural-coverage audits as one component of multilingual retrieval evaluation
 
 ### For AI Developers
 
 1. **Audit before optimise**: Check corpus coverage before investing in larger models or better embeddings
 
-2. **Domain-specific corpora**: Small, well-curated corpora (100-200 documents) outperform generic web-scale data
+2. **Domain-specific corpora**: Evaluate whether curated sources address documented retrieval gaps before changing models
 
 3. **Cultural specificity**: Generic benchmarks hide performance gaps for culturally grounded queries
 
@@ -226,15 +226,15 @@ This project demonstrates that **corpus coverage dominates model choice** for cu
 
 ## Conclusion
 
-This project provides rigorous empirical evidence that **corpus coverage is the dominant bottleneck** for culturally grounded multilingual retrieval. Through systematic experimentation, we show that targeted knowledge curation produces transformational improvements (59% absolute gain, d = 2.91) that model optimisation cannot match (7.5% gain, d = 0.31).
+This project provides evidence that corpus coverage was an important retrieval constraint in this English-Uzbek evaluation setting. Targeted Uzbek corpus supplementation produced a 59-percentage-point gain (Cohen's *d* = 2.91), while the compared embedding models differed by 7.5 percentage points overall (Cohen's *d* = 0.31).
 
-For Uzbek, the effect of knowledge source curation is 7.9 times larger than the effect of embedding model improvement (Cohen's d of 2.91 versus 0.31).
+The 59-percentage-point gain from corpus supplementation was approximately 7.9 times the 7.5-point gain observed from embedding-model variation. This is a ratio of absolute recall gains, not a ratio of Cohen's *d* values.
 
 The findings have immediate implications:
 
 - **For researchers**: Corpus-centric approaches should precede model-centric approaches for culturally grounded AI
-- **For funders**: Knowledge curation is more cost-effective than model scaling for underrepresented languages
-- **For policymakers**: AI evaluation standards must include cultural coverage audits
+- **For research programmes**: Corpus curation and model comparison can be evaluated as separate interventions
+- **For policymakers**: Cultural-coverage audits may be considered when evaluating multilingual retrieval systems
 - **For communities**: Local knowledge documentation is essential for AI systems to serve effectively
 
 The benchmark, code, and findings are publicly available for reproducibility and community engagement.
@@ -242,8 +242,9 @@ The benchmark, code, and findings are publicly available for reproducibility and
 ---
 
 **Project Status**: Core experiments complete, Uzbek supplementation validated, English supplementation incomplete
-**Publication Ready**: Workshop paper based on validated Uzbek results
 **Code Available**: https://github.com/rajantripathi/soas-rag-evaluation
-**Contact**: rt1@soas.ac.uk | Centre for AI Futures, SOAS University of London
+**Affiliations**: AI² Lab, American University of Technology, Uzbekistan; Centre for AI Futures, SOAS University of London
+
+This report is an author-maintained research artifact and does not represent an official institutional position of SOAS University of London or the American University of Technology.
 
 **Last Updated**: 20 March 2026

@@ -26,7 +26,7 @@ configs:
         path: "manual_eval_v5_sample.jsonl"
 ---
 
-# When Corpus Coverage Matters More Than Model Choice: An English-Uzbek Low-Resource RAG Evaluation Dataset
+# SOAS English-Uzbek Retrieval Pilot
 
 ## Dataset Summary
 
@@ -34,7 +34,7 @@ This folder documents a bilingual English-Uzbek retrieval evaluation benchmark f
 
 This is a pilot benchmark with documented quality flags, template-generated examples, and domain mismatches. The rows are published for transparency and diagnostic retrieval experiments; they should not be treated as 400 equally clean QA items. Some known mismatches were identified after the initial flagging pass, so the current `quality_flag` field should be treated as useful but not exhaustive.
 
-The full QA version remains pending license and source-clearance review. `gold_answer` and `reference_answer` fields are not included in the public pilot release because earlier review found source-derived answer text that needs manual clearance before publication.
+The full QA version remains pending licence and source-clearance review. `gold_answer` and `reference_answer` fields are not included in the public pilot release because earlier review found source-derived answer text that needs manual clearance before publication.
 
 The benchmark is designed to test whether a RAG pipeline retrieves the relevant supporting source document. In this benchmark setting, targeted Uzbek source curation produced an observed improvement in Uzbek retrieval recall from 39% to 98% without changing the underlying model. The result should be interpreted as evidence from this evaluation set, not as evidence for all low-resource RAG systems.
 
@@ -74,7 +74,7 @@ Current files:
 
 - `manual_eval_v5_retrieval_only.jsonl`: 400-row retrieval-only public pilot release.
 - `manual_eval_v5_sample.jsonl`: 30-row public preview sample with the same retrieval-only field set.
-- `dataset_info.json`: auxiliary draft metadata for release planning. It is not a Hugging Face-generated `dataset_infos.json` file.
+- `dataset_info.json`: auxiliary release metadata. It is not a Hugging Face-generated `dataset_infos.json` file.
 
 Not included in this branch:
 
@@ -96,7 +96,7 @@ dataset = load_dataset(
 
 Auxiliary metadata:
 
-- `dataset_info.json` is auxiliary draft release metadata for review and upload planning.
+- `dataset_info.json` is auxiliary release metadata.
 - It is not a Hugging Face-generated `dataset_infos.json` file.
 - The dataset card, retrieval-only JSONL file, and preview JSONL file are the public dataset materials in this branch.
 
@@ -182,7 +182,9 @@ Validated retrieval-side results from the repository:
 Careful interpretation:
 
 - On this English-Uzbek evaluation set, corpus coverage and curation had a larger observed effect than embedding-model variation.
-- The validated Uzbek supplementation effect was 59 percentage points, from 39% to 98%.
+- The validated Uzbek supplementation effect was 59 percentage points, from 39% to 98% (*p* < 0.001; Cohen's *d* = 2.91).
+- The observed overall recall difference between the compared embedding models was 7.5 percentage points (Cohen's *d* = 0.31).
+- The 59-percentage-point supplementation gain was approximately 7.9 times the 7.5-point embedding-model difference. This is a ratio of absolute recall gains, not a ratio of Cohen's *d* values.
 - The result is retrieval-side evidence; it does not establish final generated-answer quality.
 
 ## Ethical Considerations
@@ -193,15 +195,9 @@ Careful interpretation:
 - Quality flags are retained to make known issues visible rather than silently removing difficult items.
 - Because the flagging pass is incomplete, users should also consult the repository's dataset quality audit before defining a clean subset.
 
-## Release Risk Review
+## Future Release Requirements
 
-TODO: Confirm dataset-license compatibility for any future expanded release. The retrieval-only dataset excludes source-derived reference answers, but the source corpora and source-document identifiers still need continuing release review.
-
-TODO: Review long `gold_answer` values before any future full QA Hugging Face upload. The prepared internal full QA dataset includes some extended source-derived excerpts rather than short answer spans.
-
-TODO: Confirm that all included records come from public or release-cleared sources and do not include private Isambard paths, credentials, or non-public notes.
-
-No obvious personal private data, credentials, or local filesystem paths were added by the release-preparation files.
+Any expanded or full-QA release requires a fresh source and licence review. Internal answer-bearing material includes source-derived text and must be cleared manually before publication. The current retrieval-only files have been checked to exclude answer, context, source-text, credential, and local-path fields; this check does not pre-authorise future additions.
 
 ## Limitations
 
@@ -243,7 +239,9 @@ Dataset DOI: [10.5281/zenodo.21067667](https://doi.org/10.5281/zenodo.21067667)
 
 Maintainer: Rajan Prasad Tripathi.
 
-Affiliations: AUT AI² Lab, School of Digital Technologies, American University of Technology, Uzbekistan; Centre for AI Futures, SOAS University of London.
+Affiliations: AI² Lab, American University of Technology, Uzbekistan; Centre for AI Futures, SOAS University of London.
+
+This dataset is a research artifact maintained by the author. It does not represent an official institutional position of SOAS University of London or the American University of Technology.
 
 Hugging Face dataset: `https://huggingface.co/datasets/Rajan2026/soas-english-uzbek-rag-evaluation`
 Source repository: `https://github.com/rajantripathi/soas-rag-evaluation`

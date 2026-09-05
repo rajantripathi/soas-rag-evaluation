@@ -2,7 +2,7 @@
 
 ## Overview
 
-manual_eval_v5 is a deterministic enrichment of the 400-item bilingual retrieval benchmark for culturally grounded question answering in English and Uzbek. It preserves every v4 benchmark item exactly while adding human-readable source titles, a coarse difficulty heuristic, and auditable quality flags derived from the Stage 1 dataset audit.
+`manual_eval_v5` is a deterministic enrichment of the 400-item pilot bilingual retrieval benchmark in English and Uzbek. It preserves every v4 item while adding human-readable source titles, a coarse difficulty heuristic, and auditable quality flags derived from the Stage 1 dataset audit.
 
 ## Languages
 
@@ -87,4 +87,4 @@ Resolved titles: 326 / 400. Null values indicate that `source_doc_ids[0]` could 
 
 ## Publication Boundary
 
-This document describes an internal schema only. The full QA rows and answer-bearing sample are excluded from the public branch pending source and license clearance. Use `hf_dataset/README.md` and the retrieval-only JSONL files for the public release.
+This document describes an internal schema only. The full QA rows and answer-bearing sample are excluded from the public branch pending source and licence clearance. Use `hf_dataset/README.md` and the retrieval-only JSONL files for the public release. The public release is a pilot with known template-generated examples, domain mismatches, and incomplete quality flags.

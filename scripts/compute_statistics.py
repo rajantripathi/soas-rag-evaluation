@@ -8,7 +8,7 @@ import numpy as np
 from scipy import stats
 
 import sys
-sys.path.insert(0, '/home/u6ef/rajantripathi.u6ef/soas_rag_eval')
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from src.utils import ensure_dir, read_jsonl, write_jsonl
 
@@ -86,9 +86,8 @@ def mcnemar_test_exact(pred_a: List[Dict], pred_b: List[Dict], gold_ids: List[st
     if b + c == 0:
         return 1.0, 0.0  # No difference, p=1.0
 
-    # Use exact binomial test for small samples
-    from scipy.stats import binom_test
-    p_value = binom_test(min(b, c), n=b + c, p=0.5)
+    # Use an exact binomial test for the discordant pairs.
+    p_value = stats.binomtest(min(b, c), n=b + c, p=0.5).pvalue
 
     # Effect size (difference in proportions)
     diff = (b - c) / (a + b + c + d) if (a + b + c + d) > 0 else 0.0
@@ -131,7 +130,6 @@ def main():
         "vector_e5",
         "uz_supp_v1",
         "uz_supp_v2",
-        "full_supp",  # Will be added once Task 3 completes
     ]
 
     for exp_name in exp_names:
@@ -172,16 +170,6 @@ def main():
             "significant": p_value < 0.05,
         })
 
-    if "uz_supp_v2" in experiments and "full_supp" in experiments:
-        p_value, diff = mcnemar_test_exact(experiments["uz_supp_v2"], experiments["full_supp"], gold_ids)
-        comparisons.append({
-            "condition_a": "UZ supp v2",
-            "condition_b": "Full supp",
-            "p_value": p_value,
-            "difference": diff,
-            "significant": p_value < 0.05,
-        })
-
     # Write report
     ensure_dir(Path(args.output).parent)
 
@@ -196,7 +184,7 @@ def main():
         handle.write("| Condition | Overall | English | Uzbek |\n")
         handle.write("| --- | --- | --- | --- |\n")
 
-        for exp_name in ["baseline", "vector_mpnet", "vector_e5", "uz_supp_v1", "uz_supp_v2", "full_supp"]:
+        for exp_name in ["baseline", "vector_mpnet", "vector_e5", "uz_supp_v1", "uz_supp_v2"]:
             if exp_name not in stats_by_condition:
                 continue
 

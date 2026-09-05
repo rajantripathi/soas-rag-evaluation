@@ -1,6 +1,6 @@
 # Manual Eval v2 Error Analysis
 
-This public report retains retrieval-side identifiers, questions, and recall outcomes. Answer text, retrieved source excerpts, and generated text have been removed pending source and license clearance.
+This public report retains retrieval-side identifiers, questions, and recall outcomes. Answer text, retrieved source excerpts, and generated text have been removed pending source and licence clearance.
 
 ## Vector Retrieval Failures
 - en_83 | en | history | recall=0.0

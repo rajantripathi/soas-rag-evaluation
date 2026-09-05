@@ -1,43 +1,52 @@
-# Why Standard AI Benchmarks Fail in Non-Western Contexts
+# Corpus Coverage in an English-Uzbek Retrieval Pilot
 
 ## Key Message
 
-**For culturally grounded AI in underrepresented languages, the dominant bottleneck is knowledge source coverage, not model quality.**
+In this 400-row pilot bilingual retrieval benchmark, targeted Uzbek corpus supplementation produced a substantially larger observed recall gain than embedding-model variation. The result is evidence from this English-Uzbek evaluation setting, not a claim about all languages or end-to-end answer quality.
 
-## The Problem
+## The Evaluation Setting
 
-AI systems evaluated on standard benchmarks appear to perform well, but fail systematically on queries requiring local institutional, historical, or cultural knowledge. When communities deploy these systems for real-world tasks, they discover that the models cannot answer basic questions about local history, institutions, or cultural practices because the underlying knowledge sources are incomplete.
+The benchmark tests retrieval in English and Uzbek across governance, history, institutions, and culture. It measures whether a relevant source document is retrieved. The public release is retrieval-only, contains documented template-generated and domain-misaligned examples, and should not be treated as a uniformly clean or definitive QA benchmark.
 
-## The Evidence
+No human evaluation or LLM-as-judge evaluation has been completed. The validated findings therefore concern retrieval recall, not the quality, faithfulness, or usefulness of generated answers.
 
-Our bilingual benchmark (English and Uzbek) tested retrieval-augmented AI across four domains: governance, history, institutions, and culture. The findings were striking.
+## Validated Findings
 
-For Uzbek, we observed a dramatic improvement from 39% to 98% recall through targeted corpus supplementation. By adding 61 structured documents from Uzbek Wikipedia that filled known gaps in historical and institutional knowledge, retrieval performance more than doubled. By contrast, changing embedding models and chunking strategies produced minimal gains.
+The English baseline retrieval recall was 63%. The Uzbek baseline was 39%. After targeted Uzbek corpus supplementation, Uzbek recall reached 98%, an absolute gain of 59 percentage points (*p* < 0.001; Cohen's *d* = 2.91).
 
-For English, we identified the same pattern. History and institutions domains showed weak performance (40% and 32% coverage respectively) due to missing source documents. When we added 74 targeted English documents to fill these gaps, we anticipated substantial improvement in retrieval performance.
+Across the compared embedding models, the overall recall difference was 7.5 percentage points (Cohen's *d* = 0.31). The 59-percentage-point gain from corpus supplementation was approximately 7.9 times the 7.5-point gain observed from embedding-model variation. This is a comparison of absolute recall gains, not a ratio of Cohen's *d* values, and it does not compare different generation LLMs.
 
-These findings demonstrate that knowledge source coverage is the primary driver of performance for culturally grounded AI. Model optimisation produces marginal gains, but corpus coverage produces transformational improvements.
+English history and institutions had baseline recall of 40% and 32%, respectively. An English supplementation experiment was attempted, but its results were retracted because synthetic material leaked answer content into the corpus. English supplementation is therefore not evidence in this brief.
 
-## The Implication
+## Research and Policy Relevance
 
-Investment in local knowledge curation is more cost-effective than investment in larger models for culturally grounded AI. A small, well-curated corpus of domain-specific documents outperforms generic web-scale training data for tasks requiring local knowledge. This has important implications for funding agencies, AI developers, and communities seeking to deploy AI systems in underrepresented languages and cultural contexts.
+The evaluation suggests that corpus coverage should be audited explicitly when multilingual retrieval systems underperform on locally specific knowledge. In comparable settings, source curation may merit testing before more expensive changes to retrieval models. The present experiment does not establish comparative cost-effectiveness, and it does not show that a small curated corpus generally outperforms web-scale training data.
 
-## Recommendations
+Possible next steps include:
 
-We recommend three priority actions for funders, policymakers, and AI developers:
+- supporting transparent, community-informed source curation for underrepresented languages and domains;
+- including corpus-coverage checks in multilingual retrieval evaluations;
+- developing larger, independently reviewed benchmarks with clearer item-level provenance and quality controls; and
+- validating retrieval findings with human assessment and end-to-end generation evaluation before making deployment claims.
 
-- Fund knowledge source curation for underrepresented languages and domains. Support the creation of high-quality, culturally specific corpora through community-led documentation projects, digital archive initiatives, and knowledge preservation efforts.
+## Scope and Limitations
 
-- Require cultural coverage audits as part of AI evaluation standards. Current benchmarks and evaluation protocols do not systematically test for cultural knowledge coverage. New standards should require developers to demonstrate that their systems can answer questions about local history, institutions, and cultural practices.
-
-- Support reproducible multilingual benchmarks that test culturally specific knowledge. Fund the development of open benchmarks that go beyond translation tasks to test whether AI systems truly understand local contexts. These benchmarks should be community-driven, transparent about their limitations, and focused on real-world use cases.
+- The benchmark contains 400 pilot items in two languages.
+- Known template and domain-quality issues are documented, and current quality flags are not exhaustive.
+- The result is limited to monolingual retrieval in the evaluated English-Uzbek setting.
+- Cross-lingual retrieval, human evaluation, and LLM-as-judge evaluation were not completed.
+- The public dataset excludes reference answers, source text, contexts, and generated answers pending source and licence clearance.
 
 ## About
 
-Centre for AI Futures, SOAS University of London. Contact: rt1@soas.ac.uk
+Author affiliations: AI² Lab, American University of Technology, Uzbekistan; Centre for AI Futures, SOAS University of London.
+
+This brief and its associated repository are research artifacts maintained by the author. They do not represent an official institutional position of SOAS University of London or the American University of Technology.
 
 ---
 
 **Published:** March 2026
-**Project:** SOAS RAG Evaluation - Bilingual Retrieval Benchmark for Culturally Grounded QA
-**Funding:** Prepared for AHRC, ESRC, and British Academy funding consideration
+
+**Project:** SOAS English-Uzbek RAG Evaluation (Retrieval-Only)
+
+**Dataset DOI:** https://doi.org/10.5281/zenodo.21067667

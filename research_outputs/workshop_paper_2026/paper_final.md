@@ -1,12 +1,12 @@
-# Corpus Coverage Dominates Model Choice in Culturally Grounded Multilingual Retrieval
+# Corpus Coverage and Embedding-Model Variation in an English-Uzbek Retrieval Pilot
 
-**Authors:** Rajan Tripathi (Centre for AI Futures, SOAS University of London; AI2 Innovation Lab, American University of Technology, Uzbekistan)
+**Author:** Rajan Prasad Tripathi (AI² Lab, American University of Technology, Uzbekistan; Centre for AI Futures, SOAS University of London)
 
 ---
 
 ## Abstract
 
-Multilingual retrieval-augmented generation systems are typically evaluated on generic benchmarks that underrepresent culturally grounded knowledge. We present a bilingual benchmark for culturally grounded question answering in English and Uzbek, spanning four domains: governance, history, institutions, and culture. Through a controlled experiment sequence on the Isambard-AI supercomputer, we systematically isolate the effects of retrieval algorithm, chunking strategy, embedding model, and corpus coverage. We find that corpus supplementation with locally curated knowledge sources produces a 59-percentage-point improvement in Uzbek retrieval recall (0.39 to 0.98, p < 0.001, Cohen's d = 2.91), while embedding model changes yield only a 7.5-percentage-point gain (d = 0.31). The effect of knowledge source curation is 7.9 times larger than the effect of model optimisation. Our results suggest that for underrepresented languages, investment in culturally grounded knowledge curation should precede investment in model improvement.
+Multilingual retrieval-augmented generation systems are typically evaluated on generic benchmarks that may underrepresent culturally grounded knowledge. We present a 400-row pilot bilingual retrieval benchmark in English and Uzbek, spanning four domains: governance, history, institutions, and culture. Through a controlled experiment sequence on the Isambard-AI supercomputer, we isolate the observed effects of retrieval algorithm, chunking strategy, embedding model, and corpus coverage in this evaluation setting. Targeted Uzbek corpus supplementation produced a 59-percentage-point improvement in retrieval recall (0.39 to 0.98, p < 0.001, Cohen's d = 2.91), while the compared embedding models differed by 7.5 percentage points overall (d = 0.31). The 59-percentage-point gain from corpus supplementation was approximately 7.9 times the 7.5-point gain observed from embedding-model variation. This comparison is between absolute recall gains, not Cohen's d values. The results support auditing corpus coverage before model optimisation in comparable retrieval settings; they do not establish a general ordering for all languages or RAG systems.
 
 ---
 
@@ -18,7 +18,7 @@ When RAG systems fail in culturally grounded domains, the default assumption is 
 
 To test this hypothesis, we built a bilingual benchmark for English and Uzbek focusing on culturally grounded knowledge. We then conducted a controlled experiment sequence systematically varying retrieval parameters: chunking strategy, embedding model, retrieval algorithm, and corpus coverage. By isolating each variable, we can quantify which interventions produce meaningful improvements.
 
-We make three contributions. First, we release a retrieval-only bilingual pilot benchmark with 400 items across four domains and documented quality-audit metadata. Second, we provide a controlled ablation study isolating the effects of different RAG design choices. Third, we demonstrate that corpus supplementation produces effect sizes nearly eight times larger than embedding model improvements, with direct implications for AI funding priorities and evaluation standards.
+We make three contributions. First, we release a retrieval-only bilingual pilot benchmark with 400 items across four domains and documented quality-audit metadata. Second, we provide a controlled ablation study of several retrieval design choices. Third, we report that the absolute recall gain from Uzbek corpus supplementation was approximately 7.9 times the overall gain observed between the compared embedding models. The two standardised effect sizes are reported separately.
 
 ---
 
@@ -30,7 +30,7 @@ We make three contributions. First, we release a retrieval-only bilingual pilot 
 
 **Cultural bias in NLP.** Hershcovich et al. (2022) documented cultural gaps in NLP systems, particularly for underrepresented languages. However, existing work has not systematically tested corpus coverage versus model choice for retrieval tasks. Our work fills this gap by isolating corpus effects from model effects.
 
-**The gap.** No existing work has systematically compared corpus coverage against model choice for culturally grounded retrieval. We provide the first controlled ablation study quantifying these effects.
+**Study focus.** Prior work motivates separating corpus adequacy from downstream model behaviour. This study provides a controlled comparison of corpus and retrieval interventions in one English-Uzbek setting.
 
 ---
 
@@ -44,7 +44,7 @@ Our benchmark covers two languages (English and Uzbek) across four domains: gove
 
 The benchmark was constructed in three phases. Version 1 (v1) contained 200 items with 25 items per language-domain cell. Version 2 (v2) added quality audit metadata. Version 4 (v4) expanded to 400 items with 50 items per language-domain cell by introducing template variants. The final version (v5) enriched the schema with source titles, difficulty ratings, and quality flags.
 
-The public retrieval-only release contains question text, source document IDs, language and domain labels, cultural-specificity ratings, answerability flags, and audit metadata. Reference answers used in internal QA analysis are withheld pending source and license clearance. The current metadata identifies 20 domain or question flags, including four late corrections for two seed items and their generated variants; an internal answer-quality audit separately identified 38 artefact flags.
+The public retrieval-only release contains question text, source document IDs, language and domain labels, cultural-specificity ratings, answerability flags, and audit metadata. Reference answers used in internal QA analysis are withheld pending source and licence clearance. The current metadata identifies 20 domain or question flags, including four late corrections for two seed items and their generated variants; an internal answer-quality audit separately identified 38 artefact flags.
 
 ### 3.3 Corpus Sources
 
@@ -116,7 +116,7 @@ Table 2 shows overall recall@k across all conditions. Results are reported separ
 
 ### 5.2 Effect Sizes
 
-Cohen's d quantifies the standardised difference between conditions. Corpus supplementation produces d = 2.91 for Uzbek recall, while embedding model changes produce d = 0.31 for overall recall. The supplementation effect is 7.9 times larger than the model effect.
+Cohen's d quantifies the standardised difference between conditions. Corpus supplementation produced d = 2.91 for Uzbek recall, while the embedding-model comparison produced d = 0.31 for overall recall. Separately, the 59-percentage-point gain from corpus supplementation was approximately 7.9 times the 7.5-point gain observed from embedding-model variation. The 7.9 figure is not a ratio of the Cohen's d values.
 
 ### 5.3 Statistical Significance
 
@@ -189,9 +189,9 @@ Finally, human evaluation was not conducted. LLM-as-judge infrastructure exists 
 
 ## 8. Conclusion
 
-We presented a bilingual benchmark for culturally grounded question answering and a controlled ablation study of RAG design choices. Our main finding is that corpus coverage dominates model choice for culturally grounded retrieval. Uzbek supplementation produced a 59-percentage-point improvement (d = 2.91), while embedding model changes produced only a 7.5-percentage-point improvement (d = 0.31). The effect of knowledge curation is 7.9 times larger than the effect of model optimisation.
+We presented a 400-row pilot bilingual retrieval benchmark and a controlled ablation study of RAG design choices. In this English-Uzbek evaluation setting, Uzbek supplementation produced a 59-percentage-point improvement (d = 2.91), while the compared embedding models differed by 7.5 percentage points overall (d = 0.31). The 59-percentage-point gain from corpus supplementation was approximately 7.9 times the 7.5-point gain observed from embedding-model variation.
 
-The implications are clear. For underrepresented languages, investment in culturally grounded knowledge curation should precede investment in model improvement. Funders should prioritise corpus development over model scaling. Developers should audit corpus coverage before optimising models. Policymakers should require cultural coverage audits as part of AI evaluation standards.
+These results motivate a practical research sequence: audit source coverage, test corpus interventions, and then compare retrieval models. Whether the same pattern holds for other languages, corpora, or end-to-end generated answers remains an empirical question.
 
 Our benchmark and code are publicly available. Future work should expand to additional languages, conduct end-to-end generation evaluation, and test whether findings generalise to other cultural contexts.
 
@@ -203,15 +203,15 @@ Asai, A., Kasai, J., Clark, J. H., Lee, K., Choi, E., & Hajishirzi, H. (2020). X
 
 Clark, J. H., Choi, E., Collins, M., Garrette, D., Kwiatkowski, T., Nikolaev, V., & Palomaki, J. (2020). TyDi QA: A benchmark for information-seeking question answering in typologically diverse languages. arXiv preprint arXiv:2003.05002.
 
-Es, S., James, J., Espinosa-Anke, L., & Schockaert, S. (2024). RAGAS: Automated evaluation of retrieval augmented generation. Proceedings of the 18th Conference of the European Chapter of the Association for Computational Linguistics: System Demonstrations, 150-158.
+Es, S., James, J., Espinosa Anke, L., & Schockaert, S. (2024). RAGAs: Automated evaluation of retrieval augmented generation. Proceedings of the 18th Conference of the European Chapter of the Association for Computational Linguistics: System Demonstrations, 150-158.
 
 Hershcovich, D., Frank, S., Lent, H., de Lhoneux, M., Abdou, M., Brandl, S., Bugliarello, E., Cabello Piqueras, L., Chalkidis, I., Cui, R., Fierro, C., Margatina, K., Rust, P., & Søgaard, A. (2022). Challenges and strategies in cross-cultural NLP. arXiv preprint arXiv:2203.10020.
 
 Honovich, O., Aharoni, R., Herzig, J., Taitelbaum, H., Kukliansy, D., Cohen, V., Scialom, T., Szpektor, I., Hassidim, A., & Matias, Y. (2022). TRUE: Re-evaluating factual consistency evaluation. arXiv preprint arXiv:2204.04991.
 
-Karpukhin, V., Oguz, B., Min, S., Lewis, P., Wu, L., Edunov, S., ... & Yih, W. T. (2020). Dense passage retrieval for open-domain question answering. Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing, 6769-6782.
+Karpukhin, V., Oğuz, B., Min, S., Lewis, P., Wu, L., Edunov, S., Chen, D., & Yih, W. T. (2020). Dense passage retrieval for open-domain question answering. Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing, 6769-6782.
 
-Lewis, P., Perez, E., Piktus, A., Petroni, F., Karpukhin, V., Goyal, N., ... & Kiela, D. (2020). Retrieval-augmented generation for knowledge-intensive NLP tasks. Advances in Neural Information Processing Systems, 33, 9459-9474.
+Lewis, P., Perez, E., Piktus, A., Petroni, F., Karpukhin, V., Goyal, N., Küttler, H., Lewis, M., Yih, W. T., Rocktäschel, T., Riedel, S., & Kiela, D. (2020). Retrieval-augmented generation for knowledge-intensive NLP tasks. Advances in Neural Information Processing Systems, 33, 9459-9474.
 
 Zhang, X., Thakur, N., Ogundepo, O., Kamalloo, E., Alfonso-Hermelo, D., Li, X., Liu, Q., Rezagholizadeh, M., & Lin, J. (2022). Making a MIRACL: Multilingual information retrieval across a continuum of languages. arXiv preprint arXiv:2210.09984.
 
@@ -225,8 +225,10 @@ Robertson, S., & Zaragoza, H. (2009). The probabilistic relevance framework: BM2
 
 **Word count:** approximately 3,400 words
 
-**Acknowledgements:** This work used the Isambard-AI supercomputer under the u6ef project. The author thanks the Centre for AI Futures at SOAS University of London for support.
+**Acknowledgements:** The computations reported here used the Isambard-AI supercomputer under project u6ef. This historical acknowledgement does not imply current or future access.
 
-**Data availability:** Benchmark samples and code are available at https://github.com/rajantripathi/soas-rag-evaluation
+**Data availability:** The retrieval-only benchmark and code are available at https://github.com/rajantripathi/soas-rag-evaluation. Answer-bearing research material is withheld pending source and licence clearance.
 
-**Affiliation:** Centre for AI Futures, SOAS University of London
+**Affiliations:** AI² Lab, American University of Technology, Uzbekistan; Centre for AI Futures, SOAS University of London.
+
+This paper and repository are author-maintained research artifacts and do not represent an official institutional position of SOAS University of London or the American University of Technology.
