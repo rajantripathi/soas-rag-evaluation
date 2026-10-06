@@ -109,15 +109,32 @@ def acquire(background_count):
     manifest_path = PUBLIC / 'source_manifest.json'
     if manifest_path.exists():
         manifest = read(manifest_path)
-        # Reconstruct by immutable revision IDs; never resample a published corpus.
+        # Reconstruct exact revisions in bounded API batches; never resample.
+        pending = defaultdict(list)
         for doc in manifest['documents']:
             cached = CACHE / 'articles' / f"{doc['language']}_{doc['page_id']}.json"
-            if cached.exists() and read(cached)['raw_sha256'] == doc['raw_sha256'] and digest(read(cached)['text'].encode()) == doc['text_sha256']:
-                continue
-            fetched = fetch_page(doc['language'], revision_id=doc['revision_id'])
-            if not fetched or fetched['raw_sha256'] != doc['raw_sha256'] or fetched['text_sha256'] != doc['text_sha256']:
-                raise RuntimeError(f"Frozen revision unavailable or parser mismatch: {doc['url']}")
-            write(cached, fetched)
+            if cached.exists():
+                stored = read(cached)
+                if stored['raw_sha256'] == doc['raw_sha256'] and digest(stored['text'].encode()) == doc['text_sha256']:
+                    continue
+            pending[doc['language']].append(doc)
+        for language, missing in pending.items():
+            for start in range(0, len(missing), 50):
+                batch = missing[start:start+50]
+                payload = api(language, {'action': 'query', 'prop': 'revisions',
+                                        'revids': '|'.join(str(d['revision_id']) for d in batch),
+                                        'rvprop': 'ids|timestamp|content', 'rvslots': 'main'})
+                fetched = {}
+                for page in payload.get('query', {}).get('pages', []):
+                    parsed = parse_page(language, page)
+                    if parsed:
+                        fetched[parsed['revision_id']] = parsed
+                for doc in batch:
+                    value = fetched.get(doc['revision_id'])
+                    if not value or value['page_id'] != doc['page_id'] or value['raw_sha256'] != doc['raw_sha256'] or value['text_sha256'] != doc['text_sha256']:
+                        raise RuntimeError(f"Frozen revision unavailable or parser mismatch: {doc['url']}")
+                    write(CACHE / 'articles' / f"{language}_{doc['page_id']}.json", value)
+                print(f'Reconstructed {language}: {min(start+50,len(missing))}/{len(missing)}', flush=True)
         print('Frozen source manifest reconstructed', flush=True)
         return
     targets = {}
@@ -379,10 +396,13 @@ def report():
 
 
 def main():
+    global CACHE
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('stage',choices=['acquire','model','run','report'])
     parser.add_argument('--background-count',type=int,default=CONFIG['background_per_language'])
+    parser.add_argument('--cache-dir', type=Path, default=CACHE, help='Local source and embedding cache; never published.')
     args=parser.parse_args()
+    CACHE=args.cache_dir
     if args.stage=='acquire': acquire(args.background_count)
     elif args.stage=='model': prepare_model()
     elif args.stage=='run': run()

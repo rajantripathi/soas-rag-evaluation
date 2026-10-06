@@ -1,0 +1,8 @@
+{
+  "corpus_reconstruction": "passed against empty cache using frozen upstream revision IDs",
+  "articles_checked": 2196,
+  "source_manifest_sha256": "4c35506b8db2446bd5da6f20468ea00a4973ce8cb9f87c1ad25f31137f4f174f",
+  "independently_verified_metric_cells": 324,
+  "metrics_sha256": "de7b076622d63498f31199f09253266e3a46ec05c2bff9cf1541eab1254c6337",
+  "prediction_rows": 7056
+}

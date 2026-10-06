@@ -7,7 +7,13 @@
 
 **How much does missing source material constrain multilingual retrieval?** This research pilot examines English and Uzbek questions about governance, history, institutions, and culture. It combines a public retrieval-only dataset, an evaluation harness, and reports from a sequence of corpus and retriever experiments.
 
-The main reported finding is that targeted Uzbek corpus supplementation increased source-document retrieval from **39% to 98%** on the 100 Uzbek items in the historical v2 evaluation. The supplementation deliberately added evaluation-linked sources missing from the corpus. This is evidence of coverage repair on a known evaluation set; generalisation to unseen questions requires a held-out study.
+Historical reports describe targeted Uzbek corpus supplementation increasing source-document retrieval from **39% to 98%** on the 100 Uzbek items in the historical v2 evaluation. The supplementation deliberately added evaluation-linked sources missing from the corpus. This is evidence of coverage repair on a known evaluation set; generalisation to unseen questions requires a held-out study.
+
+## New reproducible local experiment
+
+The [frozen-corpus pilot](research_outputs/reproducible_pilot/README.md) now provides a new experiment with **196 resolved source targets and 2,000 background articles**, pinned Wikipedia revisions, public predictions, and independently checked metrics. On original questions, complete-corpus Hit@3 is 100% for both E5 prefix variants; BM25 scores 99% for English and 92.7% for Uzbek. These near-ceiling results expose the limits of this small target-aware candidate pool. They do not reproduce the historical corpus or establish performance on unseen sources.
+
+Read the [new results](research_outputs/reproducible_pilot/results.md), [working manuscript](research_outputs/workshop_paper_2026/paper_final.md), or [manuscript PDF](output/pdf/en-uz-retrieval-pilot.pdf). All five source-removal masks, alternate-phrasing results, and implementation details are available in the pilot package.
 
 ## Start here
 
@@ -17,7 +23,7 @@ The main reported finding is that targeted Uzbek corpus supplementation increase
 - **Reuse the evaluator:** Follow the dependency-free quickstart below.
 - **Read the research narrative:** [Working paper](research_outputs/workshop_paper_2026/paper_final.md) and [policy brief](research_outputs/policy_brief_culturally_grounded_ai.md). These are repository research outputs; their presence does not establish peer-reviewed publication.
 
-## Reported retrieval results
+## Historical reported retrieval results
 
 | Evaluation phase and condition | Items | English | Uzbek | Overall |
 | --- | ---: | ---: | ---: | ---: |

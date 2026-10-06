@@ -14,6 +14,9 @@ python scripts/run_reproducible_pilot.py acquire
 python scripts/run_reproducible_pilot.py model
 python scripts/run_reproducible_pilot.py run
 python scripts/run_reproducible_pilot.py report
+python scripts/verify_pilot_artifacts.py
+python scripts/write_pilot_manuscript.py
+python scripts/build_pilot_paper.py
 python -m unittest discover -s tests -v
 ```
 

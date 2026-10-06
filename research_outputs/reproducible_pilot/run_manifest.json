@@ -1,0 +1,73 @@
+{
+  "batch_size": 8,
+  "config_sha256": "7f735345de03232ba305b939f5ae47f9e1e242eba0ba60f5e9fe7043b2d951fd",
+  "cutoff_primary": 3,
+  "cutoffs": [
+    1,
+    3,
+    5
+  ],
+  "dataset_sha256": "ba1431853884e1de213426ebdce6a14f3389459da23ce7f22179a2d8e6bc4d4b",
+  "device": "cpu",
+  "git_commit": "e37bf55574ad672b646e369c0602bbcb6d462360",
+  "max_tokens": 480,
+  "model": {
+    "model_id": "intfloat/multilingual-e5-small",
+    "revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3"
+  },
+  "packages": {
+    "mwparserfromhell": "0.7.2",
+    "numpy": "2.4.6",
+    "sentence-transformers": "6.1.0",
+    "torch": "2.14.1",
+    "transformers": "5.18.0"
+  },
+  "protocol": {
+    "background_per_language": 1000,
+    "batch_size": 8,
+    "bootstrap_resamples": 10000,
+    "bootstrap_seed": 42,
+    "cutoffs": [
+      1,
+      3,
+      5
+    ],
+    "dataset": "hf_dataset/manual_eval_v5_retrieval_only.jsonl",
+    "device": "cpu",
+    "languages": [
+      "en",
+      "uz"
+    ],
+    "methods": [
+      "bm25",
+      "e5_prefixed",
+      "e5_unprefixed"
+    ],
+    "minimum_resolved_targets_per_language": 90,
+    "model_id": "intfloat/multilingual-e5-small",
+    "model_max_tokens": 512,
+    "passage_tokens": 480,
+    "primary_k": 3,
+    "primary_removal_seed": 42,
+    "protocol": "controlled-source-removal-v1",
+    "removal_fraction": 0.5,
+    "removal_seeds": [
+      42,
+      43,
+      44,
+      45,
+      46
+    ],
+    "torch_threads": 4
+  },
+  "runner_sha256": "9b3aea8262a9b91a1882b880fcd80f03c728ef565106bd63f46bcb8cc842fbd4",
+  "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "source_manifest_sha256": "4c35506b8db2446bd5da6f20468ea00a4973ce8cb9f87c1ad25f31137f4f174f",
+  "target_mapping_sha256": "600116e261f479ce438adf09f8e268c4a849f8fca2ed8b3e82c2e69af406133c"
+}

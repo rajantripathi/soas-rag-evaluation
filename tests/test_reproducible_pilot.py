@@ -39,6 +39,29 @@ class PilotTests(unittest.TestCase):
             self.assertEqual(git_commit(), 'a'*40)
             self.assertEqual(call.call_args.args[0], ['git', 'rev-parse', 'HEAD'])
 
+class FrozenAcquisitionTests(unittest.TestCase):
+    def test_reconstruction_requests_exact_revision_and_checks_hashes(self):
+        from scripts import run_reproducible_pilot as pilot
+        with tempfile.TemporaryDirectory() as temp:
+            base=Path(temp);public=base/'public';cache=base/'cache'
+            doc=dict(language='en',page_id=7,revision_id=900,raw_sha256='raw',text_sha256=digest(b'text'),url='https://example.org/?oldid=900')
+            write(public/'source_manifest.json',{'documents':[doc]})
+            with patch.object(pilot,'PUBLIC',public),patch.object(pilot,'CACHE',cache),patch.object(pilot,'api',return_value={'query':{'pages':[{}]}}) as fetch,patch.object(pilot,'parse_page',return_value={**doc,'text':'text'}):
+                pilot.acquire(1000)
+                self.assertEqual(fetch.call_args.args[0], 'en')
+                self.assertEqual(fetch.call_args.args[1]['revids'], '900')
+                self.assertEqual(json.loads((cache/'articles/en_7.json').read_text())['text'],'text')
+
+    def test_changed_revision_content_is_not_silently_accepted(self):
+        from scripts import run_reproducible_pilot as pilot
+        with tempfile.TemporaryDirectory() as temp:
+            base=Path(temp);public=base/'public';cache=base/'cache'
+            doc=dict(language='en',page_id=7,revision_id=900,raw_sha256='expected',text_sha256='expected',url='https://example.org/?oldid=900')
+            write(public/'source_manifest.json',{'documents':[doc]})
+            with patch.object(pilot,'PUBLIC',public),patch.object(pilot,'CACHE',cache),patch.object(pilot,'api',return_value={'query':{'pages':[{}]}}),patch.object(pilot,'parse_page',return_value={**doc,'raw_sha256':'changed'}):
+                with self.assertRaisesRegex(RuntimeError,'Frozen revision unavailable'):
+                    pilot.acquire(1000)
+
 
 if __name__ == '__main__':
     unittest.main()

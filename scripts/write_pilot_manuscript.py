@@ -1,4 +1,38 @@
-# Controlled Source Availability in an English-Uzbek Retrieval Pilot
+"""Build the manuscript from verified pilot metrics; historical reports stay separate."""
+from pathlib import Path
+import json
+
+ROOT=Path(__file__).resolve().parents[1]
+PUBLIC=ROOT/'research_outputs/reproducible_pilot'
+
+
+def main():
+    metrics=json.loads((PUBLIC/'metrics.json').read_text())
+    intervals=json.loads((PUBLIC/'paired_intervals.json').read_text())
+    mapping=json.loads((PUBLIC/'target_mapping.json').read_text())
+    manifest=json.loads((PUBLIC/'run_manifest.json').read_text())
+    methods={'bm25':'BM25','e5_prefixed':'E5 + prefixes','e5_unprefixed':'E5, no prefixes'}
+    def metric(lang,method,condition='full',subset='original'):
+        return next(m for m in metrics if m['language']==lang and m['method']==method and m['condition']==condition and m['subset']==subset and m['k']==3)
+    def pct(v): return f'{100*v:.1f}%'
+    main_table=['| Language | Retriever | Full Hit@3 | Removed Hit@3 | Gain (pp) | 95% paired interval (pp) |',
+                '| --- | --- | ---: | ---: | ---: | --- |']
+    seed_table=['| Language | Retriever | Seed 42 | Seed 43 | Seed 44 | Seed 45 | Seed 46 |',
+                '| --- | --- | ---: | ---: | ---: | ---: | ---: |']
+    sensitivity=['| Language | Retriever | Original Hit@3 | Alternate Hit@3 | Unflagged original Hit@3 (n) |',
+                 '| --- | --- | ---: | ---: | --- |']
+    for lang in ('en','uz'):
+        for method,label in methods.items():
+            full=metric(lang,method);removed=metric(lang,method,'removed_42')
+            interval=next(v for v in intervals if v['language']==lang and v['method']==method)
+            main_table.append(f"| {lang} | {label} | {pct(full['hit_rate'])} | {pct(removed['hit_rate'])} | {100*interval['difference']:.1f} | [{100*interval['lower']:.1f}, {100*interval['upper']:.1f}] |")
+            seed_table.append('| '+lang+' | '+label+' | '+' | '.join(pct(metric(lang,method,f'removed_{s}')['hit_rate']) for s in range(42,47))+' |')
+            variants=metric(lang,method,subset='variants');unflagged=metric(lang,method,subset='unflagged_original')
+            sensitivity.append(f"| {lang} | {label} | {pct(full['hit_rate'])} | {pct(variants['hit_rate'])} | {pct(unflagged['hit_rate'])} ({unflagged['rows']}) |")
+    en=metric('en','e5_prefixed');uz=metric('uz','e5_prefixed')
+    en_removed=metric('en','e5_prefixed','removed_42');uz_removed=metric('uz','e5_prefixed','removed_42')
+    excluded='; '.join(f"{m['requested_title']} (legacy ID {m['legacy_id']})" for m in mapping if m['status']!='resolved')
+    text=f'''# Controlled Source Availability in an English-Uzbek Retrieval Pilot
 
 **Rajan Prasad Tripathi**
 
@@ -8,7 +42,7 @@ AI² Lab, American University of Technology, Uzbekistan; Centre for AI Futures, 
 
 ## Abstract
 
-Retrieval depends on whether relevant sources are available as well as whether a retriever can rank them. We construct a reproducible source-availability diagnostic from an English-Uzbek pilot release covering governance, history, institutions, and culture. The release contains 400 question phrasings linked to 200 language-scoped targets. We resolve 196 targets and freeze their Wikipedia revisions with 1,000 background articles per language. We evaluate BM25 and multilingual E5-small, including a prefix ablation, on complete and reduced candidate pools. Correctly prefixed E5 achieves source hit rates at three of 100.0% for English and 100.0% for Uzbek on the original questions with all resolved targets available. After removing half the target sources under the predeclared primary mask, the corresponding scores are 50.0% and 50.0%. We report five removal masks, conditional retrieval scores, and source-group-aware paired intervals. These results describe controlled recovery of designated sources in small target-aware corpora; they do not establish performance on unseen sources or final answer quality. Code, revision manifests, model provenance, and retrieval-only predictions make the new experiment independently inspectable.
+Retrieval depends on whether relevant sources are available as well as whether a retriever can rank them. We construct a reproducible source-availability diagnostic from an English-Uzbek pilot release covering governance, history, institutions, and culture. The release contains 400 question phrasings linked to 200 language-scoped targets. We resolve 196 targets and freeze their Wikipedia revisions with 1,000 background articles per language. We evaluate BM25 and multilingual E5-small, including a prefix ablation, on complete and reduced candidate pools. Correctly prefixed E5 achieves source hit rates at three of {pct(en['hit_rate'])} for English and {pct(uz['hit_rate'])} for Uzbek on the original questions with all resolved targets available. After removing half the target sources under the predeclared primary mask, the corresponding scores are {pct(en_removed['hit_rate'])} and {pct(uz_removed['hit_rate'])}. We report five removal masks, conditional retrieval scores, and source-group-aware paired intervals. These results describe controlled recovery of designated sources in small target-aware corpora; they do not establish performance on unseen sources or final answer quality. Code, revision manifests, model provenance, and retrieval-only predictions make the new experiment independently inspectable.
 
 ## 1. Introduction
 
@@ -38,7 +72,7 @@ We preserve this release unchanged. The 200 original questions define the primar
 
 English source titles and Uzbek page IDs are resolved against Wikipedia, retaining mappings to the original benchmark identifiers. Uzbek resolutions are checked against stored titles, allowing recorded redirects. Missing, short, nonarticle, and title-mismatched resolutions are excluded rather than replaced with guessed topics. A minimum of 90 resolved original targets per language was required before reporting a bilingual experiment.
 
-All 100 English targets and 96 Uzbek targets resolved. The four Uzbek exclusions are: -1 (legacy ID 1036); 2 (son) (legacy ID 1037); Sovet Ittifoqi Madhiyasi (legacy ID 14266); Oʻzbekistondagi universitetlar (legacy ID 1887). Reasons and mappings are recorded in the public resolution file; exclusion does not mean that the topic lacks valid evidence elsewhere.
+All 100 English targets and 96 Uzbek targets resolved. The four Uzbek exclusions are: {excluded}. Reasons and mappings are recorded in the public resolution file; exclusion does not mean that the topic lacks valid evidence elsewhere.
 
 **Table 1. Eligible questions and candidate articles.**
 
@@ -77,18 +111,11 @@ Primary paired intervals compare the complete corpus with seed-42 removal at k=3
 
 ### 5.1 Complete and primary reduced corpus
 
-The reduced corpus has 50% designated-source availability in each language; the complete corpus has 100%. Table 2 reports original questions only. Gains refer to restoration, with all other corpus content fixed. The prefixed E5 conditional Hit@3 under removal is 100.0% for English and 100.0% for Uzbek. Complete-corpus conditional rates equal complete-corpus hit rates.
+The reduced corpus has 50% designated-source availability in each language; the complete corpus has 100%. Table 2 reports original questions only. Gains refer to restoration, with all other corpus content fixed. The prefixed E5 conditional Hit@3 under removal is {pct(en_removed['conditional_hit_rate'])} for English and {pct(uz_removed['conditional_hit_rate'])} for Uzbek. Complete-corpus conditional rates equal complete-corpus hit rates.
 
 **Table 2. Primary Hit@3 results and source-bootstrap intervals.**
 
-| Language | Retriever | Full Hit@3 | Removed Hit@3 | Gain (pp) | 95% paired interval (pp) |
-| --- | --- | ---: | ---: | ---: | --- |
-| en | BM25 | 99.0% | 49.0% | 50.0 | [40.0, 60.0] |
-| en | E5 + prefixes | 100.0% | 50.0% | 50.0 | [40.0, 60.0] |
-| en | E5, no prefixes | 100.0% | 50.0% | 50.0 | [40.0, 60.0] |
-| uz | BM25 | 92.7% | 47.9% | 44.8 | [34.4, 55.2] |
-| uz | E5 + prefixes | 100.0% | 50.0% | 50.0 | [39.6, 60.4] |
-| uz | E5, no prefixes | 100.0% | 50.0% | 50.0 | [39.6, 60.4] |
+{chr(10).join(main_table)}
 
 Both E5 variants saturate original-question Hit@3 in both languages, so this endpoint cannot discriminate their prefix settings on the complete candidate pools. At Hit@1, the prefixed and unprefixed Uzbek scores are 90/96 and 91/96, respectively; this pilot therefore does not support a claim that prefixes improved observed retrieval. The unprefixed condition remains an ablation rather than a recommended implementation.
 
@@ -100,14 +127,7 @@ Table 3 gives Hit@3 for all five reduced corpora. Variation reflects which targe
 
 **Table 3. Hit@3 across the five reduced corpora.**
 
-| Language | Retriever | Seed 42 | Seed 43 | Seed 44 | Seed 45 | Seed 46 |
-| --- | --- | ---: | ---: | ---: | ---: | ---: |
-| en | BM25 | 49.0% | 49.0% | 49.0% | 50.0% | 49.0% |
-| en | E5 + prefixes | 50.0% | 50.0% | 50.0% | 50.0% | 50.0% |
-| en | E5, no prefixes | 50.0% | 50.0% | 50.0% | 50.0% | 50.0% |
-| uz | BM25 | 47.9% | 46.9% | 45.8% | 49.0% | 49.0% |
-| uz | E5 + prefixes | 50.0% | 50.0% | 50.0% | 50.0% | 50.0% |
-| uz | E5, no prefixes | 50.0% | 50.0% | 50.0% | 50.0% | 50.0% |
+{chr(10).join(seed_table)}
 
 ### 5.3 Question and flag sensitivity
 
@@ -115,14 +135,7 @@ Table 4 reports complete-corpus performance. Alternate questions use the same so
 
 **Table 4. Complete-corpus question and flag sensitivity.**
 
-| Language | Retriever | Original Hit@3 | Alternate Hit@3 | Unflagged original Hit@3 (n) |
-| --- | --- | ---: | ---: | --- |
-| en | BM25 | 99.0% | 99.0% | 99.0% (97) |
-| en | E5 + prefixes | 100.0% | 99.0% | 100.0% (97) |
-| en | E5, no prefixes | 100.0% | 99.0% | 100.0% (97) |
-| uz | BM25 | 92.7% | 88.5% | 93.3% (89) |
-| uz | E5 + prefixes | 100.0% | 96.9% | 100.0% (89) |
-| uz | E5, no prefixes | 100.0% | 96.9% | 100.0% (89) |
+{chr(10).join(sensitivity)}
 
 All k=1 and k=5 results, availability-conditioned scores, and all subset/condition combinations are provided in the machine-readable metrics. The report generator validates prediction completeness and source identities before computing these tables.
 
@@ -140,7 +153,7 @@ A confirmatory study requires new source-disjoint questions, bilingual review, h
 
 The [pilot package](../reproducible_pilot/README.md) includes the protocol, source manifest, legacy-to-canonical mapping, model revision, run metadata, retrieval-only predictions, metrics, and paired intervals. Source content and embedding caches stay local; source revisions can be fetched by the manifest. Acquisition stops on unavailable or mismatched revisions rather than substituting current content. Inputs, dependencies, and code are hashed, and runs can resume cached batches.
 
-The executable runner used Git commit `e37bf55574ad672b646e369c0602bbcb6d462360` with SHA-256 `9b3aea8262a9b91a1882b880fcd80f03c728ef565106bd63f46bcb8cc842fbd4`. Its full model and package provenance is in `run_manifest.json`. Public predictions contain identifiers and analysis metadata, not source passages or answers. The unchanged benchmark release is available under [DOI 10.5281/zenodo.21067667](https://doi.org/10.5281/zenodo.21067667); that DOI identifies the dataset rather than this manuscript.
+The executable runner used Git commit `{manifest['git_commit']}` with SHA-256 `{manifest['runner_sha256']}`. Its full model and package provenance is in `run_manifest.json`. Public predictions contain identifiers and analysis metadata, not source passages or answers. The unchanged benchmark release is available under [DOI 10.5281/zenodo.21067667](https://doi.org/10.5281/zenodo.21067667); that DOI identifies the dataset rather than this manuscript.
 
 Code is MIT-licensed and the benchmark release is CC BY 4.0. Wikipedia material retains its upstream terms; these repository labels do not relicense downloaded source text. The public manifest provides source attribution and revision links.
 
@@ -159,3 +172,9 @@ The new experiment ran locally without paid inference or cluster compute. Earlie
 3. Wang, L., et al. (2024). [Multilingual E5 Text Embeddings: A Technical Report](https://arxiv.org/abs/2402.05672). arXiv:2402.05672.
 4. intfloat. [multilingual-e5-small model card](https://huggingface.co/intfloat/multilingual-e5-small). Retrieval prefix and model usage documentation, accessed 6 October 2026.
 5. Es, S., James, J., Espinosa Anke, L., and Schockaert, S. (2024). [RAGAs: Automated Evaluation of Retrieval Augmented Generation](https://aclanthology.org/2024.eacl-demo.16/). EACL System Demonstrations, 150-158.
+'''
+    (ROOT/'research_outputs/workshop_paper_2026/paper_final.md').write_text(text)
+    print('Manuscript regenerated from verified metrics')
+
+
+if __name__=='__main__': main()

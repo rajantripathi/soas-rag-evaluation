@@ -40,6 +40,8 @@ class PipelineTests(unittest.TestCase):
             self.fixture(directory)
             with patch.object(pilot,'PUBLIC',directory):
                 pilot.report()
+            from scripts.verify_pilot_artifacts import verify
+            verify(directory)
             metrics=pilot.read(directory/'metrics.json')
             original=[m for m in metrics if m['subset']=='original' and m['k']==3]
             self.assertEqual(len(original),36)

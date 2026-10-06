@@ -2,7 +2,11 @@
 
 This repository documents an English–Uzbek retrieval pilot. It investigates whether missing source material limits retrieval in culturally specific domains. The public release supports inspection and reuse of the retrieval evaluator; it is not a complete archive of the historical compute environment.
 
-## Evidence map
+## New local experiment
+
+The [reproducible pilot](../research_outputs/reproducible_pilot/README.md) provides separately measured results, frozen revision manifests, and retrieval-only predictions. Its controlled source-removal design uses existing evaluation targets and is not a held-out replication of the historical experiment. See the [new result tables](../research_outputs/reproducible_pilot/results.md). The statistical-provenance warning below concerns historical reports; new source-bootstrap intervals are generated from the published predictions.
+
+## Historical evidence map
 
 | Question | Evidence | Interpretation |
 | --- | --- | --- |
