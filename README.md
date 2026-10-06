@@ -12,6 +12,7 @@ The main reported finding is that targeted Uzbek corpus supplementation increase
 ## Start here
 
 - **Review the research:** [Evidence and reviewer guide](docs/reviewer_guide.md), including experiment phases, claim boundaries, and statistical provenance.
+- **Inspect the data structure:** [Reproducible audit](research_outputs/public_benchmark_structure.md): 400 question rows, 200 source targets, and two phrasings per target.
 - **Inspect the data:** [Dataset card](hf_dataset/README.md), [400-row JSONL](hf_dataset/manual_eval_v5_retrieval_only.jsonl), and [quality audit](research_outputs/dataset_quality_audit_20260309.md).
 - **Reuse the evaluator:** Follow the dependency-free quickstart below.
 - **Read the research narrative:** [Working paper](research_outputs/workshop_paper_2026/paper_final.md) and [policy brief](research_outputs/policy_brief_culturally_grounded_ai.md). These are repository research outputs; their presence does not establish peer-reviewed publication.

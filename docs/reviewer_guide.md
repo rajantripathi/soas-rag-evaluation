@@ -21,6 +21,10 @@ The original configurations inherit `top_k: 3` from `configs/base.yaml`. The met
 
 The 98% result belongs to v2 (100 Uzbek items); the expanded v4 result is 96% (200 Uzbek items). The v5 public dataset adds metadata to the expanded release. These phases should be cited separately.
 
+## Expanded-set dependence
+
+The [reproducible structural audit](../research_outputs/public_benchmark_structure.md) confirms 400 rows but only 200 language-scoped source targets, each represented twice. The expanded evaluation is a phrasing check over the same sources, not an independent held-out replication.
+
 ## Statistical provenance
 
 The [historical statistical report](../results/reports/statistical_analysis.md) contains confidence intervals, p-values, and Cohen's d values. These are retained as historical reported figures, not newly verified statistics.
