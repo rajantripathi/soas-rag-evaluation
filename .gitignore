@@ -87,3 +87,7 @@ ragas_contribution/proposal.md
 research_outputs/workshop_outline_20260309.md
 *.backup
 *.bak
+
+# Retrieval-only pilot outputs; source text remains under ignored data/.
+!research_outputs/reproducible_pilot/*.jsonl
+tmp/

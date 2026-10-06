@@ -1,0 +1,21 @@
+{
+  "protocol": "controlled-source-removal-v1",
+  "dataset": "hf_dataset/manual_eval_v5_retrieval_only.jsonl",
+  "background_per_language": 1000,
+  "minimum_resolved_targets_per_language": 90,
+  "languages": ["en", "uz"],
+  "model_id": "intfloat/multilingual-e5-small",
+  "methods": ["bm25", "e5_prefixed", "e5_unprefixed"],
+  "primary_k": 3,
+  "cutoffs": [1, 3, 5],
+  "removal_seeds": [42, 43, 44, 45, 46],
+  "primary_removal_seed": 42,
+  "removal_fraction": 0.5,
+  "passage_tokens": 480,
+  "model_max_tokens": 512,
+  "batch_size": 8,
+  "device": "cpu",
+  "torch_threads": 4,
+  "bootstrap_resamples": 10000,
+  "bootstrap_seed": 42
+}
