@@ -1,12 +1,14 @@
 # Corpus Coverage and Embedding-Model Variation in an English-Uzbek Retrieval Pilot
 
+> **Statistical provenance update:** Historical effect sizes, confidence intervals, and p-values below require verification against the original paired predictions. The reported Uzbek Cohen’s d does not match the checked-in formula. See the [reviewer guide](../../docs/reviewer_guide.md#statistical-provenance). Descriptive recall figures are retained as reported.
+
 **Author:** Rajan Prasad Tripathi (AI² Lab, American University of Technology, Uzbekistan; Centre for AI Futures, SOAS University of London)
 
 ---
 
 ## Abstract
 
-Multilingual retrieval-augmented generation systems are typically evaluated on generic benchmarks that may underrepresent culturally grounded knowledge. We present a 400-row pilot bilingual retrieval benchmark in English and Uzbek, spanning four domains: governance, history, institutions, and culture. Through a controlled experiment sequence on the Isambard-AI supercomputer, we isolate the observed effects of retrieval algorithm, chunking strategy, embedding model, and corpus coverage in this evaluation setting. Targeted Uzbek corpus supplementation produced a 59-percentage-point improvement in retrieval recall (0.39 to 0.98, p < 0.001, Cohen's d = 2.91), while the compared embedding models differed by 7.5 percentage points overall (d = 0.31). The 59-percentage-point gain from corpus supplementation was approximately 7.9 times the 7.5-point gain observed from embedding-model variation. This comparison is between absolute recall gains, not Cohen's d values. The results support auditing corpus coverage before model optimisation in comparable retrieval settings; they do not establish a general ordering for all languages or RAG systems.
+Multilingual retrieval-augmented generation systems are typically evaluated on generic benchmarks that may underrepresent culturally grounded knowledge. We present a 400-row pilot bilingual retrieval benchmark in English and Uzbek, spanning four domains: governance, history, institutions, and culture. Through a controlled experiment sequence on the Isambard-AI supercomputer, we isolate the observed effects of retrieval algorithm, chunking strategy, embedding model, and corpus coverage in this evaluation setting. Targeted Uzbek corpus supplementation produced a 59-percentage-point improvement in retrieval recall (0.39 to 0.98, p < 0.001, Cohen's d = 2.91), while the compared embedding models differed by 7.5 percentage points overall (d = 0.31). Within the same population, reported supplementation gains were 29.5 percentage points overall and 59 points for Uzbek; embedding-model gains were 7.5 points overall and 14 points for Uzbek. The results support auditing corpus coverage before model optimisation in comparable retrieval settings; they do not establish a general ordering for all languages or RAG systems.
 
 ---
 
@@ -18,7 +20,7 @@ When RAG systems fail in culturally grounded domains, the default assumption is 
 
 To test this hypothesis, we built a bilingual benchmark for English and Uzbek focusing on culturally grounded knowledge. We then conducted a controlled experiment sequence systematically varying retrieval parameters: chunking strategy, embedding model, retrieval algorithm, and corpus coverage. By isolating each variable, we can quantify which interventions produce meaningful improvements.
 
-We make three contributions. First, we release a retrieval-only bilingual pilot benchmark with 400 items across four domains and documented quality-audit metadata. Second, we provide a controlled ablation study of several retrieval design choices. Third, we report that the absolute recall gain from Uzbek corpus supplementation was approximately 7.9 times the overall gain observed between the compared embedding models. The two standardised effect sizes are reported separately.
+We make three contributions. First, we release a retrieval-only bilingual pilot benchmark with 400 items across four domains and documented quality-audit metadata. Second, we provide a controlled ablation study of several retrieval design choices. Third, we document targeted source coverage repair. Within the same population, reported supplementation gains were 29.5 percentage points overall and 59 points for Uzbek; embedding-model gains were 7.5 points overall and 14 points for Uzbek. The two standardised effect sizes are reported separately.
 
 ---
 
@@ -116,7 +118,7 @@ Table 2 shows overall recall@k across all conditions. Results are reported separ
 
 ### 5.2 Effect Sizes
 
-Cohen's d quantifies the standardised difference between conditions. Corpus supplementation produced d = 2.91 for Uzbek recall, while the embedding-model comparison produced d = 0.31 for overall recall. Separately, the 59-percentage-point gain from corpus supplementation was approximately 7.9 times the 7.5-point gain observed from embedding-model variation. The 7.9 figure is not a ratio of the Cohen's d values.
+Cohen's d quantifies the standardised difference between conditions. Corpus supplementation produced d = 2.91 for Uzbek recall, while the embedding-model comparison produced d = 0.31 for overall recall. Within the same population, reported supplementation gains were 29.5 percentage points overall and 59 points for Uzbek; embedding-model gains were 7.5 points overall and 14 points for Uzbek.
 
 ### 5.3 Statistical Significance
 
@@ -189,7 +191,7 @@ Finally, human evaluation was not conducted. LLM-as-judge infrastructure exists 
 
 ## 8. Conclusion
 
-We presented a 400-row pilot bilingual retrieval benchmark and a controlled ablation study of RAG design choices. In this English-Uzbek evaluation setting, Uzbek supplementation produced a 59-percentage-point improvement (d = 2.91), while the compared embedding models differed by 7.5 percentage points overall (d = 0.31). The 59-percentage-point gain from corpus supplementation was approximately 7.9 times the 7.5-point gain observed from embedding-model variation.
+We presented a 400-row pilot bilingual retrieval benchmark and a controlled ablation study of RAG design choices. In this English-Uzbek evaluation setting, Uzbek supplementation produced a 59-percentage-point improvement (d = 2.91), while the compared embedding models differed by 7.5 percentage points overall (d = 0.31). Within the same population, reported supplementation gains were 29.5 percentage points overall and 59 points for Uzbek; embedding-model gains were 7.5 points overall and 14 points for Uzbek.
 
 These results motivate a practical research sequence: audit source coverage, test corpus interventions, and then compare retrieval models. Whether the same pattern holds for other languages, corpora, or end-to-end generated answers remains an empirical question.
 

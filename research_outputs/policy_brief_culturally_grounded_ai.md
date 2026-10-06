@@ -1,5 +1,7 @@
 # Corpus Coverage in an English-Uzbek Retrieval Pilot
 
+> **Statistical provenance update:** Historical effect sizes, confidence intervals, and p-values below require verification against the original paired predictions. The reported Uzbek Cohen’s d does not match the checked-in formula. See the [reviewer guide](../docs/reviewer_guide.md#statistical-provenance). Descriptive recall figures are retained as reported.
+
 ## Key Message
 
 In this 400-row pilot bilingual retrieval benchmark, targeted Uzbek corpus supplementation produced a substantially larger observed recall gain than embedding-model variation. The result is evidence from this English-Uzbek evaluation setting, not a claim about all languages or end-to-end answer quality.
@@ -14,7 +16,7 @@ No human evaluation or LLM-as-judge evaluation has been completed. The validated
 
 The English baseline retrieval recall was 63%. The Uzbek baseline was 39%. After targeted Uzbek corpus supplementation, Uzbek recall reached 98%, an absolute gain of 59 percentage points (*p* < 0.001; Cohen's *d* = 2.91).
 
-Across the compared embedding models, the overall recall difference was 7.5 percentage points (Cohen's *d* = 0.31). The 59-percentage-point gain from corpus supplementation was approximately 7.9 times the 7.5-point gain observed from embedding-model variation. This is a comparison of absolute recall gains, not a ratio of Cohen's *d* values, and it does not compare different generation LLMs.
+Across the compared embedding models, the overall recall difference was 7.5 percentage points (Cohen's *d* = 0.31). Within the same population, reported supplementation gains were 29.5 percentage points overall and 59 points for Uzbek; embedding-model gains were 7.5 points overall and 14 points for Uzbek. This is a comparison of absolute recall gains, not a ratio of Cohen's *d* values, and it does not compare different generation LLMs.
 
 English history and institutions had baseline recall of 40% and 32%, respectively. An English supplementation experiment was attempted, but its results were retracted because synthetic material leaked answer content into the corpus. English supplementation is therefore not evidence in this brief.
 

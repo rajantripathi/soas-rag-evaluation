@@ -28,6 +28,8 @@ configs:
 
 # SOAS English-Uzbek Retrieval Pilot
 
+> **Statistical provenance update:** Historical effect sizes, confidence intervals, and p-values below require verification against the original paired predictions. The reported Uzbek Cohen’s d does not match the checked-in formula. See the [reviewer guide](../docs/reviewer_guide.md#statistical-provenance). Descriptive recall figures are retained as reported.
+
 ## Dataset Summary
 
 This folder documents a bilingual English-Uzbek retrieval evaluation benchmark for culturally grounded RAG systems. The 400-row public pilot release is retrieval-only: it contains questions and source-document targets, but it intentionally excludes answer, context, excerpt, and source-text fields.
@@ -184,7 +186,7 @@ Careful interpretation:
 - On this English-Uzbek evaluation set, corpus coverage and curation had a larger observed effect than embedding-model variation.
 - The validated Uzbek supplementation effect was 59 percentage points, from 39% to 98% (*p* < 0.001; Cohen's *d* = 2.91).
 - The observed overall recall difference between the compared embedding models was 7.5 percentage points (Cohen's *d* = 0.31).
-- The 59-percentage-point supplementation gain was approximately 7.9 times the 7.5-point embedding-model difference. This is a ratio of absolute recall gains, not a ratio of Cohen's *d* values.
+- Within the same population, reported supplementation gains were 29.5 percentage points overall and 59 points for Uzbek; embedding-model gains were 7.5 points overall and 14 points for Uzbek.
 - The result is retrieval-side evidence; it does not establish final generated-answer quality.
 
 ## Ethical Considerations

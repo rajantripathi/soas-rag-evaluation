@@ -1,5 +1,7 @@
 # English-Uzbek Retrieval Evaluation: Project Synthesis
 
+> **Statistical provenance update:** Historical effect sizes, confidence intervals, and p-values below require verification against the original paired predictions. The reported Uzbek Cohen’s d does not match the checked-in formula. See the [reviewer guide](../docs/reviewer_guide.md#statistical-provenance). Descriptive recall figures are retained as reported.
+
 ## Project Scope
 This project built a reproducible multilingual RAG evaluation pipeline on Isambard for English and Uzbek, with a primary focus on culturally grounded retrieval quality. The experimental sequence covered:
 
@@ -144,7 +146,7 @@ This reframes part of the multilingual AI problem from “which model should we 
 - evaluate whether multilingual systems preserve culturally specific meaning when the same topic is represented unevenly across languages
 
 ## Conclusion
-Across the reported experiments, the largest observed retrieval gain came from adding missing Uzbek source material. The 59-percentage-point gain was approximately 7.9 times the 7.5-point gain observed from embedding-model variation; this is a ratio of absolute recall gains, not Cohen's *d* values.
+Across the reported experiments, the largest observed retrieval gain came from adding missing Uzbek source material. Within the same population, reported supplementation gains were 29.5 percentage points overall and 59 points for Uzbek; embedding-model gains were 7.5 points overall and 14 points for Uzbek.
 
 For workshop or concept-note framing, the project supports a clear claim:
 

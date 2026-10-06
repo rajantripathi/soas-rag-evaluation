@@ -10,7 +10,12 @@
 - No human evaluation or LLM-as-judge evaluation has been completed.
 - The generator is a first-sentence stub; heuristic answer-oriented metrics are not part of the headline claim.
 
+## Statistical Provenance
+
+Historical inferential statistics require verification; the reported Uzbek effect size does not match the checked-in formula. See the [reviewer guide](reviewer_guide.md#statistical-provenance).
+
 ## Corpus Coverage
+- Supplementation targeted known evaluation-linked source documents; generalisation requires an independent held-out evaluation.
 - Uzbek coverage improved substantially after supplementation, but this does not imply full coverage of Uzbek institutional, legal, and historical knowledge.
 - English history and institutions remained relatively weaker under the final setup, showing that source asymmetry still matters.
 

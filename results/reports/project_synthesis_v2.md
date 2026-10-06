@@ -1,5 +1,7 @@
 # Culturally Grounded Multilingual RAG Evaluation: Project Synthesis V2
 
+> **Statistical provenance update:** Historical effect sizes, confidence intervals, and p-values below require verification against the original paired predictions. The reported Uzbek Cohen’s d does not match the checked-in formula. See the [reviewer guide](../../docs/reviewer_guide.md#statistical-provenance). Descriptive recall figures are retained as reported.
+
 ---
 ## ⚠️ PARTIAL RETRACTION: English Supplement Results Invalid (March 2026)
 
@@ -228,7 +230,7 @@ This project reports evidence from a 400-row pilot bilingual retrieval benchmark
 
 This project provides evidence that corpus coverage was an important retrieval constraint in this English-Uzbek evaluation setting. Targeted Uzbek corpus supplementation produced a 59-percentage-point gain (Cohen's *d* = 2.91), while the compared embedding models differed by 7.5 percentage points overall (Cohen's *d* = 0.31).
 
-The 59-percentage-point gain from corpus supplementation was approximately 7.9 times the 7.5-point gain observed from embedding-model variation. This is a ratio of absolute recall gains, not a ratio of Cohen's *d* values.
+ Within the same population, reported supplementation gains were 29.5 percentage points overall and 59 points for Uzbek; embedding-model gains were 7.5 points overall and 14 points for Uzbek.
 
 The findings have immediate implications:
 

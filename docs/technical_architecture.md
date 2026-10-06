@@ -1,5 +1,7 @@
 # Technical Architecture
 
+> **Statistical provenance update:** Historical effect sizes, confidence intervals, and p-values below require verification against the original paired predictions. The reported Uzbek Cohen’s d does not match the checked-in formula. See the [reviewer guide](reviewer_guide.md#statistical-provenance). Descriptive recall figures are retained as reported.
+
 ## Purpose
 
 This repository implements a bilingual RAG evaluation pipeline for culturally grounded retrieval in English and Uzbek. The system is designed to answer a specific methodological question:

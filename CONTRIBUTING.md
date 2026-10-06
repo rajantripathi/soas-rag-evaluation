@@ -14,7 +14,7 @@ Thank you for your interest in contributing to **soas-rag-evaluation**.
 
 1. Fork the repository and create a feature branch.
 2. Make a small, focused change with a clear commit message.
-3. Test locally.
+3. Run `python3 -m unittest discover -s tests -v` and `python3 scripts/compute_retrieval_recall.py --oracle-check --k 3` from the repository root. These checks require only Python 3.10+; they do not reproduce model experiments.
 4. Update documentation if needed.
 5. Open a pull request against the default branch.
 
@@ -27,3 +27,7 @@ Thank you for your interest in contributing to **soas-rag-evaluation**.
 ## Code of Conduct
 
 By participating you agree to abide by the [Code of Conduct](CODE_OF_CONDUCT.md).
+
+## Research and data changes
+
+Keep experiment phases and language populations explicit when reporting results. Link claims to the relevant report and disclose which artifacts are needed to reproduce them. Consult the [statistical provenance note](docs/reviewer_guide.md#statistical-provenance) before reusing historical inferential statistics. Do not add answer-bearing data or source text without the source and licence review described in the dataset card.

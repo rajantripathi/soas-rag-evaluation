@@ -1,5 +1,7 @@
 # Concept Note
 
+> **Statistical provenance update:** Historical effect sizes, confidence intervals, and p-values below require verification against the original paired predictions. The reported Uzbek Cohen’s d does not match the checked-in formula. See the [reviewer guide](../docs/reviewer_guide.md#statistical-provenance). Descriptive recall figures are retained as reported.
+
 ## Title
 Corpus Coverage in an English-Uzbek Retrieval Evaluation
 
