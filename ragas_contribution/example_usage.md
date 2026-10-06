@@ -1,4 +1,4 @@
-# Example Usage for RAGAS Contribution
+# Retrieval Dataset Adapter Example
 
 This example shows how the public English-Uzbek retrieval-only rows can be adapted for RAGAS-style retrieval workflows without changing the dataset schema.
 
@@ -10,7 +10,7 @@ Use the public retrieval-only sample first:
 python ragas_contribution/minimal_example.py --input hf_dataset/manual_eval_v5_sample.jsonl --limit 5
 ```
 
-Use the full retrieval-only candidate for inspection:
+Use the full retrieval-only release for inspection:
 
 ```bash
 python ragas_contribution/minimal_example.py --input hf_dataset/manual_eval_v5_retrieval_only.jsonl --limit 5
@@ -77,24 +77,6 @@ Not supported by repository fields alone:
 - claims about generated answer quality
 - cross-lingual retrieval results
 
-## Claim Wording
+## Scope
 
-Use careful wording:
-
-- In this benchmark setting, targeted Uzbek source curation improved retrieval recall from 39% to 98%.
-- On this English-Uzbek evaluation set, corpus coverage and curation had a larger observed effect than embedding-model variation.
-- The result suggests source coverage can be a first-order bottleneck in culturally grounded low-resource RAG evaluation.
-
-Avoid wording:
-
-- Broad claims about corpus coverage versus model choice outside this evaluation setting.
-- Proof-style claims about all low-resource RAG settings.
-- Claims about best-in-class answer generation.
-
-## Current External Trail
-
-- Hugging Face dataset: https://huggingface.co/datasets/Rajan2026/soas-english-uzbek-rag-evaluation
-- RAGAS PR: https://github.com/vibrantlabsai/ragas/pull/2795
-- LangChain issue: https://github.com/langchain-ai/langchain/issues/38572
-
-TODO: Add an end-to-end RAGAS metric example only after retrieved contexts, generated answers, and references are available from a user pipeline or a separately cleared QA release.
+This script previews a field mapping; it does not execute RAGAS metrics. End-to-end answer evaluation requires retrieved contexts, generated answers, and suitable references supplied separately. See the [reviewer guide](../docs/reviewer_guide.md) for interpretation of the historical retrieval results.

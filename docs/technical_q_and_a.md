@@ -1,6 +1,6 @@
 # Technical Q&A
 
-This page is intended for project discussion, supervision meetings, or technical review.
+Answers to common questions about the retrieval pipeline and its evaluation scope.
 
 ## What is the main technical contribution?
 
@@ -44,18 +44,6 @@ Hybrid retrieval is useful when lexical matching recovers relevant candidates th
 - LLM-as-judge tooling exists but has not been executed; no human evaluation has been completed.
 - Findings are based on English and Uzbek and should not be overgeneralized to all low-resource languages.
 
-## How should the architecture be explained?
+## Architecture and evidence
 
-Use this framing:
-
-> The system is a reproducible RAG evaluation harness. It builds comparable corpora, indexes them with multiple retrievers, evaluates retrieval against source-document labels, and reports language/domain-level metrics. The key design choice is that corpus interventions and model interventions are tested under the same pipeline, making the effect of missing culturally grounded source material visible.
-
-## What should not be claimed?
-
-Do not claim:
-
-- that this is a production RAG assistant
-- that generation quality is fully evaluated
-- that English supplement results are valid
-- that the Uzbek result generalizes automatically to every low-resource language
-- that larger models alone solve culturally grounded retrieval
+The pipeline builds corpora, indexes them with multiple retrievers, evaluates source-document retrieval, and reports language and domain metrics. See the [technical architecture](technical_architecture.md) for implementation details and the [reviewer guide](reviewer_guide.md) for evidence boundaries.

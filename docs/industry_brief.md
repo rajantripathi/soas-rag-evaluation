@@ -17,8 +17,6 @@ This benchmark separates source-coverage failure from downstream generation qual
 - GitHub repository: https://github.com/rajantripathi/soas-rag-evaluation
 - Hugging Face dataset: https://huggingface.co/datasets/Rajan2026/soas-english-uzbek-rag-evaluation
 - Dataset DOI: https://doi.org/10.5281/zenodo.21067667
-- RAGAS contribution PR: https://github.com/vibrantlabsai/ragas/pull/2795
-- LangChain cookbook proposal: https://github.com/langchain-ai/langchain/issues/38572
 
 ## What the Benchmark Provides
 
@@ -51,19 +49,6 @@ python scripts/compute_retrieval_recall.py --oracle-check --k 5
 
 The smoke check uses ground-truth source IDs as retrieved IDs. It validates evaluator wiring only; it is not a model result.
 
-## Claims to Make
+## Interpretation and limitations
 
-- In this English-Uzbek benchmark setting, targeted Uzbek corpus supplementation improved retrieval recall from 39% to 98%.
-- The observed corpus-coverage effect was larger than embedding-model variation in this setup.
-- Retrieval-only evaluation is useful for diagnosing source coverage before optimizing generation.
-
-## Claims to Avoid
-
-- Do not claim this proves corpus coverage always dominates model choice.
-- Do not claim the dataset measures generated-answer quality by itself.
-- Do not cite the retracted English supplementation result as valid evidence.
-- Do not describe the English and Uzbek halves as parallel translations.
-
-## Positioning
-
-This is best presented as an applied AI evaluation artifact: small enough to inspect, structured enough to reuse, and scoped carefully enough to be credible for industry review.
+The historical v2 result concerns 100 Uzbek items and targeted addition of known evaluation-linked sources. The public v5 release contains 400 bilingual items with documented quality issues. Reuse should include language and domain breakdowns, inspection of question quality, and a held-out evaluation for any new corpus intervention. See the [reviewer guide](reviewer_guide.md).

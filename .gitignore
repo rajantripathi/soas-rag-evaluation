@@ -81,3 +81,9 @@ results/reports/manual_eval_report_20260308.md
 results/reports/progress_*.md
 results/reports/publish_note_*.md
 results/reports/session_progress_*.md
+
+# Local editorial working notes
+ragas_contribution/proposal.md
+research_outputs/workshop_outline_20260309.md
+*.backup
+*.bak
