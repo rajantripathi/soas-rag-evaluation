@@ -20,6 +20,8 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - name: Check evaluator and public release
         run: python -m unittest discover -s tests -v
+      - name: Independently verify published pilot metrics
+        run: python scripts/verify_pilot_artifacts.py
       - name: Check oracle wiring (not model performance)
         run: python scripts/compute_retrieval_recall.py --oracle-check --k 3
 

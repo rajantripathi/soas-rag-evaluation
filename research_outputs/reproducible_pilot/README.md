@@ -43,3 +43,7 @@ The experiment protocol is recorded in `configs/reproducible_pilot.json`. It use
 Predictions contain IDs, rankings, and analysis metadata only. Prediction files contain multiple conditions; filter to one condition before passing them to the standalone evaluator. Use `evaluation_labels.jsonl` for the canonical source IDs, rather than the unchanged legacy labels. `report` checks complete prediction coverage, metadata consistency, source availability, and retrieved identifiers before generating metrics and intervals.
 
 Wikipedia source material retains its upstream terms; the repository's MIT code licence and CC BY dataset label do not relicense downloaded article text. Reproduction retrieves source revisions from the upstream service. These small, target-aware candidate pools and automatic question templates limit interpretation to a diagnostic pilot.
+
+## Verification performed
+
+All 2,196 article revisions were fetched again into an empty cache and matched the frozen raw and extracted-text hashes. A clean-checkout replay using those reconstructed sources and hash-matched cached embeddings reproduced all six prediction files, the metrics, intervals, passage manifest, and evaluation labels byte-for-byte. This is a cached replay, not a second uncached neural-inference run. See `verification.json`. The 324 metric cells were independently recomputed with the standalone public scorer.

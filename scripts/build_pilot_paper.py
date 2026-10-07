@@ -89,16 +89,27 @@ def pdf():
 
     text=PAPER.read_text().replace('—','-').replace('–','-').replace('‑','-')
     tokens=MarkdownIt('commonmark').enable('table').parse(text)
-    story=[]; i=0; image_inserted=False
+    story=[]; i=0; image_inserted=False; pending_caption=None; list_number=None; item_prefix=""
     while i<len(tokens):
         token=tokens[i]
+        if token.type=='ordered_list_open':
+            list_number=int(token.attrGet('start') or 1)
+        elif token.type=='ordered_list_close':
+            list_number=None
+        elif token.type=='list_item_open' and list_number is not None:
+            item_prefix=f'[{list_number}] '
+            list_number+=1
         if token.type=='heading_open':
             level=int(token.tag[1]); style='PaperTitle' if level==1 else 'PaperH2' if level==2 else 'PaperH3'
             story.append(Paragraph(inline(tokens[i+1]),styles[style]));i+=3;continue
         if token.type=='paragraph_open':
-            value=inline(tokens[i+1])
+            value=item_prefix+inline(tokens[i+1])
+            item_prefix=''
             style='TableCaption' if value.startswith('<b>Table ') else 'PaperBody'
-            story.append(Paragraph(value,styles[style]));i+=3;continue
+            paragraph=Paragraph(value,styles[style])
+            if style=='TableCaption': pending_caption=paragraph
+            else: story.append(paragraph)
+            i+=3;continue
         if token.type=='table_open':
             data=[];row=[];i+=1
             while tokens[i].type!='table_close':
@@ -113,7 +124,8 @@ def pdf():
                                       ('VALIGN',(0,0),(-1,-1),'TOP'),('LINEBELOW',(0,0),(-1,0),.5,colors.HexColor('#748a95')),
                                       ('LINEBELOW',(0,1),(-1,-1),.25,colors.HexColor('#d8dfe3')),
                                       ('TOPPADDING',(0,0),(-1,-1),5),('BOTTOMPADDING',(0,0),(-1,-1),5)]))
-            story.append(KeepTogether([table,Spacer(1,10)]))
+            story.append(KeepTogether(([pending_caption] if pending_caption else [])+[table,Spacer(1,10)]))
+            pending_caption=None
             if not image_inserted and any('Full Hit' in x.text for x in data[0]):
                 story.append(KeepTogether([
                     Image(str(PUBLIC/'coverage_results.png'),width=495,height=495*3.2/8.4),

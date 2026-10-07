@@ -4,5 +4,9 @@
   "source_manifest_sha256": "4c35506b8db2446bd5da6f20468ea00a4973ce8cb9f87c1ad25f31137f4f174f",
   "independently_verified_metric_cells": 324,
   "metrics_sha256": "de7b076622d63498f31199f09253266e3a46ec05c2bff9cf1541eab1254c6337",
-  "prediction_rows": 7056
+  "prediction_rows": 7056,
+  "clean_checkout_replay": "passed: all six prediction files, metrics, intervals, passage hashes, and evaluation labels byte-identical",
+  "replay_source_cache": "independently reacquired frozen revisions",
+  "replay_embedding_cache": "reused hash-matched model/input embeddings; not a second uncached neural inference run",
+  "clean_checkout_commit": "03c6eda"
 }
