@@ -59,11 +59,10 @@
     "uzbek_baseline_recall": "39%",
     "uzbek_after_corpus_supplementation_recall": "98%",
     "uzbek_absolute_gain_percentage_points": 59,
-    "uzbek_supplementation_p_value": "<0.001",
-    "uzbek_supplementation_cohens_d": 2.91,
     "embedding_model_comparison_gain_percentage_points": 7.5,
-    "embedding_model_comparison_cohens_d": 0.31,
-    "english_supplementation_status": "retracted_due_to_synthetic_leakage"
+    "english_supplementation_status": "retracted_due_to_synthetic_leakage",
+    "status": "historical_reported_descriptive_figures_not_rerun; inferential statistics withdrawn pending provenance recovery (see docs/reviewer_guide.md#statistical-provenance)",
+    "supplementation_caveat": "Uzbek supplementation sources were selected using known evaluation targets; not a held-out result."
   },
   "limitations": [
     "Pilot benchmark with template-generated questions, domain mismatches, and uneven item quality.",

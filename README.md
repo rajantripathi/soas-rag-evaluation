@@ -15,6 +15,8 @@ The [frozen-corpus pilot](research_outputs/reproducible_pilot/README.md) now pro
 
 Read the [new results](research_outputs/reproducible_pilot/results.md), [working manuscript](research_outputs/workshop_paper_2026/paper_final.md), or [manuscript PDF](output/pdf/en-uz-retrieval-pilot.pdf). All five source-removal masks, alternate-phrasing results, and implementation details are available in the pilot package.
 
+**Title-overlap check.** Most questions name their source article, so the near-ceiling scores partly reflect title matching. An approximate [title-masking ablation](research_outputs/title_masking/README.md) on a 2023 Wikipedia snapshot reproduces the pilot under its original protocol, then shows complete-corpus E5 Hit@3 falling from 100% to 69% for Uzbek and to 92% for English when each article's own title is removed. The exact frozen-corpus rerun is pending.
+
 ## Start here
 
 - **Review the research:** [Evidence and reviewer guide](docs/reviewer_guide.md), including experiment phases, claim boundaries, and statistical provenance.

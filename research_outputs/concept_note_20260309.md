@@ -81,7 +81,7 @@ Under the final `manual_eval_v4` best setup, recall@k was:
 - English: `0.6300`
 - Uzbek: `0.9600`
 
-The key point is not just that performance improved, but how it improved in this setting. Chunking changes were small. The compared embedding models differed by 7.5 percentage points overall. Hybrid retrieval did not surpass vector retrieval. Adding missing Uzbek source material produced a 59-percentage-point gain in Uzbek recall (39% to 98%, *p* < 0.001; Cohen's *d* = 2.91).
+The key point is not just that performance improved, but how it improved in this setting. Chunking changes were small. The compared embedding models differed by 7.5 percentage points overall. Hybrid retrieval did not surpass vector retrieval. Adding missing Uzbek source material produced a 59-percentage-point gain in Uzbek recall (39% to 98%). The added sources were chosen using known evaluation targets, so this is coverage repair on a known question set, not a held-out result. Historical *p*-values and effect sizes require verification and are not restated here; see the [reviewer guide](../docs/reviewer_guide.md#statistical-provenance).
 
 ## Implications
 The project suggests that culturally grounded AI evaluation should foreground knowledge source coverage. A multilingual model cannot ground answers in documents that are not present. This is especially important for underrepresented languages and domains where institutional, historical, or cultural knowledge may not appear in generic retrieval corpora at sufficient density.

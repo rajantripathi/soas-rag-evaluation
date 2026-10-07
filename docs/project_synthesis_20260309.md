@@ -13,7 +13,7 @@ This project built a reproducible multilingual RAG evaluation pipeline on Isamba
 - hybrid lexical plus vector retrieval
 - benchmark expansion from `manual_eval_v2` to `manual_eval_v4`
 
-The central validated result is that targeted Uzbek corpus supplementation increased retrieval recall from 39% to 98% (59 percentage points; *p* < 0.001; Cohen's *d* = 2.91). The compared embedding models differed by 7.5 percentage points overall (Cohen's *d* = 0.31). These results concern this retrieval setting and not generated-answer quality.
+The central reported result is that targeted Uzbek corpus supplementation increased retrieval recall from 39% to 98% (59 percentage points). The added sources were selected using known evaluation targets, so this is coverage repair on a known question set, not a held-out result. The compared embedding models differed by 7.5 percentage points overall. Historical inferential statistics require verification; see the reviewer guide's statistical provenance section. These results concern this retrieval setting and not generated-answer quality.
 
 ## Experimental Summary
 Two benchmark phases were used:

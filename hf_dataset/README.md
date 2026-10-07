@@ -172,20 +172,20 @@ This public release does not provide answer references. Users who want answer co
 
 ## Results Summary
 
-Validated retrieval-side results from the repository:
+Historical reported retrieval-side results from the repository (not rerun; see the statistical provenance note above):
 
 | Setting | Retrieval Recall | Status |
 | --- | ---: | --- |
 | English baseline | 63% | Valid baseline |
 | Uzbek baseline | 39% | Valid baseline |
-| Uzbek after corpus supplementation | 98% | Validated curation result |
+| Uzbek after corpus supplementation | 98% | Reported; targets known during curation |
 | English supplementation | Retracted | Invalid due to synthetic leakage |
 
 Careful interpretation:
 
 - On this English-Uzbek evaluation set, corpus coverage and curation had a larger observed effect than embedding-model variation.
-- The validated Uzbek supplementation effect was 59 percentage points, from 39% to 98% (*p* < 0.001; Cohen's *d* = 2.91).
-- The observed overall recall difference between the compared embedding models was 7.5 percentage points (Cohen's *d* = 0.31).
+- The reported Uzbek supplementation effect was 59 percentage points, from 39% to 98%. Added sources were selected using known evaluation targets, so this is not evidence of generalisation to unseen questions.
+- The observed overall recall difference between the compared embedding models was 7.5 percentage points.
 - Within the same population, reported supplementation gains were 29.5 percentage points overall and 59 points for Uzbek; embedding-model gains were 7.5 points overall and 14 points for Uzbek.
 - The result is retrieval-side evidence; it does not establish final generated-answer quality.
 

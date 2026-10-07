@@ -1,0 +1,322 @@
+{
+  "approximate": true,
+  "note": "Article text from the Hugging Face wikimedia/wikipedia 20231101 snapshots, matched to frozen page IDs (all 96 Uzbek targets, 82 of 100 English targets). Background pages absent from the snapshot were replaced by a seeded random sample (373 Uzbek, 123 English; English fill from one snapshot shard). Frozen titles are used for prefixes and masking.",
+  "corpus_sha256": "13fe853ec98a1b2f38dc2e1e3968554a757cbcbadd3883122f4f98d87e68ee3b",
+  "model": {
+    "model_id": "intfloat/multilingual-e5-small",
+    "revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3"
+  },
+  "variants": [
+    "title_prefix",
+    "no_prefix",
+    "title_masked"
+  ],
+  "methods": [
+    "bm25",
+    "e5_prefixed"
+  ],
+  "leakage": {
+    "en": {
+      "original_questions": 82,
+      "title_in_question": 71,
+      "targets_in_corpus": 82,
+      "candidates": 1082,
+      "background": 1000
+    },
+    "uz": {
+      "original_questions": 96,
+      "title_in_question": 96,
+      "targets_in_corpus": 96,
+      "candidates": 1096,
+      "background": 1000
+    }
+  },
+  "results": [
+    {
+      "language": "en",
+      "variant": "title_prefix",
+      "method": "bm25",
+      "questions": "original",
+      "n": 82,
+      "hit@1": 96.3,
+      "hit@3": 98.8,
+      "hit@5": 98.8
+    },
+    {
+      "language": "en",
+      "variant": "title_prefix",
+      "method": "bm25",
+      "questions": "alternate",
+      "n": 82,
+      "hit@1": 93.9,
+      "hit@3": 98.8,
+      "hit@5": 98.8
+    },
+    {
+      "language": "en",
+      "variant": "title_prefix",
+      "method": "e5_prefixed",
+      "questions": "original",
+      "n": 82,
+      "hit@1": 98.8,
+      "hit@3": 100.0,
+      "hit@5": 100.0
+    },
+    {
+      "language": "en",
+      "variant": "title_prefix",
+      "method": "e5_prefixed",
+      "questions": "alternate",
+      "n": 82,
+      "hit@1": 98.8,
+      "hit@3": 98.8,
+      "hit@5": 100.0
+    },
+    {
+      "language": "en",
+      "variant": "no_prefix",
+      "method": "bm25",
+      "questions": "original",
+      "n": 82,
+      "hit@1": 91.5,
+      "hit@3": 98.8,
+      "hit@5": 98.8
+    },
+    {
+      "language": "en",
+      "variant": "no_prefix",
+      "method": "bm25",
+      "questions": "alternate",
+      "n": 82,
+      "hit@1": 89.0,
+      "hit@3": 97.6,
+      "hit@5": 98.8
+    },
+    {
+      "language": "en",
+      "variant": "no_prefix",
+      "method": "e5_prefixed",
+      "questions": "original",
+      "n": 82,
+      "hit@1": 97.6,
+      "hit@3": 98.8,
+      "hit@5": 98.8
+    },
+    {
+      "language": "en",
+      "variant": "no_prefix",
+      "method": "e5_prefixed",
+      "questions": "alternate",
+      "n": 82,
+      "hit@1": 98.8,
+      "hit@3": 98.8,
+      "hit@5": 98.8
+    },
+    {
+      "language": "en",
+      "variant": "title_masked",
+      "method": "bm25",
+      "questions": "original",
+      "n": 82,
+      "hit@1": 74.4,
+      "hit@3": 81.7,
+      "hit@5": 82.9
+    },
+    {
+      "language": "en",
+      "variant": "title_masked",
+      "method": "bm25",
+      "questions": "alternate",
+      "n": 82,
+      "hit@1": 75.6,
+      "hit@3": 85.4,
+      "hit@5": 86.6
+    },
+    {
+      "language": "en",
+      "variant": "title_masked",
+      "method": "e5_prefixed",
+      "questions": "original",
+      "n": 82,
+      "hit@1": 87.8,
+      "hit@3": 91.5,
+      "hit@5": 91.5
+    },
+    {
+      "language": "en",
+      "variant": "title_masked",
+      "method": "e5_prefixed",
+      "questions": "alternate",
+      "n": 82,
+      "hit@1": 87.8,
+      "hit@3": 89.0,
+      "hit@5": 90.2
+    },
+    {
+      "language": "uz",
+      "variant": "title_prefix",
+      "method": "bm25",
+      "questions": "original",
+      "n": 96,
+      "hit@1": 80.2,
+      "hit@3": 91.7,
+      "hit@5": 97.9
+    },
+    {
+      "language": "uz",
+      "variant": "title_prefix",
+      "method": "bm25",
+      "questions": "alternate",
+      "n": 96,
+      "hit@1": 74.0,
+      "hit@3": 87.5,
+      "hit@5": 90.6
+    },
+    {
+      "language": "uz",
+      "variant": "title_prefix",
+      "method": "e5_prefixed",
+      "questions": "original",
+      "n": 96,
+      "hit@1": 96.9,
+      "hit@3": 100.0,
+      "hit@5": 100.0
+    },
+    {
+      "language": "uz",
+      "variant": "title_prefix",
+      "method": "e5_prefixed",
+      "questions": "alternate",
+      "n": 96,
+      "hit@1": 90.6,
+      "hit@3": 97.9,
+      "hit@5": 99.0
+    },
+    {
+      "language": "uz",
+      "variant": "no_prefix",
+      "method": "bm25",
+      "questions": "original",
+      "n": 96,
+      "hit@1": 70.8,
+      "hit@3": 89.6,
+      "hit@5": 92.7
+    },
+    {
+      "language": "uz",
+      "variant": "no_prefix",
+      "method": "bm25",
+      "questions": "alternate",
+      "n": 96,
+      "hit@1": 61.5,
+      "hit@3": 81.2,
+      "hit@5": 87.5
+    },
+    {
+      "language": "uz",
+      "variant": "no_prefix",
+      "method": "e5_prefixed",
+      "questions": "original",
+      "n": 96,
+      "hit@1": 91.7,
+      "hit@3": 95.8,
+      "hit@5": 97.9
+    },
+    {
+      "language": "uz",
+      "variant": "no_prefix",
+      "method": "e5_prefixed",
+      "questions": "alternate",
+      "n": 96,
+      "hit@1": 85.4,
+      "hit@3": 94.8,
+      "hit@5": 95.8
+    },
+    {
+      "language": "uz",
+      "variant": "title_masked",
+      "method": "bm25",
+      "questions": "original",
+      "n": 96,
+      "hit@1": 18.8,
+      "hit@3": 28.1,
+      "hit@5": 34.4
+    },
+    {
+      "language": "uz",
+      "variant": "title_masked",
+      "method": "bm25",
+      "questions": "alternate",
+      "n": 96,
+      "hit@1": 14.6,
+      "hit@3": 24.0,
+      "hit@5": 29.2
+    },
+    {
+      "language": "uz",
+      "variant": "title_masked",
+      "method": "e5_prefixed",
+      "questions": "original",
+      "n": 96,
+      "hit@1": 53.1,
+      "hit@3": 68.8,
+      "hit@5": 71.9
+    },
+    {
+      "language": "uz",
+      "variant": "title_masked",
+      "method": "e5_prefixed",
+      "questions": "alternate",
+      "n": 96,
+      "hit@1": 43.8,
+      "hit@3": 60.4,
+      "hit@5": 64.6
+    }
+  ],
+  "title_masking_drop": [
+    {
+      "language": "en",
+      "method": "bm25",
+      "k": 3,
+      "n": 82,
+      "drop_pp": 17.1,
+      "ci95_pp": [
+        9.8,
+        25.6
+      ]
+    },
+    {
+      "language": "en",
+      "method": "e5_prefixed",
+      "k": 3,
+      "n": 82,
+      "drop_pp": 8.5,
+      "ci95_pp": [
+        3.7,
+        14.6
+      ]
+    },
+    {
+      "language": "uz",
+      "method": "bm25",
+      "k": 3,
+      "n": 96,
+      "drop_pp": 63.5,
+      "ci95_pp": [
+        54.2,
+        72.9
+      ]
+    },
+    {
+      "language": "uz",
+      "method": "e5_prefixed",
+      "k": 3,
+      "n": 96,
+      "drop_pp": 31.2,
+      "ci95_pp": [
+        21.9,
+        40.6
+      ]
+    }
+  ]
+}
