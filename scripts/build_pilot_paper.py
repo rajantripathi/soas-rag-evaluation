@@ -15,6 +15,7 @@ PAPER=ROOT/'research_outputs/workshop_paper_2026/paper_final.md'
 def figure():
     import matplotlib
     matplotlib.use('Agg')
+    matplotlib.rcParams['svg.hashsalt']='en-uz-pilot-v1'
     import matplotlib.pyplot as plt
     import numpy as np
     metrics=json.loads((PUBLIC/'metrics.json').read_text())
@@ -37,7 +38,9 @@ def figure():
     fig.legend(handles,labels,loc='lower center',ncol=2,frameon=False,fontsize=9)
     fig.tight_layout(rect=(0,.10,1,1))
     fig.savefig(PUBLIC/'coverage_results.png',dpi=240)
-    fig.savefig(PUBLIC/'coverage_results.svg')
+    fig.savefig(PUBLIC/'coverage_results.svg',metadata={'Date':None})
+    svg=PUBLIC/'coverage_results.svg'
+    svg.write_text('\n'.join(line.rstrip() for line in svg.read_text().splitlines())+'\n')
     plt.close(fig)
 
 
