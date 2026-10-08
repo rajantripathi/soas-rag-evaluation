@@ -44,7 +44,7 @@ def verify(directory):
         samples = sorted(sum(delta[rng.randrange(n)] for _ in range(n)) / n for _ in range(config['bootstrap_resamples']))
         expected = [round(100 * samples[int(0.025 * len(samples))], 1), round(100 * samples[int(0.975 * len(samples)) - 1], 1)]
         assert interval['ci95_pp'] == expected
-    if not payload['approximate']:
+    if not payload['approximate'] and payload.get('baseline_ranks', True):
         for language in ('en', 'uz'):
             for method in payload['methods']:
                 baseline = [json.loads(line) for line in (ROOT / 'research_outputs/reproducible_pilot' /
@@ -58,3 +58,6 @@ def verify(directory):
 
 if __name__ == '__main__':
     verify(ROOT / 'research_outputs/title_masking/frozen')
+    retrievers = ROOT / 'research_outputs/title_masking/frozen_retrievers'
+    if (retrievers / 'metrics.json').exists():
+        verify(retrievers)

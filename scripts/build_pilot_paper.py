@@ -44,7 +44,13 @@ def figure():
     plt.close(fig)
 
 
-def pdf():
+DEFAULT_FIGURES=[('Full Hit',PUBLIC/'coverage_results.png',3.2/8.4,'Figure 1. Source hit rate at 3 on original questions. Complete and seed-42 reduced corpora share the same background articles. The reduced corpus excludes half the designated source pages.')]
+
+
+def pdf(paper=PAPER,out=ROOT/'output/pdf/en-uz-retrieval-pilot.pdf',link_base='research_outputs/workshop_paper_2026/',
+        title='Controlled Source Availability in an English-Uzbek Retrieval Pilot',
+        footer_text='English-Uzbek retrieval pilot | Working preprint manuscript',figures=None):
+    figures=list(DEFAULT_FIGURES if figures is None else figures)
     from markdown_it import MarkdownIt
     from reportlab.platypus import SimpleDocTemplate,Paragraph,Spacer,Table,TableStyle,Image,KeepTogether
     from reportlab.lib.styles import getSampleStyleSheet,ParagraphStyle
@@ -85,23 +91,29 @@ def pdf():
             elif child.type=='link_open':
                 href=child.attrGet('href')
                 if not href.startswith(('https://','http://')):
-                    href='https://github.com/rajantripathi/soas-rag-evaluation/blob/main/'+posixpath.normpath('research_outputs/workshop_paper_2026/'+href)
+                    href='https://github.com/rajantripathi/soas-rag-evaluation/blob/main/'+posixpath.normpath(link_base+href)
                 value.append('<a color="#226e8f" href="'+html.escape(href,quote=True)+'">')
             elif child.type=='link_close': value.append('</a>')
         return ''.join(value)
 
-    text=PAPER.read_text().replace('—','-').replace('–','-').replace('‑','-')
+    text=Path(paper).read_text().replace('—','-').replace('–','-').replace('‑','-')
     tokens=MarkdownIt('commonmark').enable('table').parse(text)
-    story=[]; i=0; image_inserted=False; pending_caption=None; list_number=None; item_prefix=""
+    story=[]; i=0; pending_caption=None; in_bullets=False; list_number=None; item_prefix=""
     while i<len(tokens):
         token=tokens[i]
         if token.type=='ordered_list_open':
             list_number=int(token.attrGet('start') or 1)
         elif token.type=='ordered_list_close':
             list_number=None
+        elif token.type=='bullet_list_open':
+            in_bullets=True
+        elif token.type=='bullet_list_close':
+            in_bullets=False
         elif token.type=='list_item_open' and list_number is not None:
             item_prefix=f'[{list_number}] '
             list_number+=1
+        elif token.type=='list_item_open' and in_bullets:
+            item_prefix='\u2022 '
         if token.type=='heading_open':
             level=int(token.tag[1]); style='PaperTitle' if level==1 else 'PaperH2' if level==2 else 'PaperH3'
             story.append(Paragraph(inline(tokens[i+1]),styles[style]));i+=3;continue
@@ -129,22 +141,23 @@ def pdf():
                                       ('TOPPADDING',(0,0),(-1,-1),5),('BOTTOMPADDING',(0,0),(-1,-1),5)]))
             story.append(KeepTogether(([pending_caption] if pending_caption else [])+[table,Spacer(1,10)]))
             pending_caption=None
-            if not image_inserted and any('Full Hit' in x.text for x in data[0]):
-                story.append(KeepTogether([
-                    Image(str(PUBLIC/'coverage_results.png'),width=495,height=495*3.2/8.4),
-                    Paragraph('Figure 1. Source hit rate at 3 on original questions. Complete and seed-42 reduced corpora share the same background articles. The reduced corpus excludes half the designated source pages.',styles['PaperCaption'])]))
-                image_inserted=True
+            for figure_spec in list(figures):
+                trigger,image,aspect,caption=figure_spec
+                if any(trigger in x.text for x in data[0]):
+                    story.append(KeepTogether([Image(str(image),width=495,height=495*aspect),
+                                               Paragraph(caption,styles['PaperCaption'])]))
+                    figures.remove(figure_spec)
             i+=1;continue
         if token.type=='hr': story.append(Spacer(1,5))
         i+=1
-    out=ROOT/'output/pdf/en-uz-retrieval-pilot.pdf';out.parent.mkdir(parents=True,exist_ok=True)
+    out=Path(out);out.parent.mkdir(parents=True,exist_ok=True)
     def footer(canvas,doc):
         canvas.saveState();canvas.setFont('Paper',7)
         canvas.setFillColor(colors.HexColor('#68747c'))
-        canvas.drawString(50,27,'English-Uzbek retrieval pilot | Working preprint manuscript')
+        canvas.drawString(50,27,footer_text)
         canvas.drawRightString(545,27,str(doc.page));canvas.restoreState()
     doc=SimpleDocTemplate(str(out),pagesize=(595.28,841.89),leftMargin=50,rightMargin=50,topMargin=44,bottomMargin=44,
-                          title='Controlled Source Availability in an English-Uzbek Retrieval Pilot',author='Rajan Prasad Tripathi')
+                          title=title,author='Rajan Prasad Tripathi')
     doc.build(story,onFirstPage=footer,onLaterPages=footer)
     print(out)
 

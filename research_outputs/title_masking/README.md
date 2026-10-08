@@ -44,6 +44,19 @@ python scripts/verify_title_masking.py
 
 For an existing cache, add `--cache-dir /path/to/data/reproducible_pilot`. Source text stays local. The standalone verifier requires only Python's standard library and checks all 96 metric cells, the paired bootstrap intervals, complete prediction coverage and exact baseline rankings. CI runs this verification without downloading a model.
 
+## Additional retrievers and between-language intervals
+
+`scripts/run_title_masking_retrievers.py` runs the same protocol with mE5-base, mE5-large and the dense mode of BGE-M3 (pinned in `configs/title_masking_retrievers.json`). It rebuilds the passages, refuses to run unless their hashes match `frozen/passage_audit.jsonl`, caches embeddings so interrupted runs resume, and writes `frozen_retrievers/`, which `verify_title_masking.py` then checks:
+
+```bash
+python scripts/run_title_masking_retrievers.py            # add --device cuda on a GPU machine
+python scripts/verify_title_masking.py
+python scripts/analyze_title_masking_gaps.py              # refresh language_gaps.json
+python scripts/write_title_sensitivity_manuscript.py      # refresh the draft preprint and PDF
+```
+
+[`language_gaps.json`](language_gaps.json) gives English minus Uzbek Hit@3 for each retriever and passage variant, and the difference between the two languages' masking drops, with unpaired source-group bootstrap intervals (descriptive, unadjusted for multiple comparisons). CI recomputes it with `--check`.
+
 ## Earlier substitute-corpus experiment
 
 The files in `snapshot_20231101/` are retained as an **exploratory legacy run**, produced with PR commit `af8085e`. They used 2023 snapshot text, 82 English and 96 Uzbek targets, and replacement backgrounds (including English fill sampled from one shard). The original matcher also removed substrings inside words, and masking before truncation admitted later text. Consequently the earlier 91.5% versus 68.8% result is not the result of the corrected frozen protocol and should not be used as the paper's headline. Corpus and masking changes occurred together; their separate contributions have not been isolated.

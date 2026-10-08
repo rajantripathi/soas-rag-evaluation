@@ -1,0 +1,138 @@
+{
+  "k": 3,
+  "resamples": 10000,
+  "seed": 42,
+  "note": "Descriptive unpaired source-group bootstrap; unadjusted for multiple comparisons; conditional on the frozen corpus.",
+  "rows": [
+    {
+      "run": "frozen",
+      "method": "bm25",
+      "variant": "no_prefix",
+      "measure": "en_minus_uz_hit@3",
+      "n_en": 100,
+      "n_uz": 96,
+      "value_pp": 7.4,
+      "ci95_pp": [
+        1.2,
+        13.8
+      ]
+    },
+    {
+      "run": "frozen",
+      "method": "bm25",
+      "variant": "title_masked",
+      "measure": "en_minus_uz_hit@3",
+      "n_en": 100,
+      "n_uz": 96,
+      "value_pp": 34.4,
+      "ci95_pp": [
+        21.2,
+        46.8
+      ]
+    },
+    {
+      "run": "frozen",
+      "method": "bm25",
+      "variant": "title_masked_fixed_window",
+      "measure": "en_minus_uz_hit@3",
+      "n_en": 100,
+      "n_uz": 96,
+      "value_pp": 34.4,
+      "ci95_pp": [
+        21.1,
+        46.9
+      ]
+    },
+    {
+      "run": "frozen",
+      "method": "bm25",
+      "variant": "title_prefix",
+      "measure": "en_minus_uz_hit@3",
+      "n_en": 100,
+      "n_uz": 96,
+      "value_pp": 6.3,
+      "ci95_pp": [
+        1.1,
+        12.5
+      ]
+    },
+    {
+      "run": "frozen",
+      "method": "e5_prefixed",
+      "variant": "no_prefix",
+      "measure": "en_minus_uz_hit@3",
+      "n_en": 100,
+      "n_uz": 96,
+      "value_pp": 4.2,
+      "ci95_pp": [
+        1.0,
+        8.3
+      ]
+    },
+    {
+      "run": "frozen",
+      "method": "e5_prefixed",
+      "variant": "title_masked",
+      "measure": "en_minus_uz_hit@3",
+      "n_en": 100,
+      "n_uz": 96,
+      "value_pp": 12.8,
+      "ci95_pp": [
+        3.5,
+        23.0
+      ]
+    },
+    {
+      "run": "frozen",
+      "method": "e5_prefixed",
+      "variant": "title_masked_fixed_window",
+      "measure": "en_minus_uz_hit@3",
+      "n_en": 100,
+      "n_uz": 96,
+      "value_pp": 13.8,
+      "ci95_pp": [
+        4.6,
+        23.3
+      ]
+    },
+    {
+      "run": "frozen",
+      "method": "e5_prefixed",
+      "variant": "title_prefix",
+      "measure": "en_minus_uz_hit@3",
+      "n_en": 100,
+      "n_uz": 96,
+      "value_pp": 0.0,
+      "ci95_pp": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "run": "frozen",
+      "method": "bm25",
+      "variant": "title_prefix_to_title_masked",
+      "measure": "uz_drop_minus_en_drop",
+      "n_en": 100,
+      "n_uz": 96,
+      "value_pp": 28.1,
+      "ci95_pp": [
+        14.9,
+        40.6
+      ]
+    },
+    {
+      "run": "frozen",
+      "method": "e5_prefixed",
+      "variant": "title_prefix_to_title_masked",
+      "measure": "uz_drop_minus_en_drop",
+      "n_en": 100,
+      "n_uz": 96,
+      "value_pp": 12.8,
+      "ci95_pp": [
+        3.5,
+        22.2
+      ]
+    }
+  ]
+}
