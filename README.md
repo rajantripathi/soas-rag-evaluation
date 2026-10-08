@@ -15,6 +15,8 @@ The [frozen-corpus pilot](research_outputs/reproducible_pilot/README.md) now pro
 
 Read the [new results](research_outputs/reproducible_pilot/results.md), [working manuscript](research_outputs/workshop_paper_2026/paper_final.md), or [manuscript PDF](output/pdf/en-uz-retrieval-pilot.pdf). All five source-removal masks, alternate-phrasing results, and implementation details are available in the pilot package.
 
+**Title-overlap check.** The [corrected frozen-corpus ablation](research_outputs/title_masking/README.md) shows E5 Hit@3 falling from 100% in both languages to 92.0% English and 79.2% Uzbek after masking article-title mentions. A fixed-window control gives 93.0% and 79.2%. This demonstrates sensitivity to title evidence in this pilot; it does not establish an intrinsic language gap. Ranked predictions, passage hashes and independent verification are included. The working manuscript above predates this additional experiment; a [draft preprint built around the title-masking result](research_outputs/preprint_2026/title_sensitivity.md) ([PDF](output/pdf/en-uz-title-sensitivity.pdf)) is generated from the verified metrics and is under co-author review.
+
 ## Start here
 
 - **Review the research:** [Evidence and reviewer guide](docs/reviewer_guide.md), including experiment phases, claim boundaries, and statistical provenance.

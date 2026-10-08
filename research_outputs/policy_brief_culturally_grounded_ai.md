@@ -10,13 +10,13 @@ In this 400-row pilot bilingual retrieval benchmark, targeted Uzbek corpus suppl
 
 The benchmark tests retrieval in English and Uzbek across governance, history, institutions, and culture. It measures whether a relevant source document is retrieved. The public release is retrieval-only, contains documented template-generated and domain-misaligned examples, and should not be treated as a uniformly clean or definitive QA benchmark.
 
-No human evaluation or LLM-as-judge evaluation has been completed. The validated findings therefore concern retrieval recall, not the quality, faithfulness, or usefulness of generated answers.
+No human evaluation or LLM-as-judge evaluation has been completed. The reported findings therefore concern retrieval recall, not the quality, faithfulness, or usefulness of generated answers.
 
-## Validated Findings
+## Reported Findings (historical runs)
 
-The English baseline retrieval recall was 63%. The Uzbek baseline was 39%. After targeted Uzbek corpus supplementation, Uzbek recall reached 98%, an absolute gain of 59 percentage points (*p* < 0.001; Cohen's *d* = 2.91).
+The English baseline retrieval recall was 63%. The Uzbek baseline was 39%. After targeted Uzbek corpus supplementation, Uzbek recall reached 98%, an absolute gain of 59 percentage points. The added sources were selected using known evaluation targets, so this is coverage repair on a known question set rather than evidence of generalisation. Historical inferential statistics are not reported here because they could not be reconstructed from the public predictions.
 
-Across the compared embedding models, the overall recall difference was 7.5 percentage points (Cohen's *d* = 0.31). Within the same population, reported supplementation gains were 29.5 percentage points overall and 59 points for Uzbek; embedding-model gains were 7.5 points overall and 14 points for Uzbek. This is a comparison of absolute recall gains, not a ratio of Cohen's *d* values, and it does not compare different generation LLMs.
+Across the compared embedding models, the overall recall difference was 7.5 percentage points. Within the same population, reported supplementation gains were 29.5 percentage points overall and 59 points for Uzbek; embedding-model gains were 7.5 points overall and 14 points for Uzbek. This is a comparison of absolute recall gains and it does not compare different generation LLMs.
 
 English history and institutions had baseline recall of 40% and 32%, respectively. An English supplementation experiment was attempted, but its results were retracted because synthetic material leaked answer content into the corpus. English supplementation is therefore not evidence in this brief.
 

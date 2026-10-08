@@ -4,7 +4,7 @@ Answers to common questions about the retrieval pipeline and its evaluation scop
 
 ## What is the main technical contribution?
 
-The main contribution is a controlled multilingual retrieval evaluation pipeline that compares corpus, retriever, embedding, and chunking interventions. In the validated Uzbek experiment, adding targeted source documents improved recall from 39% to 98%, a larger observed gain than the compared embedding or chunking changes.
+The main contribution is a controlled multilingual retrieval evaluation pipeline that compares corpus, retriever, embedding, and chunking interventions. In the reported historical Uzbek experiment, adding targeted source documents improved recall from 39% to 98%, a larger observed gain than the compared embedding or chunking changes.
 
 ## Why focus on retrieval recall instead of final answer quality?
 
@@ -40,7 +40,7 @@ Hybrid retrieval is useful when lexical matching recovers relevant candidates th
 
 - The full 400-row retrieval-only pilot benchmark is public; raw corpora, indexes, and answer-bearing internal material are not.
 - The benchmark remains moderate in size.
-- The primary validated result is retrieval-side, not full answer-generation quality.
+- The primary reported result is retrieval-side, not full answer-generation quality.
 - LLM-as-judge tooling exists but has not been executed; no human evaluation has been completed.
 - Findings are based on English and Uzbek and should not be overgeneralized to all low-resource languages.
 

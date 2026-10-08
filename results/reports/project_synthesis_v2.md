@@ -9,7 +9,7 @@
 
 **Issue:** Synthetic documents contained gold_answer text (data leakage). Results claiming 100% English recall are invalid.
 
-**Valid Results:** Uzbek supplementation (39% to 98%) and all baseline comparisons remain valid.
+**Historical descriptive results:** Uzbek supplementation (39% to 98%) is retained as reported on known evaluation targets; its inferential statistics are withdrawn pending verification.
 
 **Note:** English supplementation is NOT reported in this document. English performance is reported at baseline only.
 
@@ -17,13 +17,13 @@
 
 ## Executive Summary
 
-This project reports evidence from a 400-row pilot bilingual retrieval benchmark in English and Uzbek across governance, history, institutions, and culture. In the validated v2 comparison, targeted Uzbek corpus supplementation increased retrieval recall from 39% to 98% (59 percentage points; *p* < 0.001; Cohen's *d* = 2.91). The observed overall difference between the compared embedding models was 7.5 percentage points (Cohen's *d* = 0.31). These findings concern retrieval in this evaluation setting, not generated-answer quality or all low-resource languages.
+This project reports evidence from a 400-row pilot bilingual retrieval benchmark in English and Uzbek across governance, history, institutions, and culture. In the historical v2 comparison, targeted Uzbek corpus supplementation increased retrieval recall from 39% to 98% (59 percentage points). The observed overall difference between the compared embedding models was 7.5 percentage points. These findings concern retrieval in this evaluation setting, not generated-answer quality or all low-resource languages.
 
 ## Key Contributions
 
 1. **Pilot bilingual retrieval benchmark**: 400-item evaluation set (`manual_eval_v5`) with difficulty, quality flags, and source titles
 
-2. **Empirical demonstration**: Uzbek recall improved from 39% to 98% through corpus supplementation (p < 0.001, d = 2.91)
+2. **Empirical demonstration**: Uzbek recall improved from 39% to 98% through corpus supplementation
 
 3. **English gap analysis**: Identified 74 missing English documents (37% gap), with weakest coverage in history (40%) and institutions (32%)
 
@@ -57,17 +57,9 @@ This project reports evidence from a 400-row pilot bilingual retrieval benchmark
 | BM25 | supplement_v2 | bm25 | 67.0% | 62.0% | 72.0% |
 | Hybrid | supplement_v2 | bm25_plus_multilingual_e5_large | 79.5% | 63.0% | 96.0% |
 
-### Statistical Significance
+### Statistical provenance
 
-| Comparison | Metric | Difference | 95% CI | p-value | Cohen's d |
-|------------|--------|------------|--------|---------|-----------|
-| Baseline vs UZ supp v2 | UZ recall | +59.0% | [52.1%, 65.9%] | <0.001*** | 2.91 |
-| Baseline vs UZ supp v2 | Overall recall | +29.5% | [23.8%, 35.2%] | <0.001*** | 1.45 |
-| mpnet vs e5-large | Overall recall | +7.5% | [1.2%, 13.8%] | 0.020* | 0.31 |
-| BM25 vs Vector | UZ recall | +24.0% | [18.1%, 29.9%] | <0.001*** | 0.98 |
-| Vector vs Hybrid | Overall recall | 0.0% | [-2.1%, 2.1%] | 1.000 | 0.00 |
-
-*** p < 0.001, ** p < 0.01, * p < 0.05*
+Historical significance tests, confidence intervals and standardised effect sizes are withdrawn pending recovery of the original paired predictions. The descriptive percentages above do not establish generalisation beyond the known targets.
 
 ## Per-Language Analysis
 
@@ -90,14 +82,14 @@ This project reports evidence from a 400-row pilot bilingual retrieval benchmark
 - Institutions: 12.0%
 - Culture: 28.0%
 
-**After Uzbek supplementation v2 (validated v2 comparison):**
+**After Uzbek supplementation v2 (historical v2 comparison):**
 - Overall: 98.0%
 - Governance: 100.0%
 - History: 96.0%
 - Institutions: 96.0%
 - Culture: 100.0%
 
-**Interpretation:** Uzbek supplementation produced gains across history, institutions, and culture in this evaluation setting. The absolute improvement was 59 percentage points (Cohen's *d* = 2.91).
+**Interpretation:** Uzbek supplementation produced gains across history, institutions, and culture in this evaluation setting. The absolute improvement was 59 percentage points.
 
 ## Per-Domain Analysis
 
@@ -119,7 +111,7 @@ This project reports evidence from a 400-row pilot bilingual retrieval benchmark
 | Institutions | 32% | 96% | +64% |
 | Culture | 100% | 94% | +6% |
 
-**Interpretation:** The v4 evaluation used 400 items and should not be compared directly with the 200-item v2 phase. Its 96% Uzbek result is distinct from the validated v2 supplementation comparison, which reached 98%. English history and institutions remained weaker than the other English domains.
+**Interpretation:** The v4 evaluation used 400 items and should not be compared directly with the 200-item v2 phase. Its 96% Uzbek result is distinct from the historical v2 supplementation comparison, which reached 98%. English history and institutions remained weaker than the other English domains.
 
 ## Failure Taxonomy
 
@@ -173,7 +165,7 @@ This project reports evidence from a 400-row pilot bilingual retrieval benchmark
 **Primary metric:** Recall@k (retrieval success)
 - Robust to stub generation limitations
 - Directly measures corpus coverage
-- Statistically validated with bootstrap CIs
+- Historical descriptive results; inferential statistics unverified
 
 **Secondary metric:** Token overlap (Jaccard similarity)
 - Measures answer grounding but conflates retrieval and generation
@@ -228,7 +220,7 @@ This project reports evidence from a 400-row pilot bilingual retrieval benchmark
 
 ## Conclusion
 
-This project provides evidence that corpus coverage was an important retrieval constraint in this English-Uzbek evaluation setting. Targeted Uzbek corpus supplementation produced a 59-percentage-point gain (Cohen's *d* = 2.91), while the compared embedding models differed by 7.5 percentage points overall (Cohen's *d* = 0.31).
+This project provides evidence that corpus coverage was an important retrieval constraint in this English-Uzbek evaluation setting. Targeted Uzbek corpus supplementation produced a 59-percentage-point gain, while the compared embedding models differed by 7.5 percentage points overall.
 
  Within the same population, reported supplementation gains were 29.5 percentage points overall and 59 points for Uzbek; embedding-model gains were 7.5 points overall and 14 points for Uzbek.
 
@@ -243,7 +235,7 @@ The benchmark, code, and findings are publicly available for reproducibility and
 
 ---
 
-**Project Status**: Core experiments complete, Uzbek supplementation validated, English supplementation incomplete
+**Project Status**: Core experiments complete, Uzbek supplementation reported on known targets, English supplementation incomplete
 **Code Available**: https://github.com/rajantripathi/soas-rag-evaluation
 **Affiliations**: AI² Lab, American University of Technology, Uzbekistan; Centre for AI Futures, SOAS University of London
 

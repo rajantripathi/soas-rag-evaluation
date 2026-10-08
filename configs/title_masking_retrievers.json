@@ -1,0 +1,29 @@
+{
+  "protocol": "title-masking-retrievers-v1",
+  "note": "Passages are built once with the pinned multilingual-e5-small tokenizer (as in the frozen title-masking run) and are byte-identical across retrievers. All listed models share the XLM-RoBERTa SentencePiece vocabulary.",
+  "max_seq_length": 512,
+  "retrievers": [
+    {
+      "name": "e5_base",
+      "model_id": "intfloat/multilingual-e5-base",
+      "revision": "d128750597153bb5987e10b1c3493a34e5a4502a",
+      "query_prefix": "query: ",
+      "passage_prefix": "passage: "
+    },
+    {
+      "name": "e5_large",
+      "model_id": "intfloat/multilingual-e5-large",
+      "revision": "3d7cfbdacd47fdda877c5cd8a79fbcc4f2a574f3",
+      "query_prefix": "query: ",
+      "passage_prefix": "passage: "
+    },
+    {
+      "name": "bge_m3",
+      "model_id": "BAAI/bge-m3",
+      "revision": "5617a9f61b028005a4858fdac845db406aefb181",
+      "query_prefix": "",
+      "passage_prefix": "",
+      "mode": "dense"
+    }
+  ]
+}

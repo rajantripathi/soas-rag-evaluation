@@ -8,7 +8,7 @@ This repository implements a bilingual RAG evaluation pipeline for culturally gr
 
 > When retrieval fails for culturally grounded multilingual questions, is the main bottleneck the retrieval model or the availability of the right source documents?
 
-The validated result is that targeted Uzbek corpus supplementation improved retrieval recall from 39% to 98% (59 percentage points; *p* < 0.001; Cohen's *d* = 2.91). The compared embedding models differed by 7.5 percentage points overall (Cohen's *d* = 0.31).
+The reported historical result is that targeted Uzbek corpus supplementation improved retrieval recall from 39% to 98% (59 percentage points), using sources selected with knowledge of the evaluation targets. The compared embedding models differed by 7.5 percentage points overall. Historical inferential statistics require verification (see [reviewer guide](reviewer_guide.md#statistical-provenance)).
 
 ## Main Components
 
@@ -103,11 +103,10 @@ The repository includes configurations for:
 - BM25 retrieval
 - hybrid retrieval
 
-The strongest validated result is the Uzbek supplement v2 improvement:
+The largest reported historical change is the Uzbek supplement v2 improvement (targets known during curation; effect size withdrawn pending provenance recovery):
 
 - Uzbek baseline recall: `0.3900`
 - Uzbek recall after supplement v2: `0.9800`
-- Cohen's d: `2.91`
 
 ## Reproducibility Controls
 

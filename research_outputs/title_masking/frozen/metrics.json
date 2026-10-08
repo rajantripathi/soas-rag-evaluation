@@ -1,0 +1,454 @@
+{
+  "protocol": "title-masking-v2-word-boundaries",
+  "approximate": false,
+  "note": "",
+  "corpus_sha256": "9ca96ca4e22fbbeb4b2a5a7b48ba8550cfdac1273df4f3487cdfb96a33e8a23e",
+  "model": {
+    "model_id": "intfloat/multilingual-e5-small",
+    "revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3"
+  },
+  "variants": [
+    "title_prefix",
+    "no_prefix",
+    "title_masked",
+    "title_masked_fixed_window"
+  ],
+  "methods": [
+    "bm25",
+    "e5_prefixed"
+  ],
+  "title_overlap": {
+    "en": {
+      "original_questions": 100,
+      "title_in_question": 89,
+      "targets_in_corpus": 100,
+      "candidates": 1100,
+      "background": 1000
+    },
+    "uz": {
+      "original_questions": 96,
+      "title_in_question": 96,
+      "targets_in_corpus": 96,
+      "candidates": 1096,
+      "background": 1000
+    }
+  },
+  "results": [
+    {
+      "language": "en",
+      "variant": "title_prefix",
+      "method": "bm25",
+      "questions": "original",
+      "n": 100,
+      "hit@1": 98.0,
+      "hit@3": 99.0,
+      "hit@5": 99.0
+    },
+    {
+      "language": "en",
+      "variant": "title_prefix",
+      "method": "bm25",
+      "questions": "alternate",
+      "n": 100,
+      "hit@1": 96.0,
+      "hit@3": 99.0,
+      "hit@5": 99.0
+    },
+    {
+      "language": "en",
+      "variant": "title_prefix",
+      "method": "e5_prefixed",
+      "questions": "original",
+      "n": 100,
+      "hit@1": 100.0,
+      "hit@3": 100.0,
+      "hit@5": 100.0
+    },
+    {
+      "language": "en",
+      "variant": "title_prefix",
+      "method": "e5_prefixed",
+      "questions": "alternate",
+      "n": 100,
+      "hit@1": 98.0,
+      "hit@3": 99.0,
+      "hit@5": 99.0
+    },
+    {
+      "language": "en",
+      "variant": "no_prefix",
+      "method": "bm25",
+      "questions": "original",
+      "n": 100,
+      "hit@1": 93.0,
+      "hit@3": 98.0,
+      "hit@5": 98.0
+    },
+    {
+      "language": "en",
+      "variant": "no_prefix",
+      "method": "bm25",
+      "questions": "alternate",
+      "n": 100,
+      "hit@1": 91.0,
+      "hit@3": 97.0,
+      "hit@5": 98.0
+    },
+    {
+      "language": "en",
+      "variant": "no_prefix",
+      "method": "e5_prefixed",
+      "questions": "original",
+      "n": 100,
+      "hit@1": 98.0,
+      "hit@3": 100.0,
+      "hit@5": 100.0
+    },
+    {
+      "language": "en",
+      "variant": "no_prefix",
+      "method": "e5_prefixed",
+      "questions": "alternate",
+      "n": 100,
+      "hit@1": 98.0,
+      "hit@3": 99.0,
+      "hit@5": 99.0
+    },
+    {
+      "language": "en",
+      "variant": "title_masked",
+      "method": "bm25",
+      "questions": "original",
+      "n": 100,
+      "hit@1": 68.0,
+      "hit@3": 75.0,
+      "hit@5": 78.0
+    },
+    {
+      "language": "en",
+      "variant": "title_masked",
+      "method": "bm25",
+      "questions": "alternate",
+      "n": 100,
+      "hit@1": 65.0,
+      "hit@3": 79.0,
+      "hit@5": 79.0
+    },
+    {
+      "language": "en",
+      "variant": "title_masked",
+      "method": "e5_prefixed",
+      "questions": "original",
+      "n": 100,
+      "hit@1": 90.0,
+      "hit@3": 92.0,
+      "hit@5": 94.0
+    },
+    {
+      "language": "en",
+      "variant": "title_masked",
+      "method": "e5_prefixed",
+      "questions": "alternate",
+      "n": 100,
+      "hit@1": 86.0,
+      "hit@3": 91.0,
+      "hit@5": 93.0
+    },
+    {
+      "language": "en",
+      "variant": "title_masked_fixed_window",
+      "method": "bm25",
+      "questions": "original",
+      "n": 100,
+      "hit@1": 68.0,
+      "hit@3": 75.0,
+      "hit@5": 78.0
+    },
+    {
+      "language": "en",
+      "variant": "title_masked_fixed_window",
+      "method": "bm25",
+      "questions": "alternate",
+      "n": 100,
+      "hit@1": 65.0,
+      "hit@3": 79.0,
+      "hit@5": 79.0
+    },
+    {
+      "language": "en",
+      "variant": "title_masked_fixed_window",
+      "method": "e5_prefixed",
+      "questions": "original",
+      "n": 100,
+      "hit@1": 89.0,
+      "hit@3": 93.0,
+      "hit@5": 94.0
+    },
+    {
+      "language": "en",
+      "variant": "title_masked_fixed_window",
+      "method": "e5_prefixed",
+      "questions": "alternate",
+      "n": 100,
+      "hit@1": 87.0,
+      "hit@3": 92.0,
+      "hit@5": 94.0
+    },
+    {
+      "language": "uz",
+      "variant": "title_prefix",
+      "method": "bm25",
+      "questions": "original",
+      "n": 96,
+      "hit@1": 81.2,
+      "hit@3": 92.7,
+      "hit@5": 99.0
+    },
+    {
+      "language": "uz",
+      "variant": "title_prefix",
+      "method": "bm25",
+      "questions": "alternate",
+      "n": 96,
+      "hit@1": 77.1,
+      "hit@3": 88.5,
+      "hit@5": 93.8
+    },
+    {
+      "language": "uz",
+      "variant": "title_prefix",
+      "method": "e5_prefixed",
+      "questions": "original",
+      "n": 96,
+      "hit@1": 93.8,
+      "hit@3": 100.0,
+      "hit@5": 100.0
+    },
+    {
+      "language": "uz",
+      "variant": "title_prefix",
+      "method": "e5_prefixed",
+      "questions": "alternate",
+      "n": 96,
+      "hit@1": 87.5,
+      "hit@3": 96.9,
+      "hit@5": 99.0
+    },
+    {
+      "language": "uz",
+      "variant": "no_prefix",
+      "method": "bm25",
+      "questions": "original",
+      "n": 96,
+      "hit@1": 75.0,
+      "hit@3": 90.6,
+      "hit@5": 94.8
+    },
+    {
+      "language": "uz",
+      "variant": "no_prefix",
+      "method": "bm25",
+      "questions": "alternate",
+      "n": 96,
+      "hit@1": 65.6,
+      "hit@3": 79.2,
+      "hit@5": 88.5
+    },
+    {
+      "language": "uz",
+      "variant": "no_prefix",
+      "method": "e5_prefixed",
+      "questions": "original",
+      "n": 96,
+      "hit@1": 87.5,
+      "hit@3": 95.8,
+      "hit@5": 97.9
+    },
+    {
+      "language": "uz",
+      "variant": "no_prefix",
+      "method": "e5_prefixed",
+      "questions": "alternate",
+      "n": 96,
+      "hit@1": 83.3,
+      "hit@3": 94.8,
+      "hit@5": 94.8
+    },
+    {
+      "language": "uz",
+      "variant": "title_masked",
+      "method": "bm25",
+      "questions": "original",
+      "n": 96,
+      "hit@1": 25.0,
+      "hit@3": 40.6,
+      "hit@5": 42.7
+    },
+    {
+      "language": "uz",
+      "variant": "title_masked",
+      "method": "bm25",
+      "questions": "alternate",
+      "n": 96,
+      "hit@1": 21.9,
+      "hit@3": 35.4,
+      "hit@5": 44.8
+    },
+    {
+      "language": "uz",
+      "variant": "title_masked",
+      "method": "e5_prefixed",
+      "questions": "original",
+      "n": 96,
+      "hit@1": 61.5,
+      "hit@3": 79.2,
+      "hit@5": 81.2
+    },
+    {
+      "language": "uz",
+      "variant": "title_masked",
+      "method": "e5_prefixed",
+      "questions": "alternate",
+      "n": 96,
+      "hit@1": 47.9,
+      "hit@3": 70.8,
+      "hit@5": 80.2
+    },
+    {
+      "language": "uz",
+      "variant": "title_masked_fixed_window",
+      "method": "bm25",
+      "questions": "original",
+      "n": 96,
+      "hit@1": 24.0,
+      "hit@3": 40.6,
+      "hit@5": 41.7
+    },
+    {
+      "language": "uz",
+      "variant": "title_masked_fixed_window",
+      "method": "bm25",
+      "questions": "alternate",
+      "n": 96,
+      "hit@1": 19.8,
+      "hit@3": 37.5,
+      "hit@5": 45.8
+    },
+    {
+      "language": "uz",
+      "variant": "title_masked_fixed_window",
+      "method": "e5_prefixed",
+      "questions": "original",
+      "n": 96,
+      "hit@1": 61.5,
+      "hit@3": 79.2,
+      "hit@5": 80.2
+    },
+    {
+      "language": "uz",
+      "variant": "title_masked_fixed_window",
+      "method": "e5_prefixed",
+      "questions": "alternate",
+      "n": 96,
+      "hit@1": 50.0,
+      "hit@3": 71.9,
+      "hit@5": 80.2
+    }
+  ],
+  "title_masking_drop": [
+    {
+      "language": "en",
+      "method": "bm25",
+      "k": 3,
+      "n": 100,
+      "drop_pp": 24.0,
+      "ci95_pp": [
+        16.0,
+        33.0
+      ]
+    },
+    {
+      "language": "en",
+      "method": "e5_prefixed",
+      "k": 3,
+      "n": 100,
+      "drop_pp": 8.0,
+      "ci95_pp": [
+        3.0,
+        14.0
+      ]
+    },
+    {
+      "language": "uz",
+      "method": "bm25",
+      "k": 3,
+      "n": 96,
+      "drop_pp": 52.1,
+      "ci95_pp": [
+        41.7,
+        61.5
+      ]
+    },
+    {
+      "language": "uz",
+      "method": "e5_prefixed",
+      "k": 3,
+      "n": 96,
+      "drop_pp": 20.8,
+      "ci95_pp": [
+        13.5,
+        29.2
+      ]
+    }
+  ],
+  "provenance": {
+    "script_sha256": "62a522995dac1676ec07650c651cd1db2822bf322cdc45eab02a071abf31da04",
+    "config": {
+      "protocol": "controlled-source-removal-v1",
+      "dataset": "hf_dataset/manual_eval_v5_retrieval_only.jsonl",
+      "background_per_language": 1000,
+      "minimum_resolved_targets_per_language": 90,
+      "languages": [
+        "en",
+        "uz"
+      ],
+      "model_id": "intfloat/multilingual-e5-small",
+      "methods": [
+        "bm25",
+        "e5_prefixed",
+        "e5_unprefixed"
+      ],
+      "primary_k": 3,
+      "cutoffs": [
+        1,
+        3,
+        5
+      ],
+      "removal_seeds": [
+        42,
+        43,
+        44,
+        45,
+        46
+      ],
+      "primary_removal_seed": 42,
+      "removal_fraction": 0.5,
+      "passage_tokens": 480,
+      "model_max_tokens": 512,
+      "batch_size": 8,
+      "device": "cpu",
+      "torch_threads": 4,
+      "bootstrap_resamples": 10000,
+      "bootstrap_seed": 42
+    },
+    "labels_sha256": "2bf123a73f43c1fe854451d9cfde6e0a069a35684fc6051196bbdc86a50fd13e",
+    "source_manifest_sha256": "4c35506b8db2446bd5da6f20468ea00a4973ce8cb9f87c1ad25f31137f4f174f",
+    "packages": {
+      "numpy": "2.4.6",
+      "torch": "2.14.1",
+      "transformers": "5.18.0",
+      "sentence-transformers": "6.1.0"
+    },
+    "excluded_question_ids": []
+  }
+}
