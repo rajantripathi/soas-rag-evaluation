@@ -23,6 +23,7 @@ Example::
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import random
 from collections import defaultdict
@@ -48,11 +49,23 @@ def main():
     args = parser.parse_args()
 
     pools = defaultdict(dict)
+    inputs = []
     for spec in args.snapshot:
         language, path = spec.split('=', 1)
-        for page_id, title, text in load_rows(Path(path)):
+        if language not in ('en', 'uz'):
+            parser.error('Snapshot language must be en or uz')
+        source = Path(path)
+        h = hashlib.sha256()
+        with source.open('rb') as stream:
+            for chunk in iter(lambda: stream.read(1024 * 1024), b''):
+                h.update(chunk)
+        inputs.append(dict(language=language, filename=source.name, sha256=h.hexdigest()))
+        for page_id, title, text in load_rows(source):
             text = ' '.join((text or '').split())
             if len(text) >= 100:
+                previous = pools[language].get(str(page_id))
+                if previous is not None and previous != (title, text):
+                    raise ValueError(f'Conflicting snapshot rows: {language}:{page_id}')
                 pools[language][str(page_id)] = (title, text)
 
     manifest = json.loads(MANIFEST.read_text())
@@ -71,12 +84,14 @@ def main():
                 continue
             # Keep the frozen title: it is what the benchmark questions were written against.
             corpus.append(dict(doc_id=f"{language}:{doc['page_id']}", language=language, title=doc['title'],
-                               text=hit[1], role=doc['role'], source='frozen_id'))
+                               text=hit[1], role=doc['role'], source='frozen_id', snapshot_title=hit[0]))
             kept_targets += doc['role'] == 'target'
             kept_background += doc['role'] == 'background'
         need = manifest['background_per_language'] - kept_background
         candidates = sorted(pid for pid in pool if pid not in frozen_ids[language])
-        fill = random.Random(args.seed).sample(candidates, min(need, len(candidates)))
+        if len(candidates) < need:
+            raise ValueError(f'Insufficient background candidates for {language}: {len(candidates)} < {need}')
+        fill = random.Random(args.seed).sample(candidates, need)
         for pid in fill:
             corpus.append(dict(doc_id=f'{language}:{pid}', language=language, title=pool[pid][0], text=pool[pid][1],
                                role='background', source='snapshot_fill'))
@@ -85,6 +100,10 @@ def main():
 
     args.out.parent.mkdir(parents=True, exist_ok=True)
     args.out.write_text(''.join(json.dumps(d, ensure_ascii=False) + '\n' for d in corpus))
+    provenance = dict(inputs=inputs, seed=args.seed, counts=report,
+        corpus_sha256=hashlib.sha256(args.out.read_bytes()).hexdigest(),
+        note='Sampling is from the supplied files only, not necessarily all Wikipedia. Frozen-ID rows retain frozen titles; snapshot_title records differences.')
+    args.out.with_suffix('.provenance.json').write_text(json.dumps(provenance, indent=2) + '\n')
     print(json.dumps(report, indent=2))
 
 

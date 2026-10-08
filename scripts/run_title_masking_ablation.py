@@ -38,7 +38,7 @@ sys.path.insert(0, str(ROOT))
 PILOT = ROOT / 'research_outputs/reproducible_pilot'
 CACHE = ROOT / 'data/reproducible_pilot'
 CONFIG = json.loads((ROOT / 'configs/reproducible_pilot.json').read_text())
-VARIANTS = ('title_prefix', 'no_prefix', 'title_masked')
+VARIANTS = ('title_prefix', 'no_prefix', 'title_masked', 'title_masked_fixed_window')
 METHODS = ('bm25', 'e5_prefixed')
 CUTOFFS = (1, 3, 5)
 APOSTROPHES = "ʻʼ'‘’`ʹ"
@@ -62,18 +62,18 @@ def title_pattern(title: str) -> re.Pattern:
         escaped = r'\s+'.join(parts)
         escaped = re.sub('|'.join(re.escape(re.escape(a)) for a in APOSTROPHES), f'[{APOSTROPHES}]', escaped)
         alternatives.append(escaped)
-    return re.compile('|'.join(alternatives), re.IGNORECASE)
+    return re.compile(r'(?<!\w)(?:' + '|'.join(alternatives) + r')(?!\w)', re.IGNORECASE)
 
 
 def mask_title(title: str, text: str) -> str:
     return ' '.join(title_pattern(title).sub(' ', text).split())
 
 
-def load_frozen_corpus() -> list[dict]:
+def load_frozen_corpus(cache=CACHE) -> list[dict]:
     manifest = json.loads((PILOT / 'source_manifest.json').read_text())
     corpus = []
     for doc in manifest['documents']:
-        path = CACHE / 'articles' / f"{doc['language']}_{doc['page_id']}.json"
+        path = cache / 'articles' / f"{doc['language']}_{doc['page_id']}.json"
         if not path.exists():
             raise SystemExit(f'Missing frozen article {path}. Run: python scripts/run_reproducible_pilot.py acquire')
         cached = json.loads(path.read_text())
@@ -91,8 +91,13 @@ def build_passages(corpus, variant, tokenizer):
             text = doc['title'] + '. ' + doc['text']
         elif variant == 'no_prefix':
             text = doc['text']
-        else:
+        elif variant == 'title_masked_fixed_window':
+            window = tokenizer.decode(tokenizer.encode(doc['text'], add_special_tokens=False)[:CONFIG['passage_tokens']], skip_special_tokens=True)
+            text = mask_title(doc['title'], window)
+        elif variant == 'title_masked':
             text = mask_title(doc['title'], doc['text'])
+        else:
+            raise ValueError(variant)
         tokens = tokenizer.encode(text, add_special_tokens=False)[:CONFIG['passage_tokens']]
         out.append(dict(doc_id=doc['doc_id'], language=doc['language'],
                         text=tokenizer.decode(tokens, skip_special_tokens=True)))
@@ -117,6 +122,7 @@ def bootstrap_drop(a, b, resamples, seed):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser.add_argument('--cache-dir', type=Path, default=CACHE)
     parser.add_argument('--corpus', type=Path, help='JSONL corpus; omit to use the frozen pilot cache')
     parser.add_argument('--name', default=None, help='Output folder name (default: frozen or corpus stem)')
     parser.add_argument('--note', default='', help='Provenance note recorded with approximate runs')
@@ -141,8 +147,12 @@ def main():
         corpus = [json.loads(l) for l in args.corpus.read_text().splitlines() if l.strip()]
         approximate, name = True, args.name or args.corpus.stem
     else:
-        corpus = load_frozen_corpus()
+        corpus = load_frozen_corpus(args.cache_dir)
         approximate, name = False, args.name or 'frozen'
+    if not re.fullmatch(r'[A-Za-z0-9_-]+', name):
+        parser.error('--name must be a simple directory name')
+    if len({d['doc_id'] for d in corpus}) != len(corpus):
+        raise ValueError('Duplicate corpus IDs')
     out_dir = ROOT / 'research_outputs/title_masking' / name
     out_dir.mkdir(parents=True, exist_ok=True)
 
@@ -151,11 +161,16 @@ def main():
     titles = {d['doc_id']: d['title'] for d in corpus}
 
     results, per_question = [], {}
+    predictions, passage_audit = [], []
     leakage = {}
     for language in CONFIG['languages']:
         docs = [d for d in corpus if d['language'] == language]
         questions = [q for q in labels if q['language'] == language and q['source_doc_ids'][0] in corpus_ids]
         originals = [q for q in questions if not q['variant']]
+        if not originals or len({q['source_doc_ids'][0] for q in originals}) != len(originals):
+            raise ValueError('Bootstrap requires one original question per distinct source')
+        qv = model.encode(['query: ' + q['question'] for q in questions], batch_size=8,
+                          normalize_embeddings=True, convert_to_numpy=True, show_progress_bar=False)
         leakage[language] = dict(
             original_questions=len(originals),
             title_in_question=sum(norm(titles[q['source_doc_ids'][0]]) in norm(q['question']) for q in originals),
@@ -164,6 +179,9 @@ def main():
         for variant in VARIANTS:
             passages = build_passages(docs, variant, model.tokenizer)
             ids = [p['doc_id'] for p in passages]
+            passage_audit.extend(dict(doc_id=p['doc_id'], variant=variant, role=d['role'],
+                text_sha256=sha(p['text']), tokens=len(model.tokenizer.encode(p['text'], add_special_tokens=False)))
+                for p, d in zip(passages, docs))
             for method in METHODS:
                 if method == 'bm25':
                     index = BM25Index(passages); index.build()
@@ -171,12 +189,12 @@ def main():
                 else:
                     dv = model.encode(['passage: ' + p['text'] for p in passages], batch_size=8,
                                       normalize_embeddings=True, convert_to_numpy=True, show_progress_bar=False)
-                    qv = model.encode(['query: ' + q['question'] for q in questions], batch_size=8,
-                                      normalize_embeddings=True, convert_to_numpy=True, show_progress_bar=False)
                     score_rows = qv @ dv.T
                 for q, scores in zip(questions, score_rows):
                     top = rank(scores, ids)
                     gold = q['source_doc_ids'][0]
+                    predictions.append(dict(id=q['id'], language=language, passage_variant=variant, method=method,
+                        questions='alternate' if q['variant'] else 'original', source_doc_ids=q['source_doc_ids'], retrieved_doc_ids=top))
                     per_question[(language, variant, method, q['id'])] = {k: int(gold in top[:k]) for k in CUTOFFS}
                 for subset, rows in (('original', originals), ('alternate', [q for q in questions if q['variant']])):
                     if not rows:
@@ -196,8 +214,16 @@ def main():
                                   drop_pp=round(100 * (sum(a) - sum(b)) / len(a), 1),
                                   ci95_pp=[round(x, 1) for x in bootstrap_drop(a, b, CONFIG['bootstrap_resamples'], CONFIG['bootstrap_seed'])]))
 
-    payload = dict(approximate=approximate, note=args.note, corpus_sha256=sha(json.dumps(corpus, sort_keys=True, ensure_ascii=False)),
-                   model=lock, variants=VARIANTS, methods=METHODS, leakage=leakage, results=results, title_masking_drop=intervals)
+    payload = dict(protocol='title-masking-v2-word-boundaries', approximate=approximate, note=args.note, corpus_sha256=sha(json.dumps(corpus, sort_keys=True, ensure_ascii=False)),
+                   model=lock, variants=VARIANTS, methods=METHODS, title_overlap=leakage, results=results, title_masking_drop=intervals)
+    import importlib.metadata
+    payload['provenance'] = dict(script_sha256=sha(Path(__file__).read_text()), config=CONFIG,
+        labels_sha256=sha((PILOT / 'evaluation_labels.jsonl').read_text()),
+        source_manifest_sha256=sha((PILOT / 'source_manifest.json').read_text()),
+        packages={p: importlib.metadata.version(p) for p in ('numpy', 'torch', 'transformers', 'sentence-transformers')},
+        excluded_question_ids=[q['id'] for q in labels if q['source_doc_ids'][0] not in corpus_ids])
+    for filename, rows in [('predictions.jsonl', predictions), ('passage_audit.jsonl', passage_audit)]:
+        (out_dir / filename).write_text(''.join(json.dumps(r, ensure_ascii=False) + '\n' for r in rows))
     (out_dir / 'metrics.json').write_text(json.dumps(payload, indent=2, ensure_ascii=False) + '\n')
 
     lines = [f'# Title-masking ablation ({name})', '']

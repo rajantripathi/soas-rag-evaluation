@@ -1,5 +1,7 @@
 # Title-masking ablation (snapshot_20231101)
 
+> Legacy exploratory output: uses the original substring matcher and a substitute corpus. See the [corrected frozen analysis](../README.md); these figures are not its results.
+
 **Approximate run.** The corpus is not the hash-checked frozen pilot corpus. Article text from the Hugging Face wikimedia/wikipedia 20231101 snapshots, matched to frozen page IDs (all 96 Uzbek targets, 82 of 100 English targets). Background pages absent from the snapshot were replaced by a seeded random sample (373 Uzbek, 123 English; English fill from one snapshot shard). Frozen titles are used for prefixes and masking.
 
 Complete corpus, original questions. Hit@k in percent.

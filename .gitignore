@@ -91,3 +91,5 @@ research_outputs/workshop_outline_20260309.md
 # Retrieval-only pilot outputs; source text remains under ignored data/.
 !research_outputs/reproducible_pilot/*.jsonl
 tmp/
+
+!research_outputs/title_masking/frozen/*.jsonl

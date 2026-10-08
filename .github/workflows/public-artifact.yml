@@ -22,6 +22,8 @@ jobs:
         run: python -m unittest discover -s tests -v
       - name: Independently verify published pilot metrics
         run: python scripts/verify_pilot_artifacts.py
+      - name: Verify frozen title-masking metrics and baseline ranks
+        run: python scripts/verify_title_masking.py
       - name: Check oracle wiring (not model performance)
         run: python scripts/compute_retrieval_recall.py --oracle-check --k 3
 
